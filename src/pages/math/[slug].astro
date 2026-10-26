@@ -1,0 +1,30 @@
+---
+import GameLayout from '../../layouts/GameLayout.astro';
+import { getAllGames } from '../../contentLoader';
+import { auditGameCollection } from '../../quality/qualityGate';
+import type { GameData } from '../../schema/gameSchema';
+
+export async function getStaticPaths() {
+  const games = getAllGames();
+  const audit = auditGameCollection(games, { minWords: 250, maxSimilarity: 0.70 });
+
+  return games.map((game) => {
+    const report = audit.reports.get(game.slug);
+    const robotsDirective = report?.suggestedRobotsDirective ?? 'index, follow';
+
+    return {
+      params: { slug: game.slug },
+      props: { game, robotsDirective }
+    };
+  });
+}
+
+interface Props {
+  game: GameData;
+  robotsDirective: string;
+}
+
+const { game, robotsDirective } = Astro.props;
+---
+
+<GameLayout game={game} robotsDirective={robotsDirective} />
