@@ -1,0 +1,604 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Teacher & Parent Pass', url: '/pass/' }
+];
+
+const seoTitle = 'Teacher & Parent Pass — 100% Ad-Free Math Fluency Platform';
+const seoDesc = 'Upgrade to Grid Fluency Teacher Pass ($3.99/mo or $29/yr). Enjoy 100% ad-free classroom screens, student playlist generator, printable worksheets, and projector warmup mode.';
+const canonicalUrl = 'https://gridfluency.com/pass/';
+---
+
+<BaseLayout
+  title={seoTitle}
+  metaDescription={seoDesc}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs crumbs={breadcrumbs} />
+
+  <div class="pass-container">
+    <header class="pass-hero">
+      <span class="pass-pill">Classroom & Home Learning</span>
+      <h1 class="pass-h1">The Teacher & Parent Pass</h1>
+      <p class="pass-subtitle">
+        Empower students with a distraction-free, 100% ad-free math fluency environment. Includes custom classroom playlists, automated worksheet generators, and full-screen projector modes.
+      </p>
+    </header>
+
+    <!-- Pricing Switcher & Cards -->
+    <section class="pricing-section" aria-label="Subscription Plans">
+      <div class="billing-toggle-wrapper">
+        <span class="toggle-label" id="lbl-monthly">Monthly</span>
+        <button
+          type="button"
+          class="billing-toggle-btn"
+          id="billing-toggle"
+          role="switch"
+          aria-checked="false"
+          aria-label="Toggle annual billing discount"
+        >
+          <span class="toggle-slider"></span>
+        </button>
+        <span class="toggle-label" id="lbl-annual">
+          Annual <span class="savings-tag">Save 39%</span>
+        </span>
+      </div>
+
+      <div class="plans-grid">
+        <!-- Free Tier Card -->
+        <div class="plan-card free-card">
+          <div class="plan-header">
+            <h2 class="plan-name">Community Free</h2>
+            <p class="plan-desc">For individual quick practice on public school grids.</p>
+            <div class="plan-price">
+              <span class="price-val">$0</span>
+              <span class="price-period">forever</span>
+            </div>
+          </div>
+          <ul class="features-list">
+            <li><span class="check-icon">✓</span> 40+ Interactive 10x10 math fluency games</li>
+            <li><span class="check-icon">✓</span> Local browser personal best tracking</li>
+            <li><span class="check-icon">✓</span> High-contrast accessibility modes</li>
+            <li class="disabled"><span class="cross-icon">✕</span> Compliant child-directed banner ads</li>
+            <li class="disabled"><span class="cross-icon">✕</span> Custom playlist generator</li>
+            <li class="disabled"><span class="cross-icon">✕</span> Printable PDF worksheets with answer keys</li>
+          </ul>
+          <a href="/math/" class="btn-plan btn-secondary">Play Free Games</a>
+        </div>
+
+        <!-- Teacher Pass Card -->
+        <div class="plan-card pass-card featured">
+          <div class="popular-ribbon">Most Popular</div>
+          <div class="plan-header">
+            <h2 class="plan-name">Teacher & Parent Pass</h2>
+            <p class="plan-desc">Single-seat license for teachers, tutors, and homeschooling families.</p>
+            <div class="plan-price">
+              <span class="price-val" id="display-price">$3.99</span>
+              <span class="price-period" id="display-period">/ month</span>
+            </div>
+            <p class="billing-note" id="display-note">Billed monthly. Cancel anytime with 1 click.</p>
+          </div>
+          <ul class="features-list">
+            <li><span class="check-icon">✓</span> <strong>100% Ad-Free:</strong> Zero ad scripts or trackers loaded</li>
+            <li><span class="check-icon">✓</span> <strong>Custom Playlists:</strong> Sequence up to 10 games for math centers</li>
+            <li><span class="check-icon">✓</span> <strong>Printable Worksheets:</strong> Instant PDFs with teacher answer keys</li>
+            <li><span class="check-icon">✓</span> <strong>Projector Warmup Mode:</strong> Oversized tiles for interactive whiteboards</li>
+            <li><span class="check-icon">✓</span> <strong>Google Classroom Export:</strong> 1-click student assignment links</li>
+            <li><span class="check-icon">✓</span> <strong>Multi-device access:</strong> Works across all classroom Chromebooks</li>
+          </ul>
+          <button
+            type="button"
+            class="btn-plan btn-primary"
+            id="btn-subscribe"
+            data-plan="monthly"
+          >
+            Start Distraction-Free Pass
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transparent Policy & Ethical Billing -->
+    <section class="ethics-section">
+      <div class="ethics-box">
+        <h3>🛡️ Transparent & Ethical Billing Policy</h3>
+        <p>
+          We know teachers and parents despise hidden auto-renew traps. You can cancel your subscription at any time with a single click inside your account portal. Upon cancellation, your license remains fully active until the end of your prepaid billing period. No phone calls, no dark patterns, no hassle.
+        </p>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+      <h2 class="comp-title">Feature Comparison</h2>
+      <div class="table-container">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col">Free Community</th>
+              <th scope="col" class="highlight-col">Teacher & Parent Pass</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Display Ads</td>
+              <td>Compliant COPPA Ads</td>
+              <td class="highlight-col font-bold">100% Ad-Free (Zero Scripts)</td>
+            </tr>
+            <tr>
+              <td>Printable Worksheets & Answer Keys</td>
+              <td>Sample only</td>
+              <td class="highlight-col font-bold">Unlimited Instant Prints</td>
+            </tr>
+            <tr>
+              <td>Classroom Playlists & Math Centers</td>
+              <td>None</td>
+              <td class="highlight-col font-bold">Unlimited Custom Playlists</td>
+            </tr>
+            <tr>
+              <td>Smartboard Projector Mode</td>
+              <td>Standard</td>
+              <td class="highlight-col font-bold">High-Contrast Whiteboard Optimized</td>
+            </tr>
+            <tr>
+              <td>Google Classroom & LMS Share</td>
+              <td>Standard URL</td>
+              <td class="highlight-col font-bold">Direct Deep Links with Prefill</td>
+            </tr>
+            <tr>
+              <td>Student Data Privacy</td>
+              <td>FERPA Compliant</td>
+              <td class="highlight-col font-bold">FERPA & Zero Ad Footprint</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="pass-faq">
+      <h2 class="comp-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Can my entire classroom use my Teacher Pass?</summary>
+          <p>Yes! When you log in on your teacher laptop or display board, your student devices can access the shared playlist link or pass session on classroom Chromebooks without student accounts or passwords.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How does the cancellation process work?</summary>
+          <p>You can cancel in seconds from your Stripe billing email or account link. You will retain full access until the end of your billing cycle.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can my school pay via Purchase Order (PO)?</summary>
+          <p>For school-wide or district licenses (10+ teachers), please contact schools@gridfluency.com for customized invoicing and vendor onboarding.</p>
+        </details>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  const toggle = document.getElementById('billing-toggle') as HTMLButtonElement | null;
+  const displayPrice = document.getElementById('display-price');
+  const displayPeriod = document.getElementById('display-period');
+  const displayNote = document.getElementById('display-note');
+  const btnSubscribe = document.getElementById('btn-subscribe') as HTMLButtonElement | null;
+
+  let isAnnual = false;
+
+  function updatePlanDisplay() {
+    if (!displayPrice || !displayPeriod || !displayNote || !btnSubscribe || !toggle) return;
+
+    if (isAnnual) {
+      toggle.setAttribute('aria-checked', 'true');
+      toggle.classList.add('active');
+      displayPrice.textContent = '$29';
+      displayPeriod.textContent = '/ year';
+      displayNote.textContent = 'Billed annually ($2.42/mo). Save $18.88 per year.';
+      btnSubscribe.dataset.plan = 'annual';
+      btnSubscribe.textContent = 'Start Annual Pass ($29/yr)';
+    } else {
+      toggle.setAttribute('aria-checked', 'false');
+      toggle.classList.remove('active');
+      displayPrice.textContent = '$3.99';
+      displayPeriod.textContent = '/ month';
+      displayNote.textContent = 'Billed monthly. Cancel anytime with 1 click.';
+      btnSubscribe.dataset.plan = 'monthly';
+      btnSubscribe.textContent = 'Start Distraction-Free Pass ($3.99/mo)';
+    }
+  }
+
+  toggle?.addEventListener('click', () => {
+    isAnnual = !isAnnual;
+    updatePlanDisplay();
+  });
+
+  btnSubscribe?.addEventListener('click', async () => {
+    const plan = btnSubscribe.dataset.plan || 'monthly';
+    btnSubscribe.disabled = true;
+    btnSubscribe.textContent = 'Opening Secure Checkout...';
+
+    try {
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan })
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        if (data.url) {
+          window.location.href = data.url;
+          return;
+        }
+      }
+    } catch {
+      // Offline or mock environment fallback
+    }
+
+    // Fallback: If worker is running in local demo mode, route directly to success demo
+    window.location.href = `/pass/success?demo=true&plan=${plan}`;
+  });
+</script>
+
+<style>
+  .pass-container {
+    max-width: 1000px;
+    margin: 1.5rem auto 4rem;
+    padding: 0 1rem;
+  }
+
+  .pass-hero {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .pass-pill {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary, #2563eb);
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .pass-h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 900;
+    color: var(--text-heading, #0f172a);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+
+  .pass-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted, #475569);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Billing Toggle */
+  .billing-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .toggle-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-heading, #1e293b);
+  }
+
+  .savings-tag {
+    background: #10b981;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    margin-left: 0.35rem;
+  }
+
+  .billing-toggle-btn {
+    width: 56px;
+    height: 30px;
+    background: #cbd5e1;
+    border-radius: 15px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    padding: 3px;
+    transition: background 0.2s ease;
+  }
+
+  .billing-toggle-btn.active {
+    background: #2563eb;
+  }
+
+  .toggle-slider {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+
+  .billing-toggle-btn.active .toggle-slider {
+    transform: translateX(26px);
+  }
+
+  /* Plans Grid */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    margin-bottom: 3.5rem;
+  }
+
+  .plan-card {
+    background: var(--surface, #ffffff);
+    border: 2px solid var(--border, #e2e8f0);
+    border-radius: 16px;
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  .plan-card.featured {
+    border-color: #2563eb;
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15);
+  }
+
+  .popular-ribbon {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 1.25rem;
+    border-radius: 9999px;
+  }
+
+  .plan-header {
+    text-align: center;
+    border-bottom: 1px solid var(--border, #e2e8f0);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .plan-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-heading, #0f172a);
+    margin-bottom: 0.5rem;
+  }
+
+  .plan-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted, #64748b);
+    margin-bottom: 1rem;
+    min-height: 2.5rem;
+  }
+
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .price-val {
+    font-size: 2.75rem;
+    font-weight: 900;
+    color: var(--text-heading, #0f172a);
+  }
+
+  .price-period {
+    font-size: 1rem;
+    color: var(--text-muted, #64748b);
+    font-weight: 600;
+  }
+
+  .billing-note {
+    font-size: 0.8rem;
+    color: #10b981;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    font-size: 0.95rem;
+    color: var(--text-body, #334155);
+  }
+
+  .features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    line-height: 1.4;
+  }
+
+  .features-list li.disabled {
+    color: #94a3b8;
+    text-decoration: line-through;
+  }
+
+  .check-icon {
+    color: #10b981;
+    font-weight: 900;
+  }
+
+  .cross-icon {
+    color: #ef4444;
+    font-weight: 900;
+  }
+
+  .btn-plan {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .btn-primary {
+    background: #2563eb;
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #334155;
+  }
+
+  .btn-secondary:hover {
+    background: #e2e8f0;
+  }
+
+  /* Ethics Box */
+  .ethics-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .ethics-box {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+  }
+
+  .ethics-box h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #065f46;
+    margin-bottom: 0.5rem;
+  }
+
+  .ethics-box p {
+    font-size: 0.95rem;
+    color: #047857;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Comparison Table */
+  .comparison-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .comp-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-heading, #0f172a);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border, #e2e8f0);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+  }
+
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+    background: var(--surface, #ffffff);
+  }
+
+  .comp-table th,
+  .comp-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border, #e2e8f0);
+  }
+
+  .comp-table th {
+    background: var(--bg-alt, #f8fafc);
+    font-weight: 800;
+    color: var(--text-heading, #0f172a);
+  }
+
+  .highlight-col {
+    background: rgba(37, 99, 235, 0.04);
+  }
+
+  .font-bold {
+    font-weight: 700;
+    color: #2563eb;
+  }
+
+  /* FAQ */
+  .pass-faq {
+    margin-bottom: 2rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    background: var(--surface, #ffffff);
+  }
+
+  .faq-item summary {
+    font-weight: 700;
+    color: var(--text-heading, #0f172a);
+    cursor: pointer;
+  }
+
+  .faq-item p {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text-muted, #475569);
+    line-height: 1.5;
+  }
+</style>
