@@ -1,0 +1,165 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StructuredData from '../components/StructuredData.astro';
+import type { GameData } from '../schema/gameSchema';
+
+interface Props {
+  title: string;
+  metaDescription: string;
+  h1: string;
+  intro: string;
+  canonicalUrl: string;
+  games: GameData[];
+  breadcrumbs: Array<{ name: string; url: string }>;
+}
+
+const {
+  title,
+  metaDescription,
+  h1,
+  intro,
+  canonicalUrl,
+  games,
+  breadcrumbs
+} = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  metaDescription={metaDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <StructuredData
+    slot="head"
+    canonicalUrl={canonicalUrl}
+    breadcrumbs={breadcrumbs}
+  />
+
+  <Breadcrumbs crumbs={breadcrumbs} />
+
+  <header class="hub-header">
+    <h1 class="hub-title">{h1}</h1>
+    <p class="hub-intro">{intro}</p>
+    <div class="hub-count-badge">{games.length} Interactive Fluency Challenges</div>
+  </header>
+
+  <section class="hub-games-grid">
+    {games.map((game) => (
+      <a href={`/math/${game.slug}/`} class="hub-card">
+        <div class="card-top">
+          <span class="card-grade">Grade {game.grade}</span>
+          <span class="card-sec">{game.game.seconds}s</span>
+        </div>
+        <h2 class="card-heading">{game.seo.h1}</h2>
+        <p class="card-prompt">{game.game.prompt}</p>
+        <div class="card-bottom">
+          <span class="card-domain">{game.topic.replace('-', ' ')}</span>
+          <span class="card-cta">Play Now &rarr;</span>
+        </div>
+      </a>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .hub-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 1rem auto 2.5rem;
+  }
+  .hub-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.02em;
+  }
+  .hub-intro {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+  .hub-count-badge {
+    display: inline-block;
+    background: #e0e7ff;
+    color: #4338ca;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+  }
+
+  .hub-games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .hub-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  }
+  .hub-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  .card-grade {
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+  }
+  .card-sec {
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .card-heading {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 0.5rem;
+    line-height: 1.35;
+  }
+  .card-prompt {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0 0 1.25rem;
+    flex-grow: 1;
+  }
+  .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.75rem;
+    font-size: 0.825rem;
+  }
+  .card-domain {
+    text-transform: capitalize;
+    color: #64748b;
+    font-weight: 500;
+  }
+  .card-cta {
+    color: #4f46e5;
+    font-weight: 700;
+  }
+</style>
