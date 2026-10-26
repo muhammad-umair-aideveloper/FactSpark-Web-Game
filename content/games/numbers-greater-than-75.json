@@ -9,9 +9,9 @@
     "title": "Numbers Greater Than 75 Speed Grid - Number Comparison",
     "metaDescription": "Find every number strictly greater than 75 on a 100-tile grid. Practice inequality symbols and magnitude comparison in a fun speed challenge.",
     "h1": "Numbers Greater Than 75 Grid",
-    "intro": "Comparing numbers using magnitude and inequality relations (greater than and less than) is an essential milestone in primary mathematics. The numbers strictly greater than 75 are situated in the bottom quarter of the 100 chart, consisting of numbers 76 through 100. This game reinforces rapid evaluation of inequality boundaries on visual charts.",
-    "howToPlay": "Click all numbers that are strictly greater than 75 (values 76 to 100). Correct numbers highlight green with a checkmark. Clicking 75 or any smaller number causes a red flash and a 2-second penalty. Find all 25 numbers to win.",
-    "teacherNotes": "Reinforce that \"greater than 75\" does not include 75 itself. Review the strict inequality symbol > versus the inclusive inequality symbol >=.",
+    "intro": "Comparing numbers using magnitude and inequality relations (greater than and less than) is an essential milestone in primary mathematics. The numbers strictly greater than 75 are situated in the bottom quarter of the 100 chart, consisting of numbers 76 through 100. This game reinforces rapid evaluation of inequality boundaries on visual charts. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Click all numbers that are strictly greater than 75 (values 76 to 100). Correct numbers highlight green with a checkmark. Clicking 75 or any smaller number causes a red flash and a 2-second penalty. Find all 25 numbers to win. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Reinforce that \"greater than 75\" does not include 75 itself. Review the strict inequality symbol > versus the inclusive inequality symbol >=. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "Is 75 included when finding numbers greater than 75?",
@@ -20,6 +20,10 @@
       {
         "q": "How many whole numbers are greater than 75 up to 100?",
         "a": "There are exactly 25 integers: 76 through 100."
+      },
+      {
+        "q": "How does mastering click all numbers greater than 75 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all numbers greater than 75 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
