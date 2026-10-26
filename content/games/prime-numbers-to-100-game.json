@@ -1,0 +1,40 @@
+{
+  "slug": "prime-numbers-to-100-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": ["CCSS.MATH.CONTENT.4.OA.B.4"],
+  "seo": {
+    "title": "Prime Numbers to 100 Speed Grid - Math Fluency Game",
+    "metaDescription": "Test your prime number fluency on an interactive 10x10 grid. Find all 25 prime numbers between 1 and 100 before the timer expires.",
+    "h1": "Prime Numbers to 100 Speed Challenge",
+    "intro": "Prime numbers are the fundamental building blocks of arithmetic. A prime number is a natural number strictly greater than 1 that cannot be formed by multiplying two smaller natural numbers. On this 10x10 grid containing numbers 1 through 100, exactly 25 numbers are prime. This interactive math fluency game trains students to rapidly spot primes, eliminate composite distractors, and internalize divisibility rules under engaging game conditions.",
+    "howToPlay": "Look at the 100-number grid and click every prime number as fast as possible. Correct clicks turn green with a checkmark. Incorrect clicks flash red with an X and deduct 2 seconds from the clock. Find all 25 primes before the timer reaches zero to earn 3 stars.",
+    "teacherNotes": "Use this game as an energetic 3-minute warm-up during 4th and 5th grade number theory units. Have students observe patterns like how no even number besides 2 is prime, and how primes cluster around multiples of 6.",
+    "faq": [
+      {
+        "q": "Why is 1 not considered a prime number?",
+        "a": "A prime number is defined as having exactly two distinct positive divisors: 1 and itself. Because 1 has only one divisor, mathematicians categorize it as neither prime nor composite."
+      },
+      {
+        "q": "How many prime numbers exist between 1 and 100?",
+        "a": "There are exactly 25 prime numbers between 1 and 100: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, and 97."
+      }
+    ],
+    "related": ["multiples-of-3-grid", "factors-of-24-game", "square-numbers-1-to-100"]
+  },
+  "game": {
+    "prompt": "Click all prime numbers",
+    "seconds": 50,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "prime",
+      "params": {}
+    },
+    "allowShuffle": true
+  }
+}
