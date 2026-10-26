@@ -9,9 +9,9 @@
     "title": "Fractions Equivalent to 1/3 Speed Grid - Visual Fraction Clicker",
     "metaDescription": "Find every fraction equivalent to one-third on an interactive 100-tile grid. Practice fraction equivalence and visual models for 4th grade.",
     "h1": "Fractions Equivalent to One-Third Grid",
-    "intro": "A fraction equals one-third whenever its denominator is three times the value of its numerator (e.g. 2/6, 3/9, 4/12, 5/15). In this speed clicker game, students inspect a 100-tile board of fractions to rapidly pick out equivalent forms of 1/3, avoiding distractors like 1/4, 2/5, and 3/8. This trains fraction number sense, proportional scaling, and prepares students for adding fractions with unlike denominators.",
-    "howToPlay": "Scan the 100-tile fraction grid and click each fraction that equals 1/3. Correct fractions turn green with a checkmark. Non-equivalent fractions flash red and penalize 2 seconds from the clock. Spot all 15 target fractions to earn 3 stars.",
-    "teacherNotes": "Remind students of the ratio test: multiply the top number by 3. If it equals the bottom number, it simplifies to 1/3.",
+    "intro": "A fraction equals one-third whenever its denominator is three times the value of its numerator (e.g. 2/6, 3/9, 4/12, 5/15). In this speed clicker game, students inspect a 100-tile board of fractions to rapidly pick out equivalent forms of 1/3, avoiding distractors like 1/4, 2/5, and 3/8. This trains fraction number sense, proportional scaling, and prepares students for adding fractions with unlike denominators. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Scan the 100-tile fraction grid and click each fraction that equals 1/3. Correct fractions turn green with a checkmark. Non-equivalent fractions flash red and penalize 2 seconds from the clock. Spot all 15 target fractions to earn 3 stars. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Remind students of the ratio test: multiply the top number by 3. If it equals the bottom number, it simplifies to 1/3. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What is the rule to check if a fraction equals 1/3?",
@@ -20,6 +20,10 @@
       {
         "q": "Can fractions with larger numbers equal 1/3?",
         "a": "Yes! Fractions like 10/30, 15/45, and 33/99 all equal exactly 1/3 because both numerator and denominator share a common factor."
+      },
+      {
+        "q": "How does mastering click all fractions equivalent to 1/3 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all fractions equivalent to 1/3 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
