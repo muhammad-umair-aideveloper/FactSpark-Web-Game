@@ -10,9 +10,9 @@
     "title": "Multiples of 5 Speed Grid - 5s Times Table Math Game",
     "metaDescription": "Find all multiples of 5 on a 10x10 number grid. Speed-click numbers ending in 5 or 0 before the countdown runs out.",
     "h1": "Multiples of 5 Math Fluency Grid",
-    "intro": "Skip counting by fives is one of the earliest multiplication milestones for young students. Multiples of 5 follow an intuitive, rhythmic pattern: their ones digit alternates continuously between 5 and 0. On a standard 10-wide hundreds board, they form two distinct vertical columns in the 5th and 10th positions. This game develops rapid visual recognition of nickels, clock minutes, and tally marks.",
-    "howToPlay": "Click all numbers on the 100-grid that are multiples of 5 (ending in 5 or 0). Correct clicks turn green with checkmarks. Incorrect tiles flash red and penalize 2 seconds. Find all 20 multiples of 5 to win 3 stars.",
-    "teacherNotes": "Relate this game directly to reading an analog clock, where each hour number corresponds to five elapsed minutes (e.g. 3 on the clock represents 15 minutes).",
+    "intro": "Skip counting by fives is one of the earliest multiplication milestones for young students. Multiples of 5 follow an intuitive, rhythmic pattern: their ones digit alternates continuously between 5 and 0. On a standard 10-wide hundreds board, they form two distinct vertical columns in the 5th and 10th positions. This game develops rapid visual recognition of nickels, clock minutes, and tally marks. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Click all numbers on the 100-grid that are multiples of 5 (ending in 5 or 0). Correct clicks turn green with checkmarks. Incorrect tiles flash red and penalize 2 seconds. Find all 20 multiples of 5 to win 3 stars. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Relate this game directly to reading an analog clock, where each hour number corresponds to five elapsed minutes (e.g. 3 on the clock represents 15 minutes). Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What is the divisibility rule for 5?",
@@ -21,6 +21,10 @@
       {
         "q": "How many multiples of 5 exist between 1 and 100?",
         "a": "There are exactly 20 multiples of 5 between 1 and 100 (10 ending in 5, and 10 ending in 0)."
+      },
+      {
+        "q": "How does mastering click all multiples of 5 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all multiples of 5 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
