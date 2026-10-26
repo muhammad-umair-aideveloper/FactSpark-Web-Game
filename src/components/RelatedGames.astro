@@ -1,0 +1,106 @@
+---
+import { getGameBySlug } from '../contentLoader';
+
+interface Props {
+  relatedSlugs: string[];
+}
+
+const { relatedSlugs } = Astro.props;
+
+const relatedGames = relatedSlugs
+  .map((slug) => getGameBySlug(slug))
+  .filter((g): g is NonNullable<typeof g> => g !== undefined);
+---
+
+{relatedGames.length > 0 && (
+  <section class="related-games-section" aria-labelledby="related-heading">
+    <h2 id="related-heading" class="section-title">Related Math Fluency Challenges</h2>
+    <div class="games-grid">
+      {relatedGames.map((game) => (
+        <a href={`/math/${game.slug}/`} class="game-card">
+          <div class="card-badge">Grade {game.grade}</div>
+          <h3 class="card-title">{game.seo.h1}</h3>
+          <p class="card-prompt">{game.game.prompt}</p>
+          <div class="card-footer">
+            <span class="card-topic">{game.topic.replace('-', ' ')}</span>
+            <span class="card-time">{game.game.seconds}s speed run &rarr;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .related-games-section {
+    margin: 3rem 0;
+  }
+  .section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.25rem;
+  }
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .game-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  }
+  .game-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+  }
+  .card-badge {
+    align-self: flex-start;
+    background-color: #eff6ff;
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+  }
+  .card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 0.5rem;
+    line-height: 1.35;
+  }
+  .card-prompt {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0 0 1rem;
+    flex-grow: 1;
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.75rem;
+  }
+  .card-topic {
+    text-transform: capitalize;
+    color: #64748b;
+    font-weight: 500;
+  }
+  .card-time {
+    color: #4f46e5;
+    font-weight: 600;
+  }
+</style>
