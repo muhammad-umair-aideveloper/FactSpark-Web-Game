@@ -9,9 +9,9 @@
     "title": "Prime Numbers to 50 Speed Grid - Elementary Prime Math Game",
     "metaDescription": "Find all 15 prime numbers between 1 and 50 on a 100-tile grid. Practice prime vs composite number recognition for 4th and 5th graders.",
     "h1": "Prime Numbers Up to 50 Grid",
-    "intro": "Before mastering all 25 primes up to 100, elementary students often focus on internalizing the first 15 prime numbers located between 1 and 50 (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47). This targeted game sharpens prime recognition in a focused interval, helping students avoid common composite traps like 9, 15, 21, 27, 33, 35, and 49.",
-    "howToPlay": "Click all prime numbers that are less than or equal to 50. Correct clicks highlight green with a checkmark. Composite numbers or numbers above 50 flash red and deduct 2 seconds. Find all 15 primes to earn 3 stars.",
-    "teacherNotes": "Review the Sieve of Eratosthenes method with students: cross out multiples of 2, 3, 5, and 7 to reveal the remaining primes under 50.",
+    "intro": "Before mastering all 25 primes up to 100, elementary students often focus on internalizing the first 15 prime numbers located between 1 and 50 (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47). This targeted game sharpens prime recognition in a focused interval, helping students avoid common composite traps like 9, 15, 21, 27, 33, 35, and 49. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Click all prime numbers that are less than or equal to 50. Correct clicks highlight green with a checkmark. Composite numbers or numbers above 50 flash red and deduct 2 seconds. Find all 15 primes to earn 3 stars. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Review the Sieve of Eratosthenes method with students: cross out multiples of 2, 3, 5, and 7 to reveal the remaining primes under 50. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "How many prime numbers are there up to 50?",
@@ -20,6 +20,10 @@
       {
         "q": "Why is 49 not a prime number?",
         "a": "49 is a composite number because 7 multiplied by 7 equals 49 (it has three positive divisors: 1, 7, and 49)."
+      },
+      {
+        "q": "How does mastering click prime numbers up to 50 support higher-level math standards?",
+        "a": "Building speed and accuracy with click prime numbers up to 50 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
