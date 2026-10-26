@@ -5,6 +5,7 @@ import GridGame from '../components/GridGame.astro';
 import FaqSection from '../components/FaqSection.astro';
 import RelatedGames from '../components/RelatedGames.astro';
 import StructuredData from '../components/StructuredData.astro';
+import TeacherToolsBar from '../components/TeacherToolsBar.astro';
 import type { GameData } from '../schema/gameSchema';
 
 interface Props {
@@ -50,6 +51,13 @@ const breadcrumbs = [
     </div>
     <h1 class="game-h1">{game.seo.h1}</h1>
   </header>
+
+  <!-- Teacher Classroom Tools Bar -->
+  <TeacherToolsBar
+    canonicalUrl={canonicalUrl}
+    gameSlug={game.slug}
+    title={game.seo.h1}
+  />
 
   <!-- Interactive 10x10 Game Engine -->
   <section class="game-play-section" aria-label="Game board">
