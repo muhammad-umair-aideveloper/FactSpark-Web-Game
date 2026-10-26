@@ -1,0 +1,47 @@
+{
+  "slug": "cube-numbers-1-to-100",
+  "grade": 5,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.5.MD.C.3",
+    "CCSS.MATH.CONTENT.6.EE.A.1"
+  ],
+  "seo": {
+    "title": "Cube Numbers 1 to 100 Speed Challenge - 3D Math Fluency",
+    "metaDescription": "Spot all perfect cube numbers between 1 and 100 on an interactive 10x10 math grid. Learn third power exponents and 3D volume concepts.",
+    "h1": "Cube Numbers 1 to 100 Grid",
+    "intro": "A cube number (or perfect cube) is the result of multiplying an integer by itself three times (n x n x n = n^3). In geometry, a cube number represents the three-dimensional volume of a cube with whole-number edge lengths. Between 1 and 100, only 4 perfect cubes exist: 1 (1^3), 8 (2^3), 27 (3^3), and 64 (4^3), as the next cube 125 exceeds 100. Spotting these numbers connects exponents with volume geometry.",
+    "howToPlay": "Scan the grid to find and click the 4 perfect cube numbers up to 100. Correct selections turn green with a checkmark. Non-cubes flash red and deduct 2 seconds from your timer. Find all 4 cubes to win.",
+    "teacherNotes": "Use base-ten unit blocks to build physical cubes: a 1x1x1 block (1), a 2x2x2 block (8), a 3x3x3 block (27), and a 4x4x4 block (64).",
+    "faq": [
+      {
+        "q": "What are the perfect cubes up to 100?",
+        "a": "The four perfect cubes are 1 (1x1x1), 8 (2x2x2), 27 (3x3x3), and 64 (4x4x4)."
+      },
+      {
+        "q": "Why is 64 both a square number and a cube number?",
+        "a": "Because 64 equals 8 squared (8 x 8) and also equals 4 cubed (4 x 4 x 4). In exponential notation, 2^6 = 64."
+      }
+    ],
+    "related": [
+      "square-numbers-1-to-100",
+      "factors-of-24-game",
+      "prime-numbers-to-100-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click all cube numbers",
+    "seconds": 25,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "cube",
+      "params": {}
+    },
+    "allowShuffle": true
+  }
+}
