@@ -1,0 +1,48 @@
+{
+  "slug": "multiples-of-9-grid",
+  "grade": 3,
+  "topic": "operations",
+  "standards": [
+    "CCSS.MATH.CONTENT.3.OA.C.7"
+  ],
+  "seo": {
+    "title": "Multiples of 9 Speed Grid - 9s Multiplication Finger Trick Game",
+    "metaDescription": "Spot all multiples of 9 on a 100-tile grid. Practice 9s times tables and explore the fascinating digit sum patterns of nine.",
+    "h1": "Multiples of 9 Math Fluency Grid",
+    "intro": "Multiples of 9 possess one of the most famous patterns in arithmetic: the sum of the digits of any multiple of 9 is always equal to 9 (or a multiple of 9). Furthermore, as the tens digit increases by 1, the ones digit decreases by 1 (e.g. 18, 27, 36, 45, 54, 63, 72, 81, 90). On a 10x10 grid, multiples of 9 create a clean diagonal ray from top right toward bottom left.",
+    "howToPlay": "Click all multiples of 9 from 9 to 99. Correct tiles turn green with a checkmark. Incorrect clicks flash red and subtract 2 seconds. Find all 11 multiples of 9 to finish.",
+    "teacherNotes": "Demonstrate the famous digit sum trick to help students quickly verify whether any large number is divisible by 9 (for example, 99 -> 9 + 9 = 18 -> 1 + 8 = 9).",
+    "faq": [
+      {
+        "q": "What is the digit sum trick for 9?",
+        "a": "Add all the digits together. If their sum is 9 (or a multiple of 9), the number is a multiple of 9."
+      },
+      {
+        "q": "How many multiples of 9 exist up to 100?",
+        "a": "There are 11 multiples: 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, and 99."
+      }
+    ],
+    "related": [
+      "multiples-of-3-grid",
+      "square-numbers-1-to-100",
+      "factors-of-36-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click all multiples of 9",
+    "seconds": 40,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "multiple_of",
+      "params": {
+        "factor": 9
+      }
+    },
+    "allowShuffle": true
+  }
+}
