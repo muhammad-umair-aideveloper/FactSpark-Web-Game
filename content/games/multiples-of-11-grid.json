@@ -9,9 +9,9 @@
     "title": "Multiples of 11 Speed Grid - Double Digit Math Clicker",
     "metaDescription": "Find all double-digit multiples of 11 from 11 to 99 on a 100-number grid. Fast-paced times table practice for 3rd and 4th grade math.",
     "h1": "Multiples of 11 Speed Challenge",
-    "intro": "Under 100, multiples of 11 are instantly recognizable because they consist of repeated identical digits (11, 22, 33, 44, 55, 66, 77, 88, 99). On a 10x10 grid, these 9 numbers form a crisp diagonal line from the top-left to bottom-right. Spotting these symmetrical twin digits quickly develops visual pattern recognition and number familiarity.",
-    "howToPlay": "Scan the grid to click every multiple of 11 up to 100. Correct clicks lock green with a checkmark. Non-multiples flash red and deduct 2 seconds from the clock. Find all 9 multiples to earn 3 stars.",
-    "teacherNotes": "Show how multiples of 11 advance diagonally across the hundreds chart because each step increases by 10 (one row down) plus 1 (one column right).",
+    "intro": "Under 100, multiples of 11 are instantly recognizable because they consist of repeated identical digits (11, 22, 33, 44, 55, 66, 77, 88, 99). On a 10x10 grid, these 9 numbers form a crisp diagonal line from the top-left to bottom-right. Spotting these symmetrical twin digits quickly develops visual pattern recognition and number familiarity. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Scan the grid to click every multiple of 11 up to 100. Correct clicks lock green with a checkmark. Non-multiples flash red and deduct 2 seconds from the clock. Find all 9 multiples to earn 3 stars. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Show how multiples of 11 advance diagonally across the hundreds chart because each step increases by 10 (one row down) plus 1 (one column right). Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "Why do multiples of 11 have repeated digits up to 99?",
@@ -20,6 +20,10 @@
       {
         "q": "How many multiples of 11 are between 1 and 100?",
         "a": "There are exactly 9 multiples of 11 in this range: 11, 22, 33, 44, 55, 66, 77, 88, and 99."
+      },
+      {
+        "q": "How does mastering click all multiples of 11 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all multiples of 11 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
