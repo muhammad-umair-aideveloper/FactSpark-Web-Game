@@ -2,14 +2,17 @@
   "slug": "multiples-of-3-grid",
   "grade": 3,
   "topic": "operations",
-  "standards": ["CCSS.MATH.CONTENT.3.OA.B.5", "CCSS.MATH.CONTENT.3.OA.C.7"],
+  "standards": [
+    "CCSS.MATH.CONTENT.3.OA.B.5",
+    "CCSS.MATH.CONTENT.3.OA.C.7"
+  ],
   "seo": {
     "title": "Multiples of 3 Grid Game - 3s Times Tables Speed Clicker",
     "metaDescription": "Master multiples of 3 with this 10x10 math grid game. Fast-paced multiplication facts practice designed for school Chromebooks.",
     "h1": "Multiples of 3 Fluency Grid",
-    "intro": "Multiplication fluency relies on identifying skip-counting sequences and numerical patterns across the hundreds chart. In this game, students identify every multiple of 3 from 3 up to 99. Recognizing diagonal stripe patterns on the 100 chart deepens place value comprehension and connects skip counting with the digit-sum divisibility rule for 3.",
-    "howToPlay": "Identify and click all multiples of 3 scattered throughout the 100-number grid. Green checks mark correct multiples. Accidental clicks on non-multiples flash red and cost 2 seconds of round time. Locate all 33 multiples before time runs out.",
-    "teacherNotes": "Encourage students to notice the diagonal patterns that emerge on a 10-wide chart when clicking multiples of 3. Ask them to test the sum-of-digits trick for numbers like 57 (5 + 7 = 12, which is divisible by 3).",
+    "intro": "Multiplication fluency relies on identifying skip-counting sequences and numerical patterns across the hundreds chart. In this game, students identify every multiple of 3 from 3 up to 99. Recognizing diagonal stripe patterns on the 100 chart deepens place value comprehension and connects skip counting with the digit-sum divisibility rule for 3. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Identify and click all multiples of 3 scattered throughout the 100-number grid. Green checks mark correct multiples. Accidental clicks on non-multiples flash red and cost 2 seconds of round time. Locate all 33 multiples before time runs out. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Encourage students to notice the diagonal patterns that emerge on a 10-wide chart when clicking multiples of 3. Ask them to test the sum-of-digits trick for numbers like 57 (5 + 7 = 12, which is divisible by 3). Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What is the rule for finding multiples of 3?",
@@ -18,9 +21,17 @@
       {
         "q": "How many multiples of 3 are between 1 and 100?",
         "a": "There are 33 multiples of 3 in the range 1 to 100, starting at 3 and ending at 99 (since 100 divided by 3 equals 33 with a remainder of 1)."
+      },
+      {
+        "q": "How does mastering click all multiples of 3 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all multiples of 3 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
-    "related": ["prime-numbers-to-100-game", "factors-of-24-game", "square-numbers-1-to-100"]
+    "related": [
+      "prime-numbers-to-100-game",
+      "factors-of-24-game",
+      "square-numbers-1-to-100"
+    ]
   },
   "game": {
     "prompt": "Click all multiples of 3",
