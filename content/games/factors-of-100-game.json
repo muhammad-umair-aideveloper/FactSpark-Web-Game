@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-100-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 100 Speed Grid - Percentages & Benchmark Divisors",
+    "metaDescription": "Click all 9 factors of 100 on an interactive 10x10 math grid. Master key divisor benchmarks for dollar money math and percentage calculations.",
+    "h1": "Factors of 100 Math Challenge",
+    "intro": "One hundred is the cornerstone of our decimal currency and percentage mathematics. Because 100 is a square number (10 x 10), it has an odd count of factors (9 in total): 1, 2, 4, 5, 10, 20, 25, 50, and 100. Spotting all 9 factors builds essential bridges between whole number division, fractions (1/4 = 25/100), and percentages.",
+    "howToPlay": "Identify and click all 9 factors of 100 on the grid. Correct factors turn green with a checkmark. Incorrect clicks flash red and penalize 2 seconds. Find all 9 factors to complete the round.",
+    "teacherNotes": "Directly relate the factors of 100 to United States currency: 1 cent (penny), 5 cents (nickel), 10 cents (dime), 25 cents (quarter), 50 cents (half dollar), and 100 cents (dollar).",
+    "faq": [
+      {
+        "q": "What are all 9 factors of 100?",
+        "a": "The factors of 100 are 1, 2, 4, 5, 10, 20, 25, 50, and 100."
+      },
+      {
+        "q": "Why are factors of 100 useful in real life?",
+        "a": "They provide the exact coin values for money and simplify common percentages like 20%, 25%, and 50%."
+      }
+    ],
+    "related": [
+      "factors-of-50-game",
+      "square-numbers-1-to-100",
+      "multiples-of-10-grid"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 100",
+    "seconds": 35,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 100
+      }
+    },
+    "allowShuffle": true
+  }
+}
