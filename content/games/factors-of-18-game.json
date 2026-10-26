@@ -9,9 +9,9 @@
     "title": "Factors of 18 Speed Grid - Multiplication Factor Pairs",
     "metaDescription": "Find all 6 factors of 18 on an interactive 10x10 math grid. Test your multiplication and division fact recall under time pressure.",
     "h1": "Factors of 18 Speed Grid",
-    "intro": "The number 18 is an even composite number whose factor pairs include 1 x 18, 2 x 9, and 3 x 6. Finding all 6 factors on a 100-number grid sharpens mental division skills and reinforces multiples of 2, 3, 6, and 9. This speed fluency exercise prepares students for reducing fractions and finding greatest common factors.",
-    "howToPlay": "Scan the grid to find all 6 factors of 18. Correct numbers highlight green with a checkmark. Non-factors flash red and subtract 2 seconds from your timer. Find all 6 factors to earn 3 stars.",
-    "teacherNotes": "Have students organize the factors into partner pairs: (1, 18), (2, 9), (3, 6). Notice how all pairs multiply to exactly 18.",
+    "intro": "The number 18 is an even composite number whose factor pairs include 1 x 18, 2 x 9, and 3 x 6. Finding all 6 factors on a 100-number grid sharpens mental division skills and reinforces multiples of 2, 3, 6, and 9. This speed fluency exercise prepares students for reducing fractions and finding greatest common factors. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Scan the grid to find all 6 factors of 18. Correct numbers highlight green with a checkmark. Non-factors flash red and subtract 2 seconds from your timer. Find all 6 factors to earn 3 stars. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Have students organize the factors into partner pairs: (1, 18), (2, 9), (3, 6). Notice how all pairs multiply to exactly 18. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What are the positive factors of 18?",
@@ -20,6 +20,10 @@
       {
         "q": "Is 4 a factor of 18?",
         "a": "No, 18 divided by 4 equals 4 with a remainder of 2, so 4 is not an exact factor of 18."
+      },
+      {
+        "q": "How does mastering click all factors of 18 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all factors of 18 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
