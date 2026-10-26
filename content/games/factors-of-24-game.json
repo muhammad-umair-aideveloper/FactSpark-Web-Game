@@ -1,0 +1,42 @@
+{
+  "slug": "factors-of-24-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": ["CCSS.MATH.CONTENT.4.OA.B.4"],
+  "seo": {
+    "title": "Factors of 24 Game - Number Pairs & Divisibility Speed Clicker",
+    "metaDescription": "Find all factor pairs of 24 on a 100-number grid. Fast-paced math practice reinforcing divisibility and multiplication facts.",
+    "h1": "Factors of 24 Math Challenge",
+    "intro": "Factors are numbers that multiply together to produce a given product without leaving any remainder. The number 24 is a composite number with multiple distinct factor pairs. Finding factors on a 100-number grid helps students connect factor pairs such as 1 and 24, 2 and 12, 3 and 8, and 4 and 6, fostering algebraic reasoning and preparing for fraction simplification.",
+    "howToPlay": "Identify and click all numbers between 1 and 100 that divide evenly into 24. Correct factors turn green with a checkmark. Ineligible numbers flash red and penalize 2 seconds from your timer. Find all 8 factors to complete the round.",
+    "teacherNotes": "Have students write factor pairs on scratch paper as they play. Highlight that factors come in partner pairs (1 x 24, 2 x 12, 3 x 8, 4 x 6).",
+    "faq": [
+      {
+        "q": "What are all the factors of 24?",
+        "a": "The positive integer factors of 24 are 1, 2, 3, 4, 6, 8, 12, and 24."
+      },
+      {
+        "q": "Why is 24 considered an abundant number?",
+        "a": "An abundant number is one where the sum of its proper divisors exceeds the number itself. The proper divisors of 24 sum to 1 + 2 + 3 + 4 + 6 + 8 + 12 = 36, which is greater than 24."
+      }
+    ],
+    "related": ["prime-numbers-to-100-game", "multiples-of-3-grid", "square-numbers-1-to-100"]
+  },
+  "game": {
+    "prompt": "Click all factors of 24",
+    "seconds": 35,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 24
+      }
+    },
+    "allowShuffle": true
+  }
+}
