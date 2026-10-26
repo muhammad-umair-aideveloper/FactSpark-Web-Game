@@ -1,0 +1,48 @@
+{
+  "slug": "multiples-of-10-grid",
+  "grade": 2,
+  "topic": "place-value",
+  "standards": [
+    "CCSS.MATH.CONTENT.2.NBT.A.2"
+  ],
+  "seo": {
+    "title": "Multiples of 10 Speed Grid - Skip Counting Math Game",
+    "metaDescription": "Master multiples of 10 on an interactive 10x10 math grid. Click all numbers ending in zero from 10 to 100 in this classroom clicker challenge.",
+    "h1": "Multiples of 10 Speed Challenge",
+    "intro": "Our base-ten positional number system is built around groupings of ten. When skip counting by tens starting from zero, every resulting multiple ends with the zero digit. On this 10x10 grid, the multiples of 10 occupy the entire rightmost column. Speed-clicking these benchmark numbers reinforces place value transitions, decade numbers, and rapid mental estimation for early elementary mathematicians.",
+    "howToPlay": "Identify and click all multiples of 10 between 1 and 100. Correct clicks turn green with a checkmark. Non-multiples flash red and cost 2 seconds of round time. Locate all 10 multiples of 10 to complete the challenge.",
+    "teacherNotes": "Use this quick exercise to solidify mental addition and subtraction with two-digit decade numbers (e.g. 30 + 40 = 70). Emphasize how 10 tens make 100.",
+    "faq": [
+      {
+        "q": "How can you instantly identify a multiple of 10?",
+        "a": "Any whole number whose ones digit is 0 is an exact multiple of 10."
+      },
+      {
+        "q": "What is the largest multiple of 10 under 100?",
+        "a": "On the 1 to 100 grid, 100 is the largest multiple of 10, equal to 10 multiplied by 10."
+      }
+    ],
+    "related": [
+      "multiples-of-5-grid",
+      "even-numbers-up-to-50",
+      "factors-of-100-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click all multiples of 10",
+    "seconds": 30,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "multiple_of",
+      "params": {
+        "factor": 10
+      }
+    },
+    "allowShuffle": true
+  }
+}
