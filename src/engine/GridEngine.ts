@@ -86,7 +86,7 @@ export class GridEngine {
       t.missed = false;
     });
 
-    this.startTime = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+    this.startTime = Date.now();
     this.startTimer();
     this.options.onStateChange?.(this.status, this.getStats());
   }
@@ -101,7 +101,7 @@ export class GridEngine {
         return;
       }
 
-      const now = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+      const now = Date.now();
       const elapsedWallClock = (now - this.startTime) / 1000;
       const totalElapsed = elapsedWallClock + this.penaltySeconds;
       const remaining = Math.max(0, this.timeLimitSeconds - totalElapsed);
@@ -246,7 +246,7 @@ export class GridEngine {
   }
 
   public getStats(): GameStats {
-    const now = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+    const now = Date.now();
     const elapsedWallClock = this.status === 'idle' ? 0 : (now - this.startTime) / 1000;
     const totalElapsed = elapsedWallClock + this.penaltySeconds;
     const timeRemaining = this.status === 'idle'
