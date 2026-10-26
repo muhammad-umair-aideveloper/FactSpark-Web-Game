@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-18-game",
+  "grade": 3,
+  "topic": "operations",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 18 Speed Grid - Multiplication Factor Pairs",
+    "metaDescription": "Find all 6 factors of 18 on an interactive 10x10 math grid. Test your multiplication and division fact recall under time pressure.",
+    "h1": "Factors of 18 Speed Grid",
+    "intro": "The number 18 is an even composite number whose factor pairs include 1 x 18, 2 x 9, and 3 x 6. Finding all 6 factors on a 100-number grid sharpens mental division skills and reinforces multiples of 2, 3, 6, and 9. This speed fluency exercise prepares students for reducing fractions and finding greatest common factors.",
+    "howToPlay": "Scan the grid to find all 6 factors of 18. Correct numbers highlight green with a checkmark. Non-factors flash red and subtract 2 seconds from your timer. Find all 6 factors to earn 3 stars.",
+    "teacherNotes": "Have students organize the factors into partner pairs: (1, 18), (2, 9), (3, 6). Notice how all pairs multiply to exactly 18.",
+    "faq": [
+      {
+        "q": "What are the positive factors of 18?",
+        "a": "The factors of 18 are 1, 2, 3, 6, 9, and 18."
+      },
+      {
+        "q": "Is 4 a factor of 18?",
+        "a": "No, 18 divided by 4 equals 4 with a remainder of 2, so 4 is not an exact factor of 18."
+      }
+    ],
+    "related": [
+      "multiples-of-9-grid",
+      "factors-of-36-game",
+      "factors-of-12-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 18",
+    "seconds": 30,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 18
+      }
+    },
+    "allowShuffle": true
+  }
+}
