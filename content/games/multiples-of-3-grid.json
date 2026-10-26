@@ -1,0 +1,42 @@
+{
+  "slug": "multiples-of-3-grid",
+  "grade": 3,
+  "topic": "operations",
+  "standards": ["CCSS.MATH.CONTENT.3.OA.B.5", "CCSS.MATH.CONTENT.3.OA.C.7"],
+  "seo": {
+    "title": "Multiples of 3 Grid Game - 3s Times Tables Speed Clicker",
+    "metaDescription": "Master multiples of 3 with this 10x10 math grid game. Fast-paced multiplication facts practice designed for school Chromebooks.",
+    "h1": "Multiples of 3 Fluency Grid",
+    "intro": "Multiplication fluency relies on identifying skip-counting sequences and numerical patterns across the hundreds chart. In this game, students identify every multiple of 3 from 3 up to 99. Recognizing diagonal stripe patterns on the 100 chart deepens place value comprehension and connects skip counting with the digit-sum divisibility rule for 3.",
+    "howToPlay": "Identify and click all multiples of 3 scattered throughout the 100-number grid. Green checks mark correct multiples. Accidental clicks on non-multiples flash red and cost 2 seconds of round time. Locate all 33 multiples before time runs out.",
+    "teacherNotes": "Encourage students to notice the diagonal patterns that emerge on a 10-wide chart when clicking multiples of 3. Ask them to test the sum-of-digits trick for numbers like 57 (5 + 7 = 12, which is divisible by 3).",
+    "faq": [
+      {
+        "q": "What is the rule for finding multiples of 3?",
+        "a": "A whole number is a multiple of 3 if the sum of its digits is divisible by 3. For example, with 84: 8 + 4 = 12, and 12 is divisible by 3, so 84 is a multiple of 3."
+      },
+      {
+        "q": "How many multiples of 3 are between 1 and 100?",
+        "a": "There are 33 multiples of 3 in the range 1 to 100, starting at 3 and ending at 99 (since 100 divided by 3 equals 33 with a remainder of 1)."
+      }
+    ],
+    "related": ["prime-numbers-to-100-game", "factors-of-24-game", "square-numbers-1-to-100"]
+  },
+  "game": {
+    "prompt": "Click all multiples of 3",
+    "seconds": 55,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "multiple_of",
+      "params": {
+        "factor": 3
+      }
+    },
+    "allowShuffle": true
+  }
+}
