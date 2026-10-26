@@ -1,0 +1,52 @@
+{
+  "slug": "common-multiples-2-and-3",
+  "grade": 5,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.5.OA.A.2",
+    "CCSS.MATH.CONTENT.6.NS.B.4"
+  ],
+  "seo": {
+    "title": "Common Multiples of 2 and 3 - LCM 6 Speed Grid",
+    "metaDescription": "Find all numbers divisible by both 2 and 3 on a 100-number grid. Master least common multiples and divisibility rules in this math speed challenge.",
+    "h1": "Common Multiples of 2 and 3 Grid",
+    "intro": "When an integer is divisible by both 2 and 3, it must also be a multiple of their least common multiple, which is 6 (2 x 3 = 6). In this game, students identify numbers that satisfy both conditions: the number must be even and its digit sum must be divisible by 3. Finding all 16 common multiples on the 100-grid cements divisibility integration and fraction denominator mastery.",
+    "howToPlay": "Click all numbers between 1 and 100 that are multiples of both 2 and 3 (multiples of 6). Correct tiles highlight green with a checkmark. Distractor clicks flash red and cost 2 seconds. Find all 16 common multiples before time expires.",
+    "teacherNotes": "Have students test numbers by applying the two-step rule: first check if it is even, then sum the digits to see if 3 divides into the sum.",
+    "faq": [
+      {
+        "q": "What is the least common multiple (LCM) of 2 and 3?",
+        "a": "The LCM of 2 and 3 is 6. Therefore, all common multiples of 2 and 3 are multiples of 6."
+      },
+      {
+        "q": "How many common multiples of 2 and 3 are under 100?",
+        "a": "There are 16 common multiples: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, and 96."
+      }
+    ],
+    "related": [
+      "common-multiples-3-and-5",
+      "multiples-of-6-grid",
+      "factors-of-24-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click common multiples of 2 and 3",
+    "seconds": 45,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "common_multiple",
+      "params": {
+        "factors": [
+          2,
+          3
+        ]
+      }
+    },
+    "allowShuffle": true
+  }
+}
