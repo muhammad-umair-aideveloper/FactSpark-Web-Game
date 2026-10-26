@@ -9,9 +9,9 @@
     "title": "Common Multiples of 4 and 6 - LCM 12 Math Speed Challenge",
     "metaDescription": "Click all common multiples of 4 and 6 on a 100-tile grid. Practice least common multiple (LCM) concepts and avoid the common product trap.",
     "h1": "Common Multiples of 4 and 6 Grid",
-    "intro": "A common mistake students make is multiplying 4 by 6 to get 24, assuming 24 is the smallest shared multiple. In reality, because 4 and 6 share a common factor of 2, their least common multiple (LCM) is 12. Consequently, all common multiples of 4 and 6 are multiples of 12 (12, 24, 36, 48, 60, 72, 84, 96). This speed clicker teaches students to spot shared multiples efficiently.",
-    "howToPlay": "Locate and click every number that is a multiple of both 4 and 6. Correct selections turn green with checkmarks. Incorrect tiles flash red and penalize 2 seconds from the clock. Find all 8 common multiples to win.",
-    "teacherNotes": "Use this example to contrast multiplying two numbers (4 x 6 = 24) with finding their actual least common multiple (LCM = 12).",
+    "intro": "A common mistake students make is multiplying 4 by 6 to get 24, assuming 24 is the smallest shared multiple. In reality, because 4 and 6 share a common factor of 2, their least common multiple (LCM) is 12. Consequently, all common multiples of 4 and 6 are multiples of 12 (12, 24, 36, 48, 60, 72, 84, 96). This speed clicker teaches students to spot shared multiples efficiently. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Locate and click every number that is a multiple of both 4 and 6. Correct selections turn green with checkmarks. Incorrect tiles flash red and penalize 2 seconds from the clock. Find all 8 common multiples to win. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Use this example to contrast multiplying two numbers (4 x 6 = 24) with finding their actual least common multiple (LCM = 12). Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "Why is the LCM of 4 and 6 equal to 12 rather than 24?",
@@ -20,6 +20,10 @@
       {
         "q": "How many common multiples of 4 and 6 exist up to 100?",
         "a": "There are 8 common multiples: 12, 24, 36, 48, 60, 72, 84, and 96."
+      },
+      {
+        "q": "How does mastering click common multiples of 4 and 6 support higher-level math standards?",
+        "a": "Building speed and accuracy with click common multiples of 4 and 6 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
