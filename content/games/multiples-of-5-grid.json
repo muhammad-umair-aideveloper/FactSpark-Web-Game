@@ -1,0 +1,49 @@
+{
+  "slug": "multiples-of-5-grid",
+  "grade": 2,
+  "topic": "operations",
+  "standards": [
+    "CCSS.MATH.CONTENT.2.NBT.A.2",
+    "CCSS.MATH.CONTENT.3.OA.C.7"
+  ],
+  "seo": {
+    "title": "Multiples of 5 Speed Grid - 5s Times Table Math Game",
+    "metaDescription": "Find all multiples of 5 on a 10x10 number grid. Speed-click numbers ending in 5 or 0 before the countdown runs out.",
+    "h1": "Multiples of 5 Math Fluency Grid",
+    "intro": "Skip counting by fives is one of the earliest multiplication milestones for young students. Multiples of 5 follow an intuitive, rhythmic pattern: their ones digit alternates continuously between 5 and 0. On a standard 10-wide hundreds board, they form two distinct vertical columns in the 5th and 10th positions. This game develops rapid visual recognition of nickels, clock minutes, and tally marks.",
+    "howToPlay": "Click all numbers on the 100-grid that are multiples of 5 (ending in 5 or 0). Correct clicks turn green with checkmarks. Incorrect tiles flash red and penalize 2 seconds. Find all 20 multiples of 5 to win 3 stars.",
+    "teacherNotes": "Relate this game directly to reading an analog clock, where each hour number corresponds to five elapsed minutes (e.g. 3 on the clock represents 15 minutes).",
+    "faq": [
+      {
+        "q": "What is the divisibility rule for 5?",
+        "a": "A number is divisible by 5 if and only if its final digit is either 0 or 5."
+      },
+      {
+        "q": "How many multiples of 5 exist between 1 and 100?",
+        "a": "There are exactly 20 multiples of 5 between 1 and 100 (10 ending in 5, and 10 ending in 0)."
+      }
+    ],
+    "related": [
+      "multiples-of-10-grid",
+      "multiples-of-3-grid",
+      "factors-of-50-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click all multiples of 5",
+    "seconds": 40,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "multiple_of",
+      "params": {
+        "factor": 5
+      }
+    },
+    "allowShuffle": true
+  }
+}
