@@ -9,9 +9,9 @@
     "title": "Factors of 60 Speed Grid - Clock & Geometry Number Theory",
     "metaDescription": "Click all 12 factors of 60 on a 100-number grid. Explore the ancient sexagesimal base number used in clocks and angles in this speed clicker.",
     "h1": "Factors of 60 Math Challenge",
-    "intro": "The number 60 was chosen by ancient Babylonian astronomers as the foundation of timekeeping and geometry (60 seconds in a minute, 60 minutes in an hour, 360 degrees in a circle) specifically because it has an extraordinary number of factors. Sixty has 12 positive divisors: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, and 60. Locating all 12 factors requires comprehensive mental math across multiple times tables.",
-    "howToPlay": "Locate and click all 12 factors of 60 across the 100-number grid. Correct selections lock green with a checkmark. Incorrect tiles flash red and deduct 2 seconds. Discover all 12 factors before time runs out.",
-    "teacherNotes": "Share the history of 60 with students. Explain why a clock face can be divided evenly into halves, thirds, fourths, fifths, and sixths without awkward fractions.",
+    "intro": "The number 60 was chosen by ancient Babylonian astronomers as the foundation of timekeeping and geometry (60 seconds in a minute, 60 minutes in an hour, 360 degrees in a circle) specifically because it has an extraordinary number of factors. Sixty has 12 positive divisors: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, and 60. Locating all 12 factors requires comprehensive mental math across multiple times tables. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Locate and click all 12 factors of 60 across the 100-number grid. Correct selections lock green with a checkmark. Incorrect tiles flash red and deduct 2 seconds. Discover all 12 factors before time runs out. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Share the history of 60 with students. Explain why a clock face can be divided evenly into halves, thirds, fourths, fifths, and sixths without awkward fractions. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "Why did ancient civilizations use base 60?",
@@ -20,6 +20,10 @@
       {
         "q": "What are all 12 factors of 60?",
         "a": "The factors of 60 are 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, and 60."
+      },
+      {
+        "q": "How does mastering click all factors of 60 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all factors of 60 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
