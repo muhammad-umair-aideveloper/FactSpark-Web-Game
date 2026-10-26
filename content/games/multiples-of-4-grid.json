@@ -9,9 +9,9 @@
     "title": "Multiples of 4 Speed Grid - 4s Multiplication Facts Game",
     "metaDescription": "Click all multiples of 4 on a 10x10 math grid. Fast multiplication facts practice and skip counting designed for 3rd grade math fluency.",
     "h1": "Multiples of 4 Speed Challenge",
-    "intro": "Multiplying by 4 is equivalent to doubling a number twice. Because 4 is an even number, all of its multiples must also be even numbers. On a 100-number grid, multiples of 4 exhibit clear diagonal stair-step symmetries. This game helps 3rd grade students solidify their four-times tables, link repeated addition to multiplication, and prepare for fraction four-part divisions.",
-    "howToPlay": "Scan the grid to find and click every multiple of 4 up to 100. Correct clicks highlight green with a checkmark. Odd numbers or non-multiples flash red and deduct 2 seconds from the timer. Locate all 25 multiples to complete the round.",
-    "teacherNotes": "Teach the double-double strategy: to multiply any number by 4, double it once, and then double the result (e.g. 7 doubled is 14; 14 doubled is 28).",
+    "intro": "Multiplying by 4 is equivalent to doubling a number twice. Because 4 is an even number, all of its multiples must also be even numbers. On a 100-number grid, multiples of 4 exhibit clear diagonal stair-step symmetries. This game helps 3rd grade students solidify their four-times tables, link repeated addition to multiplication, and prepare for fraction four-part divisions. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Scan the grid to find and click every multiple of 4 up to 100. Correct clicks highlight green with a checkmark. Odd numbers or non-multiples flash red and deduct 2 seconds from the timer. Locate all 25 multiples to complete the round. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Teach the double-double strategy: to multiply any number by 4, double it once, and then double the result (e.g. 7 doubled is 14; 14 doubled is 28). Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "Can a multiple of 4 ever be odd?",
@@ -20,6 +20,10 @@
       {
         "q": "How many multiples of 4 are between 1 and 100?",
         "a": "There are exactly 25 multiples of 4 in this range, since 100 divided by 4 equals 25."
+      },
+      {
+        "q": "How does mastering click all multiples of 4 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all multiples of 4 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
