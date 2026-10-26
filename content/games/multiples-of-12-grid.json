@@ -9,9 +9,9 @@
     "title": "Multiples of 12 Speed Grid - 12s Times Table Fluency Game",
     "metaDescription": "Find all multiples of 12 on a 100-tile math grid. Practice dozen groupings and advanced multiplication facts before time runs out.",
     "h1": "Multiples of 12 Fluency Grid",
-    "intro": "The twelve times table is a crucial benchmark in measurement systems, representing hours on clock faces, inches in a foot, and items in a dozen. Multiples of 12 are numbers that can be divided evenly by both 3 and 4. Up to 100, exactly 8 multiples of 12 exist. Mastering these 8 numbers cements upper multiplication recall and prepares students for work with common denominators.",
-    "howToPlay": "Find and click all multiples of 12 from 1 to 100. Correct multiples highlight green with a checkmark. Misclicks flash red and penalize 2 seconds. Find all 8 multiples of 12 before the clock expires.",
-    "teacherNotes": "Connect the 12 times table to real-world units: dozens of eggs, 12 inches in a foot, and 24 hours in a day.",
+    "intro": "The twelve times table is a crucial benchmark in measurement systems, representing hours on clock faces, inches in a foot, and items in a dozen. Multiples of 12 are numbers that can be divided evenly by both 3 and 4. Up to 100, exactly 8 multiples of 12 exist. Mastering these 8 numbers cements upper multiplication recall and prepares students for work with common denominators. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Find and click all multiples of 12 from 1 to 100. Correct multiples highlight green with a checkmark. Misclicks flash red and penalize 2 seconds. Find all 8 multiples of 12 before the clock expires. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Connect the 12 times table to real-world units: dozens of eggs, 12 inches in a foot, and 24 hours in a day. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What are the multiples of 12 up to 100?",
@@ -20,6 +20,10 @@
       {
         "q": "What is a quick test for divisibility by 12?",
         "a": "A number is divisible by 12 if its last two digits form a multiple of 4 AND the sum of its digits is divisible by 3."
+      },
+      {
+        "q": "How does mastering click all multiples of 12 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all multiples of 12 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
