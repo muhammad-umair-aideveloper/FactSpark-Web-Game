@@ -1,0 +1,48 @@
+{
+  "slug": "multiples-of-11-grid",
+  "grade": 3,
+  "topic": "operations",
+  "standards": [
+    "CCSS.MATH.CONTENT.3.OA.C.7"
+  ],
+  "seo": {
+    "title": "Multiples of 11 Speed Grid - Double Digit Math Clicker",
+    "metaDescription": "Find all double-digit multiples of 11 from 11 to 99 on a 100-number grid. Fast-paced times table practice for 3rd and 4th grade math.",
+    "h1": "Multiples of 11 Speed Challenge",
+    "intro": "Under 100, multiples of 11 are instantly recognizable because they consist of repeated identical digits (11, 22, 33, 44, 55, 66, 77, 88, 99). On a 10x10 grid, these 9 numbers form a crisp diagonal line from the top-left to bottom-right. Spotting these symmetrical twin digits quickly develops visual pattern recognition and number familiarity.",
+    "howToPlay": "Scan the grid to click every multiple of 11 up to 100. Correct clicks lock green with a checkmark. Non-multiples flash red and deduct 2 seconds from the clock. Find all 9 multiples to earn 3 stars.",
+    "teacherNotes": "Show how multiples of 11 advance diagonally across the hundreds chart because each step increases by 10 (one row down) plus 1 (one column right).",
+    "faq": [
+      {
+        "q": "Why do multiples of 11 have repeated digits up to 99?",
+        "a": "Multiplying any single-digit integer n by 11 yields 10n + n, which places n in both the tens and ones columns (e.g. 7 x 11 = 77)."
+      },
+      {
+        "q": "How many multiples of 11 are between 1 and 100?",
+        "a": "There are exactly 9 multiples of 11 in this range: 11, 22, 33, 44, 55, 66, 77, 88, and 99."
+      }
+    ],
+    "related": [
+      "multiples-of-12-grid",
+      "multiples-of-9-grid",
+      "prime-numbers-to-100-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click all multiples of 11",
+    "seconds": 35,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "multiple_of",
+      "params": {
+        "factor": 11
+      }
+    },
+    "allowShuffle": true
+  }
+}
