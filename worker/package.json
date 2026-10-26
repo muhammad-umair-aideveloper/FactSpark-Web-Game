@@ -1,0 +1,17 @@
+{
+  "name": "grid-fluency-license-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for Stripe webhook handling and signed license token verification",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "cloudflare-worker",
+    "stripe",
+    "licenses"
+  ],
+  "author": "Grid Fluency Team",
+  "license": "MIT"
+}
