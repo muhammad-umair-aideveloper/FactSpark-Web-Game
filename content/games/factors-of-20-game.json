@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-20-game",
+  "grade": 3,
+  "topic": "operations",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 20 Math Clicker - Division & Divisibility Practice",
+    "metaDescription": "Spot all 6 factors of 20 on a 10x10 math grid. Fast-paced factor pair identification for elementary and middle school students.",
+    "h1": "Factors of 20 Math Challenge",
+    "intro": "Twenty is a composite number with 6 factors: 1, 2, 4, 5, 10, and 20. Its factor pairs are 1 x 20, 2 x 10, and 4 x 5. Locating these factors on a 100-number board strengthens connections between fives, tens, and evens, laying essential groundwork for percentage benchmarks (like 5%, 10%, 20%, 25%, and 50%).",
+    "howToPlay": "Click all 6 factors of 20 on the 100-tile grid. Correct tiles turn green with a checkmark. Incorrect clicks flash red and deduct 2 seconds from your round clock. Locate all 6 factors before time runs out.",
+    "teacherNotes": "Connect the factors of 20 to money and coins: 1 cent (pennies), 2 cents, 5 cents (nickels), 10 cents (dimes), and 20 cents.",
+    "faq": [
+      {
+        "q": "What are all the factors of 20?",
+        "a": "The factors of 20 are 1, 2, 4, 5, 10, and 20."
+      },
+      {
+        "q": "What factor pairs equal 20?",
+        "a": "The factor pairs are (1, 20), (2, 10), and (4, 5)."
+      }
+    ],
+    "related": [
+      "multiples-of-5-grid",
+      "multiples-of-10-grid",
+      "factors-of-40-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 20",
+    "seconds": 30,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 20
+      }
+    },
+    "allowShuffle": true
+  }
+}
