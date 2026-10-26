@@ -32,7 +32,6 @@ class AdManager {
   }
 
   private checkUserLicense(): boolean {
-    if (typeof window === 'undefined') return false;
     const token = safeStorage.getItem('gf_license_token');
     return Boolean(token && token.length > 10);
   }
