@@ -1,0 +1,697 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAllGames } from '../contentLoader';
+
+const allGames = getAllGames();
+
+const canonicalUrl = 'https://gridfluency.com/playlist/';
+const title = 'Class Math Playlist Builder & Player - Grid Fluency';
+const metaDescription = 'Create custom 3-5 game math rotation playlists for your classroom. Encoded in one shareable link with zero student accounts needed.';
+---
+
+<BaseLayout
+  title={title}
+  metaDescription={metaDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <div class="playlist-page-container" id="playlist-app" data-all-games={JSON.stringify(allGames)}>
+    <!-- MODE 1: PLAYLIST RUNNER (Displayed when ?games=slug1,slug2 is present in URL) -->
+    <div id="runner-view" style="display:none;">
+      <div class="runner-progress-header">
+        <div class="runner-nav">
+          <a href="/playlist/" class="runner-back-link">&larr; Exit Playlist</a>
+          <span class="runner-progress-label" id="runner-progress-text">Game 1 of 3</span>
+        </div>
+        <div class="runner-meter">
+          <div class="runner-meter-bar" id="runner-meter-fill" style="width: 33%;"></div>
+        </div>
+      </div>
+
+      <!-- Current Game Frame -->
+      <div class="runner-game-container" id="runner-game-slot">
+        <div class="runner-loading">Loading playlist game...</div>
+      </div>
+
+      <!-- End of Playlist Summary -->
+      <div id="runner-summary" class="runner-summary-card" style="display:none;">
+        <div class="trophy-icon" aria-hidden="true">&#127942;</div>
+        <h2>Class Playlist Complete!</h2>
+        <p class="summary-sub">Great job! You finished all games in this assignment.</p>
+
+        <div class="summary-stats-box">
+          <div class="s-stat"><span class="s-lbl">Total Score</span><strong id="sum-total-score">0</strong></div>
+          <div class="s-stat"><span class="s-lbl">Total Stars</span><strong id="sum-total-stars">0 &#9733;</strong></div>
+          <div class="s-stat"><span class="s-lbl">Rounds Completed</span><strong id="sum-rounds">3</strong></div>
+        </div>
+
+        <div class="summary-actions">
+          <button type="button" class="btn-restart-playlist" id="btn-restart-playlist">Play Assignment Again</button>
+          <a href="/" class="btn-home-link">Explore More Games</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODE 2: PLAYLIST BUILDER (Displayed when no ?games= parameter is in URL) -->
+    <div id="builder-view">
+      <div class="builder-header">
+        <span class="builder-badge">No Student Accounts Needed</span>
+        <h1 class="builder-title">Class Math Playlist Builder</h1>
+        <p class="builder-intro">
+          Pick 3 to 5 math fluency games to create a continuous classroom practice session. 
+          Generate one shareable link that saves the entire playlist state directly in the URL.
+        </p>
+      </div>
+
+      <!-- Share Box (Live updates as games are selected) -->
+      <div class="share-box-card">
+        <div class="share-box-top">
+          <div>
+            <h2 class="share-title">Your Custom Playlist Link</h2>
+            <p class="share-sub" id="selected-count-label">Select at least 1 game to generate your class link.</p>
+          </div>
+          <div class="selected-pills" id="selected-pills-list"></div>
+        </div>
+
+        <div class="share-inputs-row">
+          <input type="text" class="share-url-input" id="share-link-input" readonly value="https://gridfluency.com/playlist" />
+          <button type="button" class="btn-copy-playlist" id="btn-copy-playlist">Copy Link</button>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-classroom-playlist" id="btn-classroom-playlist">
+            Share to Classroom
+          </a>
+        </div>
+      </div>
+
+      <!-- Game Picker Grid -->
+      <div class="picker-section">
+        <h2 class="picker-title">Select Games for This Playlist ({allGames.length} available)</h2>
+        <div class="picker-grid">
+          {allGames.map((game) => (
+            <label class="picker-card" data-slug={game.slug}>
+              <input type="checkbox" class="game-checkbox" value={game.slug} />
+              <div class="picker-card-content">
+                <div class="picker-meta">
+                  <span class="p-grade">Grade {game.grade}</span>
+                  <span class="p-sec">{game.game.seconds}s</span>
+                </div>
+                <h3 class="p-title">{game.seo.h1}</h3>
+                <p class="p-prompt">{game.game.prompt}</p>
+                <span class="p-topic">{game.topic.replace('-', ' ')}</span>
+              </div>
+            </label>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  import { GridEngine, InputManager } from '../engine';
+  import { generatePoolItems, resolveTargetIds } from '../schema/gameSchema';
+
+  const app = document.getElementById('playlist-app');
+  if (app) {
+    const rawGamesData = app.getAttribute('data-all-games');
+    const allGames = rawGamesData ? JSON.parse(rawGamesData) : [];
+    const gamesBySlug = new Map(allGames.map((g: any) => [g.slug, g]));
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const rawSlugsParam = urlParams.get('games');
+
+    const runnerView = document.getElementById('runner-view') as HTMLElement;
+    const builderView = document.getElementById('builder-view') as HTMLElement;
+
+    if (rawSlugsParam) {
+      // === PLAYLIST RUNNER MODE ===
+      runnerView.style.display = 'block';
+      builderView.style.display = 'none';
+
+      const slugs = decodeURIComponent(rawSlugsParam)
+        .split(',')
+        .map((s) => s.trim())
+        .filter((s) => gamesBySlug.has(s));
+
+      if (slugs.length === 0) {
+        window.location.href = '/playlist/';
+      }
+
+      let currentGameIndex = 0;
+      let totalStars = 0;
+      let totalScore = 0;
+      let activeEngine: any = null;
+
+      const progressText = document.getElementById('runner-progress-text') as HTMLElement;
+      const meterFill = document.getElementById('runner-meter-fill') as HTMLElement;
+      const gameSlot = document.getElementById('runner-game-slot') as HTMLElement;
+      const summaryCard = document.getElementById('runner-summary') as HTMLElement;
+      const sumTotalScore = document.getElementById('sum-total-score') as HTMLElement;
+      const sumTotalStars = document.getElementById('sum-total-stars') as HTMLElement;
+      const sumRounds = document.getElementById('sum-rounds') as HTMLElement;
+      const btnRestart = document.getElementById('btn-restart-playlist');
+
+      const renderCurrentGame = () => {
+        if (currentGameIndex >= slugs.length) {
+          // Playlist finished!
+          gameSlot.style.display = 'none';
+          summaryCard.style.display = 'block';
+          sumTotalScore.textContent = String(totalScore);
+          sumTotalStars.textContent = `${totalStars} ★`;
+          sumRounds.textContent = String(slugs.length);
+          return;
+        }
+
+        const game = gamesBySlug.get(slugs[currentGameIndex]);
+        if (!game) return;
+
+        progressText.textContent = `Game ${currentGameIndex + 1} of ${slugs.length}: ${game.seo.h1}`;
+        meterFill.style.width = `${((currentGameIndex) / slugs.length) * 100}%`;
+
+        const items = generatePoolItems(game.game.pool, game.game.display);
+        const targetIds = resolveTargetIds(game);
+
+        // Render game DOM
+        gameSlot.innerHTML = `
+          <div class="runner-card-wrapper">
+            <div class="runner-header-bar">
+              <div class="prompt-box">
+                <span class="p-sub">Target Prompt</span>
+                <h2 class="p-main">${game.game.prompt}</h2>
+              </div>
+              <div class="runner-stats-box">
+                <div class="stat-cell"><span class="lbl">Time</span><strong id="r-time">${game.game.seconds}.0s</strong></div>
+                <div class="stat-cell"><span class="lbl">Left</span><strong id="r-left">${targetIds.length}</strong></div>
+              </div>
+            </div>
+
+            <div class="grid-board" id="runner-grid" style="display:grid; grid-template-columns: repeat(10, 1fr); gap: 4px; aspect-ratio: 1/1; background: #e2e8f0; padding: 6px; border-radius: 12px;">
+              ${items.map((it: any) => `
+                <button type="button" class="runner-tile" data-tile-id="${it.id}" style="background:#fff; border:none; border-radius:6px; font-weight:700; font-size:0.9rem; cursor:pointer;">
+                  ${it.display}
+                </button>
+              `).join('')}
+            </div>
+
+            <div id="runner-interstitial" style="display:none; text-align:center; margin-top: 1.5rem; padding: 1.5rem; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0;">
+              <h3 id="interstitial-title" style="margin:0 0 0.5rem; font-size:1.35rem; color:#0f172a;">Round Complete!</h3>
+              <p id="interstitial-stats" style="margin:0 0 1rem; color:#64748b;"></p>
+              <button type="button" id="btn-next-game" style="background:#4f46e5; color:#fff; border:none; border-radius:8px; padding:0.75rem 2rem; font-weight:700; font-size:1rem; cursor:pointer;">
+                ${currentGameIndex + 1 === slugs.length ? 'Finish Playlist &rarr;' : 'Next Game in Playlist &rarr;'}
+              </button>
+            </div>
+          </div>
+        `;
+
+        const gridElem = document.getElementById('runner-grid') as HTMLElement;
+        const timeElem = document.getElementById('r-time') as HTMLElement;
+        const leftElem = document.getElementById('r-left') as HTMLElement;
+        const interstitial = document.getElementById('runner-interstitial') as HTMLElement;
+        const interstitialTitle = document.getElementById('interstitial-title') as HTMLElement;
+        const interstitialStats = document.getElementById('interstitial-stats') as HTMLElement;
+        const btnNext = document.getElementById('btn-next-game') as HTMLButtonElement;
+
+        const tileButtons = Array.from(gridElem.querySelectorAll<HTMLButtonElement>('.runner-tile'));
+
+        if (activeEngine) {
+          activeEngine.destroy();
+        }
+
+        activeEngine = new GridEngine({
+          slug: game.slug,
+          prompt: game.game.prompt,
+          seconds: game.game.seconds,
+          items,
+          targetIds,
+          soundEnabled: true,
+          onTick: (rem) => {
+            timeElem.textContent = `${rem.toFixed(1)}s`;
+          },
+          onTileUpdate: (tile) => {
+            const btn = gridElem.querySelector<HTMLButtonElement>(`button[data-tile-id="${tile.id}"]`);
+            if (!btn) return;
+            if (tile.status === 'correct') {
+              btn.style.backgroundColor = '#16a34a';
+              btn.style.color = '#ffffff';
+            } else if (tile.status === 'wrong') {
+              btn.style.backgroundColor = '#dc2626';
+              btn.style.color = '#ffffff';
+            } else if (tile.missed) {
+              btn.style.outline = '2px dashed #f97316';
+              btn.style.backgroundColor = '#fff7ed';
+            } else {
+              btn.style.backgroundColor = '#ffffff';
+              btn.style.color = '#000000';
+            }
+          },
+          onStateChange: (status, stats) => {
+            leftElem.textContent = String(stats.remainingTargets);
+          },
+          onGameEnd: (status, stats) => {
+            totalScore += stats.score;
+            totalStars += stats.stars;
+            interstitial.style.display = 'block';
+
+            if (status === 'completed') {
+              interstitialTitle.textContent = `${stats.stars} ★ Round Complete!`;
+              interstitialStats.textContent = `Score: ${stats.score} | Accuracy: ${stats.accuracy}%`;
+            } else {
+              interstitialTitle.textContent = "Time's Up!";
+              interstitialStats.textContent = `Found ${stats.correctClicks} targets. Score: ${stats.score}`;
+            }
+          }
+        });
+
+        new InputManager(gridElem, activeEngine);
+
+        btnNext?.addEventListener('click', () => {
+          currentGameIndex++;
+          renderCurrentGame();
+        });
+      };
+
+      btnRestart?.addEventListener('click', () => {
+        currentGameIndex = 0;
+        totalScore = 0;
+        totalStars = 0;
+        summaryCard.style.display = 'none';
+        gameSlot.style.display = 'block';
+        renderCurrentGame();
+      });
+
+      renderCurrentGame();
+
+    } else {
+      // === PLAYLIST BUILDER MODE ===
+      runnerView.style.display = 'none';
+      builderView.style.display = 'block';
+
+      const selectedSlugs = new Set<string>();
+      const checkboxes = Array.from(document.querySelectorAll<HTMLInputElement>('.game-checkbox'));
+      const countLabel = document.getElementById('selected-count-label') as HTMLElement;
+      const pillsContainer = document.getElementById('selected-pills-list') as HTMLElement;
+      const linkInput = document.getElementById('share-link-input') as HTMLInputElement;
+      const btnCopy = document.getElementById('btn-copy-playlist') as HTMLButtonElement;
+      const btnClassroom = document.getElementById('btn-classroom-playlist') as HTMLAnchorElement;
+
+      const updateBuilderState = () => {
+        const count = selectedSlugs.size;
+        if (count === 0) {
+          countLabel.textContent = 'Select at least 1 game to generate your class link.';
+          linkInput.value = 'https://gridfluency.com/playlist';
+          btnClassroom.href = '#';
+        } else {
+          countLabel.textContent = `${count} game${count > 1 ? 's' : ''} selected in sequence:`;
+          const slugArray = Array.from(selectedSlugs);
+          const fullUrl = `https://gridfluency.com/playlist?games=${encodeURIComponent(slugArray.join(','))}`;
+          linkInput.value = fullUrl;
+          btnClassroom.href = `https://classroom.google.com/share?url=${encodeURIComponent(fullUrl)}`;
+        }
+
+        // Render pills
+        pillsContainer.innerHTML = Array.from(selectedSlugs)
+          .map((slug, idx) => {
+            const game = gamesBySlug.get(slug);
+            const title = game ? game.seo.h1 : slug;
+            return `<span class="sel-pill">#${idx + 1} ${title}</span>`;
+          })
+          .join('');
+      };
+
+      checkboxes.forEach((cb) => {
+        cb.addEventListener('change', () => {
+          if (cb.checked) {
+            selectedSlugs.add(cb.value);
+            cb.closest('.picker-card')?.classList.add('is-selected');
+          } else {
+            selectedSlugs.delete(cb.value);
+            cb.closest('.picker-card')?.classList.remove('is-selected');
+          }
+          updateBuilderState();
+        });
+      });
+
+      btnCopy?.addEventListener('click', async () => {
+        if (selectedSlugs.size === 0) {
+          alert('Please select at least one game to copy a playlist link.');
+          return;
+        }
+        try {
+          await navigator.clipboard.writeText(linkInput.value);
+          const original = btnCopy.textContent;
+          btnCopy.textContent = 'Copied!';
+          setTimeout(() => {
+            btnCopy.textContent = original;
+          }, 2000);
+        } catch {
+          window.prompt('Copy playlist link:', linkInput.value);
+        }
+      });
+    }
+  }
+</script>
+
+<style>
+  .playlist-page-container {
+    max-width: 1000px;
+    margin: 1.5rem auto 4rem;
+  }
+
+  /* Builder View */
+  .builder-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 2rem;
+  }
+  .builder-badge {
+    display: inline-block;
+    background: #e0e7ff;
+    color: #4338ca;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+  }
+  .builder-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.02em;
+  }
+  .builder-intro {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Share Card */
+  .share-box-card {
+    background: #ffffff;
+    border: 2px solid #4f46e5;
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1);
+    margin-bottom: 2.5rem;
+  }
+  .share-box-top {
+    margin-bottom: 1.25rem;
+  }
+  .share-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.25rem;
+  }
+  .share-sub {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+  }
+  .selected-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+  .sel-pill {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.775rem;
+    font-weight: 600;
+  }
+  .share-inputs-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .share-url-input {
+    flex: 1;
+    min-width: 260px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: #334155;
+    font-family: monospace;
+  }
+  .btn-copy-playlist {
+    background: #4f46e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  .btn-copy-playlist:hover {
+    background: #4338ca;
+  }
+  .btn-classroom-playlist {
+    background: #166534;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.15s;
+  }
+  .btn-classroom-playlist:hover {
+    background: #14532d;
+  }
+
+  /* Game Picker */
+  .picker-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1.25rem;
+  }
+  .picker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .picker-card {
+    position: relative;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .picker-card:hover {
+    border-color: #cbd5e1;
+  }
+  .picker-card.is-selected {
+    border-color: #4f46e5;
+    background-color: #faf5ff;
+  }
+  .game-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #4f46e5;
+    cursor: pointer;
+    margin-top: 2px;
+  }
+  .picker-card-content {
+    flex: 1;
+  }
+  .picker-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  .p-grade {
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 9999px;
+  }
+  .p-sec {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .p-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.25rem;
+    line-height: 1.3;
+  }
+  .p-prompt {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0 0 0.5rem;
+  }
+  .p-topic {
+    font-size: 0.75rem;
+    text-transform: capitalize;
+    color: #475569;
+    font-weight: 600;
+  }
+
+  /* Runner View */
+  .runner-progress-header {
+    margin-bottom: 1.5rem;
+  }
+  .runner-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .runner-back-link {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  .runner-progress-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .runner-meter {
+    background: #e2e8f0;
+    height: 8px;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  .runner-meter-bar {
+    background: #4f46e5;
+    height: 100%;
+    transition: width 0.3s ease;
+  }
+  .runner-game-container {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .runner-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .p-sub {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #4f46e5;
+  }
+  .p-main {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+  }
+  .runner-stats-box {
+    display: flex;
+    gap: 1rem;
+  }
+  .stat-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat-cell .lbl {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .stat-cell strong {
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+
+  /* Summary Card */
+  .runner-summary-card {
+    background: #ffffff;
+    border: 2px solid #10b981;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 500px;
+    margin: 2rem auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  .trophy-icon {
+    font-size: 3.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .runner-summary-card h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.5rem;
+  }
+  .summary-sub {
+    color: #64748b;
+    margin: 0 0 2rem;
+    font-size: 1.05rem;
+  }
+  .summary-stats-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  .s-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .s-lbl {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .s-stat strong {
+    font-size: 1.4rem;
+    color: #0f172a;
+    font-weight: 800;
+  }
+  .summary-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .btn-restart-playlist {
+    background: #4f46e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.85rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn-home-link {
+    color: #475569;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.925rem;
+  }
+</style>
