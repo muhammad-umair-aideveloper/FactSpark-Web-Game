@@ -81,4 +81,19 @@ const {
   h1, h2, h3, h4, .brand-text {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   }
+
+  /* Accessibility & Low-Motion Support */
+  :focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 </style>
