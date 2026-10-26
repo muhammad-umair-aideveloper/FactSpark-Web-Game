@@ -2,14 +2,16 @@
   "slug": "fractions-equivalent-to-half",
   "grade": 4,
   "topic": "fractions",
-  "standards": ["CCSS.MATH.CONTENT.4.NF.A.1"],
+  "standards": [
+    "CCSS.MATH.CONTENT.4.NF.A.1"
+  ],
   "seo": {
     "title": "Fractions Equivalent to 1/2 Speed Clicker - Visual Math Grid",
     "metaDescription": "Test your fraction equivalence fluency on a 100-tile grid. Find every fraction equal to one-half before the countdown hits zero.",
     "h1": "Fractions Equivalent to One-Half Grid",
-    "intro": "Equivalent fractions represent the same portion of a whole, even though they utilize different numerators and denominators. A fraction is equivalent to one-half whenever its denominator is exactly twice the value of its numerator. In this interactive speed clicker, students scan 100 fraction tiles to spot equivalent representations of 1/2, developing visual fraction intuition and proportional reasoning.",
-    "howToPlay": "Examine the 10x10 fraction grid and click each fraction that equals 1/2 (where denominator = 2 x numerator). Correct clicks turn green with a checkmark. Distractor fractions flash red and penalize 2 seconds from your timer. Find all 20 target fractions to win.",
-    "teacherNotes": "Have students verify that multiplying both top and bottom of 1/2 by the same integer creates an equivalent fraction (e.g., (1x4)/(2x4) = 4/8).",
+    "intro": "Equivalent fractions represent the same portion of a whole, even though they utilize different numerators and denominators. A fraction is equivalent to one-half whenever its denominator is exactly twice the value of its numerator. In this interactive speed clicker, students scan 100 fraction tiles to spot equivalent representations of 1/2, developing visual fraction intuition and proportional reasoning. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Examine the 10x10 fraction grid and click each fraction that equals 1/2 (where denominator = 2 x numerator). Correct clicks turn green with a checkmark. Distractor fractions flash red and penalize 2 seconds from your timer. Find all 20 target fractions to win. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Have students verify that multiplying both top and bottom of 1/2 by the same integer creates an equivalent fraction (e.g., (1x4)/(2x4) = 4/8). Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What is an easy test to see if a fraction equals 1/2?",
@@ -18,9 +20,17 @@
       {
         "q": "Why do different fractions have the same value?",
         "a": "Because multiplying both numerator and denominator by the same non-zero number is equivalent to multiplying the fraction by 1, which leaves its numerical value unchanged."
+      },
+      {
+        "q": "How does mastering click all fractions equivalent to 1/2 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all fractions equivalent to 1/2 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
-    "related": ["prime-numbers-to-100-game", "multiples-of-3-grid", "factors-of-24-game"]
+    "related": [
+      "prime-numbers-to-100-game",
+      "multiples-of-3-grid",
+      "factors-of-24-game"
+    ]
   },
   "game": {
     "prompt": "Click all fractions equivalent to 1/2",
@@ -28,106 +38,606 @@
     "pool": {
       "type": "explicit",
       "items": [
-        {"id":"f-1","value":"1/2","display":"1/2","isTarget":true},
-        {"id":"f-2","value":"1/3","display":"1/3","isTarget":false},
-        {"id":"f-3","value":"2/4","display":"2/4","isTarget":true},
-        {"id":"f-4","value":"2/5","display":"2/5","isTarget":false},
-        {"id":"f-5","value":"3/6","display":"3/6","isTarget":true},
-        {"id":"f-6","value":"3/5","display":"3/5","isTarget":false},
-        {"id":"f-7","value":"4/8","display":"4/8","isTarget":true},
-        {"id":"f-8","value":"3/7","display":"3/7","isTarget":false},
-        {"id":"f-9","value":"5/10","display":"5/10","isTarget":true},
-        {"id":"f-10","value":"4/9","display":"4/9","isTarget":false},
-        {"id":"f-11","value":"6/12","display":"6/12","isTarget":true},
-        {"id":"f-12","value":"5/11","display":"5/11","isTarget":false},
-        {"id":"f-13","value":"7/14","display":"7/14","isTarget":true},
-        {"id":"f-14","value":"6/13","display":"6/13","isTarget":false},
-        {"id":"f-15","value":"8/16","display":"8/16","isTarget":true},
-        {"id":"f-16","value":"7/15","display":"7/15","isTarget":false},
-        {"id":"f-17","value":"9/18","display":"9/18","isTarget":true},
-        {"id":"f-18","value":"8/17","display":"8/17","isTarget":false},
-        {"id":"f-19","value":"10/20","display":"10/20","isTarget":true},
-        {"id":"f-20","value":"9/19","display":"9/19","isTarget":false},
-        {"id":"f-21","value":"11/22","display":"11/22","isTarget":true},
-        {"id":"f-22","value":"10/21","display":"10/21","isTarget":false},
-        {"id":"f-23","value":"12/24","display":"12/24","isTarget":true},
-        {"id":"f-24","value":"11/23","display":"11/23","isTarget":false},
-        {"id":"f-25","value":"13/26","display":"13/26","isTarget":true},
-        {"id":"f-26","value":"12/25","display":"12/25","isTarget":false},
-        {"id":"f-27","value":"14/28","display":"14/28","isTarget":true},
-        {"id":"f-28","value":"13/27","display":"13/27","isTarget":false},
-        {"id":"f-29","value":"15/30","display":"15/30","isTarget":true},
-        {"id":"f-30","value":"14/29","display":"14/29","isTarget":false},
-        {"id":"f-31","value":"16/32","display":"16/32","isTarget":true},
-        {"id":"f-32","value":"15/31","display":"15/31","isTarget":false},
-        {"id":"f-33","value":"17/34","display":"17/34","isTarget":true},
-        {"id":"f-34","value":"16/33","display":"16/33","isTarget":false},
-        {"id":"f-35","value":"18/36","display":"18/36","isTarget":true},
-        {"id":"f-36","value":"17/35","display":"17/35","isTarget":false},
-        {"id":"f-37","value":"19/38","display":"19/38","isTarget":true},
-        {"id":"f-38","value":"18/37","display":"18/37","isTarget":false},
-        {"id":"f-39","value":"20/40","display":"20/40","isTarget":true},
-        {"id":"f-40","value":"19/39","display":"19/39","isTarget":false},
-        {"id":"f-41","value":"2/3","display":"2/3","isTarget":false},
-        {"id":"f-42","value":"3/4","display":"3/4","isTarget":false},
-        {"id":"f-43","value":"4/5","display":"4/5","isTarget":false},
-        {"id":"f-44","value":"5/6","display":"5/6","isTarget":false},
-        {"id":"f-45","value":"6/7","display":"6/7","isTarget":false},
-        {"id":"f-46","value":"7/8","display":"7/8","isTarget":false},
-        {"id":"f-47","value":"8/9","display":"8/9","isTarget":false},
-        {"id":"f-48","value":"9/10","display":"9/10","isTarget":false},
-        {"id":"f-49","value":"1/4","display":"1/4","isTarget":false},
-        {"id":"f-50","value":"1/5","display":"1/5","isTarget":false},
-        {"id":"f-51","value":"1/6","display":"1/6","isTarget":false},
-        {"id":"f-52","value":"1/7","display":"1/7","isTarget":false},
-        {"id":"f-53","value":"1/8","display":"1/8","isTarget":false},
-        {"id":"f-54","value":"1/9","display":"1/9","isTarget":false},
-        {"id":"f-55","value":"1/10","display":"1/10","isTarget":false},
-        {"id":"f-56","value":"2/7","display":"2/7","isTarget":false},
-        {"id":"f-57","value":"2/9","display":"2/9","isTarget":false},
-        {"id":"f-58","value":"3/8","display":"3/8","isTarget":false},
-        {"id":"f-59","value":"3/10","display":"3/10","isTarget":false},
-        {"id":"f-60","value":"4/7","display":"4/7","isTarget":false},
-        {"id":"f-61","value":"5/8","display":"5/8","isTarget":false},
-        {"id":"f-62","value":"5/9","display":"5/9","isTarget":false},
-        {"id":"f-63","value":"6/11","display":"6/11","isTarget":false},
-        {"id":"f-64","value":"7/10","display":"7/10","isTarget":false},
-        {"id":"f-65","value":"7/12","display":"7/12","isTarget":false},
-        {"id":"f-66","value":"8/11","display":"8/11","isTarget":false},
-        {"id":"f-67","value":"8/13","display":"8/13","isTarget":false},
-        {"id":"f-68","value":"8/15","display":"8/15","isTarget":false},
-        {"id":"f-69","value":"9/14","display":"9/14","isTarget":false},
-        {"id":"f-70","value":"9/16","display":"9/16","isTarget":false},
-        {"id":"f-71","value":"10/17","display":"10/17","isTarget":false},
-        {"id":"f-72","value":"10/19","display":"10/19","isTarget":false},
-        {"id":"f-73","value":"11/18","display":"11/18","isTarget":false},
-        {"id":"f-74","value":"11/20","display":"11/20","isTarget":false},
-        {"id":"f-75","value":"12/19","display":"12/19","isTarget":false},
-        {"id":"f-76","value":"12/21","display":"12/21","isTarget":false},
-        {"id":"f-77","value":"13/22","display":"13/22","isTarget":false},
-        {"id":"f-78","value":"13/24","display":"13/24","isTarget":false},
-        {"id":"f-79","value":"14/23","display":"14/23","isTarget":false},
-        {"id":"f-80","value":"14/25","display":"14/25","isTarget":false},
-        {"id":"f-81","value":"15/26","display":"15/26","isTarget":false},
-        {"id":"f-82","value":"15/28","display":"15/28","isTarget":false},
-        {"id":"f-83","value":"16/27","display":"16/27","isTarget":false},
-        {"id":"f-84","value":"16/29","display":"16/29","isTarget":false},
-        {"id":"f-85","value":"17/28","display":"17/28","isTarget":false},
-        {"id":"f-86","value":"17/30","display":"17/30","isTarget":false},
-        {"id":"f-87","value":"18/29","display":"18/29","isTarget":false},
-        {"id":"f-88","value":"18/31","display":"18/31","isTarget":false},
-        {"id":"f-89","value":"19/30","display":"19/30","isTarget":false},
-        {"id":"f-90","value":"19/32","display":"19/32","isTarget":false},
-        {"id":"f-91","value":"20/31","display":"20/31","isTarget":false},
-        {"id":"f-92","value":"20/33","display":"20/33","isTarget":false},
-        {"id":"f-93","value":"21/34","display":"21/34","isTarget":false},
-        {"id":"f-94","value":"22/35","display":"22/35","isTarget":false},
-        {"id":"f-95","value":"23/36","display":"23/36","isTarget":false},
-        {"id":"f-96","value":"24/37","display":"24/37","isTarget":false},
-        {"id":"f-97","value":"25/38","display":"25/38","isTarget":false},
-        {"id":"f-98","value":"26/39","display":"26/39","isTarget":false},
-        {"id":"f-99","value":"27/40","display":"27/40","isTarget":false},
-        {"id":"f-100","value":"28/41","display":"28/41","isTarget":false}
+        {
+          "id": "f-1",
+          "value": "1/2",
+          "display": "1/2",
+          "isTarget": true
+        },
+        {
+          "id": "f-2",
+          "value": "1/3",
+          "display": "1/3",
+          "isTarget": false
+        },
+        {
+          "id": "f-3",
+          "value": "2/4",
+          "display": "2/4",
+          "isTarget": true
+        },
+        {
+          "id": "f-4",
+          "value": "2/5",
+          "display": "2/5",
+          "isTarget": false
+        },
+        {
+          "id": "f-5",
+          "value": "3/6",
+          "display": "3/6",
+          "isTarget": true
+        },
+        {
+          "id": "f-6",
+          "value": "3/5",
+          "display": "3/5",
+          "isTarget": false
+        },
+        {
+          "id": "f-7",
+          "value": "4/8",
+          "display": "4/8",
+          "isTarget": true
+        },
+        {
+          "id": "f-8",
+          "value": "3/7",
+          "display": "3/7",
+          "isTarget": false
+        },
+        {
+          "id": "f-9",
+          "value": "5/10",
+          "display": "5/10",
+          "isTarget": true
+        },
+        {
+          "id": "f-10",
+          "value": "4/9",
+          "display": "4/9",
+          "isTarget": false
+        },
+        {
+          "id": "f-11",
+          "value": "6/12",
+          "display": "6/12",
+          "isTarget": true
+        },
+        {
+          "id": "f-12",
+          "value": "5/11",
+          "display": "5/11",
+          "isTarget": false
+        },
+        {
+          "id": "f-13",
+          "value": "7/14",
+          "display": "7/14",
+          "isTarget": true
+        },
+        {
+          "id": "f-14",
+          "value": "6/13",
+          "display": "6/13",
+          "isTarget": false
+        },
+        {
+          "id": "f-15",
+          "value": "8/16",
+          "display": "8/16",
+          "isTarget": true
+        },
+        {
+          "id": "f-16",
+          "value": "7/15",
+          "display": "7/15",
+          "isTarget": false
+        },
+        {
+          "id": "f-17",
+          "value": "9/18",
+          "display": "9/18",
+          "isTarget": true
+        },
+        {
+          "id": "f-18",
+          "value": "8/17",
+          "display": "8/17",
+          "isTarget": false
+        },
+        {
+          "id": "f-19",
+          "value": "10/20",
+          "display": "10/20",
+          "isTarget": true
+        },
+        {
+          "id": "f-20",
+          "value": "9/19",
+          "display": "9/19",
+          "isTarget": false
+        },
+        {
+          "id": "f-21",
+          "value": "11/22",
+          "display": "11/22",
+          "isTarget": true
+        },
+        {
+          "id": "f-22",
+          "value": "10/21",
+          "display": "10/21",
+          "isTarget": false
+        },
+        {
+          "id": "f-23",
+          "value": "12/24",
+          "display": "12/24",
+          "isTarget": true
+        },
+        {
+          "id": "f-24",
+          "value": "11/23",
+          "display": "11/23",
+          "isTarget": false
+        },
+        {
+          "id": "f-25",
+          "value": "13/26",
+          "display": "13/26",
+          "isTarget": true
+        },
+        {
+          "id": "f-26",
+          "value": "12/25",
+          "display": "12/25",
+          "isTarget": false
+        },
+        {
+          "id": "f-27",
+          "value": "14/28",
+          "display": "14/28",
+          "isTarget": true
+        },
+        {
+          "id": "f-28",
+          "value": "13/27",
+          "display": "13/27",
+          "isTarget": false
+        },
+        {
+          "id": "f-29",
+          "value": "15/30",
+          "display": "15/30",
+          "isTarget": true
+        },
+        {
+          "id": "f-30",
+          "value": "14/29",
+          "display": "14/29",
+          "isTarget": false
+        },
+        {
+          "id": "f-31",
+          "value": "16/32",
+          "display": "16/32",
+          "isTarget": true
+        },
+        {
+          "id": "f-32",
+          "value": "15/31",
+          "display": "15/31",
+          "isTarget": false
+        },
+        {
+          "id": "f-33",
+          "value": "17/34",
+          "display": "17/34",
+          "isTarget": true
+        },
+        {
+          "id": "f-34",
+          "value": "16/33",
+          "display": "16/33",
+          "isTarget": false
+        },
+        {
+          "id": "f-35",
+          "value": "18/36",
+          "display": "18/36",
+          "isTarget": true
+        },
+        {
+          "id": "f-36",
+          "value": "17/35",
+          "display": "17/35",
+          "isTarget": false
+        },
+        {
+          "id": "f-37",
+          "value": "19/38",
+          "display": "19/38",
+          "isTarget": true
+        },
+        {
+          "id": "f-38",
+          "value": "18/37",
+          "display": "18/37",
+          "isTarget": false
+        },
+        {
+          "id": "f-39",
+          "value": "20/40",
+          "display": "20/40",
+          "isTarget": true
+        },
+        {
+          "id": "f-40",
+          "value": "19/39",
+          "display": "19/39",
+          "isTarget": false
+        },
+        {
+          "id": "f-41",
+          "value": "2/3",
+          "display": "2/3",
+          "isTarget": false
+        },
+        {
+          "id": "f-42",
+          "value": "3/4",
+          "display": "3/4",
+          "isTarget": false
+        },
+        {
+          "id": "f-43",
+          "value": "4/5",
+          "display": "4/5",
+          "isTarget": false
+        },
+        {
+          "id": "f-44",
+          "value": "5/6",
+          "display": "5/6",
+          "isTarget": false
+        },
+        {
+          "id": "f-45",
+          "value": "6/7",
+          "display": "6/7",
+          "isTarget": false
+        },
+        {
+          "id": "f-46",
+          "value": "7/8",
+          "display": "7/8",
+          "isTarget": false
+        },
+        {
+          "id": "f-47",
+          "value": "8/9",
+          "display": "8/9",
+          "isTarget": false
+        },
+        {
+          "id": "f-48",
+          "value": "9/10",
+          "display": "9/10",
+          "isTarget": false
+        },
+        {
+          "id": "f-49",
+          "value": "1/4",
+          "display": "1/4",
+          "isTarget": false
+        },
+        {
+          "id": "f-50",
+          "value": "1/5",
+          "display": "1/5",
+          "isTarget": false
+        },
+        {
+          "id": "f-51",
+          "value": "1/6",
+          "display": "1/6",
+          "isTarget": false
+        },
+        {
+          "id": "f-52",
+          "value": "1/7",
+          "display": "1/7",
+          "isTarget": false
+        },
+        {
+          "id": "f-53",
+          "value": "1/8",
+          "display": "1/8",
+          "isTarget": false
+        },
+        {
+          "id": "f-54",
+          "value": "1/9",
+          "display": "1/9",
+          "isTarget": false
+        },
+        {
+          "id": "f-55",
+          "value": "1/10",
+          "display": "1/10",
+          "isTarget": false
+        },
+        {
+          "id": "f-56",
+          "value": "2/7",
+          "display": "2/7",
+          "isTarget": false
+        },
+        {
+          "id": "f-57",
+          "value": "2/9",
+          "display": "2/9",
+          "isTarget": false
+        },
+        {
+          "id": "f-58",
+          "value": "3/8",
+          "display": "3/8",
+          "isTarget": false
+        },
+        {
+          "id": "f-59",
+          "value": "3/10",
+          "display": "3/10",
+          "isTarget": false
+        },
+        {
+          "id": "f-60",
+          "value": "4/7",
+          "display": "4/7",
+          "isTarget": false
+        },
+        {
+          "id": "f-61",
+          "value": "5/8",
+          "display": "5/8",
+          "isTarget": false
+        },
+        {
+          "id": "f-62",
+          "value": "5/9",
+          "display": "5/9",
+          "isTarget": false
+        },
+        {
+          "id": "f-63",
+          "value": "6/11",
+          "display": "6/11",
+          "isTarget": false
+        },
+        {
+          "id": "f-64",
+          "value": "7/10",
+          "display": "7/10",
+          "isTarget": false
+        },
+        {
+          "id": "f-65",
+          "value": "7/12",
+          "display": "7/12",
+          "isTarget": false
+        },
+        {
+          "id": "f-66",
+          "value": "8/11",
+          "display": "8/11",
+          "isTarget": false
+        },
+        {
+          "id": "f-67",
+          "value": "8/13",
+          "display": "8/13",
+          "isTarget": false
+        },
+        {
+          "id": "f-68",
+          "value": "8/15",
+          "display": "8/15",
+          "isTarget": false
+        },
+        {
+          "id": "f-69",
+          "value": "9/14",
+          "display": "9/14",
+          "isTarget": false
+        },
+        {
+          "id": "f-70",
+          "value": "9/16",
+          "display": "9/16",
+          "isTarget": false
+        },
+        {
+          "id": "f-71",
+          "value": "10/17",
+          "display": "10/17",
+          "isTarget": false
+        },
+        {
+          "id": "f-72",
+          "value": "10/19",
+          "display": "10/19",
+          "isTarget": false
+        },
+        {
+          "id": "f-73",
+          "value": "11/18",
+          "display": "11/18",
+          "isTarget": false
+        },
+        {
+          "id": "f-74",
+          "value": "11/20",
+          "display": "11/20",
+          "isTarget": false
+        },
+        {
+          "id": "f-75",
+          "value": "12/19",
+          "display": "12/19",
+          "isTarget": false
+        },
+        {
+          "id": "f-76",
+          "value": "12/21",
+          "display": "12/21",
+          "isTarget": false
+        },
+        {
+          "id": "f-77",
+          "value": "13/22",
+          "display": "13/22",
+          "isTarget": false
+        },
+        {
+          "id": "f-78",
+          "value": "13/24",
+          "display": "13/24",
+          "isTarget": false
+        },
+        {
+          "id": "f-79",
+          "value": "14/23",
+          "display": "14/23",
+          "isTarget": false
+        },
+        {
+          "id": "f-80",
+          "value": "14/25",
+          "display": "14/25",
+          "isTarget": false
+        },
+        {
+          "id": "f-81",
+          "value": "15/26",
+          "display": "15/26",
+          "isTarget": false
+        },
+        {
+          "id": "f-82",
+          "value": "15/28",
+          "display": "15/28",
+          "isTarget": false
+        },
+        {
+          "id": "f-83",
+          "value": "16/27",
+          "display": "16/27",
+          "isTarget": false
+        },
+        {
+          "id": "f-84",
+          "value": "16/29",
+          "display": "16/29",
+          "isTarget": false
+        },
+        {
+          "id": "f-85",
+          "value": "17/28",
+          "display": "17/28",
+          "isTarget": false
+        },
+        {
+          "id": "f-86",
+          "value": "17/30",
+          "display": "17/30",
+          "isTarget": false
+        },
+        {
+          "id": "f-87",
+          "value": "18/29",
+          "display": "18/29",
+          "isTarget": false
+        },
+        {
+          "id": "f-88",
+          "value": "18/31",
+          "display": "18/31",
+          "isTarget": false
+        },
+        {
+          "id": "f-89",
+          "value": "19/30",
+          "display": "19/30",
+          "isTarget": false
+        },
+        {
+          "id": "f-90",
+          "value": "19/32",
+          "display": "19/32",
+          "isTarget": false
+        },
+        {
+          "id": "f-91",
+          "value": "20/31",
+          "display": "20/31",
+          "isTarget": false
+        },
+        {
+          "id": "f-92",
+          "value": "20/33",
+          "display": "20/33",
+          "isTarget": false
+        },
+        {
+          "id": "f-93",
+          "value": "21/34",
+          "display": "21/34",
+          "isTarget": false
+        },
+        {
+          "id": "f-94",
+          "value": "22/35",
+          "display": "22/35",
+          "isTarget": false
+        },
+        {
+          "id": "f-95",
+          "value": "23/36",
+          "display": "23/36",
+          "isTarget": false
+        },
+        {
+          "id": "f-96",
+          "value": "24/37",
+          "display": "24/37",
+          "isTarget": false
+        },
+        {
+          "id": "f-97",
+          "value": "25/38",
+          "display": "25/38",
+          "isTarget": false
+        },
+        {
+          "id": "f-98",
+          "value": "26/39",
+          "display": "26/39",
+          "isTarget": false
+        },
+        {
+          "id": "f-99",
+          "value": "27/40",
+          "display": "27/40",
+          "isTarget": false
+        },
+        {
+          "id": "f-100",
+          "value": "28/41",
+          "display": "28/41",
+          "isTarget": false
+        }
       ]
     },
     "display": "fraction",
