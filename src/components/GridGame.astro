@@ -124,6 +124,7 @@ const targetIds = resolveTargetIds(game);
 
 <script>
   import { GridEngine, InputManager, safeStorage } from '../engine';
+  import { adManager } from '../ads';
 
   const app = document.getElementById('game-app');
   if (app) {
@@ -249,8 +250,14 @@ const targetIds = resolveTargetIds(game);
     const inputMgr = new InputManager(gridBoard, engine);
 
     // Button controls
-    btnReset?.addEventListener('click', () => engine.reset());
-    modalBtnReplay?.addEventListener('click', () => engine.reset());
+    btnReset?.addEventListener('click', () => {
+      engine.reset();
+      adManager.handleRoundReset('ad-slot-game-bottom');
+    });
+    modalBtnReplay?.addEventListener('click', () => {
+      engine.reset();
+      adManager.handleRoundReset('ad-slot-game-bottom');
+    });
 
     btnProjector?.addEventListener('click', () => {
       const isBig = gridBoard.classList.toggle('projector-mode');
