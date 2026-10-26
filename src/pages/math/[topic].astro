@@ -1,0 +1,47 @@
+---
+import HubLayout from '../../layouts/HubLayout.astro';
+import { getAllTopics, getGamesByTopic } from '../../contentLoader';
+import type { GameData } from '../../schema/gameSchema';
+
+export async function getStaticPaths() {
+  const topics = getAllTopics();
+
+  return topics.map((topic) => {
+    const games = getGamesByTopic(topic);
+    return {
+      params: { topic },
+      props: { topic, games }
+    };
+  });
+}
+
+interface Props {
+  topic: string;
+  games: GameData[];
+}
+
+const { topic, games } = Astro.props;
+
+const formattedTopic = topic.replace('-', ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+const canonicalUrl = `https://gridfluency.com/math/${topic}/`;
+const title = `${formattedTopic} Math Games - 10x10 Fluency Grids`;
+const metaDescription = `Practice ${formattedTopic.toLowerCase()} with ${games.length} fast-paced 10x10 math fluency games. Designed for elementary and middle school classrooms.`;
+const h1 = `${formattedTopic} Fluency Hub`;
+const intro = `Master ${formattedTopic.toLowerCase()} with these engaging 10x10 speed clicker challenges. Build instant numerical recognition, deepen foundational concepts, and achieve math automaticity.`;
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Math', url: '/math/' },
+  { name: formattedTopic, url: canonicalUrl }
+];
+---
+
+<HubLayout
+  title={title}
+  metaDescription={metaDescription}
+  h1={h1}
+  intro={intro}
+  canonicalUrl={canonicalUrl}
+  games={games}
+  breadcrumbs={breadcrumbs}
+/>
