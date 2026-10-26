@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-30-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 30 Speed Grid - Number Theory & Divisors Game",
+    "metaDescription": "Find all 8 factors of 30 on a 100-tile math grid. Practice divisibility rules for 2, 3, and 5 in this fast-paced classroom math clicker.",
+    "h1": "Factors of 30 Speed Challenge",
+    "intro": "Thirty is the product of three distinct prime numbers: 2 x 3 x 5. Because it combines three distinct prime building blocks, it has 8 factors: 1, 2, 3, 5, 6, 10, 15, and 30. Searching for these factors across the 100-number grid teaches students to integrate multiple divisibility rules at once.",
+    "howToPlay": "Scan the grid to click all 8 factors of 30. Correct clicks highlight green with a checkmark. Non-factors flash red and cost 2 seconds of timer penalty. Locate all 8 factors to finish.",
+    "teacherNotes": "Highlight that 30 is divisible by 2, 3, and 5. This makes it an ideal case study for prime factorization trees (30 = 2 x 3 x 5).",
+    "faq": [
+      {
+        "q": "What are the 8 factors of 30?",
+        "a": "The factors of 30 are 1, 2, 3, 5, 6, 10, 15, and 30."
+      },
+      {
+        "q": "What are the factor pairs of 30?",
+        "a": "The factor pairs are (1, 30), (2, 15), (3, 10), and (5, 6)."
+      }
+    ],
+    "related": [
+      "factors-of-60-game",
+      "common-multiples-3-and-5",
+      "multiples-of-5-grid"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 30",
+    "seconds": 35,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 30
+      }
+    },
+    "allowShuffle": true
+  }
+}
