@@ -1,0 +1,48 @@
+{
+  "slug": "multiples-of-8-grid",
+  "grade": 3,
+  "topic": "operations",
+  "standards": [
+    "CCSS.MATH.CONTENT.3.OA.C.7"
+  ],
+  "seo": {
+    "title": "Multiples of 8 Speed Grid - 8s Times Tables Math Clicker",
+    "metaDescription": "Find all multiples of 8 on a 100-number grid. Boost 8-times table multiplication facts speed and accuracy for elementary learners.",
+    "h1": "Multiples of 8 Fluency Challenge",
+    "intro": "Multiplying by 8 can be conceived as doubling a number three consecutive times (double, double, and double again). All multiples of 8 are even numbers that end in 8, 6, 4, 2, or 0 in a predictable repeating cycle. In this speed clicker, students locate all 12 multiples of 8 from 8 to 96 on the hundreds board.",
+    "howToPlay": "Click all multiples of 8 on the grid. Correct clicks turn green with a checkmark. Distractor clicks flash red with an X and deduct 2 seconds from your time. Spot all 12 multiples before the countdown hits zero.",
+    "teacherNotes": "Encourage the double-double-double mental strategy: for 8 x 6, double 6 to 12, double 12 to 24, and double 24 to 48.",
+    "faq": [
+      {
+        "q": "What is the pattern of the last digits in multiples of 8?",
+        "a": "The ones digits follow a repeating cycle: 8, 6, 4, 2, 0, then 8, 6, 4, 2, 0 again."
+      },
+      {
+        "q": "What is the largest multiple of 8 under 100?",
+        "a": "The largest multiple of 8 up to 100 is 96 (8 x 12 = 96)."
+      }
+    ],
+    "related": [
+      "multiples-of-4-grid",
+      "multiples-of-7-grid",
+      "factors-of-48-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click all multiples of 8",
+    "seconds": 40,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "multiple_of",
+      "params": {
+        "factor": 8
+      }
+    },
+    "allowShuffle": true
+  }
+}
