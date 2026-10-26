@@ -1,0 +1,66 @@
+---
+interface Props {
+  slotId?: string;
+  format?: 'leaderboard' | 'rectangle';
+  width?: number;
+  height?: number;
+}
+
+const {
+  slotId = 'ad-slot-bottom',
+  format = 'leaderboard',
+  width = 728,
+  height = 90
+} = Astro.props;
+---
+
+<div
+  class="ad-slot-wrapper"
+  style={`min-height: ${height}px; width: 100%; max-width: ${width}px; margin: 2rem auto;`}
+>
+  <div
+    id={slotId}
+    class="ad-slot-container"
+    data-slot-id={slotId}
+    data-format={format}
+    data-width={width}
+    data-height={height}
+    style={`min-height: ${height}px;`}
+  >
+  </div>
+</div>
+
+<script>
+  import { adManager } from '../ads';
+
+  const containers = Array.from(document.querySelectorAll<HTMLElement>('.ad-slot-container'));
+  containers.forEach((container) => {
+    const slotId = container.dataset.slotId || 'ad-slot';
+    const format = (container.dataset.format || 'leaderboard') as 'leaderboard' | 'rectangle';
+    const width = parseInt(container.dataset.width || '728', 10);
+    const height = parseInt(container.dataset.height || '90', 10);
+
+    adManager.renderSlot(container, {
+      slotId,
+      format,
+      width,
+      height,
+      minHeight: height
+    });
+  });
+</script>
+
+<style>
+  .ad-slot-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .ad-slot-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
