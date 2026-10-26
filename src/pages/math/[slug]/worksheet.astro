@@ -1,0 +1,244 @@
+---
+import { getAllGames } from '../../../contentLoader';
+import { generateWorksheetData } from '../../../teacher/worksheetGenerator';
+import type { GameData } from '../../../schema/gameSchema';
+
+export async function getStaticPaths() {
+  const games = getAllGames();
+  return games.map((game) => ({
+    params: { slug: game.slug },
+    props: { game }
+  }));
+}
+
+interface Props {
+  game: GameData;
+}
+
+const { game } = Astro.props;
+const data = generateWorksheetData(game);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printable Worksheet & Answer Key: {data.title}</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        color: #000000;
+        background: #ffffff;
+        margin: 0;
+        padding: 20px;
+      }
+      .no-print-bar {
+        background: #0f172a;
+        color: #ffffff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .btn-print {
+        background: #4f46e5;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 16px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-back {
+        color: #c7d2fe;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .worksheet-page {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Header fields */
+      .header-fields {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        font-size: 14px;
+        border-bottom: 2px solid #000;
+        padding-bottom: 12px;
+      }
+      .field-line {
+        font-weight: 600;
+      }
+      .field-line span {
+        display: inline-block;
+        border-bottom: 1px solid #000;
+        width: 140px;
+      }
+
+      .title-section {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .ws-title {
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0 0 6px;
+      }
+      .ws-meta {
+        font-size: 12px;
+        color: #333;
+      }
+
+      .instructions-box {
+        border: 1px solid #666;
+        border-radius: 6px;
+        padding: 10px 14px;
+        margin-bottom: 20px;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      /* Printable 10x10 Grid */
+      .print-grid {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        border-top: 2px solid #000;
+        border-left: 2px solid #000;
+        margin: 0 auto 24px;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+      }
+      .grid-cell {
+        border-right: 1px solid #333;
+        border-bottom: 1px solid #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 600;
+        color: #000;
+      }
+
+      /* Answer Key styling */
+      .is-key-target {
+        background-color: #e5e7eb;
+        font-weight: 800;
+        position: relative;
+      }
+      .is-key-target::after {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border: 2px solid #000;
+        border-radius: 50%;
+      }
+
+      .target-list-box {
+        margin-top: 16px;
+        border-top: 1px dashed #666;
+        padding-top: 12px;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      /* Page Break */
+      .page-break {
+        page-break-before: always;
+        break-before: page;
+      }
+
+      @media print {
+        body { padding: 0; }
+        .no-print-bar { display: none !important; }
+        .worksheet-page { padding: 0; max-width: 100%; }
+        .page-break { page-break-before: always; break-before: page; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Screen-only Print Bar -->
+    <div class="no-print-bar">
+      <div>
+        <a href={`/math/${data.slug}/`} class="btn-back">&larr; Back to Game</a>
+        <span style="margin-left: 12px; font-size: 14px;">Print Preview: Page 1 = Worksheet, Page 2 = Answer Key</span>
+      </div>
+      <button type="button" class="btn-print" onclick="window.print()">Print Worksheet &amp; Key</button>
+    </div>
+
+    <!-- PAGE 1: STUDENT WORKSHEET -->
+    <div class="worksheet-page">
+      <div class="header-fields">
+        <div class="field-line">Name: <span></span></div>
+        <div class="field-line">Date: <span></span></div>
+        <div class="field-line">Score: <span></span> / {data.targetsCount}</div>
+      </div>
+
+      <div class="title-section">
+        <h1 class="ws-title">{data.title}</h1>
+        <div class="ws-meta">Grade {data.grade} &bull; {data.topic} &bull; Standard: {data.standard}</div>
+      </div>
+
+      <div class="instructions-box">
+        <strong>Directions:</strong> Circle or color every tile on the grid that matches the rule:
+        <em>"{data.prompt}"</em>. There are exactly <strong>{data.targetsCount}</strong> target numbers to find.
+      </div>
+
+      <div class="print-grid">
+        {data.items.map((item) => (
+          <div class="grid-cell">
+            {item.display}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- PAGE BREAK -->
+    <div class="page-break"></div>
+
+    <!-- PAGE 2: TEACHER ANSWER KEY -->
+    <div class="worksheet-page">
+      <div class="header-fields">
+        <div class="field-line" style="color: #4f46e5; font-weight: 800;">TEACHER ANSWER KEY</div>
+        <div class="field-line">Target Count: <strong>{data.targetsCount}</strong></div>
+        <div class="field-line">Grid Fluency &copy;</div>
+      </div>
+
+      <div class="title-section">
+        <h2 class="ws-title">Answer Key: {data.title}</h2>
+        <div class="ws-meta">Target Rule: "{data.prompt}"</div>
+      </div>
+
+      <div class="instructions-box" style="background: #f8fafc;">
+        <strong>Answer Key Instructions:</strong> All {data.targetsCount} correct target items are circled and shaded on the grid below.
+      </div>
+
+      <div class="print-grid">
+        {data.items.map((item) => (
+          <div class={`grid-cell ${item.isTarget ? 'is-key-target' : ''}`}>
+            {item.display}
+          </div>
+        ))}
+      </div>
+
+      <div class="target-list-box">
+        <strong>List of Correct Answers ({data.targetsCount} total):</strong><br />
+        {data.targetDisplays.join(', ')}
+      </div>
+    </div>
+  </body>
+</html>
