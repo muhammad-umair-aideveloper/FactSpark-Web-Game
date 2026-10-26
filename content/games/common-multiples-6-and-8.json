@@ -9,9 +9,9 @@
     "title": "Common Multiples of 6 and 8 - LCM 24 Math Speed Game",
     "metaDescription": "Find all numbers divisible by both 6 and 8 on a 100-number grid. Master least common multiples for middle school algebraic reasoning.",
     "h1": "Common Multiples of 6 and 8 Grid",
-    "intro": "The least common multiple of 6 and 8 is 24 (since 6 = 2 x 3 and 8 = 2^3, LCM = 2^3 x 3 = 24). Up to 100, exactly 4 numbers are common multiples of both 6 and 8: 24, 48, 72, and 96. Identifying these shared multiples trains 6th-grade students in prime factorization, algebraic reasoning, and finding common denominators for fraction operations.",
-    "howToPlay": "Scan the grid to click every number that is a multiple of both 6 and 8. Correct clicks turn green with a checkmark. Incorrect clicks flash red and cost 2 seconds. Find all 4 common multiples to finish.",
-    "teacherNotes": "Demonstrate prime factor Venn diagrams: put the shared factor 2 in the overlap, 3 in the 6-circle, and 2, 2 in the 8-circle. The union is 2 x 2 x 2 x 3 = 24.",
+    "intro": "The least common multiple of 6 and 8 is 24 (since 6 = 2 x 3 and 8 = 2^3, LCM = 2^3 x 3 = 24). Up to 100, exactly 4 numbers are common multiples of both 6 and 8: 24, 48, 72, and 96. Identifying these shared multiples trains 6th-grade students in prime factorization, algebraic reasoning, and finding common denominators for fraction operations. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Scan the grid to click every number that is a multiple of both 6 and 8. Correct clicks turn green with a checkmark. Incorrect clicks flash red and cost 2 seconds. Find all 4 common multiples to finish. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Demonstrate prime factor Venn diagrams: put the shared factor 2 in the overlap, 3 in the 6-circle, and 2, 2 in the 8-circle. The union is 2 x 2 x 2 x 3 = 24. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What are the common multiples of 6 and 8 up to 100?",
@@ -20,6 +20,10 @@
       {
         "q": "What is the difference between LCM and GCF?",
         "a": "LCM is the smallest shared multiple of two numbers (here, 24). GCF is the largest factor that divides both numbers (for 6 and 8, GCF is 2)."
+      },
+      {
+        "q": "How does mastering click common multiples of 6 and 8 support higher-level math standards?",
+        "a": "Building speed and accuracy with click common multiples of 6 and 8 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
