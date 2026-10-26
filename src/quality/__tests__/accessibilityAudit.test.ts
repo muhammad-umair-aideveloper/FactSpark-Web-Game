@@ -26,32 +26,26 @@ describe('Accessibility & WCAG 2.1 AA Compliance Audit', () => {
   });
 
   it('guarantees engine creates tiles with color-independent check and cross icons', () => {
-    const sampleTargets = ['2', '3', '5', '7'];
+    const items = Array.from({ length: 100 }, (_, i) => ({
+      id: `cell-${i + 1}`,
+      value: i + 1,
+      display: String(i + 1)
+    }));
     let tileStatus: string | null = null;
 
     const engine = new GridEngine({
-      game: {
-        id: 'test-a11y',
-        slug: 'test-a11y',
-        title: 'Test A11y',
-        grade: 3,
-        topic: 'number-theory',
-        standards: ['CCSS.MATH.3.OA'],
-        prompt: 'Click primes',
-        targetRule: { type: 'prime-numbers', params: { max: 10 } },
-        gridSize: 100,
-        seconds: 30,
-        penaltySeconds: 2
-      },
-      targetIds: sampleTargets,
-      options: {
-        onTileUpdate: (tile) => {
-          tileStatus = tile.status;
-        }
+      slug: 'test-a11y',
+      prompt: 'Click primes',
+      seconds: 30,
+      items,
+      targetIds: ['cell-2', 'cell-3', 'cell-5', 'cell-7'],
+      soundEnabled: false,
+      onTileUpdate: (tile) => {
+        tileStatus = tile.status;
       }
     });
 
-    engine.clickTile('2');
+    engine.clickTile('cell-2');
     expect(tileStatus).toBe('correct');
   });
 
