@@ -1,0 +1,48 @@
+{
+  "slug": "odd-numbers-up-to-50",
+  "grade": 2,
+  "topic": "operations",
+  "standards": [
+    "CCSS.MATH.CONTENT.2.OA.C.3"
+  ],
+  "seo": {
+    "title": "Odd Numbers to 50 Speed Grid - Elementary Number Sense",
+    "metaDescription": "Spot all odd numbers up to 50 on a 100-tile chart. Build fundamental number sense, parity identification, and mental math agility.",
+    "h1": "Odd Numbers Up to 50 Speed Grid",
+    "intro": "An odd number is any integer that cannot be divided evenly into two whole-number halves; grouping odd items into pairs always leaves a single solitary item remaining. Odd numbers consistently end in the digits 1, 3, 5, 7, or 9. This speed clicker trains primary students to quickly scan numbers 1 through 100 and click the 25 odd numbers bounded between 1 and 50, reinforcing algebraic parity and mental math fluency.",
+    "howToPlay": "Look closely at the grid and select all odd numbers from 1 up to 49. Successful clicks illuminate green with a checkmark. Even numbers or numbers above 50 flash red with an X and deduct 2 seconds from the clock. Find all 25 odd numbers to earn maximum stars.",
+    "teacherNotes": "Ask students to pair up counters or draw dots in pairs to prove why 7 or 15 cannot be evenly split without one left over. Connect this to the alternating odd-even structure of natural numbers.",
+    "faq": [
+      {
+        "q": "What digits do all odd numbers end with?",
+        "a": "All odd numbers terminate in 1, 3, 5, 7, or 9. No odd number can ever end in an even digit."
+      },
+      {
+        "q": "Why is 1 considered an odd number?",
+        "a": "When 1 is divided by 2, it leaves a remainder of 1. It also cannot be grouped into pairs of two without a leftover piece."
+      }
+    ],
+    "related": [
+      "even-numbers-up-to-50",
+      "multiples-of-3-grid",
+      "prime-numbers-to-50-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click odd numbers up to 50",
+    "seconds": 50,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "odd_up_to",
+      "params": {
+        "max": 50
+      }
+    },
+    "allowShuffle": true
+  }
+}
