@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-36-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 36 Speed Grid - Square Number Factors Challenge",
+    "metaDescription": "Click all 9 factors of 36 on an interactive 10x10 math grid. Test factor pairs and square number divisibility before time expires.",
+    "h1": "Factors of 36 Math Challenge",
+    "intro": "Thirty-six is both a square number (6 x 6) and a highly composite number with 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, and 36. Its factor pairs are (1, 36), (2, 18), (3, 12), (4, 9), and the square pair (6, 6). Navigating the 100-number board to find all 9 factors develops multi-step divisibility checks and algebraic number sense.",
+    "howToPlay": "Find and click all 9 factors of 36. Correct clicks lock green with checkmarks. Incorrect tiles flash red and penalize 2 seconds from the clock. Find all 9 factors to complete the round.",
+    "teacherNotes": "Draw a factor rainbow on the board connecting pairs: 1 to 36, 2 to 18, 3 to 12, 4 to 9, with 6 resting in the center paired with itself.",
+    "faq": [
+      {
+        "q": "What are all factors of 36?",
+        "a": "The 9 factors of 36 are 1, 2, 3, 4, 6, 9, 12, 18, and 36."
+      },
+      {
+        "q": "Why does 36 have an odd number of factors?",
+        "a": "Like all perfect square numbers, 36 has an odd number of divisors because 6 x 6 produces 36 without a unique partner."
+      }
+    ],
+    "related": [
+      "square-numbers-1-to-100",
+      "factors-of-72-game",
+      "multiples-of-6-grid"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 36",
+    "seconds": 35,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 36
+      }
+    },
+    "allowShuffle": true
+  }
+}
