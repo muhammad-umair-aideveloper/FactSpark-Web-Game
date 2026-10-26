@@ -81,3 +81,24 @@ export const isCommonMultiple: RuleFunction = (val, params) => {
     return factor !== 0 && n % factor === 0;
   });
 };
+
+export const isEvenUpTo: RuleFunction = (val, params) => {
+  const n = typeof val === 'number' ? val : Number(val);
+  const max = Number(params.max ?? 50);
+  if (isNaN(n) || !Number.isInteger(n) || n > max) return false;
+  return n % 2 === 0;
+};
+
+export const isOddUpTo: RuleFunction = (val, params) => {
+  const n = typeof val === 'number' ? val : Number(val);
+  const max = Number(params.max ?? 50);
+  if (isNaN(n) || !Number.isInteger(n) || n > max) return false;
+  return Math.abs(n % 2) === 1;
+};
+
+export const isPrimeUpTo: RuleFunction = (val, params) => {
+  const n = typeof val === 'number' ? val : Number(val);
+  const max = Number(params.max ?? 50);
+  if (isNaN(n) || n > max) return false;
+  return isPrime(n, params);
+};
