@@ -9,9 +9,9 @@
     "title": "Multiples of 6 Speed Grid - 6 Times Table Fluency Game",
     "metaDescription": "Find all multiples of 6 on a 10x10 number chart. Reinforce the 6 times table and divisibility rules for 2 and 3 in this fast math clicker.",
     "h1": "Multiples of 6 Fluency Grid",
-    "intro": "A multiple of 6 must satisfy divisibility rules for both 2 and 3 simultaneously. This means a multiple of 6 is always an even number whose digits sum to a multiple of 3. On the 100 grid, exactly 16 numbers are multiples of 6. Mastering these values boosts multiplication speed and simplifies common factor calculations in elementary algebra.",
-    "howToPlay": "Locate and select every multiple of 6 up to 100. Correct selections turn green with a checkmark. Non-multiples flash red and cost 2 seconds. Find all 16 multiples before time expires.",
-    "teacherNotes": "Ask students to observe why all multiples of 6 are also multiples of 2 and 3. Have them practice verifying numbers like 78 (even, and 7 + 8 = 15, so divisible by 6).",
+    "intro": "A multiple of 6 must satisfy divisibility rules for both 2 and 3 simultaneously. This means a multiple of 6 is always an even number whose digits sum to a multiple of 3. On the 100 grid, exactly 16 numbers are multiples of 6. Mastering these values boosts multiplication speed and simplifies common factor calculations in elementary algebra. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Locate and select every multiple of 6 up to 100. Correct selections turn green with a checkmark. Non-multiples flash red and cost 2 seconds. Find all 16 multiples before time expires. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Ask students to observe why all multiples of 6 are also multiples of 2 and 3. Have them practice verifying numbers like 78 (even, and 7 + 8 = 15, so divisible by 6). Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What is the divisibility rule for 6?",
@@ -20,6 +20,10 @@
       {
         "q": "What is the highest multiple of 6 under 100?",
         "a": "The highest multiple of 6 in this range is 96 (6 x 16 = 96)."
+      },
+      {
+        "q": "How does mastering click all multiples of 6 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all multiples of 6 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
