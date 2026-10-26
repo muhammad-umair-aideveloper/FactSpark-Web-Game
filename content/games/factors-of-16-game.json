@@ -9,9 +9,9 @@
     "title": "Factors of 16 Math Clicker - Square Number Divisors",
     "metaDescription": "Click all factors of 16 on a 100-number grid. Discover why square numbers have an odd number of factors in this math fluency challenge.",
     "h1": "Factors of 16 Math Challenge",
-    "intro": "Because 16 is a perfect square (4 x 4 = 16), it possesses an odd count of factors: 1, 2, 4, 8, and 16. The repeated factor pair 4 x 4 means 4 is counted only once. In this speed game, students identify the 5 factors of 16 scattered across the 100-tile board, reinforcing power-of-two relationships and square number divisors.",
-    "howToPlay": "Locate and click the 5 factors of 16. Correct factors turn green with a checkmark. Incorrect clicks flash red and penalize 2 seconds from the timer. Locate all 5 factors before time expires.",
-    "teacherNotes": "Explain why square numbers always have an odd total number of factors because the middle factor pairs with itself.",
+    "intro": "Because 16 is a perfect square (4 x 4 = 16), it possesses an odd count of factors: 1, 2, 4, 8, and 16. The repeated factor pair 4 x 4 means 4 is counted only once. In this speed game, students identify the 5 factors of 16 scattered across the 100-tile board, reinforcing power-of-two relationships and square number divisors. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Locate and click the 5 factors of 16. Correct factors turn green with a checkmark. Incorrect clicks flash red and penalize 2 seconds from the timer. Locate all 5 factors before time expires. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Explain why square numbers always have an odd total number of factors because the middle factor pairs with itself. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What are all the factors of 16?",
@@ -20,6 +20,10 @@
       {
         "q": "Why does 16 have an odd number of factors?",
         "a": "Because 16 is a square number (4 x 4), the factor 4 pairs with itself rather than a different number."
+      },
+      {
+        "q": "How does mastering click all factors of 16 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all factors of 16 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
