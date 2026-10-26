@@ -8,8 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "test": "node ./node_modules/vitest/vitest.mjs run",
+    "test:watch": "node ./node_modules/vitest/vitest.mjs"
   },
   "dependencies": {
     "astro": "^4.16.18",
