@@ -1,0 +1,51 @@
+{
+  "slug": "common-multiples-6-and-8",
+  "grade": 6,
+  "topic": "algebra-foundations",
+  "standards": [
+    "CCSS.MATH.CONTENT.6.NS.B.4"
+  ],
+  "seo": {
+    "title": "Common Multiples of 6 and 8 - LCM 24 Math Speed Game",
+    "metaDescription": "Find all numbers divisible by both 6 and 8 on a 100-number grid. Master least common multiples for middle school algebraic reasoning.",
+    "h1": "Common Multiples of 6 and 8 Grid",
+    "intro": "The least common multiple of 6 and 8 is 24 (since 6 = 2 x 3 and 8 = 2^3, LCM = 2^3 x 3 = 24). Up to 100, exactly 4 numbers are common multiples of both 6 and 8: 24, 48, 72, and 96. Identifying these shared multiples trains 6th-grade students in prime factorization, algebraic reasoning, and finding common denominators for fraction operations.",
+    "howToPlay": "Scan the grid to click every number that is a multiple of both 6 and 8. Correct clicks turn green with a checkmark. Incorrect clicks flash red and cost 2 seconds. Find all 4 common multiples to finish.",
+    "teacherNotes": "Demonstrate prime factor Venn diagrams: put the shared factor 2 in the overlap, 3 in the 6-circle, and 2, 2 in the 8-circle. The union is 2 x 2 x 2 x 3 = 24.",
+    "faq": [
+      {
+        "q": "What are the common multiples of 6 and 8 up to 100?",
+        "a": "The four common multiples are 24, 48, 72, and 96."
+      },
+      {
+        "q": "What is the difference between LCM and GCF?",
+        "a": "LCM is the smallest shared multiple of two numbers (here, 24). GCF is the largest factor that divides both numbers (for 6 and 8, GCF is 2)."
+      }
+    ],
+    "related": [
+      "common-multiples-4-and-6",
+      "multiples-of-8-grid",
+      "factors-of-48-game"
+    ]
+  },
+  "game": {
+    "prompt": "Click common multiples of 6 and 8",
+    "seconds": 30,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "common_multiple",
+      "params": {
+        "factors": [
+          6,
+          8
+        ]
+      }
+    },
+    "allowShuffle": true
+  }
+}
