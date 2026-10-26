@@ -9,9 +9,9 @@
     "title": "Factors of 36 Speed Grid - Square Number Factors Challenge",
     "metaDescription": "Click all 9 factors of 36 on an interactive 10x10 math grid. Test factor pairs and square number divisibility before time expires.",
     "h1": "Factors of 36 Math Challenge",
-    "intro": "Thirty-six is both a square number (6 x 6) and a highly composite number with 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, and 36. Its factor pairs are (1, 36), (2, 18), (3, 12), (4, 9), and the square pair (6, 6). Navigating the 100-number board to find all 9 factors develops multi-step divisibility checks and algebraic number sense.",
-    "howToPlay": "Find and click all 9 factors of 36. Correct clicks lock green with checkmarks. Incorrect tiles flash red and penalize 2 seconds from the clock. Find all 9 factors to complete the round.",
-    "teacherNotes": "Draw a factor rainbow on the board connecting pairs: 1 to 36, 2 to 18, 3 to 12, 4 to 9, with 6 resting in the center paired with itself.",
+    "intro": "Thirty-six is both a square number (6 x 6) and a highly composite number with 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, and 36. Its factor pairs are (1, 36), (2, 18), (3, 12), (4, 9), and the square pair (6, 6). Navigating the 100-number board to find all 9 factors develops multi-step divisibility checks and algebraic number sense. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Find and click all 9 factors of 36. Correct clicks lock green with checkmarks. Incorrect tiles flash red and penalize 2 seconds from the clock. Find all 9 factors to complete the round. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Draw a factor rainbow on the board connecting pairs: 1 to 36, 2 to 18, 3 to 12, 4 to 9, with 6 resting in the center paired with itself. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What are all factors of 36?",
@@ -20,6 +20,10 @@
       {
         "q": "Why does 36 have an odd number of factors?",
         "a": "Like all perfect square numbers, 36 has an odd number of divisors because 6 x 6 produces 36 without a unique partner."
+      },
+      {
+        "q": "How does mastering click all factors of 36 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all factors of 36 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
