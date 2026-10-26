@@ -1,0 +1,73 @@
+---
+import type { GameData } from '../schema/gameSchema';
+
+interface Props {
+  game?: GameData;
+  canonicalUrl: string;
+  type?: 'game' | 'hub' | 'home';
+  title?: string;
+  description?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+}
+
+const { game, canonicalUrl, type = 'game', title, description, breadcrumbs = [] } = Astro.props;
+
+// Build BreadcrumbList schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": crumb.name,
+    "item": crumb.url
+  }))
+};
+
+// Build LearningResource schema for game pages
+const learningResourceSchema = game ? {
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": game.seo.title,
+  "description": game.seo.metaDescription,
+  "url": canonicalUrl,
+  "learningResourceType": "Quiz/Game",
+  "interactivityType": "active",
+  "educationalLevel": `Grade ${game.grade}`,
+  "educationalAlignment": game.standards.map((std) => ({
+    "@type": "AlignmentObject",
+    "alignmentType": "educationalSubject",
+    "targetName": std,
+    "educationalFramework": "Common Core State Standards for Mathematics"
+  })),
+  "isAccessibleForFree": true,
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Grid Fluency",
+    "url": "https://gridfluency.com"
+  }
+} : null;
+
+// Build FAQPage schema
+const faqSchema = (game && game.seo.faq && game.seo.faq.length > 0) ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": game.seo.faq.map((item) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+} : null;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+{learningResourceSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(learningResourceSchema)} />
+)}
+{faqSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+)}
