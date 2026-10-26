@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-50-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 50 Speed Grid - Mental Math Divisors Challenge",
+    "metaDescription": "Find all 6 factors of 50 on a 100-number grid. Practice division facts and benchmark decimal/percentage connections in this math game.",
+    "h1": "Factors of 50 Math Challenge",
+    "intro": "Fifty is half of one hundred and possesses 6 factors: 1, 2, 5, 10, 25, and 50. Its factor pairs are (1, 50), (2, 25), and (5, 10). Finding these factors reinforces fractional halves and quarters of 100, which are invaluable for calculating percentages, money transactions, and mental math shortcuts.",
+    "howToPlay": "Scan the grid to find and click the 6 factors of 50. Correct factors turn green with a checkmark. Non-factors flash red and subtract 2 seconds from the clock. Find all 6 factors to earn a perfect score.",
+    "teacherNotes": "Link the factors of 50 to common percentage divisions: 50% (factor 2), 20% (factor 5), 10% (factor 10), and 4% (factor 25).",
+    "faq": [
+      {
+        "q": "What are all the factors of 50?",
+        "a": "The factors of 50 are 1, 2, 5, 10, 25, and 50."
+      },
+      {
+        "q": "What are the factor pairs of 50?",
+        "a": "The pairs are (1, 50), (2, 25), and (5, 10)."
+      }
+    ],
+    "related": [
+      "factors-of-100-game",
+      "multiples-of-5-grid",
+      "multiples-of-10-grid"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 50",
+    "seconds": 30,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 50
+      }
+    },
+    "allowShuffle": true
+  }
+}
