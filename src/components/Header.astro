@@ -1,0 +1,161 @@
+---
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="brand-logo" aria-label="Grid Fluency Home">
+      <span class="logo-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+      </span>
+      <span class="brand-text">Grid<strong>Fluency</strong></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main Navigation">
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-toggle" aria-haspopup="true">
+          Grades
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="/math/grade-1/">Grade 1</a>
+          <a href="/math/grade-2/">Grade 2</a>
+          <a href="/math/grade-3/">Grade 3</a>
+          <a href="/math/grade-4/">Grade 4</a>
+          <a href="/math/grade-5/">Grade 5</a>
+          <a href="/math/grade-6/">Grade 6</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-toggle" aria-haspopup="true">
+          Topics
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="/math/number-theory/">Number Theory</a>
+          <a href="/math/operations/">Operations</a>
+          <a href="/math/fractions/">Fractions</a>
+          <a href="/math/place-value/">Place Value</a>
+          <a href="/math/algebra-foundations/">Algebra Foundations</a>
+        </div>
+      </div>
+
+      <a href="/playlist/" class="nav-link">Class Playlists</a>
+      <a href="/pass/" class="pass-badge">Teacher Pass ($3.99)</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #1e1b4b;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  .logo-icon {
+    display: inline-flex;
+    color: #4f46e5;
+  }
+  .brand-text strong {
+    color: #4f46e5;
+  }
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .nav-link {
+    color: #475569;
+    text-decoration: none;
+    font-size: 0.925rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    transition: color 0.15s, background-color 0.15s;
+  }
+  .nav-link:hover {
+    color: #4f46e5;
+    background-color: #f1f5f9;
+  }
+  .nav-dropdown {
+    position: relative;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 160px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+    z-index: 60;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+  .dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  .dropdown-menu a:hover {
+    background-color: #f8fafc;
+    color: #4f46e5;
+  }
+  .pass-badge {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: #ffffff;
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .pass-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(79, 70, 229, 0.3);
+  }
+  @media (max-width: 640px) {
+    .nav-dropdown { display: none; }
+  }
+</style>
