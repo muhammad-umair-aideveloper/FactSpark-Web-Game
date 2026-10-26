@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-60-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 60 Speed Grid - Clock & Geometry Number Theory",
+    "metaDescription": "Click all 12 factors of 60 on a 100-number grid. Explore the ancient sexagesimal base number used in clocks and angles in this speed clicker.",
+    "h1": "Factors of 60 Math Challenge",
+    "intro": "The number 60 was chosen by ancient Babylonian astronomers as the foundation of timekeeping and geometry (60 seconds in a minute, 60 minutes in an hour, 360 degrees in a circle) specifically because it has an extraordinary number of factors. Sixty has 12 positive divisors: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, and 60. Locating all 12 factors requires comprehensive mental math across multiple times tables.",
+    "howToPlay": "Locate and click all 12 factors of 60 across the 100-number grid. Correct selections lock green with a checkmark. Incorrect tiles flash red and deduct 2 seconds. Discover all 12 factors before time runs out.",
+    "teacherNotes": "Share the history of 60 with students. Explain why a clock face can be divided evenly into halves, thirds, fourths, fifths, and sixths without awkward fractions.",
+    "faq": [
+      {
+        "q": "Why did ancient civilizations use base 60?",
+        "a": "Because 60 can be divided evenly by 1, 2, 3, 4, 5, and 6, making division of time and trade goods exceptionally simple."
+      },
+      {
+        "q": "What are all 12 factors of 60?",
+        "a": "The factors of 60 are 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, and 60."
+      }
+    ],
+    "related": [
+      "factors-of-30-game",
+      "factors-of-72-game",
+      "multiples-of-12-grid"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 60",
+    "seconds": 45,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 60
+      }
+    },
+    "allowShuffle": true
+  }
+}
