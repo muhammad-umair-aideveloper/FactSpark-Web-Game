@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-48-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 48 Speed Grid - Composite Number Factors Challenge",
+    "metaDescription": "Locate all 10 factors of 48 on a 10x10 math grid. Deepen factor pair fluency and divisibility rules in this fast-paced math game.",
+    "h1": "Factors of 48 Math Fluency Grid",
+    "intro": "The number 48 is an abundant composite number featuring 10 positive factors: 1, 2, 3, 4, 6, 8, 12, 16, 24, and 48. Its factor pairs are (1, 48), (2, 24), (3, 16), (4, 12), and (6, 8). Because 48 has so many divisors, locating all 10 requires rapid mental math and thorough systematic checking of small primes.",
+    "howToPlay": "Click all 10 factors of 48 on the grid. Correct clicks illuminate green with a checkmark. Incorrect clicks flash red and cost a 2-second time penalty. Find all 10 factors to win 3 stars.",
+    "teacherNotes": "Use 48 to model systematic factor searching: start at 1, check 2, check 3, check 4, check 5 (fails), check 6, and stop when factors cross over at 7.",
+    "faq": [
+      {
+        "q": "What are all 10 factors of 48?",
+        "a": "The factors of 48 are 1, 2, 3, 4, 6, 8, 12, 16, 24, and 48."
+      },
+      {
+        "q": "Why does 48 have so many factors?",
+        "a": "Its prime factorization is 2^4 x 3. Having multiple powers of two gives it an unusually large number of divisor combinations."
+      }
+    ],
+    "related": [
+      "factors-of-24-game",
+      "factors-of-36-game",
+      "multiples-of-8-grid"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 48",
+    "seconds": 40,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 48
+      }
+    },
+    "allowShuffle": true
+  }
+}
