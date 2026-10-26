@@ -1,0 +1,40 @@
+{
+  "slug": "square-numbers-1-to-100",
+  "grade": 5,
+  "topic": "number-theory",
+  "standards": ["CCSS.MATH.CONTENT.5.OA.A.1", "CCSS.MATH.CONTENT.4.OA.B.4"],
+  "seo": {
+    "title": "Square Numbers 1 to 100 Speed Clicker - Math Grid Game",
+    "metaDescription": "Test your square number recall on an interactive 10x10 math grid. Click all 10 perfect squares from 1 to 100 before the timer runs out.",
+    "h1": "Square Numbers 1 to 100 Speed Challenge",
+    "intro": "A square number, or perfect square, is an integer that is the square of another integer. In geometric terms, a square number represents the area of a square with whole-number side lengths. Recognizing square numbers from 1 to 100 builds mental math reflexes essential for algebra, area models, square roots, and Pythagorean theorem problem solving.",
+    "howToPlay": "Scan the 100-number grid and click all 10 perfect square numbers (from 1x1 up to 10x10). Correct clicks turn green with a checkmark. Non-square clicks flash red and deduct 2 seconds from the clock. Spot all 10 squares to finish the round.",
+    "teacherNotes": "Remind students that 1 is a square number (1 x 1 = 1). Have students visualize physical square tiles of dimension 1x1, 2x2, 3x3, up to 10x10.",
+    "faq": [
+      {
+        "q": "What are the perfect squares from 1 to 100?",
+        "a": "The 10 perfect squares up to 100 are 1, 4, 9, 16, 25, 36, 49, 64, 81, and 100."
+      },
+      {
+        "q": "Why is 1 considered a square number?",
+        "a": "Because 1 multiplied by itself equals 1 (1^2 = 1). Any number that can be expressed as n x n for an integer n is a perfect square."
+      }
+    ],
+    "related": ["prime-numbers-to-100-game", "multiples-of-3-grid", "factors-of-24-game"]
+  },
+  "game": {
+    "prompt": "Click all square numbers",
+    "seconds": 35,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "square",
+      "params": {}
+    },
+    "allowShuffle": true
+  }
+}
