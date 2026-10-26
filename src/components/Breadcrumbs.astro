@@ -1,0 +1,70 @@
+---
+interface Crumb {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumbs-container">
+  <ol class="breadcrumbs-list">
+    {crumbs.map((crumb, idx) => {
+      const isLast = idx === crumbs.length - 1;
+      return (
+        <li class="breadcrumb-item">
+          {isLast ? (
+            <span class="breadcrumb-current" aria-current="page">{crumb.name}</span>
+          ) : (
+            <>
+              <a href={crumb.url} class="breadcrumb-link">{crumb.name}</a>
+              <span class="breadcrumb-separator" aria-hidden="true">/</span>
+            </>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs-container {
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+  }
+  .breadcrumbs-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.35rem;
+  }
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    color: #64748b;
+  }
+  .breadcrumb-link {
+    color: #4338ca;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .breadcrumb-link:hover {
+    text-decoration: underline;
+  }
+  .breadcrumb-separator {
+    margin-left: 0.35rem;
+    color: #94a3b8;
+  }
+  .breadcrumb-current {
+    color: #1e293b;
+    font-weight: 600;
+  }
+</style>
