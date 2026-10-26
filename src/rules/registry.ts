@@ -10,7 +10,10 @@ import {
   isBetween,
   isGreaterThan,
   isLessThan,
-  isCommonMultiple
+  isCommonMultiple,
+  isEvenUpTo,
+  isOddUpTo,
+  isPrimeUpTo
 } from './mathRules';
 import {
   isExplicitTarget,
@@ -20,6 +23,7 @@ import {
 
 export const ruleRegistry: Record<string, RuleFunction> = {
   prime: isPrime,
+  prime_up_to: isPrimeUpTo,
   multiple_of: isMultipleOf,
   multiples: isMultipleOf,
   factor_of: isFactorOf,
@@ -29,7 +33,9 @@ export const ruleRegistry: Record<string, RuleFunction> = {
   cube: isCube,
   cubes: isCube,
   even: isEven,
+  even_up_to: isEvenUpTo,
   odd: isOdd,
+  odd_up_to: isOddUpTo,
   between: isBetween,
   greater_than: isGreaterThan,
   less_than: isLessThan,
