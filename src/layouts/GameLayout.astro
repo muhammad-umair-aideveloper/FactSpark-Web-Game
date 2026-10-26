@@ -6,6 +6,7 @@ import FaqSection from '../components/FaqSection.astro';
 import RelatedGames from '../components/RelatedGames.astro';
 import StructuredData from '../components/StructuredData.astro';
 import TeacherToolsBar from '../components/TeacherToolsBar.astro';
+import AdSlot from '../components/AdSlot.astro';
 import type { GameData } from '../schema/gameSchema';
 
 interface Props {
@@ -63,6 +64,9 @@ const breadcrumbs = [
   <section class="game-play-section" aria-label="Game board">
     <GridGame game={game} />
   </section>
+
+  <!-- Reserved Ad Slot: CLS < 0.05 -->
+  <AdSlot slotId="ad-slot-game-bottom" format="leaderboard" width={728} height={90} />
 
   <!-- Deep SEO Educational Content -->
   <article class="educational-copy-article">
