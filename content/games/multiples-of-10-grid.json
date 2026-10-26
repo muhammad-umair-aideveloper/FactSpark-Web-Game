@@ -9,9 +9,9 @@
     "title": "Multiples of 10 Speed Grid - Skip Counting Math Game",
     "metaDescription": "Master multiples of 10 on an interactive 10x10 math grid. Click all numbers ending in zero from 10 to 100 in this classroom clicker challenge.",
     "h1": "Multiples of 10 Speed Challenge",
-    "intro": "Our base-ten positional number system is built around groupings of ten. When skip counting by tens starting from zero, every resulting multiple ends with the zero digit. On this 10x10 grid, the multiples of 10 occupy the entire rightmost column. Speed-clicking these benchmark numbers reinforces place value transitions, decade numbers, and rapid mental estimation for early elementary mathematicians.",
-    "howToPlay": "Identify and click all multiples of 10 between 1 and 100. Correct clicks turn green with a checkmark. Non-multiples flash red and cost 2 seconds of round time. Locate all 10 multiples of 10 to complete the challenge.",
-    "teacherNotes": "Use this quick exercise to solidify mental addition and subtraction with two-digit decade numbers (e.g. 30 + 40 = 70). Emphasize how 10 tens make 100.",
+    "intro": "Our base-ten positional number system is built around groupings of ten. When skip counting by tens starting from zero, every resulting multiple ends with the zero digit. On this 10x10 grid, the multiples of 10 occupy the entire rightmost column. Speed-clicking these benchmark numbers reinforces place value transitions, decade numbers, and rapid mental estimation for early elementary mathematicians. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Identify and click all multiples of 10 between 1 and 100. Correct clicks turn green with a checkmark. Non-multiples flash red and cost 2 seconds of round time. Locate all 10 multiples of 10 to complete the challenge. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Use this quick exercise to solidify mental addition and subtraction with two-digit decade numbers (e.g. 30 + 40 = 70). Emphasize how 10 tens make 100. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "How can you instantly identify a multiple of 10?",
@@ -20,6 +20,10 @@
       {
         "q": "What is the largest multiple of 10 under 100?",
         "a": "On the 1 to 100 grid, 100 is the largest multiple of 10, equal to 10 multiplied by 10."
+      },
+      {
+        "q": "How does mastering click all multiples of 10 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all multiples of 10 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
