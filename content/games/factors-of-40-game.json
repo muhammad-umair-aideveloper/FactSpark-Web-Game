@@ -9,9 +9,9 @@
     "title": "Factors of 40 Speed Grid - Factor Pairs & Divisors Clicker",
     "metaDescription": "Find all 8 factors of 40 on a 100-number math grid. Fast multiplication and division fact recall for 4th and 5th grade learners.",
     "h1": "Factors of 40 Math Challenge",
-    "intro": "Forty is an even composite number with 8 positive factors: 1, 2, 4, 5, 8, 10, 20, and 40. Its factor pairs include (1, 40), (2, 20), (4, 10), and (5, 8). Hunting for all 8 factors across the hundreds board reinforces understanding of powers of 2, multiples of 5 and 10, and divisibility tests.",
-    "howToPlay": "Scan the 100-tile grid and click every factor of 40. Correct factors turn green with a checkmark. Non-factors flash red and subtract 2 seconds. Spot all 8 factors before time runs out.",
-    "teacherNotes": "Remind students to check numbers in pairs. When they discover that 4 divides into 40 ten times, they immediately register both 4 and 10 as factors.",
+    "intro": "Forty is an even composite number with 8 positive factors: 1, 2, 4, 5, 8, 10, 20, and 40. Its factor pairs include (1, 40), (2, 20), (4, 10), and (5, 8). Hunting for all 8 factors across the hundreds board reinforces understanding of powers of 2, multiples of 5 and 10, and divisibility tests. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Scan the 100-tile grid and click every factor of 40. Correct factors turn green with a checkmark. Non-factors flash red and subtract 2 seconds. Spot all 8 factors before time runs out. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Remind students to check numbers in pairs. When they discover that 4 divides into 40 ten times, they immediately register both 4 and 10 as factors. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What are all the factors of 40?",
@@ -20,6 +20,10 @@
       {
         "q": "What factor pairs multiply to 40?",
         "a": "The factor pairs are (1, 40), (2, 20), (4, 10), and (5, 8)."
+      },
+      {
+        "q": "How does mastering click all factors of 40 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all factors of 40 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
