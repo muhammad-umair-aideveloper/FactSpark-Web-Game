@@ -9,9 +9,9 @@
     "title": "Multiples of 8 Speed Grid - 8s Times Tables Math Clicker",
     "metaDescription": "Find all multiples of 8 on a 100-number grid. Boost 8-times table multiplication facts speed and accuracy for elementary learners.",
     "h1": "Multiples of 8 Fluency Challenge",
-    "intro": "Multiplying by 8 can be conceived as doubling a number three consecutive times (double, double, and double again). All multiples of 8 are even numbers that end in 8, 6, 4, 2, or 0 in a predictable repeating cycle. In this speed clicker, students locate all 12 multiples of 8 from 8 to 96 on the hundreds board.",
-    "howToPlay": "Click all multiples of 8 on the grid. Correct clicks turn green with a checkmark. Distractor clicks flash red with an X and deduct 2 seconds from your time. Spot all 12 multiples before the countdown hits zero.",
-    "teacherNotes": "Encourage the double-double-double mental strategy: for 8 x 6, double 6 to 12, double 12 to 24, and double 24 to 48.",
+    "intro": "Multiplying by 8 can be conceived as doubling a number three consecutive times (double, double, and double again). All multiples of 8 are even numbers that end in 8, 6, 4, 2, or 0 in a predictable repeating cycle. In this speed clicker, students locate all 12 multiples of 8 from 8 to 96 on the hundreds board. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Click all multiples of 8 on the grid. Correct clicks turn green with a checkmark. Distractor clicks flash red with an X and deduct 2 seconds from your time. Spot all 12 multiples before the countdown hits zero. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Encourage the double-double-double mental strategy: for 8 x 6, double 6 to 12, double 12 to 24, and double 24 to 48. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What is the pattern of the last digits in multiples of 8?",
@@ -20,6 +20,10 @@
       {
         "q": "What is the largest multiple of 8 under 100?",
         "a": "The largest multiple of 8 up to 100 is 96 (8 x 12 = 96)."
+      },
+      {
+        "q": "How does mastering click all multiples of 8 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all multiples of 8 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
