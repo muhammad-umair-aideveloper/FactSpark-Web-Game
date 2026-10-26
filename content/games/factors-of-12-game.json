@@ -1,0 +1,49 @@
+{
+  "slug": "factors-of-12-game",
+  "grade": 3,
+  "topic": "operations",
+  "standards": [
+    "CCSS.MATH.CONTENT.3.OA.B.6",
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 12 Speed Clicker - Factor Pairs Math Game",
+    "metaDescription": "Find all 6 factors of 12 on a 100-number grid. Practice division, factor pairs, and multiplication facts in this fast math game.",
+    "h1": "Factors of 12 Math Challenge",
+    "intro": "Factors of 12 are all the whole numbers that divide evenly into 12 without leaving any remainder. Twelve is a highly composite small number with three pairs of integer factors: 1 and 12, 2 and 6, and 3 and 4. Locating these 6 factors on a 100-number grid trains students to quickly recognize divisor relationships and simplifies future fraction work.",
+    "howToPlay": "Scan the grid to find and click all 6 factors of 12. Correct clicks turn green with a checkmark. Non-factors flash red and cost 2 seconds of round time. Find all 6 factors to earn 3 stars.",
+    "teacherNotes": "Have students draw rectangular arrays for 12 (1x12, 2x6, 3x4) to visualize why 12 has so many factors compared to other numbers near it.",
+    "faq": [
+      {
+        "q": "What are all the factors of 12?",
+        "a": "The 6 factors of 12 are 1, 2, 3, 4, 6, and 12."
+      },
+      {
+        "q": "What factor pairs multiply to 12?",
+        "a": "The factor pairs are (1, 12), (2, 6), and (3, 4)."
+      }
+    ],
+    "related": [
+      "factors-of-24-game",
+      "factors-of-36-game",
+      "multiples-of-12-grid"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 12",
+    "seconds": 30,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 12
+      }
+    },
+    "allowShuffle": true
+  }
+}
