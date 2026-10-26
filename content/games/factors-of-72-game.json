@@ -9,9 +9,9 @@
     "title": "Factors of 72 Speed Grid - Highly Composite Divisors Challenge",
     "metaDescription": "Find all 12 factors of 72 on a 10x10 math grid. Test advanced factor pairs, multiplication facts, and division speed for 4th and 5th graders.",
     "h1": "Factors of 72 Math Challenge",
-    "intro": "Seventy-two is an abundant, highly composite number with prime factorization 2^3 x 3^2. It has 12 distinct factors: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, and 72. Its factor pairs are (1, 72), (2, 36), (3, 24), (4, 18), (6, 12), and (8, 9). Identifying these 12 factors on a 100-tile board represents a pinnacle of elementary factor fluency.",
-    "howToPlay": "Scan the grid to click all 12 factors of 72. Correct numbers turn green with a checkmark. Distractor clicks flash red and penalize 2 seconds from the clock. Find all 12 factors to complete the challenge.",
-    "teacherNotes": "Note how factor pairs converge toward the square root: the closest pair is 8 and 9, right beside the square root of 72 (~8.48).",
+    "intro": "Seventy-two is an abundant, highly composite number with prime factorization 2^3 x 3^2. It has 12 distinct factors: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, and 72. Its factor pairs are (1, 72), (2, 36), (3, 24), (4, 18), (6, 12), and (8, 9). Identifying these 12 factors on a 100-tile board represents a pinnacle of elementary factor fluency. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Scan the grid to click all 12 factors of 72. Correct numbers turn green with a checkmark. Distractor clicks flash red and penalize 2 seconds from the clock. Find all 12 factors to complete the challenge. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Note how factor pairs converge toward the square root: the closest pair is 8 and 9, right beside the square root of 72 (~8.48). Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What are all 12 factors of 72?",
@@ -20,6 +20,10 @@
       {
         "q": "What factor pairs equal 72?",
         "a": "The factor pairs are (1, 72), (2, 36), (3, 24), (4, 18), (6, 12), and (8, 9)."
+      },
+      {
+        "q": "How does mastering click all factors of 72 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all factors of 72 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
