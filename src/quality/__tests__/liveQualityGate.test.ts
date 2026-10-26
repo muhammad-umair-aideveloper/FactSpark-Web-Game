@@ -10,7 +10,7 @@ describe('Live 40 Seed Games Quality Gate Audit', () => {
   });
 
   it('passes strict SEO quality gate: 250+ words, <70% similarity, 1..40 targets', () => {
-    const audit = auditGameCollection(games, { minWords: 200, maxSimilarity: 0.70 });
+    const audit = auditGameCollection(games, { minWords: 250, maxSimilarity: 0.70 });
 
     if (!audit.passed) {
       console.error('Quality gate failures:');
