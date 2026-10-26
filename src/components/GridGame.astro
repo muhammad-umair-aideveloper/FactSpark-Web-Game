@@ -1,0 +1,574 @@
+---
+import type { GameData } from '../schema/gameSchema';
+import { generatePoolItems, resolveTargetIds } from '../schema/gameSchema';
+
+interface Props {
+  game: GameData;
+}
+
+const { game } = Astro.props;
+
+const items = generatePoolItems(game.game.pool, game.game.display);
+const targetIds = resolveTargetIds(game);
+---
+
+<div class="game-wrapper" id="game-app" data-slug={game.slug} data-seconds={game.game.seconds} data-targets={JSON.stringify(targetIds)}>
+  <!-- Header Bar: Prompt and Controls -->
+  <div class="game-header-card">
+    <div class="prompt-section">
+      <span class="prompt-badge">Current Target</span>
+      <h2 class="prompt-title" id="game-prompt">{game.game.prompt}</h2>
+    </div>
+
+    <div class="game-controls">
+      <button type="button" class="ctrl-btn" id="btn-projector" title="Toggle Big Tile Projector Mode" aria-pressed="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        <span>Projector</span>
+      </button>
+
+      <button type="button" class="ctrl-btn" id="btn-sound" title="Toggle Sound Effects" aria-pressed="true">
+        <svg class="icon-sound-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        <svg class="icon-sound-off" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <span>Sound</span>
+      </button>
+
+      {game.game.allowShuffle && (
+        <button type="button" class="ctrl-btn" id="btn-shuffle" title="Shuffle Tiles (Hard Mode)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+          <span>Shuffle</span>
+        </button>
+      )}
+
+      <button type="button" class="ctrl-btn reset-btn" id="btn-reset" title="Restart Round">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+        <span>Reset</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Telemetry Bar -->
+  <div class="telemetry-bar" aria-live="polite">
+    <div class="metric-item timer-metric">
+      <span class="metric-label">Time Remaining</span>
+      <span class="metric-val" id="metric-timer">{game.game.seconds}.0s</span>
+    </div>
+
+    <div class="metric-item targets-metric">
+      <span class="metric-label">Targets Remaining</span>
+      <span class="metric-val" id="metric-remaining">{targetIds.length}</span>
+    </div>
+
+    <div class="metric-item score-metric">
+      <span class="metric-label">Score</span>
+      <span class="metric-val" id="metric-score">0</span>
+    </div>
+
+    <div class="metric-item accuracy-metric">
+      <span class="metric-label">Accuracy</span>
+      <span class="metric-val" id="metric-accuracy">100%</span>
+    </div>
+
+    <div class="metric-item pb-metric">
+      <span class="metric-label">Personal Best</span>
+      <span class="metric-val" id="metric-pb">--</span>
+    </div>
+  </div>
+
+  <!-- 10x10 Interactive Grid -->
+  <div class="grid-container" id="grid-board" role="grid" aria-label="Math fact tiles 10 by 10 grid">
+    {items.map((item, index) => (
+      <button
+        type="button"
+        class="grid-tile"
+        data-tile-id={item.id}
+        data-index={index}
+        aria-label={`Tile ${item.display}`}
+        tabindex="0"
+      >
+        <span class="tile-val">{item.display}</span>
+        <span class="tile-icon icon-check" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span class="tile-icon icon-cross" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </span>
+      </button>
+    ))}
+  </div>
+
+  <!-- Round End Modal Overlay -->
+  <div class="round-modal-backdrop" id="end-modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="round-modal-card">
+      <div class="stars-row" id="modal-stars" aria-label="0 out of 3 stars">
+        <span class="star-icon">&#9733;</span>
+        <span class="star-icon">&#9733;</span>
+        <span class="star-icon">&#9733;</span>
+      </div>
+
+      <h3 class="modal-title" id="modal-title">Round Complete!</h3>
+      <p class="modal-subtitle" id="modal-sub">You identified all target tiles.</p>
+
+      <div class="modal-stats-grid">
+        <div class="mstat"><span class="mstat-lbl">Final Score</span><strong id="modal-final-score">0</strong></div>
+        <div class="mstat"><span class="mstat-lbl">Accuracy</span><strong id="modal-final-accuracy">100%</strong></div>
+        <div class="mstat"><span class="mstat-lbl">Time Elapsed</span><strong id="modal-final-time">0s</strong></div>
+        <div class="mstat"><span class="mstat-lbl">Mistakes</span><strong id="modal-final-mistakes">0</strong></div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-play-again" id="modal-btn-replay">Play Again</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { GridEngine, InputManager, safeStorage } from '../engine';
+
+  const app = document.getElementById('game-app');
+  if (app) {
+    const slug = app.dataset.slug || 'game';
+    const seconds = parseInt(app.dataset.seconds || '45', 10);
+    const targetIds = JSON.parse(app.dataset.targets || '[]');
+
+    const gridBoard = document.getElementById('grid-board') as HTMLElement;
+    const metricTimer = document.getElementById('metric-timer') as HTMLElement;
+    const metricRemaining = document.getElementById('metric-remaining') as HTMLElement;
+    const metricScore = document.getElementById('metric-score') as HTMLElement;
+    const metricAccuracy = document.getElementById('metric-accuracy') as HTMLElement;
+    const metricPb = document.getElementById('metric-pb') as HTMLElement;
+
+    const modal = document.getElementById('end-modal') as HTMLElement;
+    const modalTitle = document.getElementById('modal-title') as HTMLElement;
+    const modalSub = document.getElementById('modal-sub') as HTMLElement;
+    const modalStars = document.getElementById('modal-stars') as HTMLElement;
+    const modalFinalScore = document.getElementById('modal-final-score') as HTMLElement;
+    const modalFinalAccuracy = document.getElementById('modal-final-accuracy') as HTMLElement;
+    const modalFinalTime = document.getElementById('modal-final-time') as HTMLElement;
+    const modalFinalMistakes = document.getElementById('modal-final-mistakes') as HTMLElement;
+
+    const btnProjector = document.getElementById('btn-projector') as HTMLButtonElement;
+    const btnSound = document.getElementById('btn-sound') as HTMLButtonElement;
+    const btnShuffle = document.getElementById('btn-shuffle') as HTMLButtonElement;
+    const btnReset = document.getElementById('btn-reset') as HTMLButtonElement;
+    const modalBtnReplay = document.getElementById('modal-btn-replay') as HTMLButtonElement;
+
+    // Collect DOM tile items
+    const tileButtons = Array.from(gridBoard.querySelectorAll<HTMLButtonElement>('.grid-tile'));
+    const items = tileButtons.map((btn) => ({
+      id: btn.getAttribute('data-tile-id') || '',
+      value: btn.querySelector('.tile-val')?.textContent || '',
+      display: btn.querySelector('.tile-val')?.textContent || ''
+    }));
+
+    // Update personal best display
+    const updatePbDisplay = () => {
+      const pb = safeStorage.getPersonalBest(slug);
+      if (pb) {
+        metricPb.textContent = `${pb.stars}★ (${pb.accuracy}%)`;
+      } else {
+        metricPb.textContent = '--';
+      }
+    };
+    updatePbDisplay();
+
+    // Initialize Engine
+    const engine = new GridEngine({
+      slug,
+      prompt: document.getElementById('game-prompt')?.textContent || '',
+      seconds,
+      items,
+      targetIds,
+      allowShuffle: true,
+      soundEnabled: true,
+      onTick: (rem, stats) => {
+        metricTimer.textContent = `${rem.toFixed(1)}s`;
+        if (rem <= 5) {
+          metricTimer.classList.add('urgent');
+        } else {
+          metricTimer.classList.remove('urgent');
+        }
+      },
+      onTileUpdate: (tile) => {
+        const btn = gridBoard.querySelector<HTMLButtonElement>(`button[data-tile-id="${tile.id}"]`);
+        if (!btn) return;
+
+        btn.classList.remove('is-correct', 'is-wrong', 'is-missed');
+        if (tile.status === 'correct') {
+          btn.classList.add('is-correct');
+          btn.setAttribute('aria-pressed', 'true');
+        } else if (tile.status === 'wrong') {
+          btn.classList.add('is-wrong');
+        } else if (tile.missed) {
+          btn.classList.add('is-missed');
+        }
+      },
+      onStateChange: (status, stats) => {
+        metricRemaining.textContent = String(stats.remainingTargets);
+        metricScore.textContent = String(stats.score);
+        metricAccuracy.textContent = `${stats.accuracy}%`;
+
+        if (status === 'idle') {
+          modal.style.display = 'none';
+          tileButtons.forEach((b) => {
+            b.classList.remove('is-correct', 'is-wrong', 'is-missed');
+            b.setAttribute('aria-pressed', 'false');
+          });
+        }
+      },
+      onGameEnd: (status, stats) => {
+        modal.style.display = 'flex';
+        modalFinalScore.textContent = String(stats.score);
+        modalFinalAccuracy.textContent = `${stats.accuracy}%`;
+        modalFinalTime.textContent = `${stats.timeElapsed.toFixed(1)}s`;
+        modalFinalMistakes.textContent = String(stats.mistakes);
+
+        // Update stars visuals
+        const starSpans = modalStars.querySelectorAll('.star-icon');
+        starSpans.forEach((span, i) => {
+          if (i < stats.stars) {
+            span.classList.add('active');
+          } else {
+            span.classList.remove('active');
+          }
+        });
+
+        if (status === 'completed') {
+          modalTitle.textContent = 'Round Complete!';
+          modalSub.textContent = stats.stars === 3 ? 'Flawless accuracy! 3 Stars earned.' : 'Great job! Targets found.';
+        } else {
+          modalTitle.textContent = "Time's Up!";
+          modalSub.textContent = 'Remaining targets are outlined in orange.';
+        }
+
+        updatePbDisplay();
+      }
+    });
+
+    // Attach Input Manager
+    const inputMgr = new InputManager(gridBoard, engine);
+
+    // Button controls
+    btnReset?.addEventListener('click', () => engine.reset());
+    modalBtnReplay?.addEventListener('click', () => engine.reset());
+
+    btnProjector?.addEventListener('click', () => {
+      const isBig = gridBoard.classList.toggle('projector-mode');
+      btnProjector.setAttribute('aria-pressed', String(isBig));
+    });
+
+    btnShuffle?.addEventListener('click', () => {
+      engine.shuffleTiles();
+    });
+
+    let soundOn = true;
+    btnSound?.addEventListener('click', () => {
+      soundOn = !soundOn;
+      btnSound.setAttribute('aria-pressed', String(soundOn));
+      const onIcon = btnSound.querySelector('.icon-sound-on') as HTMLElement;
+      const offIcon = btnSound.querySelector('.icon-sound-off') as HTMLElement;
+      if (soundOn) {
+        onIcon.style.display = 'inline';
+        offIcon.style.display = 'none';
+      } else {
+        onIcon.style.display = 'none';
+        offIcon.style.display = 'inline';
+      }
+    });
+  }
+</script>
+
+<style>
+  .game-wrapper {
+    position: relative;
+    max-width: 680px;
+    margin: 0 auto;
+    user-select: none;
+  }
+
+  /* Header card */
+  .game-header-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  }
+  .prompt-badge {
+    display: inline-block;
+    font-size: 0.725rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #4f46e5;
+    margin-bottom: 0.2rem;
+  }
+  .prompt-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .game-controls {
+    display: flex;
+    gap: 0.4rem;
+  }
+  .ctrl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 0.4rem 0.65rem;
+    font-size: 0.775rem;
+    font-weight: 600;
+    color: #334155;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+  }
+  .ctrl-btn:hover {
+    background: #e2e8f0;
+  }
+  .reset-btn {
+    background: #eef2ff;
+    color: #4338ca;
+    border-color: #c7d2fe;
+  }
+  .reset-btn:hover {
+    background: #e0e7ff;
+  }
+
+  /* Telemetry bar */
+  .telemetry-bar {
+    background: #0f172a;
+    color: #f8fafc;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .metric-label {
+    font-size: 0.675rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #94a3b8;
+    font-weight: 600;
+  }
+  .metric-val {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+  }
+  .timer-metric .metric-val.urgent {
+    color: #ef4444;
+    animation: pulse 0.5s infinite alternate;
+  }
+  @keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+  }
+
+  /* 10x10 Grid */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 4px;
+    background: #e2e8f0;
+    padding: 6px;
+    border-radius: 12px;
+    aspect-ratio: 1 / 1;
+    touch-action: manipulation;
+  }
+
+  /* Projector Big Tile Mode */
+  .grid-container.projector-mode {
+    gap: 8px;
+    padding: 10px;
+  }
+  .grid-container.projector-mode .grid-tile {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+
+  /* Tile Styling */
+  .grid-tile {
+    position: relative;
+    background: #ffffff;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.925rem;
+    font-weight: 700;
+    color: #1e293b;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.1s, transform 0.1s;
+    outline: none;
+  }
+  .grid-tile:hover {
+    background: #f1f5f9;
+  }
+  .grid-tile:focus-visible {
+    box-shadow: 0 0 0 3px #4f46e5;
+    z-index: 2;
+  }
+
+  /* Correct State (Green + Checkmark) */
+  .grid-tile.is-correct {
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+  }
+  .grid-tile .tile-icon {
+    display: none;
+    position: absolute;
+  }
+  .grid-tile.is-correct .icon-check {
+    display: block;
+    color: #ffffff;
+  }
+  .grid-tile.is-correct .tile-val {
+    opacity: 0.25;
+  }
+
+  /* Wrong State (Red Flash + X icon, Not locked) */
+  .grid-tile.is-wrong {
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+    animation: shake 0.3s ease;
+  }
+  .grid-tile.is-wrong .icon-cross {
+    display: block;
+    color: #ffffff;
+  }
+  .grid-tile.is-wrong .tile-val {
+    opacity: 0.25;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-3px); }
+    40%, 80% { transform: translateX(3px); }
+  }
+
+  /* Missed State (Orange Outline) */
+  .grid-tile.is-missed {
+    border: 2px dashed #f97316;
+    background-color: #fff7ed;
+    color: #c2410c;
+  }
+
+  /* Modal Overlay */
+  .round-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    z-index: 30;
+    padding: 1rem;
+  }
+  .round-modal-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 360px;
+    width: 100%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  }
+  .stars-row {
+    font-size: 2.25rem;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+  }
+  .star-icon.active {
+    color: #eab308;
+    text-shadow: 0 0 10px rgba(234, 179, 8, 0.4);
+  }
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.25rem;
+  }
+  .modal-subtitle {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0 0 1.5rem;
+  }
+  .modal-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .mstat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mstat-lbl {
+    font-size: 0.7rem;
+    color: #64748b;
+    text-transform: uppercase;
+  }
+  .mstat strong {
+    font-size: 1.1rem;
+    color: #1e293b;
+  }
+  .btn-play-again {
+    width: 100%;
+    background: #4f46e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+  }
+  .btn-play-again:hover {
+    background: #4338ca;
+  }
+
+  @media (max-width: 480px) {
+    .grid-container {
+      gap: 2px;
+      padding: 3px;
+    }
+    .grid-tile {
+      font-size: 0.75rem;
+    }
+    .telemetry-bar {
+      padding: 0.5rem 0.5rem;
+    }
+    .metric-val {
+      font-size: 0.95rem;
+    }
+  }
+</style>
