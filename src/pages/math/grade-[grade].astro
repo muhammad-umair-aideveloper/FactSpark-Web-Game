@@ -1,0 +1,46 @@
+---
+import HubLayout from '../../layouts/HubLayout.astro';
+import { getAllGrades, getGamesByGrade } from '../../contentLoader';
+import type { GameData } from '../../schema/gameSchema';
+
+export async function getStaticPaths() {
+  const grades = getAllGrades();
+
+  return grades.map((grade) => {
+    const games = getGamesByGrade(grade);
+    return {
+      params: { grade: String(grade) },
+      props: { grade, games }
+    };
+  });
+}
+
+interface Props {
+  grade: number;
+  games: GameData[];
+}
+
+const { grade, games } = Astro.props;
+
+const canonicalUrl = `https://gridfluency.com/math/grade-${grade}/`;
+const title = `Grade ${grade} Math Fluency Games - 10x10 Speed Grids`;
+const metaDescription = `Explore ${games.length} standards-aligned 10x10 math fluency games for Grade ${grade}. Fast-paced facts practice designed for school Chromebooks.`;
+const h1 = `Grade ${grade} Math Fluency Hub`;
+const intro = `Welcome to the Grade ${grade} math fluency collection. These interactive 10x10 grid challenges develop rapid number recognition, multiplication automaticity, and algebraic intuition aligned with Common Core Grade ${grade} standards.`;
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Math', url: '/math/' },
+  { name: `Grade ${grade}`, url: canonicalUrl }
+];
+---
+
+<HubLayout
+  title={title}
+  metaDescription={metaDescription}
+  h1={h1}
+  intro={intro}
+  canonicalUrl={canonicalUrl}
+  games={games}
+  breadcrumbs={breadcrumbs}
+/>
