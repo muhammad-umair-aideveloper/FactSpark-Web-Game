@@ -1,0 +1,14 @@
+name = "grid-fluency-license-worker"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+ENVIRONMENT = "production"
+STRIPE_MONTHLY_PRICE_ID = "price_monthly_399"
+STRIPE_ANNUAL_PRICE_ID = "price_annual_2900"
+FRONTEND_ORIGIN = "https://gridfluency.com"
+
+[[kv_namespaces]]
+binding = "LICENSES"
+id = "licenses_kv_namespace_id"
+preview_id = "licenses_preview_kv_id"
