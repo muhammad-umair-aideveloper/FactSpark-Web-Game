@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-40-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 40 Speed Grid - Factor Pairs & Divisors Clicker",
+    "metaDescription": "Find all 8 factors of 40 on a 100-number math grid. Fast multiplication and division fact recall for 4th and 5th grade learners.",
+    "h1": "Factors of 40 Math Challenge",
+    "intro": "Forty is an even composite number with 8 positive factors: 1, 2, 4, 5, 8, 10, 20, and 40. Its factor pairs include (1, 40), (2, 20), (4, 10), and (5, 8). Hunting for all 8 factors across the hundreds board reinforces understanding of powers of 2, multiples of 5 and 10, and divisibility tests.",
+    "howToPlay": "Scan the 100-tile grid and click every factor of 40. Correct factors turn green with a checkmark. Non-factors flash red and subtract 2 seconds. Spot all 8 factors before time runs out.",
+    "teacherNotes": "Remind students to check numbers in pairs. When they discover that 4 divides into 40 ten times, they immediately register both 4 and 10 as factors.",
+    "faq": [
+      {
+        "q": "What are all the factors of 40?",
+        "a": "The 8 factors of 40 are 1, 2, 4, 5, 8, 10, 20, and 40."
+      },
+      {
+        "q": "What factor pairs multiply to 40?",
+        "a": "The factor pairs are (1, 40), (2, 20), (4, 10), and (5, 8)."
+      }
+    ],
+    "related": [
+      "factors-of-20-game",
+      "multiples-of-8-grid",
+      "multiples-of-10-grid"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 40",
+    "seconds": 35,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 40
+      }
+    },
+    "allowShuffle": true
+  }
+}
