@@ -1,0 +1,49 @@
+{
+  "slug": "numbers-between-25-and-50",
+  "grade": 1,
+  "topic": "place-value",
+  "standards": [
+    "CCSS.MATH.CONTENT.1.NBT.B.3"
+  ],
+  "seo": {
+    "title": "Numbers 25 to 50 Speed Grid - Number Range Fluency",
+    "metaDescription": "Practice identifying numbers from 25 to 50 on a 100-tile chart. Build number line orientation and magnitude comparison for 1st and 2nd grade.",
+    "h1": "Numbers 25 to 50 Range Grid",
+    "intro": "Understanding where numbers sit along the continuous number line is vital for early spatial number sense. On a 10x10 grid, the interval between 25 and 50 spans parts of the third row down into the fifth row. In this challenge, primary students click all numbers within this specific numerical window, solidifying boundary comprehension and relative magnitude comparisons.",
+    "howToPlay": "Locate and click every number starting from 25 up to and including 50. Correct clicks lock green with a checkmark. Numbers below 25 or above 50 flash red and deduct 2 seconds from the timer. Find all 26 target numbers before time expires.",
+    "teacherNotes": "Use this activity to help students visualize the halfway point on a 100-chart. Discuss why 50 is half of 100 and how 25 represents one quarter.",
+    "faq": [
+      {
+        "q": "How many integers are between 25 and 50 inclusive?",
+        "a": "There are 26 integers from 25 through 50 inclusive (calculated as 50 - 25 + 1 = 26)."
+      },
+      {
+        "q": "Which tens rows contain numbers in this game?",
+        "a": "Numbers in this range span across row 3 (numbers 25-30), row 4 (numbers 31-40), and row 5 (numbers 41-50)."
+      }
+    ],
+    "related": [
+      "numbers-greater-than-75",
+      "multiples-of-5-grid",
+      "even-numbers-up-to-50"
+    ]
+  },
+  "game": {
+    "prompt": "Click numbers from 25 to 50",
+    "seconds": 45,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "between",
+      "params": {
+        "min": 25,
+        "max": 50
+      }
+    },
+    "allowShuffle": true
+  }
+}
