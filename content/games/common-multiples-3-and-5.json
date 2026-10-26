@@ -2,14 +2,17 @@
   "slug": "common-multiples-3-and-5",
   "grade": 5,
   "topic": "number-theory",
-  "standards": ["CCSS.MATH.CONTENT.5.OA.A.2", "CCSS.MATH.CONTENT.6.NS.B.4"],
+  "standards": [
+    "CCSS.MATH.CONTENT.5.OA.A.2",
+    "CCSS.MATH.CONTENT.6.NS.B.4"
+  ],
   "seo": {
     "title": "Common Multiples of 3 and 5 - LCM Grid Speed Challenge",
     "metaDescription": "Click all common multiples of 3 and 5 on a 100-tile grid. Practice least common multiple (LCM) and divisibility concepts under time pressure.",
     "h1": "Common Multiples of 3 and 5 Grid",
-    "intro": "A common multiple is a shared multiple of two or more distinct integers. The least common multiple (LCM) of 3 and 5 is 15. Consequently, any number that is a common multiple of both 3 and 5 must be a multiple of 15. In this speed game, students identify numbers on the 100-grid that satisfy divisibility by both 3 and 5 simultaneously, reinforcing algebraic factors and fraction denominators.",
-    "howToPlay": "Find every number from 1 to 100 that is divisible by both 3 and 5. Correct clicks turn green with a checkmark icon. Incorrect selections flash red and subtract 2 seconds from the clock. Find all 6 common multiples before time expires.",
-    "teacherNotes": "Connect this exercise to finding least common denominators (LCD) when adding fractions with unlike denominators 1/3 and 1/5.",
+    "intro": "A common multiple is a shared multiple of two or more distinct integers. The least common multiple (LCM) of 3 and 5 is 15. Consequently, any number that is a common multiple of both 3 and 5 must be a multiple of 15. In this speed game, students identify numbers on the 100-grid that satisfy divisibility by both 3 and 5 simultaneously, reinforcing algebraic factors and fraction denominators. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Find every number from 1 to 100 that is divisible by both 3 and 5. Correct clicks turn green with a checkmark icon. Incorrect selections flash red and subtract 2 seconds from the clock. Find all 6 common multiples before time expires. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Connect this exercise to finding least common denominators (LCD) when adding fractions with unlike denominators 1/3 and 1/5. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What are all common multiples of 3 and 5 up to 100?",
@@ -18,9 +21,17 @@
       {
         "q": "How can you test if a number is a multiple of both 3 and 5?",
         "a": "First, check if the last digit is 0 or 5 (divisibility rule for 5). Next, add the digits together and check if their sum is divisible by 3."
+      },
+      {
+        "q": "How does mastering click common multiples of 3 and 5 support higher-level math standards?",
+        "a": "Building speed and accuracy with click common multiples of 3 and 5 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
-    "related": ["multiples-of-3-grid", "prime-numbers-to-100-game", "factors-of-24-game"]
+    "related": [
+      "multiples-of-3-grid",
+      "prime-numbers-to-100-game",
+      "factors-of-24-game"
+    ]
   },
   "game": {
     "prompt": "Click common multiples of 3 and 5",
@@ -34,7 +45,10 @@
     "rule": {
       "name": "common_multiple",
       "params": {
-        "factors": [3, 5]
+        "factors": [
+          3,
+          5
+        ]
       }
     },
     "allowShuffle": true
