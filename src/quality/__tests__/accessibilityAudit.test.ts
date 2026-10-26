@@ -4,7 +4,7 @@ import path from 'node:path';
 import { GridEngine } from '../../engine';
 
 describe('Accessibility & WCAG 2.1 AA Compliance Audit', () => {
-  const gamesDir = path.resolve(process.cwd(), 'src/content/games');
+  const gamesDir = path.resolve(process.cwd(), 'content/games');
   const gameFiles = fs.readdirSync(gamesDir).filter((f) => f.endsWith('.json'));
 
   it('ensures all 40 games include keyboard navigation accessibility guidance in content', () => {
