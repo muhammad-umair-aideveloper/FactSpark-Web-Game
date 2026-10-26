@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-16-game",
+  "grade": 3,
+  "topic": "operations",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 16 Math Clicker - Square Number Divisors",
+    "metaDescription": "Click all factors of 16 on a 100-number grid. Discover why square numbers have an odd number of factors in this math fluency challenge.",
+    "h1": "Factors of 16 Math Challenge",
+    "intro": "Because 16 is a perfect square (4 x 4 = 16), it possesses an odd count of factors: 1, 2, 4, 8, and 16. The repeated factor pair 4 x 4 means 4 is counted only once. In this speed game, students identify the 5 factors of 16 scattered across the 100-tile board, reinforcing power-of-two relationships and square number divisors.",
+    "howToPlay": "Locate and click the 5 factors of 16. Correct factors turn green with a checkmark. Incorrect clicks flash red and penalize 2 seconds from the timer. Locate all 5 factors before time expires.",
+    "teacherNotes": "Explain why square numbers always have an odd total number of factors because the middle factor pairs with itself.",
+    "faq": [
+      {
+        "q": "What are all the factors of 16?",
+        "a": "The factors of 16 are 1, 2, 4, 8, and 16."
+      },
+      {
+        "q": "Why does 16 have an odd number of factors?",
+        "a": "Because 16 is a square number (4 x 4), the factor 4 pairs with itself rather than a different number."
+      }
+    ],
+    "related": [
+      "square-numbers-1-to-100",
+      "factors-of-24-game",
+      "multiples-of-4-grid"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 16",
+    "seconds": 30,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 16
+      }
+    },
+    "allowShuffle": true
+  }
+}
