@@ -1,0 +1,48 @@
+{
+  "slug": "prime-numbers-to-50-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Prime Numbers to 50 Speed Grid - Elementary Prime Math Game",
+    "metaDescription": "Find all 15 prime numbers between 1 and 50 on a 100-tile grid. Practice prime vs composite number recognition for 4th and 5th graders.",
+    "h1": "Prime Numbers Up to 50 Grid",
+    "intro": "Before mastering all 25 primes up to 100, elementary students often focus on internalizing the first 15 prime numbers located between 1 and 50 (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47). This targeted game sharpens prime recognition in a focused interval, helping students avoid common composite traps like 9, 15, 21, 27, 33, 35, and 49.",
+    "howToPlay": "Click all prime numbers that are less than or equal to 50. Correct clicks highlight green with a checkmark. Composite numbers or numbers above 50 flash red and deduct 2 seconds. Find all 15 primes to earn 3 stars.",
+    "teacherNotes": "Review the Sieve of Eratosthenes method with students: cross out multiples of 2, 3, 5, and 7 to reveal the remaining primes under 50.",
+    "faq": [
+      {
+        "q": "How many prime numbers are there up to 50?",
+        "a": "There are exactly 15 prime numbers: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, and 47."
+      },
+      {
+        "q": "Why is 49 not a prime number?",
+        "a": "49 is a composite number because 7 multiplied by 7 equals 49 (it has three positive divisors: 1, 7, and 49)."
+      }
+    ],
+    "related": [
+      "prime-numbers-to-100-game",
+      "odd-numbers-up-to-50",
+      "square-numbers-1-to-100"
+    ]
+  },
+  "game": {
+    "prompt": "Click prime numbers up to 50",
+    "seconds": 40,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "prime_up_to",
+      "params": {
+        "max": 50
+      }
+    },
+    "allowShuffle": true
+  }
+}
