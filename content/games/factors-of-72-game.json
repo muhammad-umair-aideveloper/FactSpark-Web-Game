@@ -1,0 +1,48 @@
+{
+  "slug": "factors-of-72-game",
+  "grade": 4,
+  "topic": "number-theory",
+  "standards": [
+    "CCSS.MATH.CONTENT.4.OA.B.4"
+  ],
+  "seo": {
+    "title": "Factors of 72 Speed Grid - Highly Composite Divisors Challenge",
+    "metaDescription": "Find all 12 factors of 72 on a 10x10 math grid. Test advanced factor pairs, multiplication facts, and division speed for 4th and 5th graders.",
+    "h1": "Factors of 72 Math Challenge",
+    "intro": "Seventy-two is an abundant, highly composite number with prime factorization 2^3 x 3^2. It has 12 distinct factors: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, and 72. Its factor pairs are (1, 72), (2, 36), (3, 24), (4, 18), (6, 12), and (8, 9). Identifying these 12 factors on a 100-tile board represents a pinnacle of elementary factor fluency.",
+    "howToPlay": "Scan the grid to click all 12 factors of 72. Correct numbers turn green with a checkmark. Distractor clicks flash red and penalize 2 seconds from the clock. Find all 12 factors to complete the challenge.",
+    "teacherNotes": "Note how factor pairs converge toward the square root: the closest pair is 8 and 9, right beside the square root of 72 (~8.48).",
+    "faq": [
+      {
+        "q": "What are all 12 factors of 72?",
+        "a": "The factors of 72 are 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, and 72."
+      },
+      {
+        "q": "What factor pairs equal 72?",
+        "a": "The factor pairs are (1, 72), (2, 36), (3, 24), (4, 18), (6, 12), and (8, 9)."
+      }
+    ],
+    "related": [
+      "factors-of-36-game",
+      "factors-of-60-game",
+      "multiples-of-9-grid"
+    ]
+  },
+  "game": {
+    "prompt": "Click all factors of 72",
+    "seconds": 45,
+    "pool": {
+      "type": "range",
+      "from": 1,
+      "to": 100
+    },
+    "display": "decimal",
+    "rule": {
+      "name": "factor_of",
+      "params": {
+        "number": 72
+      }
+    },
+    "allowShuffle": true
+  }
+}
