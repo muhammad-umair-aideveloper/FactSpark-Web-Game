@@ -1,0 +1,371 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAllGames, getAllGrades, getAllTopics } from '../contentLoader';
+
+const allGames = getAllGames();
+const grades = getAllGrades();
+const topics = getAllTopics();
+
+const canonicalUrl = 'https://gridfluency.com/';
+const title = 'Grid Fluency - Fast 10x10 Math Facts & Number Sense Speed Games';
+const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classroom Chromebooks. Master primes, factors, multiples, and fractions with zero setup.';
+---
+
+<BaseLayout
+  title={title}
+  metaDescription={metaDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-badge">Built for School Chromebooks &bull; COPPA Compliant &bull; Zero Accounts Needed</div>
+    <h1 class="hero-headline">Master Math Facts in <span class="highlight-text">60-Second</span> Grid Speed Runs</h1>
+    <p class="hero-subhead">
+      Grid Fluency is a high-speed math fluency platform designed for low-spec classroom devices. 
+      Click primes, factors, multiples, and fractions on an interactive 10x10 board with instant feedback and zero lag.
+    </p>
+    <div class="hero-actions">
+      <a href="/math/prime-numbers-to-100-game/" class="cta-primary">Play Prime Numbers Grid &rarr;</a>
+      <a href="/playlist/" class="cta-secondary">Create Class Playlist</a>
+    </div>
+  </section>
+
+  <!-- Filter by Grade Level -->
+  <section class="grades-strip" aria-labelledby="grades-strip-title">
+    <h2 id="grades-strip-title" class="strip-label">Select by Grade Level</h2>
+    <div class="grades-pills">
+      {grades.map((grade) => (
+        <a href={`/math/grade-${grade}/`} class="grade-pill">
+          <strong>Grade {grade}</strong>
+          <span>{allGames.filter((g) => g.grade === grade).length} Games</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Filter by Math Topic -->
+  <section class="topics-strip" aria-labelledby="topics-strip-title">
+    <h2 id="topics-strip-title" class="strip-label">Explore Math Domains</h2>
+    <div class="topics-pills">
+      {topics.map((topic) => (
+        <a href={`/math/${topic}/`} class="topic-pill">
+          {topic.replace('-', ' ')}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- All 40 Games Directory -->
+  <section class="games-directory" aria-labelledby="directory-title">
+    <div class="directory-header">
+      <h2 id="directory-title" class="section-title">All 40 Math Speed Challenges</h2>
+      <span class="count-badge">{allGames.length} Games Available</span>
+    </div>
+
+    <div class="games-grid">
+      {allGames.map((game) => (
+        <a href={`/math/${game.slug}/`} class="game-card">
+          <div class="card-meta">
+            <span class="card-grade">Grade {game.grade}</span>
+            <span class="card-timer">{game.game.seconds}s</span>
+          </div>
+          <h3 class="card-title">{game.seo.h1}</h3>
+          <p class="card-prompt">{game.game.prompt}</p>
+          <div class="card-footer">
+            <span class="card-topic">{game.topic.replace('-', ' ')}</span>
+            <span class="play-link">Play &rarr;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Teacher Features Banner -->
+  <section class="teacher-banner">
+    <div class="teacher-banner-content">
+      <h2>Classroom-Ready Tools for Teachers</h2>
+      <p>
+        No student accounts, no passwords, and no setup time. Share directly to Google Classroom, encode custom multi-game playlist sequences in the URL, or print 10x10 worksheets with answer keys.
+      </p>
+      <div class="teacher-badges">
+        <span class="t-badge">&#10003; 1-Click Google Classroom</span>
+        <span class="t-badge">&#10003; State-in-URL Playlists</span>
+        <span class="t-badge">&#10003; Instant Printable Worksheets</span>
+        <span class="t-badge">&#10003; Fullscreen Projector Mode</span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section {
+    text-align: center;
+    padding: 3rem 1rem 2.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: #e0e7ff;
+    color: #4338ca;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 1.25rem;
+  }
+  .hero-headline {
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+    margin: 0 0 1rem;
+  }
+  .highlight-text {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-subhead {
+    font-size: 1.15rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 auto 2rem;
+    max-width: 720px;
+  }
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .cta-primary {
+    background: #4f46e5;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+    transition: background-color 0.15s, transform 0.15s;
+  }
+  .cta-primary:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+  }
+  .cta-secondary {
+    background: #ffffff;
+    color: #334155;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    transition: background-color 0.15s;
+  }
+  .cta-secondary:hover {
+    background: #f1f5f9;
+  }
+
+  /* Grades and Topics Strips */
+  .grades-strip, .topics-strip {
+    margin: 2rem 0;
+  }
+  .strip-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+  }
+  .grades-pills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+  .grade-pill {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: #1e293b;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .grade-pill strong {
+    font-size: 1rem;
+    color: #4f46e5;
+  }
+  .grade-pill span {
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+  .grade-pill:hover {
+    border-color: #818cf8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .topics-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .topic-pill {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    color: #334155;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: background-color 0.15s, color 0.15s;
+  }
+  .topic-pill:hover {
+    background: #4f46e5;
+    color: #ffffff;
+    border-color: #4f46e5;
+  }
+
+  /* Games Directory */
+  .games-directory {
+    margin: 3.5rem 0;
+  }
+  .directory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+  }
+  .count-badge {
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+  }
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .game-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  }
+  .game-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+  }
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .card-grade {
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+  }
+  .card-timer {
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.4rem;
+    line-height: 1.35;
+  }
+  .card-prompt {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0 0 1rem;
+    flex-grow: 1;
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.75rem;
+  }
+  .card-topic {
+    text-transform: capitalize;
+    color: #64748b;
+    font-weight: 500;
+  }
+  .play-link {
+    color: #4f46e5;
+    font-weight: 700;
+  }
+
+  /* Teacher Banner */
+  .teacher-banner {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    margin: 4rem 0 2rem;
+  }
+  .teacher-banner-content h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin: 0 0 0.75rem;
+  }
+  .teacher-banner-content p {
+    color: #c7d2fe;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 0 1.5rem;
+  }
+  .teacher-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .t-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  @media (max-width: 640px) {
+    .hero-headline { font-size: 2rem; }
+    .hero-subhead { font-size: 1rem; }
+  }
+</style>
