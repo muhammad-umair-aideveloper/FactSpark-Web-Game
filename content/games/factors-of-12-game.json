@@ -10,9 +10,9 @@
     "title": "Factors of 12 Speed Clicker - Factor Pairs Math Game",
     "metaDescription": "Find all 6 factors of 12 on a 100-number grid. Practice division, factor pairs, and multiplication facts in this fast math game.",
     "h1": "Factors of 12 Math Challenge",
-    "intro": "Factors of 12 are all the whole numbers that divide evenly into 12 without leaving any remainder. Twelve is a highly composite small number with three pairs of integer factors: 1 and 12, 2 and 6, and 3 and 4. Locating these 6 factors on a 100-number grid trains students to quickly recognize divisor relationships and simplifies future fraction work.",
-    "howToPlay": "Scan the grid to find and click all 6 factors of 12. Correct clicks turn green with a checkmark. Non-factors flash red and cost 2 seconds of round time. Find all 6 factors to earn 3 stars.",
-    "teacherNotes": "Have students draw rectangular arrays for 12 (1x12, 2x6, 3x4) to visualize why 12 has so many factors compared to other numbers near it.",
+    "intro": "Factors of 12 are all the whole numbers that divide evenly into 12 without leaving any remainder. Twelve is a highly composite small number with three pairs of integer factors: 1 and 12, 2 and 6, and 3 and 4. Locating these 6 factors on a 100-number grid trains students to quickly recognize divisor relationships and simplifies future fraction work. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Scan the grid to find and click all 6 factors of 12. Correct clicks turn green with a checkmark. Non-factors flash red and cost 2 seconds of round time. Find all 6 factors to earn 3 stars. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Have students draw rectangular arrays for 12 (1x12, 2x6, 3x4) to visualize why 12 has so many factors compared to other numbers near it. Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What are all the factors of 12?",
@@ -21,6 +21,10 @@
       {
         "q": "What factor pairs multiply to 12?",
         "a": "The factor pairs are (1, 12), (2, 6), and (3, 4)."
+      },
+      {
+        "q": "How does mastering click all factors of 12 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all factors of 12 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
