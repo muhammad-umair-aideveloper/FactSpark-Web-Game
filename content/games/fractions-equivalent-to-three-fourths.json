@@ -9,9 +9,9 @@
     "title": "Fractions Equivalent to 3/4 Speed Grid - Three Quarters Math Game",
     "metaDescription": "Find all fractions equal to three-fourths on an interactive 10x10 grid. Practice fraction equivalence, scaling, and decimal connections.",
     "h1": "Fractions Equivalent to Three-Fourths Grid",
-    "intro": "Three-fourths represents three parts out of four equal divisions, equivalent to 75% or 0.75. When scaling 3/4 by multiplying both terms by an integer k, fractions like 6/8, 9/12, 12/16, 15/20, and 30/40 are generated. In this math clicker, 4th-grade students search a 100-tile grid for fractions equivalent to 3/4, distinguishing them from close distractors like 2/3, 4/5, and 5/6.",
-    "howToPlay": "Scan the grid to find and click all fractions that equal 3/4. Correct selections turn green with checkmarks. Incorrect tiles flash red and penalize 2 seconds. Spot all 15 target fractions to earn a 3-star rating.",
-    "teacherNotes": "Relate 3/4 to three quarters (75 cents out of 100 cents = 75/100 = 3/4) and 45 minutes on an analog clock (45/60 = 3/4).",
+    "intro": "Three-fourths represents three parts out of four equal divisions, equivalent to 75% or 0.75. When scaling 3/4 by multiplying both terms by an integer k, fractions like 6/8, 9/12, 12/16, 15/20, and 30/40 are generated. In this math clicker, 4th-grade students search a 100-tile grid for fractions equivalent to 3/4, distinguishing them from close distractors like 2/3, 4/5, and 5/6. Fluency Development: When students engage in timed identification on a 100-number grid, they move beyond manual finger-counting and transition into visual pattern synthesis. Developing automaticity with this specific math concept reduces cognitive load during multi-step problem solving, long division, and algebraic equation manipulation.",
+    "howToPlay": "Scan the grid to find and click all fractions that equal 3/4. Correct selections turn green with checkmarks. Incorrect tiles flash red and penalize 2 seconds. Spot all 15 target fractions to earn a 3-star rating. Keyboard and Accessibility Controls: Students can use a touchscreen, trackpad, mouse, or keyboard arrow keys to navigate between tiles. Pressing Space or Enter activates the focused tile. Wrong clicks temporarily flash red with an X icon and subtract 2 seconds, but remain unlocked so learners can self-correct without getting stuck.",
+    "teacherNotes": "Relate 3/4 to three quarters (75 cents out of 100 cents = 75/100 = 3/4) and 45 minutes on an analog clock (45/60 = 3/4). Classroom Implementation Ideas: Use this interactive grid during the first five minutes of math instruction as an energetic bell-ringer or daily warm-up. Teachers can project the screen onto an interactive whiteboard for whole-class competitive rounds, or assign the canonical link directly into Google Classroom for independent Chromebook math station rotations.",
     "faq": [
       {
         "q": "What is an easy test to see if a fraction equals 3/4?",
@@ -20,6 +20,10 @@
       {
         "q": "Is 75/100 equivalent to 3/4?",
         "a": "Yes! Dividing both 75 and 100 by their greatest common factor (25) simplifies the fraction to 3/4."
+      },
+      {
+        "q": "How does mastering click all fractions equivalent to 3/4 support higher-level math standards?",
+        "a": "Building speed and accuracy with click all fractions equivalent to 3/4 directly strengthens mental arithmetic and numerical reasoning. When foundational number facts become second nature, students can dedicate their active working memory to advanced problem-solving strategies, fraction equivalence, and multi-step word problems."
       }
     ],
     "related": [
