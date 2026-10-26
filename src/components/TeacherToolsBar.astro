@@ -1,0 +1,253 @@
+---
+import { generateQrSvg } from '../teacher/qrGenerator';
+
+interface Props {
+  canonicalUrl: string;
+  gameSlug: string;
+  title: string;
+}
+
+const { canonicalUrl, gameSlug, title } = Astro.props;
+const classroomShareUrl = `https://classroom.google.com/share?url=${encodeURIComponent(canonicalUrl)}`;
+const qrSvg = generateQrSvg(canonicalUrl, 200);
+const worksheetUrl = `/math/${gameSlug}/worksheet/`;
+---
+
+<div class="teacher-tools-bar">
+  <div class="teacher-tools-label">
+    <span class="teacher-icon" aria-hidden="true">&#127891;</span>
+    <span class="teacher-text">Teacher Tools</span>
+  </div>
+
+  <div class="teacher-tools-actions">
+    <!-- Google Classroom Share -->
+    <a
+      href={classroomShareUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="tool-btn classroom-btn"
+      title="Share directly to Google Classroom"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      <span>Google Classroom</span>
+    </a>
+
+    <!-- Copy Direct Link -->
+    <button type="button" class="tool-btn copy-btn" id="btn-copy-link" data-url={canonicalUrl}>
+      <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      <span class="copy-text">Copy Link</span>
+    </button>
+
+    <!-- QR Code Trigger -->
+    <button type="button" class="tool-btn qr-btn" id="btn-open-qr">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+      <span>QR Code</span>
+    </button>
+
+    <!-- Printable Worksheet -->
+    <a href={worksheetUrl} class="tool-btn print-btn" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      <span>Print Worksheet</span>
+    </a>
+
+    <!-- Fullscreen Mode -->
+    <button type="button" class="tool-btn fullscreen-btn" id="btn-fullscreen">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+      <span>Fullscreen</span>
+    </button>
+  </div>
+
+  <!-- QR Code Modal Dialog -->
+  <dialog class="qr-modal-dialog" id="qr-dialog" aria-labelledby="qr-modal-title">
+    <div class="qr-dialog-content">
+      <h3 id="qr-modal-title" class="qr-title">Scan on Tablet or Phone</h3>
+      <p class="qr-subtitle">{title}</p>
+      <div class="qr-svg-holder" set:html={qrSvg} />
+      <button type="button" class="qr-close-btn" id="btn-close-qr">Close</button>
+    </div>
+  </dialog>
+</div>
+
+<script>
+  // Copy Link
+  const copyBtn = document.getElementById('btn-copy-link');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const url = copyBtn.getAttribute('data-url') || window.location.href;
+      try {
+        await navigator.clipboard.writeText(url);
+        const label = copyBtn.querySelector('.copy-text');
+        if (label) {
+          const original = label.textContent;
+          label.textContent = 'Copied!';
+          copyBtn.classList.add('copied');
+          setTimeout(() => {
+            label.textContent = original;
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        }
+      } catch {
+        // Fallback prompt if clipboard API is restricted
+        window.prompt('Copy this game link for students:', url);
+      }
+    });
+  }
+
+  // QR Dialog
+  const openQrBtn = document.getElementById('btn-open-qr');
+  const qrDialog = document.getElementById('qr-dialog') as HTMLDialogElement | null;
+  const closeQrBtn = document.getElementById('btn-close-qr');
+
+  if (openQrBtn && qrDialog) {
+    openQrBtn.addEventListener('click', () => {
+      if (typeof qrDialog.showModal === 'function') {
+        qrDialog.showModal();
+      } else {
+        qrDialog.setAttribute('open', 'true');
+      }
+    });
+  }
+
+  if (closeQrBtn && qrDialog) {
+    closeQrBtn.addEventListener('click', () => {
+      if (typeof qrDialog.close === 'function') {
+        qrDialog.close();
+      } else {
+        qrDialog.removeAttribute('open');
+      }
+    });
+  }
+
+  // Fullscreen
+  const fullscreenBtn = document.getElementById('btn-fullscreen');
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    });
+  }
+</script>
+
+<style>
+  .teacher-tools-bar {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .teacher-tools-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #4338ca;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .teacher-tools-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .tool-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #334155;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .tool-btn:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #1e293b;
+  }
+  .classroom-btn {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #166534;
+  }
+  .classroom-btn:hover {
+    background: #dcfce7;
+    border-color: #86efac;
+  }
+  .copy-btn.copied {
+    background: #ecfdf5;
+    border-color: #10b981;
+    color: #047857;
+  }
+  .print-btn {
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #92400e;
+  }
+  .print-btn:hover {
+    background: #fef3c7;
+  }
+
+  /* QR Dialog */
+  .qr-modal-dialog {
+    border: none;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background: transparent;
+  }
+  .qr-modal-dialog::backdrop {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+  }
+  .qr-dialog-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 320px;
+  }
+  .qr-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.25rem;
+  }
+  .qr-subtitle {
+    font-size: 0.825rem;
+    color: #64748b;
+    margin: 0 0 1.25rem;
+  }
+  .qr-svg-holder {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .qr-close-btn {
+    background: #f1f5f9;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    color: #334155;
+    cursor: pointer;
+  }
+  .qr-close-btn:hover {
+    background: #e2e8f0;
+  }
+</style>
