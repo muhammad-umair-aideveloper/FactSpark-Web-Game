@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Teacher Pass', url: '/pass/' },
+  { name: 'Checkout Cancelled', url: '/pass/cancel/' }
+];
+---
+
+<BaseLayout
+  title="Checkout Cancelled — Grid Fluency"
+  metaDescription="Your checkout session was cancelled. No charges were made. You can still enjoy all 40+ free math games."
+  canonicalUrl="https://gridfluency.com/pass/cancel/"
+  robots="noindex, nofollow"
+>
+  <Breadcrumbs crumbs={breadcrumbs} />
+
+  <div class="cancel-card">
+    <div class="cancel-icon">↩️</div>
+    <h1 class="cancel-title">Checkout Cancelled</h1>
+    <p class="cancel-lead">
+      No charges were made to your card. Whenever you are ready to upgrade your classroom to 100% ad-free screens, the Teacher Pass will be waiting for you.
+    </p>
+
+    <div class="cancel-actions">
+      <a href="/pass/" class="btn-primary">View Pricing Plans</a>
+      <a href="/math/" class="btn-secondary">Play Free Math Games</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .cancel-card {
+    max-width: 600px;
+    margin: 4rem auto 6rem;
+    padding: 3rem 2rem;
+    background: var(--surface, #ffffff);
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  .cancel-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .cancel-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-heading, #0f172a);
+    margin-bottom: 0.75rem;
+  }
+
+  .cancel-lead {
+    font-size: 1.1rem;
+    color: var(--text-muted, #475569);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .cancel-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 800;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    background: #1d4ed8;
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    background: #f1f5f9;
+    color: #334155;
+    font-weight: 800;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .btn-secondary:hover {
+    background: #e2e8f0;
+  }
+</style>
