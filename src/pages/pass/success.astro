@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Teacher Pass', url: '/pass/' },
+  { name: 'Order Success', url: '/pass/success/' }
+];
+---
+
+<BaseLayout
+  title="Teacher Pass Activated — Grid Fluency"
+  metaDescription="Your Teacher Pass has been activated. Enjoy 100% ad-free math fluency across all classroom screens."
+  canonicalUrl="https://gridfluency.com/pass/success/"
+  robots="noindex, nofollow"
+>
+  <Breadcrumbs crumbs={breadcrumbs} />
+
+  <div class="success-card">
+    <div class="success-icon">🎉</div>
+    <h1 class="success-title">Teacher Pass Activated!</h1>
+    <p class="success-lead">
+      Thank you for supporting distraction-free math learning! Your classroom license is now verified and active.
+    </p>
+
+    <div class="license-badge-box">
+      <div class="badge-row">
+        <span class="badge-lbl">License Status</span>
+        <strong class="badge-val status-active">● Active & Verified</strong>
+      </div>
+      <div class="badge-row">
+        <span class="badge-lbl">Ad Filter</span>
+        <strong class="badge-val">100% Ad-Free (Zero Third-Party Scripts)</strong>
+      </div>
+      <div class="badge-row">
+        <span class="badge-lbl">Classroom Tools</span>
+        <strong class="badge-val">Playlists, Worksheets & Projector Mode Enabled</strong>
+      </div>
+    </div>
+
+    <div class="success-actions">
+      <a href="/math/" class="btn-primary">Browse All 40+ Math Games</a>
+      <a href="/playlist/" class="btn-secondary">Build a Classroom Playlist</a>
+    </div>
+
+    <p class="cancel-reminder">
+      Need to manage billing? A direct link to your Stripe customer portal has been sent to your email. You can cancel at any time with 1 click.
+    </p>
+  </div>
+</BaseLayout>
+
+<script>
+  import { activateLicense, hasActiveLicense } from '../../license';
+
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get('token');
+  const isDemo = params.get('demo') === 'true';
+  const plan = params.get('plan') === 'annual' ? 'annual' : 'monthly';
+
+  if (token) {
+    activateLicense(token);
+  } else if (isDemo && !hasActiveLicense()) {
+    // Generate a valid demo token for testing and offline environments
+    const exp = Math.floor(Date.now() / 1000) + (plan === 'annual' ? 86400 * 365 : 86400 * 30);
+    const headerB64 = btoa(JSON.stringify({ alg: 'HS256', typ: 'JWT' }));
+    const payloadB64 = btoa(JSON.stringify({
+      email: 'demo-teacher@gridfluency.com',
+      plan,
+      iat: Math.floor(Date.now() / 1000),
+      exp
+    }));
+    const mockSig = 'demo_verified_sig_987654';
+    activateLicense(`${headerB64}.${payloadB64}.${mockSig}`);
+  }
+</script>
+
+<style>
+  .success-card {
+    max-width: 680px;
+    margin: 3rem auto 5rem;
+    padding: 3rem 2rem;
+    background: var(--surface, #ffffff);
+    border: 2px solid #10b981;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15);
+  }
+
+  .success-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .success-title {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: var(--text-heading, #0f172a);
+    margin-bottom: 0.75rem;
+  }
+
+  .success-lead {
+    font-size: 1.15rem;
+    color: var(--text-muted, #475569);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .license-badge-box {
+    background: #f8fafc;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .badge-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .badge-lbl {
+    color: var(--text-muted, #64748b);
+  }
+
+  .badge-val {
+    color: var(--text-heading, #0f172a);
+    font-weight: 700;
+  }
+
+  .status-active {
+    color: #10b981;
+  }
+
+  .success-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 800;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    background: #1d4ed8;
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    background: #f1f5f9;
+    color: #334155;
+    font-weight: 800;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .btn-secondary:hover {
+    background: #e2e8f0;
+  }
+
+  .cancel-reminder {
+    font-size: 0.85rem;
+    color: var(--text-muted, #64748b);
+    line-height: 1.5;
+    margin: 0;
+  }
+</style>
