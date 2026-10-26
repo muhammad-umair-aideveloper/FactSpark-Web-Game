@@ -1,0 +1,167 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import GridGame from '../components/GridGame.astro';
+import FaqSection from '../components/FaqSection.astro';
+import RelatedGames from '../components/RelatedGames.astro';
+import StructuredData from '../components/StructuredData.astro';
+import type { GameData } from '../schema/gameSchema';
+
+interface Props {
+  game: GameData;
+  robotsDirective?: string;
+}
+
+const { game, robotsDirective = 'index, follow' } = Astro.props;
+
+const canonicalUrl = `https://gridfluency.com/math/${game.slug}/`;
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Math', url: '/math/' },
+  { name: `Grade ${game.grade}`, url: `/math/grade-${game.grade}/` },
+  { name: game.seo.h1, url: canonicalUrl }
+];
+---
+
+<BaseLayout
+  title={game.seo.title}
+  metaDescription={game.seo.metaDescription}
+  canonicalUrl={canonicalUrl}
+  robots={robotsDirective}
+>
+  <StructuredData
+    slot="head"
+    game={game}
+    canonicalUrl={canonicalUrl}
+    breadcrumbs={breadcrumbs}
+  />
+
+  <Breadcrumbs crumbs={breadcrumbs} />
+
+  <!-- Game Title and Metadata Header -->
+  <header class="game-heading-header">
+    <div class="badges-row">
+      <span class="badge grade-badge">Grade {game.grade}</span>
+      <span class="badge topic-badge">{game.topic.replace('-', ' ')}</span>
+      {game.standards.map((std) => (
+        <span class="badge standard-badge" title="Common Core Standard">{std}</span>
+      ))}
+    </div>
+    <h1 class="game-h1">{game.seo.h1}</h1>
+  </header>
+
+  <!-- Interactive 10x10 Game Engine -->
+  <section class="game-play-section" aria-label="Game board">
+    <GridGame game={game} />
+  </section>
+
+  <!-- Deep SEO Educational Content -->
+  <article class="educational-copy-article">
+    <section class="copy-block">
+      <h2>About This Math Fluency Challenge</h2>
+      <p>{game.seo.intro}</p>
+    </section>
+
+    <div class="split-notes-row">
+      <section class="copy-block split-col">
+        <h2>How to Play & Strategies</h2>
+        <p>{game.seo.howToPlay}</p>
+      </section>
+
+      <section class="copy-block split-col teacher-box">
+        <h2>Teacher Notes & Pedagogy</h2>
+        <p>{game.seo.teacherNotes}</p>
+      </section>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <FaqSection faq={game.seo.faq} />
+
+    <!-- Related Games Cluster -->
+    <RelatedGames relatedSlugs={game.seo.related} />
+  </article>
+</BaseLayout>
+
+<style>
+  .game-heading-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .badges-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    text-transform: capitalize;
+  }
+  .grade-badge {
+    background-color: #e0e7ff;
+    color: #4338ca;
+  }
+  .topic-badge {
+    background-color: #f1f5f9;
+    color: #475569;
+  }
+  .standard-badge {
+    background-color: #fef3c7;
+    color: #92400e;
+    font-family: monospace;
+  }
+  .game-h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .game-play-section {
+    margin-bottom: 3rem;
+  }
+
+  .educational-copy-article {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #334155;
+    line-height: 1.7;
+  }
+  .copy-block h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .split-notes-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .teacher-box {
+    background: #f8fafc;
+    border-left: 4px solid #4f46e5;
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .teacher-box h2 {
+    margin-top: 0;
+    color: #4338ca;
+  }
+  @media (max-width: 640px) {
+    .split-notes-row {
+      grid-template-columns: 1fr;
+    }
+    .game-h1 {
+      font-size: 1.6rem;
+    }
+  }
+</style>
