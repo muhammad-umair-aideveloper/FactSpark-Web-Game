@@ -49,38 +49,42 @@ const { crumbs } = Astro.props;
   .breadcrumb-item {
     display: flex;
     align-items: center;
-    color: #64748B;
+    color: #464554;
   }
   .breadcrumb-link {
-    color: #0284C7;
+    color: #4648D4;
     text-decoration: none;
-    font-family: var(--font-heading);
-    font-weight: 800;
+    font-family: var(--font-caps);
+    font-weight: 700;
+    font-size: 0.8rem;
     background: #FFFFFF;
-    border: 1.5px solid #E2E8F0;
-    padding: 0.2rem 0.6rem;
+    border: 1.5px solid #0F172A;
+    padding: 0.2rem 0.65rem;
     border-radius: 9999px;
-    box-shadow: 0 2px 0 #CBD5E1;
-    transition: transform 0.12s, box-shadow 0.12s, color 0.12s;
+    box-shadow: 0 2px 0 0 #0F172A;
+    transition: transform 0.08s, box-shadow 0.08s, color 0.1s;
+    letter-spacing: 0.03em;
   }
   .breadcrumb-link:hover {
-    color: #0369A1;
-    border-color: #BAE6FD;
+    color: #2F2EBE;
+    background: #F2F3FF;
     transform: translateY(-1px);
-    box-shadow: 0 3px 0 #BAE6FD;
+    box-shadow: 0 3px 0 0 #0F172A;
   }
   .breadcrumb-separator {
     margin-left: 0.45rem;
-    color: #CBD5E1;
+    color: #0F172A;
     font-weight: 800;
   }
   .breadcrumb-current {
-    color: #0369A1;
-    font-family: var(--font-heading);
-    font-weight: 800;
-    background: #E0F2FE;
-    border: 1.5px solid #BAE6FD;
+    color: #07006C;
+    font-family: var(--font-caps);
+    font-weight: 700;
+    font-size: 0.8rem;
+    background: #E1E0FF;
+    border: 1.5px solid #0F172A;
     padding: 0.2rem 0.65rem;
     border-radius: 9999px;
+    letter-spacing: 0.03em;
   }
 </style>
