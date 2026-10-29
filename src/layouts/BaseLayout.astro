@@ -238,6 +238,20 @@ const {
     border-radius: 6px;
   }
 
+  /* Chromebook (1366x768) & School Tablet Responsive Optimization */
+  @media (max-width: 1366px) {
+    .page-body {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  @media (pointer: coarse) {
+    /* Touch devices: ensure effortless tap feedback and minimum 44px touch targets */
+    .btn-3d, .tool-btn, .ctrl-btn, .nav-link, .topic-pill {
+      min-height: 44px;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
