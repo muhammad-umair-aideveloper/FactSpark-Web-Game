@@ -224,6 +224,9 @@ const targetIds = resolveTargetIds(game);
           btn.setAttribute('aria-pressed', 'true');
         } else if (tile.status === 'wrong') {
           btn.classList.add('is-wrong');
+          if (announcer) {
+            announcer.textContent = 'Incorrect tile selected. 2-second time penalty applied.';
+          }
         } else if (tile.missed) {
           btn.classList.add('is-missed');
         }
@@ -242,6 +245,7 @@ const targetIds = resolveTargetIds(game);
         }
       },
       onGameEnd: (status, stats) => {
+        lastFocusedElement = document.activeElement as HTMLElement | null;
         modal.style.display = 'flex';
         modalFinalScore.textContent = String(stats.score);
         modalFinalAccuracy.textContent = `${stats.accuracy}%`;
@@ -261,12 +265,23 @@ const targetIds = resolveTargetIds(game);
         if (status === 'completed') {
           modalTitle.textContent = 'Round Complete!';
           modalSub.textContent = stats.stars === 3 ? 'Flawless accuracy! 3 Stars earned.' : 'Great job! Targets found.';
+          if (announcer) {
+            announcer.textContent = `Round complete! ${stats.stars} stars earned. Score: ${stats.score}, Accuracy: ${stats.accuracy} percent.`;
+          }
         } else {
           modalTitle.textContent = "Time's Up!";
           modalSub.textContent = 'Remaining targets are outlined in orange.';
+          if (announcer) {
+            announcer.textContent = `Time's up! Final score: ${stats.score}, Accuracy: ${stats.accuracy} percent.`;
+          }
         }
 
         updatePbDisplay();
+
+        // Move focus into modal
+        setTimeout(() => {
+          modalBtnReplay?.focus();
+        }, 50);
       }
     });
 
@@ -279,8 +294,24 @@ const targetIds = resolveTargetIds(game);
       adManager.handleRoundReset('ad-slot-game-bottom');
     });
     modalBtnReplay?.addEventListener('click', () => {
+      modal.style.display = 'none';
       engine.reset();
       adManager.handleRoundReset('ad-slot-game-bottom');
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      } else {
+        btnReset?.focus();
+      }
+    });
+
+    // Trap focus inside modal while active
+    modal?.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        modalBtnReplay?.focus();
+      } else if (e.key === 'Escape') {
+        modalBtnReplay?.click();
+      }
     });
 
     btnProjector?.addEventListener('click', () => {
@@ -736,6 +767,45 @@ const targetIds = resolveTargetIds(game);
     }
     .metric-val {
       font-size: 1rem;
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 480px) {
+    .game-wrapper {
+      width: 100%;
+      margin: 0;
+    }
+    .grid-container {
+      gap: 2px;
+      padding: 2px;
+      border-width: 3px;
+      border-radius: 12px;
+    }
+    .grid-tile {
+      font-size: 0.85rem;
+      border-radius: 4px;
+      border-width: 1px;
+      border-bottom-width: 2px !important;
+      box-shadow: none;
+    }
+    .game-header-card {
+      padding: 0.65rem 0.75rem;
+    }
+    .telemetry-bar {
+      padding: 0.35rem;
+      gap: 0.25rem;
     }
   }
 </style>
