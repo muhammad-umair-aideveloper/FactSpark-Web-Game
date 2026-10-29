@@ -14,16 +14,28 @@ const relatedGames = relatedSlugs
 
 {relatedGames.length > 0 && (
   <section class="related-games-section" aria-labelledby="related-heading">
-    <h2 id="related-heading" class="section-title">Related Math Fluency Challenges</h2>
+    <div class="section-title-box">
+      <span class="rel-icon" aria-hidden="true">&#127918;</span>
+      <h2 id="related-heading" class="section-title">More Speed Run Quests</h2>
+    </div>
     <div class="games-grid">
       {relatedGames.map((game) => (
         <a href={`/math/${game.slug}/`} class="game-card">
-          <div class="card-badge">Grade {game.grade}</div>
+          <div class="card-badge-row">
+            <span class="card-badge">Grade {game.grade}</span>
+            <span class="card-timer-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              {game.game.seconds}s
+            </span>
+          </div>
           <h3 class="card-title">{game.seo.h1}</h3>
           <p class="card-prompt">{game.game.prompt}</p>
           <div class="card-footer">
             <span class="card-topic">{game.topic.replace('-', ' ')}</span>
-            <span class="card-time">{game.game.seconds}s speed run &rarr;</span>
+            <span class="card-play-btn">
+              <span>Play Quest</span>
+              <span class="arrow-icon" aria-hidden="true">&rarr;</span>
+            </span>
           </div>
         </a>
       ))}
@@ -33,74 +45,130 @@ const relatedGames = relatedSlugs
 
 <style>
   .related-games-section {
-    margin: 3rem 0;
+    margin: 3.5rem 0;
+  }
+  .section-title-box {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .rel-icon {
+    font-size: 1.5rem;
   }
   .section-title {
-    font-size: 1.35rem;
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
     font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 1.25rem;
+    color: #0F172A;
+    margin: 0;
   }
   .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 1.25rem;
   }
+  
+  /* Bouncy Quest Cards */
   .game-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1.25rem;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: var(--card-radius);
+    padding: 1.35rem;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    box-shadow: 0 5px 0 #E2E8F0, 0 10px 18px -4px rgba(15, 23, 42, 0.05);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease;
   }
   .game-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
-    border-color: #cbd5e1;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 0 #C7D2FE, 0 16px 24px -4px rgba(99, 102, 241, 0.16);
+    border-color: #818CF8;
   }
-  .card-badge {
-    align-self: flex-start;
-    background-color: #eff6ff;
-    color: #2563eb;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.2rem 0.5rem;
-    border-radius: 9999px;
+  .game-card:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #C7D2FE;
+  }
+
+  .card-badge-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 0.75rem;
   }
+  .card-badge {
+    background-color: #EEF2FF;
+    color: #4F46E5;
+    border: 1.5px solid #C7D2FE;
+    font-family: var(--font-heading);
+    font-size: 0.775rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+  }
+  .card-timer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: #FFF7ED;
+    color: #EA580C;
+    border: 1.5px solid #FED7AA;
+    border-radius: 9999px;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.775rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+
   .card-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin: 0 0 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0 0 0.45rem;
     line-height: 1.35;
   }
   .card-prompt {
     font-size: 0.875rem;
-    color: #64748b;
+    color: #64748B;
     margin: 0 0 1rem;
     flex-grow: 1;
+    line-height: 1.5;
+    font-weight: 600;
   }
   .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.8rem;
-    border-top: 1px solid #f1f5f9;
+    font-size: 0.825rem;
+    border-top: 2px dashed #F1F5F9;
     padding-top: 0.75rem;
   }
   .card-topic {
     text-transform: capitalize;
-    color: #64748b;
-    font-weight: 500;
+    color: #64748B;
+    font-weight: 700;
   }
-  .card-time {
-    color: #4f46e5;
-    font-weight: 600;
+  .card-play-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: #4F46E5;
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    box-shadow: 0 3px 0 #3730A3;
+  }
+  .arrow-icon {
+    transition: transform 0.2s ease;
+  }
+  .game-card:hover .arrow-icon {
+    transform: translateX(3px);
   }
 </style>

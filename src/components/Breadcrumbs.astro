@@ -33,9 +33,9 @@ const { crumbs } = Astro.props;
 
 <style>
   .breadcrumbs-container {
-    padding: 0.5rem 0;
-    margin-bottom: 1rem;
-    font-size: 0.875rem;
+    padding: 0.25rem 0;
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
   }
   .breadcrumbs-list {
     display: flex;
@@ -44,27 +44,43 @@ const { crumbs } = Astro.props;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 0.35rem;
+    gap: 0.45rem;
   }
   .breadcrumb-item {
     display: flex;
     align-items: center;
-    color: #64748b;
+    color: #64748B;
   }
   .breadcrumb-link {
-    color: #4338ca;
+    color: #4F46E5;
     text-decoration: none;
-    font-weight: 500;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    box-shadow: 0 2px 0 #E2E8F0;
+    transition: transform 0.12s, box-shadow 0.12s, color 0.12s;
   }
   .breadcrumb-link:hover {
-    text-decoration: underline;
+    color: #4338CA;
+    border-color: #C7D2FE;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 0 #C7D2FE;
   }
   .breadcrumb-separator {
-    margin-left: 0.35rem;
-    color: #94a3b8;
+    margin-left: 0.45rem;
+    color: #CBD5E1;
+    font-weight: 700;
   }
   .breadcrumb-current {
-    color: #1e293b;
-    font-weight: 600;
+    color: #0F172A;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    background: #EEF2FF;
+    border: 1.5px solid #C7D2FE;
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
   }
 </style>
