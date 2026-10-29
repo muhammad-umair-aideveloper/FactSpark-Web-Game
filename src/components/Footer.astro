@@ -6,46 +6,46 @@
     <div class="footer-columns">
       <div class="footer-col brand-col">
         <div class="footer-brand">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-          <span>Grid<strong>Fluency</strong></span>
+          <span class="brand-bolt" aria-hidden="true">⚡</span>
+          <span>Fact Spark ⚡</span>
         </div>
         <p class="brand-desc">
-          Fast-paced, data-driven 10x10 math fluency games optimized for classroom Chromebooks. Built for speed, accessibility, and zero-distraction student learning.
+          Tactile math automaticity and 10x10 speed runs for K-6 superlearners. Built for classroom Chromebooks with zero fluff, zero lag, and instant math mastery.
         </p>
         <div class="compliance-badge">
-          <span class="shield-icon" aria-hidden="true">&#128737;</span>
-          <span>We don't collect personal information from students.</span>
+          <span class="shield-icon" aria-hidden="true">🛡️</span>
+          <span>COPPA Compliant &bull; We don't collect personal information from students.</span>
         </div>
       </div>
 
       <div class="footer-col">
-        <h3 class="col-title">Grade Levels</h3>
+        <h3 class="col-title">Grade Stations</h3>
         <ul class="col-links">
-          <li><a href="/math/grade-1/">Grade 1 Fluency</a></li>
-          <li><a href="/math/grade-2/">Grade 2 Fluency</a></li>
-          <li><a href="/math/grade-3/">Grade 3 Fluency</a></li>
-          <li><a href="/math/grade-4/">Grade 4 Fluency</a></li>
-          <li><a href="/math/grade-5/">Grade 5 Fluency</a></li>
-          <li><a href="/math/grade-6/">Grade 6 Fluency</a></li>
+          <li><a href="/math/grade-1/">Grade 1 &bull; Addition &amp; Bonds</a></li>
+          <li><a href="/math/grade-2/">Grade 2 &bull; Multiplication Arrays</a></li>
+          <li><a href="/math/grade-3/">Grade 3 &bull; Speed Blitz Times</a></li>
+          <li><a href="/math/grade-4/">Grade 4 &bull; Factors &amp; Division</a></li>
+          <li><a href="/math/grade-5/">Grade 5 &bull; Fractions &amp; Decimals</a></li>
+          <li><a href="/math/grade-6/">Grade 6 &bull; Pre-Algebra &amp; Integers</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h3 class="col-title">Math Domains</h3>
+        <h3 class="col-title">Curriculum Domains</h3>
         <ul class="col-links">
           <li><a href="/math/number-theory/">Number Theory</a></li>
-          <li><a href="/math/operations/">Operations & Tables</a></li>
+          <li><a href="/math/operations/">Operations &amp; Tables</a></li>
           <li><a href="/math/fractions/">Fraction Equivalence</a></li>
-          <li><a href="/math/place-value/">Place Value & Range</a></li>
+          <li><a href="/math/place-value/">Place Value &amp; Range</a></li>
           <li><a href="/math/algebra-foundations/">Algebra Foundations</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h3 class="col-title">Classroom Tools</h3>
+        <h3 class="col-title">Classroom Mode</h3>
         <ul class="col-links">
           <li><a href="/playlist/">Class Playlist Builder</a></li>
-          <li><a href="/pass/">Teacher / Parent Pass</a></li>
+          <li><a href="/pass/">Teacher Pass ($3.99)</a></li>
           <li><a href="/privacy/">Privacy Policy</a></li>
           <li><a href="/sitemap.xml">XML Sitemap</a></li>
         </ul>
@@ -53,67 +53,67 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; {new Date().getFullYear()} Grid Fluency. All rights reserved. Common Core State Standards &copy; Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers.</p>
+      <p>&copy; {new Date().getFullYear()} Fact Spark. All rights reserved. Common Core State Standards &copy; Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers.</p>
     </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background-color: #FFFFFF;
-    color: #475569;
-    padding: 3.5rem 1.25rem 2rem;
+    background-color: var(--surface-low, #F2F3FF);
+    color: var(--ink-muted, #464554);
+    padding: 3.5rem 1.5rem 2rem;
     margin-top: 5rem;
-    border-top: 3px solid #E2E8F0;
+    border-top: 3px solid #0F172A;
+    box-shadow: 0 -4px 0 0 #C7C4D7;
     font-size: 0.9rem;
     position: relative;
     z-index: 10;
   }
   .footer-inner {
-    max-width: 1240px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   .footer-columns {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1.1fr 1fr 1fr;
     gap: 2.5rem;
     margin-bottom: 3rem;
   }
   .brand-col .footer-brand {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
     color: #0F172A;
     font-family: var(--font-heading);
-    font-size: 1.35rem;
-    font-weight: 800;
+    font-size: 1.45rem;
+    font-weight: 900;
     margin-bottom: 0.85rem;
+    letter-spacing: -0.02em;
   }
-  .footer-brand svg {
-    color: #0284C7;
-  }
-  .footer-brand strong {
-    color: #0284C7;
+  .brand-bolt {
+    font-size: 1.5rem;
   }
   .brand-desc {
     line-height: 1.6;
     margin-bottom: 1.25rem;
-    max-width: 340px;
-    color: #64748B;
-    font-weight: 600;
+    max-width: 380px;
+    color: #464554;
+    font-weight: 500;
   }
   .compliance-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #F1F5F9;
-    color: #334155;
-    border: 1.5px solid #E2E8F0;
+    background-color: #FFFFFF;
+    color: #006B2D;
+    border: 2px solid #0F172A;
+    box-shadow: 0 3px 0 0 #0F172A;
     padding: 0.4rem 0.85rem;
     border-radius: 9999px;
-    font-size: 0.8rem;
-    font-weight: 800;
-    font-family: var(--font-heading);
+    font-size: 0.775rem;
+    font-weight: 700;
+    font-family: var(--font-caps);
   }
   .col-title {
     font-family: var(--font-heading);
@@ -121,7 +121,7 @@
     font-size: 1.05rem;
     font-weight: 800;
     margin-bottom: 1.15rem;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
   .col-links {
     list-style: none;
@@ -132,22 +132,22 @@
     gap: 0.65rem;
   }
   .col-links a {
-    color: #475569;
+    color: #464554;
     text-decoration: none;
-    font-weight: 700;
-    transition: color 0.15s, transform 0.15s;
+    font-weight: 600;
+    transition: color 0.12s, transform 0.08s;
     display: inline-block;
   }
   .col-links a:hover {
-    color: #0284C7;
+    color: #4648D4;
     transform: translateX(4px);
   }
   .footer-bottom {
-    border-top: 1px solid #E2E8F0;
+    border-top: 2px dashed #C7C4D7;
     padding-top: 1.75rem;
     text-align: center;
     font-size: 0.8rem;
-    color: #64748B;
+    color: #464554;
     line-height: 1.6;
   }
   @media (max-width: 768px) {
