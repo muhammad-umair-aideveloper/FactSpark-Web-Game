@@ -33,69 +33,91 @@ const breadcrumbs = [
 
 <style>
   .cancel-card {
-    max-width: 600px;
+    max-width: 620px;
     margin: 4rem auto 6rem;
-    padding: 3rem 2rem;
-    background: var(--surface, #ffffff);
-    border: 1px solid var(--border, #e2e8f0);
-    border-radius: 16px;
+    padding: 3.5rem 2.25rem;
+    background: #FFFFFF;
+    border: 2.5px solid #CBD5E1;
+    border-radius: 26px;
     text-align: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 0 #CBD5E1, 0 16px 30px rgba(15, 23, 42, 0.05);
   }
 
   .cancel-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
   }
 
   .cancel-title {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--text-heading, #0f172a);
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #0F172A;
     margin-bottom: 0.75rem;
   }
 
   .cancel-lead {
-    font-size: 1.1rem;
-    color: var(--text-muted, #475569);
+    font-size: 1.15rem;
+    color: #475569;
     margin-bottom: 2rem;
     line-height: 1.6;
+    font-weight: 600;
   }
 
   .cancel-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     justify-content: center;
     flex-wrap: wrap;
   }
 
   .btn-primary {
     display: inline-block;
-    padding: 0.85rem 1.75rem;
-    background: #2563eb;
-    color: #ffffff;
-    font-weight: 800;
-    border-radius: 10px;
+    padding: 0.95rem 1.85rem;
+    background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 16px;
+    border: 2px solid #3730A3;
     text-decoration: none;
-    transition: background 0.15s ease;
+    box-shadow: 0 5px 0 #3730A3;
+    transition: transform 0.12s, box-shadow 0.12s;
   }
 
   .btn-primary:hover {
-    background: #1d4ed8;
+    background: #4338CA;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #3730A3;
+  }
+  .btn-primary:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #3730A3;
   }
 
   .btn-secondary {
     display: inline-block;
-    padding: 0.85rem 1.75rem;
-    background: #f1f5f9;
-    color: #334155;
-    font-weight: 800;
-    border-radius: 10px;
+    padding: 0.95rem 1.85rem;
+    background: #FFFFFF;
+    color: #1E293B;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 16px;
+    border: 2px solid #CBD5E1;
     text-decoration: none;
-    transition: background 0.15s ease;
+    box-shadow: 0 4px 0 #CBD5E1;
+    transition: transform 0.12s, box-shadow 0.12s;
   }
 
   .btn-secondary:hover {
-    background: #e2e8f0;
+    background: #F8FAFC;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #94A3B8;
+  }
+  .btn-secondary:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #CBD5E1;
   }
 </style>
