@@ -53,26 +53,64 @@ const breadcrumbs = [
 <script>
   import { activateLicense, hasActiveLicense } from '../../license';
 
+  const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE === 'mock';
   const params = new URLSearchParams(window.location.search);
   const token = params.get('token');
   const isDemo = params.get('demo') === 'true';
   const plan = params.get('plan') === 'annual' ? 'annual' : 'monthly';
 
-  if (token) {
-    activateLicense(token);
-  } else if (isDemo && !hasActiveLicense()) {
-    // Generate a valid demo token for testing and offline environments
-    const exp = Math.floor(Date.now() / 1000) + (plan === 'annual' ? 86400 * 365 : 86400 * 30);
-    const headerB64 = btoa(JSON.stringify({ alg: 'HS256', typ: 'JWT' }));
-    const payloadB64 = btoa(JSON.stringify({
-      email: 'demo-teacher@gridfluency.com',
-      plan,
-      iat: Math.floor(Date.now() / 1000),
-      exp
-    }));
-    const mockSig = 'demo_verified_sig_987654';
-    activateLicense(`${headerB64}.${payloadB64}.${mockSig}`);
+  const statusBadge = document.querySelector('.status-active') as HTMLElement | null;
+  const cardTitle = document.querySelector('.success-title') as HTMLElement | null;
+  const leadText = document.querySelector('.success-lead') as HTMLElement | null;
+
+  function showVerificationFailed(msg: string) {
+    if (statusBadge) {
+      statusBadge.textContent = '● Verification Required';
+      statusBadge.classList.remove('status-active');
+      statusBadge.style.color = '#EF4444';
+    }
+    if (cardTitle) {
+      cardTitle.textContent = 'License Not Verified';
+    }
+    if (leadText) {
+      leadText.textContent = msg;
+    }
   }
+
+  async function processActivation() {
+    if (token) {
+      // Must cryptographically verify signature against Worker before granting license
+      try {
+        const res = await fetch(`/api/verify-license?token=${encodeURIComponent(token)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.valid) {
+            activateLicense(token);
+            return;
+          }
+        }
+        showVerificationFailed('The provided license token failed cryptographic verification by the license server.');
+      } catch {
+        showVerificationFailed('Unable to reach the license verification service to validate token authenticity.');
+      }
+    } else if (isMockPayment && isDemo && !hasActiveLicense()) {
+      // Gated exclusively to dev environment with PUBLIC_PAYMENT_MODE=mock
+      const exp = Math.floor(Date.now() / 1000) + (plan === 'annual' ? 86400 * 365 : 86400 * 30);
+      const headerB64 = btoa(JSON.stringify({ alg: 'HS256', typ: 'JWT' }));
+      const payloadB64 = btoa(JSON.stringify({
+        email: 'demo-teacher@gridfluency.com',
+        plan,
+        iat: Math.floor(Date.now() / 1000),
+        exp
+      }));
+      const mockSig = 'demo_verified_sig_987654';
+      activateLicense(`${headerB64}.${payloadB64}.${mockSig}`);
+    } else if (!hasActiveLicense()) {
+      showVerificationFailed('No verified signed license token was provided. Access requires an authenticated purchase confirmation.');
+    }
+  }
+
+  processActivation();
 </script>
 
 <style>

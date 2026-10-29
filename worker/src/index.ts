@@ -126,12 +126,19 @@ export default {
           }
         }
 
-        // Demo / offline fallback mode
+        // Demo / offline fallback mode (only in non-production environments)
+        if (env.ENVIRONMENT !== 'production') {
+          return new Response(
+            JSON.stringify({
+              url: `${origin}/pass/success?demo=true&plan=${plan}`
+            }),
+            { headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+          );
+        }
+
         return new Response(
-          JSON.stringify({
-            url: `${origin}/pass/success?demo=true&plan=${plan}`
-          }),
-          { headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+          JSON.stringify({ error: 'Payment provider unavailable in production' }),
+          { status: 503, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
         );
       } catch (err: any) {
         return new Response(JSON.stringify({ error: err.message || 'Internal Server Error' }), {

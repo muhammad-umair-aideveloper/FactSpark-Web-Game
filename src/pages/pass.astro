@@ -10,6 +10,9 @@ const breadcrumbs = [
 const seoTitle = 'Teacher & Parent Pass — 100% Ad-Free Math Fluency Platform';
 const seoDesc = 'Upgrade to Grid Fluency Teacher Pass ($3.99/mo or $29/yr). Enjoy 100% ad-free classroom screens, student playlist generator, printable worksheets, and projector warmup mode.';
 const canonicalUrl = 'https://gridfluency.com/pass/';
+
+// Only permit mock payment when explicitly running in DEV and PUBLIC_PAYMENT_MODE === 'mock'
+const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE === 'mock';
 ---
 
 <BaseLayout
@@ -94,8 +97,9 @@ const canonicalUrl = 'https://gridfluency.com/pass/';
             class="btn-plan btn-primary"
             id="btn-subscribe"
             data-plan="monthly"
+            disabled={!isMockPayment ? true : undefined}
           >
-            Start Distraction-Free Pass
+            {isMockPayment ? 'Start Distraction-Free Pass' : 'Coming soon'}
           </button>
         </div>
       </div>
@@ -187,10 +191,34 @@ const canonicalUrl = 'https://gridfluency.com/pass/';
   const displayNote = document.getElementById('display-note');
   const btnSubscribe = document.getElementById('btn-subscribe') as HTMLButtonElement | null;
 
+  // Strict check: Mock payment provider is only reachable in DEV when PUBLIC_PAYMENT_MODE === 'mock'
+  const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE === 'mock';
+
   let isAnnual = false;
 
   function updatePlanDisplay() {
     if (!displayPrice || !displayPeriod || !displayNote || !btnSubscribe || !toggle) return;
+
+    if (!isMockPayment) {
+      btnSubscribe.textContent = 'Coming soon';
+      btnSubscribe.disabled = true;
+      if (isAnnual) {
+        toggle.setAttribute('aria-checked', 'true');
+        toggle.classList.add('active');
+        displayPrice.textContent = '$29';
+        displayPeriod.textContent = '/ year';
+        displayNote.textContent = 'Billed annually ($2.42/mo). Save $18.88 per year.';
+        btnSubscribe.dataset.plan = 'annual';
+      } else {
+        toggle.setAttribute('aria-checked', 'false');
+        toggle.classList.remove('active');
+        displayPrice.textContent = '$3.99';
+        displayPeriod.textContent = '/ month';
+        displayNote.textContent = 'Billed monthly. Cancel anytime with 1 click.';
+        btnSubscribe.dataset.plan = 'monthly';
+      }
+      return;
+    }
 
     if (isAnnual) {
       toggle.setAttribute('aria-checked', 'true');
@@ -211,37 +239,45 @@ const canonicalUrl = 'https://gridfluency.com/pass/';
     }
   }
 
+  // In production, ensure the Buy button shows "Coming soon", is disabled, and does nothing else
+  if (!isMockPayment && btnSubscribe) {
+    btnSubscribe.textContent = 'Coming soon';
+    btnSubscribe.disabled = true;
+  }
+
   toggle?.addEventListener('click', () => {
     isAnnual = !isAnnual;
     updatePlanDisplay();
   });
 
-  btnSubscribe?.addEventListener('click', async () => {
-    const plan = btnSubscribe.dataset.plan || 'monthly';
-    btnSubscribe.disabled = true;
-    btnSubscribe.textContent = 'Opening Secure Checkout...';
+  if (isMockPayment && btnSubscribe) {
+    btnSubscribe.addEventListener('click', async () => {
+      const plan = btnSubscribe.dataset.plan || 'monthly';
+      btnSubscribe.disabled = true;
+      btnSubscribe.textContent = 'Opening Secure Checkout...';
 
-    try {
-      const res = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan })
-      });
+      try {
+        const res = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ plan })
+        });
 
-      if (res.ok) {
-        const data = await res.json();
-        if (data.url) {
-          window.location.href = data.url;
-          return;
+        if (res.ok) {
+          const data = await res.json();
+          if (data.url) {
+            window.location.href = data.url;
+            return;
+          }
         }
+      } catch {
+        // Offline or mock environment fallback
       }
-    } catch {
-      // Offline or mock environment fallback
-    }
 
-    // Fallback: If worker is running in local demo mode, route directly to success demo
-    window.location.href = `/pass/success?demo=true&plan=${plan}`;
-  });
+      // Dev mock fallback only
+      window.location.href = `/pass/success?demo=true&plan=${plan}`;
+    });
+  }
 </script>
 
 <style>
@@ -510,6 +546,16 @@ const canonicalUrl = 'https://gridfluency.com/pass/';
     cursor: pointer;
     border: none;
     transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.12s ease;
+  }
+  .btn-plan:disabled,
+  .btn-plan[disabled] {
+    opacity: 0.65;
+    cursor: not-allowed;
+    background: #E2E8F0 !important;
+    color: #64748B !important;
+    border: 2px solid #CBD5E1 !important;
+    box-shadow: 0 4px 0 #CBD5E1 !important;
+    transform: none !important;
   }
 
   .btn-primary {
