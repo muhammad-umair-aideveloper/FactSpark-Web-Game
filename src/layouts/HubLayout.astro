@@ -82,19 +82,20 @@ const {
     align-items: center;
     gap: 0.4rem;
     background: #FFFFFF;
-    color: #0369A1;
-    border: 2px solid #E2E8F0;
-    border-bottom: 4px solid #CBD5E1;
-    font-family: var(--font-heading);
-    font-size: 0.95rem;
-    font-weight: 800;
+    color: #07006C;
+    border: 2px solid #0F172A;
+    box-shadow: 0 3px 0 0 #0F172A;
+    font-family: var(--font-caps);
+    font-size: 0.9rem;
+    font-weight: 700;
     padding: 0.45rem 1.15rem;
     border-radius: 9999px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     margin-bottom: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
   .hub-sparkle {
-    color: #F59E0B;
+    color: #FFC329;
   }
   .hub-title {
     font-family: var(--font-heading);
@@ -107,10 +108,10 @@ const {
   }
   .hub-intro {
     font-size: 1.2rem;
-    color: #475569;
+    color: #464554;
     line-height: 1.65;
     margin: 0 auto;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .hub-games-grid {
@@ -120,12 +121,12 @@ const {
     margin-bottom: 4rem;
   }
   
-  /* Toybox Playful Game Cards */
+  /* Tactile Neo-Brutalist Arcade Cards */
   .hub-card {
     background: #FFFFFF;
-    border: 2px solid #E2E8F0;
+    border: 2px solid #0F172A;
     border-radius: 20px;
-    box-shadow: 0 6px 0 #CBD5E1;
+    box-shadow: 0 6px 0 0 #0F172A;
     padding: 1.5rem;
     text-decoration: none;
     color: inherit;
@@ -133,7 +134,7 @@ const {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    transition: transform 0.12s ease, border-bottom-width 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
     overflow: hidden;
   }
   .hub-card::before {
@@ -142,17 +143,17 @@ const {
     top: 0;
     left: 0;
     right: 0;
-    height: 6px;
-    background: #38BDF8;
+    height: 7px;
+    background: #4648D4;
+    border-bottom: 2px solid #0F172A;
   }
   .hub-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 0 #CBD5E1, 0 16px 25px rgba(0, 0, 0, 0.05);
-    border-color: #38BDF8;
+    box-shadow: 0 10px 0 0 #0F172A;
   }
   .hub-card:active {
     transform: translateY(3px);
-    box-shadow: 0 2px 0 #CBD5E1;
+    box-shadow: 0 2px 0 0 #0F172A;
   }
 
   .card-top {
@@ -160,83 +161,85 @@ const {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.85rem;
+    padding-top: 0.25rem;
   }
   .card-grade {
-    background: #E0F2FE;
-    color: #0369A1;
-    border: 1.5px solid #BAE6FD;
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    font-weight: 800;
-    padding: 0.25rem 0.7rem;
+    background: #E1E0FF;
+    color: #07006C;
+    border: 1.5px solid #0F172A;
+    font-family: var(--font-caps);
+    font-size: 0.775rem;
+    font-weight: 700;
+    padding: 0.2rem 0.65rem;
     border-radius: 9999px;
   }
   .card-sec {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    background: #FEF3C7;
-    color: #D97706;
-    border: 1.5px solid #FDE68A;
+    background: #FFDF9F;
+    color: #6F5100;
+    border: 1.5px solid #0F172A;
     border-radius: 9999px;
-    padding: 0.25rem 0.7rem;
-    font-size: 0.8rem;
-    font-family: var(--font-heading);
-    font-weight: 800;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.775rem;
+    font-family: var(--font-caps);
+    font-weight: 700;
   }
 
   .card-heading {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    font-weight: 800;
+    font-weight: 900;
     color: #0F172A;
     margin: 0 0 0.5rem;
     line-height: 1.3;
+    letter-spacing: -0.015em;
   }
   .card-prompt {
     font-size: 0.95rem;
-    color: #475569;
+    color: #464554;
     margin: 0 0 1.25rem;
     flex-grow: 1;
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .card-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 2px dashed #E2E8F0;
+    border-top: 2px dashed #C7C4D7;
     padding-top: 0.85rem;
     font-size: 0.85rem;
   }
   .card-domain {
     text-transform: capitalize;
-    color: #64748B;
-    font-weight: 800;
+    color: #464554;
+    font-weight: 700;
     font-size: 0.825rem;
+    font-family: var(--font-caps);
   }
   .card-cta {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    background: #58CC02;
+    background: #22C55E;
     color: #FFFFFF;
     font-family: var(--font-heading);
-    font-weight: 800;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 0.825rem;
     padding: 0.4rem 1rem;
-    border: 2px solid #46A302;
-    border-bottom: 4px solid #378000;
+    border: 2px solid #0F172A;
     border-radius: 12px;
-    box-shadow: 0 2px 0 #378000;
+    box-shadow: 0 3px 0 0 #15803D;
     transition: transform 0.08s ease, background-color 0.1s ease;
   }
   .hub-card:hover .card-cta {
-    background: #68DE05;
-    transform: scale(1.05);
+    background: #16A34A;
+    transform: scale(1.04);
   }
   .cta-arrow {
     transition: transform 0.2s ease;
