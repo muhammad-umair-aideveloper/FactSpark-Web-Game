@@ -37,14 +37,28 @@ const {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={metaDescription} />
 
-    <!-- Google Fonts Inter & Outfit -->
+    <!-- Google Fonts: Fredoka (punchy rounded headings) & Nunito (friendly bouncy body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
     <slot name="head" />
   </head>
   <body>
+    <!-- Playful Ambient Background Canvas with Floating Math Doodles -->
+    <div class="ambient-bg-layer" aria-hidden="true">
+      <div class="math-doodle doodle-plus" style="top: 8%; left: 4%;">&#43;</div>
+      <div class="math-doodle doodle-times" style="top: 15%; right: 5%;">&#215;</div>
+      <div class="math-doodle doodle-star" style="top: 32%; left: 7%;">&#9733;</div>
+      <div class="math-doodle doodle-divide" style="top: 48%; right: 4%;">&#247;</div>
+      <div class="math-doodle doodle-equals" style="top: 65%; left: 3%;">&#61;</div>
+      <div class="math-doodle doodle-sparkle" style="top: 78%; right: 6%;">&#10022;</div>
+      <div class="math-doodle doodle-minus" style="top: 90%; left: 8%;">&#8722;</div>
+      <div class="ambient-orb orb-1"></div>
+      <div class="ambient-orb orb-2"></div>
+      <div class="ambient-orb orb-3"></div>
+    </div>
+
     <Header />
     <main id="main-content" class="page-body">
       <slot />
@@ -54,38 +68,174 @@ const {
 </html>
 
 <style is:global>
+  :root {
+    --font-heading: 'Fredoka', -apple-system, BlinkMacSystemFont, 'Segoe UI', cursive, sans-serif;
+    --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Playful Neo-Pop Color Palette */
+    --brand-indigo: #6366F1;
+    --brand-dark-indigo: #4F46E5;
+    --brand-shadow: #3730A3;
+    
+    --success-green: #10B981;
+    --success-bright: #22C55E;
+    --success-shadow: #059669;
+    
+    --energy-orange: #F97316;
+    --energy-orange-shadow: #C2410C;
+    --bubblegum-pink: #EC4899;
+    --bubblegum-shadow: #BE185D;
+    
+    --sun-amber: #F59E0B;
+    --sun-amber-shadow: #B45309;
+    
+    --navy-text: #0F172A;
+    --slate-text: #334155;
+    --slate-muted: #64748B;
+    --slate-border: #E2E8F0;
+    --bg-canvas: #F8FAFC;
+    
+    /* 3D Tactile Depths */
+    --btn-radius: 18px;
+    --card-radius: 20px;
+  }
+
   *, *::before, *::after {
     box-sizing: border-box;
   }
+  
   html {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f8fafc;
-    color: #0f172a;
-    line-height: 1.5;
+    font-family: var(--font-body);
+    background-color: var(--bg-canvas);
+    color: var(--navy-text);
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
   }
+  
   body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-  }
-  .page-body {
-    flex: 1;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1.5rem 1rem;
-  }
-  h1, h2, h3, h4, .brand-text {
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
+                #F8FAFC;
   }
 
-  /* Accessibility & Low-Motion Support */
+  /* Ambient Floating Background Decorations */
+  .ambient-bg-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .math-doodle {
+    position: absolute;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #6366F1;
+    opacity: 0.12;
+    animation: doodleFloat 14s ease-in-out infinite;
+    user-select: none;
+  }
+  
+  .doodle-plus { animation-delay: 0s; color: #6366F1; font-size: 2.8rem; }
+  .doodle-times { animation-delay: 2s; color: #EC4899; font-size: 2.4rem; }
+  .doodle-star { animation-delay: 4s; color: #F59E0B; font-size: 2.2rem; }
+  .doodle-divide { animation-delay: 6s; color: #10B981; font-size: 2.6rem; }
+  .doodle-equals { animation-delay: 8s; color: #8B5CF6; font-size: 2.5rem; }
+  .doodle-sparkle { animation-delay: 10s; color: #F97316; font-size: 2.2rem; }
+  .doodle-minus { animation-delay: 12s; color: #06B6D4; font-size: 3rem; }
+
+  @keyframes doodleFloat {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    50% {
+      transform: translateY(-16px) rotate(8deg) scale(1.06);
+    }
+  }
+
+  .ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .orb-1 {
+    width: 380px;
+    height: 380px;
+    background: rgba(99, 102, 241, 0.15);
+    top: -80px;
+    right: -100px;
+  }
+  .orb-2 {
+    width: 420px;
+    height: 420px;
+    background: rgba(236, 72, 153, 0.12);
+    bottom: 10%;
+    left: -120px;
+  }
+  .orb-3 {
+    width: 320px;
+    height: 320px;
+    background: rgba(245, 158, 11, 0.1);
+    top: 45%;
+    right: 5%;
+  }
+
+  .page-body {
+    flex: 1;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  h1, h2, h3, h4, .brand-text, .section-title, .prompt-title {
+    font-family: var(--font-heading);
+    color: var(--navy-text);
+    letter-spacing: -0.015em;
+  }
+
+  /* Tactile 3D Neo-Brutalist Micro-Interactions */
+  .btn-3d {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--btn-radius);
+    transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    user-select: none;
+  }
+  .btn-3d:hover {
+    transform: translateY(-2px);
+  }
+  .btn-3d:active {
+    transform: translateY(4px);
+  }
+
+  /* Accessibility & Focus Rings */
   :focus-visible {
-    outline: 3px solid #2563eb;
-    outline-offset: 2px;
+    outline: 3px solid #6366F1;
+    outline-offset: 3px;
+    border-radius: 6px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -94,6 +244,9 @@ const {
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
+    }
+    .math-doodle {
+      animation: none !important;
     }
   }
 </style>
