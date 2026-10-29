@@ -9,7 +9,10 @@ export const GET: APIRoute = async () => {
   const audit = auditGameCollection(games, { minWords: 250, maxSimilarity: 0.70 });
 
   const urls: Array<{ loc: string; priority: string; changefreq: string }> = [
-    { loc: 'https://gridfluency.com/', priority: '1.0', changefreq: 'weekly' }
+    { loc: 'https://gridfluency.com/', priority: '1.0', changefreq: 'weekly' },
+    { loc: 'https://gridfluency.com/math/', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://gridfluency.com/playlist/', priority: '0.8', changefreq: 'monthly' },
+    { loc: 'https://gridfluency.com/privacy/', priority: '0.5', changefreq: 'monthly' }
   ];
 
   // Grade hubs

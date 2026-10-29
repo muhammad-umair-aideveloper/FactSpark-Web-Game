@@ -25,7 +25,9 @@ const data = generateWorksheetData(game);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Printable Worksheet & Answer Key: {data.title}</title>
+    <meta name="description" content={`Free printable 10x10 math fluency grid worksheet and teacher answer key for ${data.title}. Grade ${data.grade} math facts.`} />
     <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href={`https://gridfluency.com/math/${game.slug}/worksheet/`} />
     <style>
       *, *::before, *::after {
         box-sizing: border-box;
