@@ -234,6 +234,14 @@ export class GridEngine {
     this.options.onStateChange?.(this.status, this.getStats());
   }
 
+  public setSoundEnabled(enabled: boolean): void {
+    audioEffects.enabled = enabled;
+  }
+
+  public isSoundEnabled(): boolean {
+    return audioEffects.enabled;
+  }
+
   public getRemainingTargetsCount(): number {
     return Math.max(0, this.targetIds.size - this.foundTargetIds.size);
   }
