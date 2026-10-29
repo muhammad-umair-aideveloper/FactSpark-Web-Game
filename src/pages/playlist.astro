@@ -183,18 +183,18 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
               </div>
             </div>
 
-            <div class="grid-board" id="runner-grid" style="display:grid; grid-template-columns: repeat(10, 1fr); gap: 4px; aspect-ratio: 1/1; background: #e2e8f0; padding: 6px; border-radius: 12px;">
+            <div class="grid-board runner-grid" id="runner-grid">
               ${items.map((it: any) => `
-                <button type="button" class="runner-tile" data-tile-id="${it.id}" style="background:#fff; border:none; border-radius:6px; font-weight:700; font-size:0.9rem; cursor:pointer;">
+                <button type="button" class="runner-tile" data-tile-id="${it.id}">
                   ${it.display}
                 </button>
               `).join('')}
             </div>
 
-            <div id="runner-interstitial" style="display:none; text-align:center; margin-top: 1.5rem; padding: 1.5rem; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0;">
-              <h3 id="interstitial-title" style="margin:0 0 0.5rem; font-size:1.35rem; color:#0f172a;">Round Complete!</h3>
-              <p id="interstitial-stats" style="margin:0 0 1rem; color:#64748b;"></p>
-              <button type="button" id="btn-next-game" style="background:#4f46e5; color:#fff; border:none; border-radius:8px; padding:0.75rem 2rem; font-weight:700; font-size:1rem; cursor:pointer;">
+            <div id="runner-interstitial" class="runner-interstitial" style="display:none;">
+              <h3 id="interstitial-title" class="interstitial-title">Round Complete!</h3>
+              <p id="interstitial-stats" class="interstitial-stats"></p>
+              <button type="button" id="btn-next-game" class="btn-next-game">
                 ${currentGameIndex + 1 === slugs.length ? 'Finish Playlist &rarr;' : 'Next Game in Playlist &rarr;'}
               </button>
             </div>
@@ -229,17 +229,16 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
             const btn = gridElem.querySelector<HTMLButtonElement>(`button[data-tile-id="${tile.id}"]`);
             if (!btn) return;
             if (tile.status === 'correct') {
-              btn.style.backgroundColor = '#16a34a';
-              btn.style.color = '#ffffff';
+              btn.classList.add('is-correct');
+              btn.classList.remove('is-wrong', 'is-missed');
             } else if (tile.status === 'wrong') {
-              btn.style.backgroundColor = '#dc2626';
-              btn.style.color = '#ffffff';
+              btn.classList.add('is-wrong');
+              btn.classList.remove('is-correct', 'is-missed');
             } else if (tile.missed) {
-              btn.style.outline = '2px dashed #f97316';
-              btn.style.backgroundColor = '#fff7ed';
+              btn.classList.add('is-missed');
+              btn.classList.remove('is-correct', 'is-wrong');
             } else {
-              btn.style.backgroundColor = '#ffffff';
-              btn.style.color = '#000000';
+              btn.classList.remove('is-correct', 'is-wrong', 'is-missed');
             }
           },
           onStateChange: (status, stats) => {
@@ -686,6 +685,126 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     font-size: 1.25rem;
     color: #0F172A;
     font-weight: 700;
+  }
+
+  /* Runner Grid & 3D Keycap Tiles */
+  .runner-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 6px;
+    aspect-ratio: 1 / 1;
+    background: #FFFFFF;
+    padding: 12px;
+    border-radius: 20px;
+    border: 3px solid #E2E8F0;
+    box-shadow: 0 8px 0 #CBD5E1, 0 16px 24px rgba(15, 23, 42, 0.06);
+    user-select: none;
+    touch-action: manipulation;
+  }
+  .runner-tile {
+    background: #FFFFFF;
+    border: 2px solid #CBD5E1;
+    border-radius: 10px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    color: #0F172A;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #CBD5E1;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.12s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .runner-tile:hover {
+    background-color: #F1F5F9;
+    border-color: #94A3B8;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 0 #94A3B8;
+  }
+  .runner-tile:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #CBD5E1;
+  }
+  .runner-tile.is-correct {
+    background-color: #22C55E !important;
+    border-color: #16A34A !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 3px 0 #15803D !important;
+    transform: translateY(2px);
+    animation: tilePop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .runner-tile.is-wrong {
+    background-color: #EF4444 !important;
+    border-color: #B91C1C !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 3px 0 #991B1B !important;
+    transform: translateY(2px);
+    animation: tileShake 0.3s ease;
+  }
+  .runner-tile.is-missed {
+    outline: 3px dashed #F97316 !important;
+    outline-offset: -2px;
+    background-color: #FFF7ED !important;
+    border-color: #FDBA74 !important;
+    color: #C2410C !important;
+    box-shadow: none !important;
+  }
+  @keyframes tilePop {
+    0% { transform: scale(0.9) translateY(2px); }
+    50% { transform: scale(1.08) translateY(-2px); }
+    100% { transform: scale(1) translateY(2px); }
+  }
+  @keyframes tileShake {
+    0%, 100% { transform: translateX(0) translateY(2px); }
+    25% { transform: translateX(-4px) translateY(2px); }
+    75% { transform: translateX(4px) translateY(2px); }
+  }
+
+  /* Runner Interstitial */
+  .runner-interstitial {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 2rem 1.5rem;
+    background: #FFFFFF;
+    border-radius: 22px;
+    border: 3.5px solid #6366F1;
+    box-shadow: 0 8px 0 #3730A3, 0 20px 30px rgba(99, 102, 241, 0.15);
+  }
+  .interstitial-title {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .interstitial-stats {
+    margin: 0 0 1.25rem;
+    color: #475569;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .btn-next-game {
+    background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    color: #FFFFFF;
+    border: 2px solid #3730A3;
+    border-radius: 16px;
+    padding: 0.95rem 2.25rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #3730A3;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+  }
+  .btn-next-game:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #3730A3;
+  }
+  .btn-next-game:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #3730A3;
   }
 
   /* Summary Card */
