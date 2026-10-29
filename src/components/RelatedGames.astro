@@ -54,14 +54,16 @@ const relatedGames = relatedSlugs
     margin-bottom: 1.5rem;
   }
   .rel-icon {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.6));
   }
   .section-title {
     font-family: var(--font-heading);
     font-size: 1.65rem;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: #F8FAFC;
     margin: 0;
+    letter-spacing: -0.01em;
   }
   .games-grid {
     display: grid;
@@ -69,28 +71,41 @@ const relatedGames = relatedSlugs
     gap: 1.25rem;
   }
   
-  /* Bouncy Quest Cards */
+  /* Collectible Arcade Cards */
   .game-card {
-    background: #FFFFFF;
-    border: 2px solid #E2E8F0;
-    border-radius: var(--card-radius);
+    position: relative;
+    background: #0F172A;
+    border: 2px solid #312E81;
+    border-bottom: 6px solid #1E1B4B;
+    border-radius: 20px;
     padding: 1.35rem;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 5px 0 #E2E8F0, 0 10px 18px -4px rgba(15, 23, 42, 0.05);
-    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    overflow: hidden;
+  }
+  .game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #6366F1, #EC4899, #FACC15);
   }
   .game-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 8px 0 #C7D2FE, 0 16px 24px -4px rgba(99, 102, 241, 0.16);
-    border-color: #818CF8;
+    transform: translateY(-4px);
+    border-color: #6366F1;
+    border-bottom-color: #4338CA;
+    box-shadow: 0 12px 24px rgba(99, 102, 241, 0.25);
   }
   .game-card:active {
-    transform: translateY(3px);
-    box-shadow: 0 1px 0 #C7D2FE;
+    transform: translateY(2px);
+    border-bottom-width: 3px;
   }
 
   .card-badge-row {
@@ -98,42 +113,46 @@ const relatedGames = relatedSlugs
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.75rem;
+    margin-top: 0.25rem;
   }
   .card-badge {
-    background-color: #EEF2FF;
-    color: #4F46E5;
-    border: 1.5px solid #C7D2FE;
+    background-color: #1E1B4B;
+    color: #818CF8;
+    border: 1.5px solid #4338CA;
+    border-bottom: 3px solid #312E81;
     font-family: var(--font-heading);
     font-size: 0.775rem;
-    font-weight: 700;
-    padding: 0.2rem 0.6rem;
-    border-radius: 9999px;
+    font-weight: 800;
+    padding: 0.2rem 0.65rem;
+    border-radius: 10px;
+    letter-spacing: 0.04em;
   }
   .card-timer-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
-    background: #FFF7ED;
-    color: #EA580C;
-    border: 1.5px solid #FED7AA;
-    border-radius: 9999px;
-    padding: 0.2rem 0.55rem;
+    background: #451A03;
+    color: #FDBA74;
+    border: 1.5px solid #C2410C;
+    border-bottom: 3px solid #9A3412;
+    border-radius: 10px;
+    padding: 0.2rem 0.6rem;
     font-size: 0.775rem;
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 800;
   }
 
   .card-title {
     font-family: var(--font-heading);
     font-size: 1.15rem;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: #F8FAFC;
     margin: 0 0 0.45rem;
     line-height: 1.35;
   }
   .card-prompt {
     font-size: 0.875rem;
-    color: #64748B;
+    color: #94A3B8;
     margin: 0 0 1rem;
     flex-grow: 1;
     line-height: 1.5;
@@ -144,26 +163,29 @@ const relatedGames = relatedSlugs
     justify-content: space-between;
     align-items: center;
     font-size: 0.825rem;
-    border-top: 2px dashed #F1F5F9;
+    border-top: 2px dashed #1E293B;
     padding-top: 0.75rem;
   }
   .card-topic {
     text-transform: capitalize;
-    color: #64748B;
+    color: #CBD5E1;
     font-weight: 700;
   }
   .card-play-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
-    background: #4F46E5;
+    gap: 0.4rem;
+    background: #6366F1;
+    border-bottom: 4px solid #4338CA;
     color: #FFFFFF;
     font-family: var(--font-heading);
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 0.3rem 0.75rem;
-    border-radius: 9999px;
-    box-shadow: 0 3px 0 #3730A3;
+    font-size: 0.775rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.8rem;
+    border-radius: 12px;
+    transition: transform 0.1s ease, border-bottom-width 0.1s ease;
   }
   .arrow-icon {
     transition: transform 0.2s ease;

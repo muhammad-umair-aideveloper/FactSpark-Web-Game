@@ -364,29 +364,31 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    background: #EEF2FF;
-    color: #4338CA;
-    border: 2px solid #C7D2FE;
+    background: #1E1B4B;
+    color: #818CF8;
+    border: 2px solid #4338CA;
+    border-bottom: 4px solid #312E81;
     font-family: var(--font-heading);
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 800;
     padding: 0.4rem 1.15rem;
-    border-radius: 9999px;
-    box-shadow: 0 3px 0 #C7D2FE;
+    border-radius: 12px;
+    letter-spacing: 0.04em;
     margin-bottom: 1rem;
   }
   .builder-title {
     font-family: var(--font-heading);
     font-size: 2.75rem;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: #F8FAFC;
     margin: 0 0 1rem;
     letter-spacing: -0.025em;
     line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
   }
   .builder-intro {
     font-size: 1.15rem;
-    color: #475569;
+    color: #CBD5E1;
     line-height: 1.65;
     margin: 0;
     font-weight: 600;
@@ -394,11 +396,12 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
 
   /* Share Card */
   .share-box-card {
-    background: #FFFFFF;
-    border: 3px solid #6366F1;
+    background: #0F172A;
+    border: 3px solid #4338CA;
+    border-bottom: 6px solid #312E81;
     border-radius: 24px;
     padding: 1.75rem 2rem;
-    box-shadow: 0 8px 0 #3730A3, 0 16px 30px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 10px 0 #020617, 0 20px 30px rgba(0, 0, 0, 0.4);
     margin-bottom: 3rem;
   }
   .share-box-top {
@@ -407,13 +410,13 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
   .share-title {
     font-family: var(--font-heading);
     font-size: 1.45rem;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: #F8FAFC;
     margin: 0 0 0.35rem;
   }
   .share-sub {
     font-size: 0.95rem;
-    color: #64748B;
+    color: #94A3B8;
     margin: 0;
     font-weight: 600;
   }
@@ -424,15 +427,15 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     margin-top: 1rem;
   }
   .sel-pill {
-    background: #EEF2FF;
-    color: #4338CA;
-    border: 1.5px solid #C7D2FE;
+    background: #1E1B4B;
+    color: #818CF8;
+    border: 1.5px solid #4338CA;
+    border-bottom: 3px solid #312E81;
     padding: 0.3rem 0.85rem;
-    border-radius: 9999px;
+    border-radius: 10px;
     font-family: var(--font-heading);
     font-size: 0.825rem;
-    font-weight: 700;
-    box-shadow: 0 2px 0 #C7D2FE;
+    font-weight: 800;
   }
   .share-inputs-row {
     display: flex;
@@ -442,71 +445,75 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
   .share-url-input {
     flex: 1;
     min-width: 260px;
-    background: #F8FAFC;
-    border: 2px solid #CBD5E1;
+    background: #020617;
+    border: 2px solid #312E81;
     border-radius: 14px;
     padding: 0.85rem 1.15rem;
     font-size: 0.95rem;
-    color: #1E293B;
+    color: #38BDF8;
     font-family: monospace;
-    font-weight: 600;
+    font-weight: 700;
   }
   
   /* 3D Action Buttons */
   .btn-copy-playlist {
-    background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    background: #6366F1;
     color: #FFFFFF;
-    border: 2px solid #3730A3;
+    border: none;
+    border-bottom: 5px solid #4338CA;
     border-radius: 14px;
     padding: 0.85rem 1.75rem;
     font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     cursor: pointer;
-    box-shadow: 0 5px 0 #3730A3;
-    transition: transform 0.12s, box-shadow 0.12s;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    transition: transform 0.1s ease, border-bottom-width 0.1s ease, background 0.15s ease;
   }
   .btn-copy-playlist:hover {
-    background: #4338CA;
+    background: #4F46E5;
     transform: translateY(-2px);
-    box-shadow: 0 7px 0 #3730A3;
   }
   .btn-copy-playlist:active {
     transform: translateY(3px);
-    box-shadow: 0 1px 0 #3730A3;
+    border-bottom-width: 2px;
   }
 
   .btn-classroom-playlist {
-    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    background: #10B981;
     color: #FFFFFF;
-    border: 2px solid #047857;
+    border: none;
+    border-bottom: 5px solid #047857;
     border-radius: 14px;
     padding: 0.85rem 1.5rem;
     font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    box-shadow: 0 5px 0 #047857;
-    transition: transform 0.12s, box-shadow 0.12s;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transition: transform 0.1s ease, border-bottom-width 0.1s ease, background 0.15s ease;
   }
   .btn-classroom-playlist:hover {
-    background: #047857;
+    background: #059669;
     transform: translateY(-2px);
-    box-shadow: 0 7px 0 #047857;
   }
   .btn-classroom-playlist:active {
     transform: translateY(3px);
-    box-shadow: 0 1px 0 #047857;
+    border-bottom-width: 2px;
   }
 
   /* Game Picker */
   .picker-title {
     font-family: var(--font-heading);
     font-size: 1.65rem;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: #F8FAFC;
     margin-bottom: 1.5rem;
   }
   .picker-grid {
@@ -516,30 +523,33 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
   }
   .picker-card {
     position: relative;
-    background: #FFFFFF;
-    border: 2px solid #E2E8F0;
-    border-radius: var(--card-radius);
+    background: #0F172A;
+    border: 2px solid #312E81;
+    border-bottom: 6px solid #1E1B4B;
+    border-radius: 18px;
     padding: 1.25rem;
     display: flex;
     gap: 0.85rem;
     cursor: pointer;
-    box-shadow: 0 5px 0 #E2E8F0;
-    transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    box-shadow: 0 6px 0 #020617;
+    transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s, background-color 0.15s;
   }
   .picker-card:hover {
-    border-color: #CBD5E1;
+    border-color: #6366F1;
+    border-bottom-color: #4338CA;
     transform: translateY(-3px);
-    box-shadow: 0 8px 0 #CBD5E1;
+    box-shadow: 0 9px 0 #020617;
   }
   .picker-card.is-selected {
-    border-color: #6366F1;
-    background-color: #EEF2FF;
-    box-shadow: 0 6px 0 #3730A3;
+    border-color: #818CF8;
+    border-bottom-color: #6366F1;
+    background-color: #1E1B4B;
+    box-shadow: 0 6px 0 #312E81;
   }
   .game-checkbox {
     width: 22px;
     height: 22px;
-    accent-color: #4F46E5;
+    accent-color: #6366F1;
     cursor: pointer;
     margin-top: 3px;
   }
@@ -553,36 +563,38 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     margin-bottom: 0.5rem;
   }
   .p-grade {
-    background: #EEF2FF;
-    color: #4F46E5;
-    border: 1.5px solid #C7D2FE;
+    background: #1E1B4B;
+    color: #818CF8;
+    border: 1.5px solid #4338CA;
+    border-bottom: 3px solid #312E81;
     font-family: var(--font-heading);
     font-size: 0.775rem;
-    font-weight: 700;
+    font-weight: 800;
     padding: 0.2rem 0.55rem;
-    border-radius: 9999px;
+    border-radius: 8px;
   }
   .p-sec {
     font-family: var(--font-heading);
     font-size: 0.775rem;
-    color: #EA580C;
-    background: #FFF7ED;
-    border: 1.5px solid #FED7AA;
+    color: #FDBA74;
+    background: #451A03;
+    border: 1.5px solid #C2410C;
+    border-bottom: 3px solid #9A3412;
     padding: 0.2rem 0.55rem;
-    border-radius: 9999px;
-    font-weight: 700;
+    border-radius: 8px;
+    font-weight: 800;
   }
   .p-title {
     font-family: var(--font-heading);
     font-size: 1.15rem;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: #F8FAFC;
     margin: 0 0 0.35rem;
     line-height: 1.3;
   }
   .p-prompt {
     font-size: 0.875rem;
-    color: #64748B;
+    color: #94A3B8;
     margin: 0 0 0.65rem;
     font-weight: 600;
   }
@@ -590,7 +602,7 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     font-family: var(--font-heading);
     font-size: 0.775rem;
     text-transform: capitalize;
-    color: #64748B;
+    color: #CBD5E1;
     font-weight: 700;
   }
 
@@ -605,35 +617,42 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     margin-bottom: 0.75rem;
   }
   .runner-back-link {
-    color: #4F46E5;
+    color: #818CF8;
     text-decoration: none;
     font-family: var(--font-heading);
     font-size: 0.95rem;
-    font-weight: 700;
-    background: #FFFFFF;
-    border: 2px solid #E2E8F0;
-    padding: 0.4rem 0.95rem;
-    border-radius: 9999px;
-    box-shadow: 0 3px 0 #E2E8F0;
+    font-weight: 800;
+    background: #0F172A;
+    border: 2px solid #312E81;
+    border-bottom: 4px solid #1E1B4B;
+    padding: 0.4rem 1rem;
+    border-radius: 12px;
+    transition: transform 0.1s ease, border-bottom-width 0.1s ease;
+  }
+  .runner-back-link:active {
+    transform: translateY(2px);
+    border-bottom-width: 2px;
   }
   .runner-progress-label {
     font-family: var(--font-heading);
     font-size: 1.15rem;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: #F8FAFC;
   }
   .runner-meter {
-    background: #E2E8F0;
-    height: 12px;
+    background: #020617;
+    border: 2px solid #1E293B;
+    height: 14px;
     border-radius: 9999px;
     overflow: hidden;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
   }
   .runner-meter-bar {
-    background: linear-gradient(90deg, #6366F1 0%, #EC4899 100%);
+    background: linear-gradient(90deg, #6366F1 0%, #EC4899 50%, #FACC15 100%);
     height: 100%;
     border-radius: 9999px;
     transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
   }
   .runner-game-container {
     max-width: 680px;
@@ -643,26 +662,28 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #FFFFFF;
-    border: 2.5px solid #E2E8F0;
-    border-radius: 18px;
+    background: #0F172A;
+    border: 3px solid #4338CA;
+    border-bottom: 6px solid #312E81;
+    border-radius: 20px;
     padding: 1rem 1.35rem;
     margin-bottom: 0.85rem;
-    box-shadow: 0 5px 0 #E2E8F0;
+    box-shadow: 0 8px 0 #020617;
   }
   .p-sub {
     font-family: var(--font-heading);
     font-size: 0.75rem;
     text-transform: uppercase;
-    font-weight: 700;
-    color: #4F46E5;
+    font-weight: 800;
+    color: #38BDF8;
+    letter-spacing: 0.05em;
   }
   .p-main {
     margin: 0;
     font-family: var(--font-heading);
     font-size: 1.35rem;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: #F8FAFC;
   }
   .runner-stats-box {
     display: flex;
@@ -677,14 +698,16 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     font-family: var(--font-heading);
     font-size: 0.7rem;
     text-transform: uppercase;
-    color: #64748B;
-    font-weight: 700;
+    color: #94A3B8;
+    font-weight: 800;
+    letter-spacing: 0.05em;
   }
   .stat-cell strong {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    color: #0F172A;
-    font-weight: 700;
+    font-family: monospace;
+    font-size: 1.35rem;
+    color: #FACC15;
+    font-weight: 800;
+    text-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
   }
 
   /* Runner Grid & 3D Keycap Tiles */
@@ -693,63 +716,60 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     grid-template-columns: repeat(10, 1fr);
     gap: 6px;
     aspect-ratio: 1 / 1;
-    background: #FFFFFF;
+    background: #0F172A;
     padding: 12px;
-    border-radius: 20px;
-    border: 3px solid #E2E8F0;
-    box-shadow: 0 8px 0 #CBD5E1, 0 16px 24px rgba(15, 23, 42, 0.06);
+    border-radius: 22px;
+    border: 6px solid #4338CA;
+    box-shadow: 0 12px 0 #020617, 0 20px 25px rgba(0, 0, 0, 0.4);
     user-select: none;
     touch-action: manipulation;
   }
   .runner-tile {
-    background: #FFFFFF;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
     border: 2px solid #CBD5E1;
-    border-radius: 10px;
+    border-bottom: 5px solid #94A3B8;
+    border-radius: 12px;
     font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: 800;
+    font-size: 1.15rem;
     color: #0F172A;
     cursor: pointer;
-    box-shadow: 0 4px 0 #CBD5E1;
-    transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.12s ease;
+    transition: transform 0.08s ease, border-bottom-width 0.08s ease, background-color 0.12s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
   }
   .runner-tile:hover {
-    background-color: #F1F5F9;
+    background: #FFFFFF;
     border-color: #94A3B8;
-    transform: translateY(-1px);
-    box-shadow: 0 5px 0 #94A3B8;
+    border-bottom-color: #64748B;
   }
   .runner-tile:active {
     transform: translateY(3px);
-    box-shadow: 0 1px 0 #CBD5E1;
+    border-bottom-width: 2px;
   }
   .runner-tile.is-correct {
-    background-color: #22C55E !important;
+    background: linear-gradient(180deg, #4ADE80 0%, #22C55E 100%) !important;
     border-color: #16A34A !important;
+    border-bottom: 5px solid #15803D !important;
     color: #FFFFFF !important;
-    box-shadow: 0 3px 0 #15803D !important;
     transform: translateY(2px);
-    animation: tilePop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: tilePop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   .runner-tile.is-wrong {
-    background-color: #EF4444 !important;
-    border-color: #B91C1C !important;
+    background: #EF4444 !important;
+    border-color: #DC2626 !important;
+    border-bottom: 5px solid #991B1B !important;
     color: #FFFFFF !important;
-    box-shadow: 0 3px 0 #991B1B !important;
     transform: translateY(2px);
-    animation: tileShake 0.3s ease;
+    animation: tileShake 0.35s ease;
   }
   .runner-tile.is-missed {
-    outline: 3px dashed #F97316 !important;
-    outline-offset: -2px;
-    background-color: #FFF7ED !important;
-    border-color: #FDBA74 !important;
-    color: #C2410C !important;
-    box-shadow: none !important;
+    border: 3px dashed #F97316 !important;
+    border-bottom: 5px solid #EA580C !important;
+    background-color: #451A03 !important;
+    color: #FDBA74 !important;
   }
   @keyframes tilePop {
     0% { transform: scale(0.9) translateY(2px); }
@@ -767,61 +787,67 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     text-align: center;
     margin-top: 1.5rem;
     padding: 2rem 1.5rem;
-    background: #FFFFFF;
-    border-radius: 22px;
-    border: 3.5px solid #6366F1;
-    box-shadow: 0 8px 0 #3730A3, 0 20px 30px rgba(99, 102, 241, 0.15);
+    background: #0F172A;
+    border-radius: 24px;
+    border: 4px solid #4338CA;
+    border-bottom: 8px solid #312E81;
+    box-shadow: 0 12px 0 #020617, 0 20px 30px rgba(0, 0, 0, 0.5);
   }
   .interstitial-title {
     margin: 0 0 0.5rem;
     font-family: var(--font-heading);
     font-size: 1.75rem;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: #F8FAFC;
   }
   .interstitial-stats {
     margin: 0 0 1.25rem;
-    color: #475569;
+    color: #38BDF8;
     font-size: 1.05rem;
-    font-weight: 600;
+    font-weight: 700;
   }
   .btn-next-game {
-    background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    background: #6366F1;
     color: #FFFFFF;
-    border: 2px solid #3730A3;
-    border-radius: 16px;
+    border: none;
+    border-bottom: 5px solid #4338CA;
+    border-radius: 14px;
     padding: 0.95rem 2.25rem;
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     cursor: pointer;
-    box-shadow: 0 5px 0 #3730A3;
-    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    transition: transform 0.1s ease, border-bottom-width 0.1s ease, background 0.15s ease;
   }
   .btn-next-game:hover {
+    background: #4F46E5;
     transform: translateY(-2px);
-    box-shadow: 0 7px 0 #3730A3;
   }
   .btn-next-game:active {
     transform: translateY(3px);
-    box-shadow: 0 1px 0 #3730A3;
+    border-bottom-width: 2px;
   }
 
   /* Summary Card */
   .runner-summary-card {
-    background: #FFFFFF;
-    border: 3.5px solid #10B981;
+    background: #0F172A;
+    border: 4px solid #10B981;
+    border-bottom: 8px solid #047857;
     border-radius: 26px;
     padding: 3rem 2rem;
     text-align: center;
     max-width: 520px;
     margin: 2.5rem auto;
-    box-shadow: 0 10px 0 #047857, 0 25px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 0 #020617, 0 25px 40px rgba(0, 0, 0, 0.5);
   }
   .trophy-icon {
     font-size: 4rem;
     margin-bottom: 0.85rem;
     animation: trophyFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(250, 204, 21, 0.6));
   }
   @keyframes trophyFloat {
     0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -830,12 +856,12 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
   .runner-summary-card h2 {
     font-family: var(--font-heading);
     font-size: 2.25rem;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: #F8FAFC;
     margin: 0 0 0.5rem;
   }
   .summary-sub {
-    color: #64748B;
+    color: #94A3B8;
     margin: 0 0 2rem;
     font-size: 1.1rem;
     font-weight: 600;
@@ -844,9 +870,9 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    background: #F8FAFC;
-    border: 2px solid #E2E8F0;
-    border-radius: 16px;
+    background: #020617;
+    border: 2px solid #1E293B;
+    border-radius: 18px;
     padding: 1.25rem;
     margin-bottom: 2rem;
   }
@@ -859,14 +885,16 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     font-family: var(--font-heading);
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: #64748B;
-    font-weight: 700;
+    color: #94A3B8;
+    font-weight: 800;
+    letter-spacing: 0.05em;
   }
   .s-stat strong {
-    font-family: var(--font-heading);
+    font-family: monospace;
     font-size: 1.6rem;
-    color: #0F172A;
-    font-weight: 700;
+    color: #4ADE80;
+    font-weight: 800;
+    text-shadow: 0 0 8px rgba(74, 222, 128, 0.4);
   }
   .summary-actions {
     display: flex;
@@ -874,32 +902,34 @@ const metaDescription = 'Create custom 3-5 game math rotation playlists for your
     gap: 0.85rem;
   }
   .btn-restart-playlist {
-    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    background: #10B981;
     color: #FFFFFF;
-    border: 2px solid #047857;
-    border-radius: 16px;
+    border: none;
+    border-bottom: 5px solid #047857;
+    border-radius: 14px;
     padding: 0.95rem;
     font-family: var(--font-heading);
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     cursor: pointer;
-    box-shadow: 0 6px 0 #047857;
-    transition: transform 0.12s, box-shadow 0.12s;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    transition: transform 0.1s ease, border-bottom-width 0.1s ease;
   }
   .btn-restart-playlist:hover {
-    background: #047857;
+    background: #059669;
     transform: translateY(-2px);
-    box-shadow: 0 8px 0 #047857;
   }
   .btn-restart-playlist:active {
     transform: translateY(3px);
-    box-shadow: 0 1px 0 #047857;
+    border-bottom-width: 2px;
   }
   .btn-home-link {
-    color: #4F46E5;
+    color: #818CF8;
     text-decoration: none;
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1rem;
   }
 </style>
