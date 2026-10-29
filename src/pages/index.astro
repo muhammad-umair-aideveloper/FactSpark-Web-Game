@@ -33,7 +33,7 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
 
     <div class="hero-content-wrap">
       <h1 class="hero-headline">
-        Master Math Facts in <span class="highlight-badge"><span class="neon-glow" aria-hidden="true"></span>60-Second</span> Grid Speed Runs
+        Master Math Facts in <span class="highlight-badge">60-Second</span> Grid Speed Runs
       </h1>
       
       <p class="hero-subhead">
@@ -47,15 +47,15 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
           <div class="mascot-bubble">Ready, Set, Solve! ⚡</div>
           <div class="mascot-avatar">
             <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
-              <circle cx="40" cy="40" r="36" fill="#6366F1" stroke="#4F46E5" stroke-width="4"/>
+              <circle cx="40" cy="40" r="36" fill="#38BDF8" stroke="#0284C7" stroke-width="4"/>
               <circle cx="28" cy="34" r="6" fill="#FFFFFF"/>
               <circle cx="29.5" cy="34" r="3" fill="#0F172A"/>
               <circle cx="52" cy="34" r="6" fill="#FFFFFF"/>
               <circle cx="50.5" cy="34" r="3" fill="#0F172A"/>
               <path d="M30 48 Q40 58 50 48" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none"/>
-              <circle cx="20" cy="42" r="4" fill="#F472B6" opacity="0.6"/>
-              <circle cx="60" cy="42" r="4" fill="#F472B6" opacity="0.6"/>
-              <polygon points="40,6 45,18 35,18" fill="#F59E0B"/>
+              <circle cx="20" cy="42" r="4" fill="#F43F5E" opacity="0.4"/>
+              <circle cx="60" cy="42" r="4" fill="#F43F5E" opacity="0.4"/>
+              <polygon points="40,6 45,18 35,18" fill="#FBBF24"/>
               <circle cx="40" cy="6" r="3" fill="#FDE68A"/>
             </svg>
           </div>
@@ -194,7 +194,7 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
   .hero-chip {
     font-family: var(--font-heading);
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 800;
     padding: 0.4rem 0.9rem;
     border-radius: 9999px;
     background: #FFFFFF;
@@ -204,8 +204,8 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     user-select: none;
   }
   .streak-chip { color: #EA580C; border-color: #FED7AA; box-shadow: 0 4px 0 #FDBA74; animation-delay: 0s; }
-  .speed-chip { color: #4F46E5; border-color: #C7D2FE; box-shadow: 0 4px 0 #A5B4FC; animation-delay: 0.8s; }
-  .lag-chip { color: #059669; border-color: #A7F3D0; box-shadow: 0 4px 0 #6EE7B7; animation-delay: 1.6s; }
+  .speed-chip { color: #0284C7; border-color: #BAE6FD; box-shadow: 0 4px 0 #7DD3FC; animation-delay: 0.8s; }
+  .lag-chip { color: #16A34A; border-color: #BBF7D0; box-shadow: 0 4px 0 #86EFAC; animation-delay: 1.6s; }
   .free-chip { color: #DB2777; border-color: #FBCFE8; box-shadow: 0 4px 0 #F9A8D4; animation-delay: 2.4s; }
 
   @keyframes floatChip {
@@ -217,16 +217,16 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #EEF2FF;
-    color: #4338CA;
-    border: 2px solid #C7D2FE;
+    background: #E0F2FE;
+    color: #0369A1;
+    border: 2px solid #BAE6FD;
     font-family: var(--font-heading);
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 800;
     padding: 0.4rem 1.15rem;
     border-radius: 9999px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 3px 0 #C7D2FE;
+    box-shadow: 0 3px 0 #BAE6FD;
   }
   .badge-icon {
     font-size: 1rem;
@@ -234,49 +234,34 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
 
   .hero-headline {
     font-size: 3.25rem;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1.15;
     color: #0F172A;
     margin: 0 0 1.25rem;
     letter-spacing: -0.025em;
   }
   
-  /* Animated Neon Gradient Badge for 60-Second */
+  /* Playful Highlight Pill for 60-Second */
   .highlight-badge {
     position: relative;
     display: inline-block;
-    padding: 0.15rem 0.75rem;
-    background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
-    color: #FFFFFF;
-    border-radius: 16px;
-    box-shadow: 0 6px 0 #3730A3, 0 12px 24px rgba(99, 102, 241, 0.35);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background: #FEF08A;
+    color: #854D0E;
+    border-radius: 12px;
+    padding: 2px 14px;
+    border: 2px solid #FACC15;
+    box-shadow: 0 3px 0 #EAB308;
     transform: rotate(-1.5deg);
     margin: 0 0.25rem;
-  }
-  .neon-glow {
-    position: absolute;
-    inset: -3px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #818CF8, #F472B6);
-    opacity: 0.6;
-    filter: blur(8px);
-    z-index: -1;
-    animation: neonPulse 2.5s ease-in-out infinite alternate;
-  }
-  @keyframes neonPulse {
-    from { opacity: 0.3; transform: scale(0.97); }
-    to { opacity: 0.75; transform: scale(1.04); }
   }
 
   .hero-subhead {
     font-size: 1.25rem;
-    color: #CBD5E1;
+    color: #475569;
     line-height: 1.65;
     margin: 0 auto 2.25rem;
     max-width: 760px;
     font-weight: 600;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   }
 
   /* Mascot & Launchpad Area */
@@ -294,22 +279,22 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
   }
   .mascot-avatar {
     animation: mascotBounce 3s ease-in-out infinite;
-    filter: drop-shadow(0 10px 16px rgba(99, 102, 241, 0.4));
+    filter: drop-shadow(0 6px 12px rgba(2, 132, 199, 0.25));
   }
   @keyframes mascotBounce {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-10px) rotate(3deg); }
   }
   .mascot-bubble {
-    background: #1E1B4B;
-    color: #F8FAFC;
+    background: #FFFFFF;
+    color: #0F172A;
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 0.9rem;
     padding: 0.4rem 1rem;
     border-radius: 14px;
-    border: 2px solid #6366F1;
-    box-shadow: 0 4px 0 #312E81;
+    border: 2px solid #E2E8F0;
+    box-shadow: 0 3px 0 #CBD5E1;
     margin-bottom: -6px;
     z-index: 2;
   }
@@ -322,23 +307,23 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     width: 100%;
   }
   
-  /* Giant 3D Arcade Main CTA */
+  /* Giant 3D Duolingo Green Main CTA */
   .cta-primary {
-    background: #6366F1;
+    background: #58CC02;
     color: #FFFFFF;
     font-size: 1.25rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     padding: 1.15rem 2.4rem;
-    border: 2px solid #818CF8;
-    border-bottom: 6px solid #3730A3;
+    border: 2px solid #46A302;
+    border-bottom: 6px solid #378000;
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 8px 20px rgba(88, 204, 2, 0.3);
     transition: transform 0.08s ease, border-bottom-width 0.08s ease, background-color 0.1s ease;
   }
   .cta-primary:hover {
-    background: #4F46E5;
+    background: #68DE05;
     transform: translateY(-2px);
     border-bottom-width: 7px;
   }
@@ -349,7 +334,7 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
   }
   .play-icon {
     font-size: 1rem;
-    color: #FDE047;
+    color: #FFFFFF;
   }
   .cta-arrow {
     transition: transform 0.2s ease;
@@ -359,22 +344,22 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
   }
 
   .cta-secondary {
-    background: #1E293B;
-    color: #F8FAFC;
+    background: #FFFFFF;
+    color: #1E293B;
     font-size: 1.15rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: 1.15rem 2rem;
-    border: 2px solid #475569;
-    border-bottom: 6px solid #0F172A;
+    border: 2px solid #CBD5E1;
+    border-bottom: 6px solid #94A3B8;
     border-radius: 16px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.08s ease, border-bottom-width 0.08s ease;
   }
   .cta-secondary:hover {
-    background: #334155;
-    border-color: #64748B;
+    background: #F8FAFC;
+    border-color: #94A3B8;
     transform: translateY(-2px);
     border-bottom-width: 7px;
   }
@@ -396,7 +381,7 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
   .strip-label {
     font-size: 1.35rem;
     font-weight: 800;
-    color: #F8FAFC;
+    color: #0F172A;
     margin: 0;
   }
 
@@ -410,22 +395,22 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     gap: 1rem;
   }
   .grade-card {
-    background: #0F172A;
-    border: 2px solid #312E81;
-    border-bottom: 5px solid #1E1B4B;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-bottom: 5px solid #CBD5E1;
     border-radius: 18px;
     padding: 1rem 1.15rem;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
     transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease, border-color 0.15s ease;
   }
   .grade-card:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 12px 24px rgba(99, 102, 241, 0.25);
-    border-color: #6366F1;
+    box-shadow: 0 8px 16px rgba(56, 189, 248, 0.15);
+    border-color: #38BDF8;
     border-bottom-width: 6px;
   }
   .grade-card:active {
@@ -445,12 +430,12 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     color: #FFFFFF;
     flex-shrink: 0;
   }
-  .grade-color-1 .grade-badge-circle { background: #10B981; box-shadow: 0 4px 0 #059669; }
-  .grade-color-2 .grade-badge-circle { background: #06B6D4; box-shadow: 0 4px 0 #0891B2; }
-  .grade-color-3 .grade-badge-circle { background: #8B5CF6; box-shadow: 0 4px 0 #6D28D9; }
-  .grade-color-4 .grade-badge-circle { background: #EC4899; box-shadow: 0 4px 0 #BE185D; }
-  .grade-color-5 .grade-badge-circle { background: #F97316; box-shadow: 0 4px 0 #C2410C; }
-  .grade-color-6 .grade-badge-circle { background: #6366F1; box-shadow: 0 4px 0 #4338CA; }
+  .grade-color-1 .grade-badge-circle { background: #10B981; box-shadow: 0 3px 0 #059669; }
+  .grade-color-2 .grade-badge-circle { background: #06B6D4; box-shadow: 0 3px 0 #0891B2; }
+  .grade-color-3 .grade-badge-circle { background: #8B5CF6; box-shadow: 0 3px 0 #6D28D9; }
+  .grade-color-4 .grade-badge-circle { background: #EC4899; box-shadow: 0 3px 0 #BE185D; }
+  .grade-color-5 .grade-badge-circle { background: #F97316; box-shadow: 0 3px 0 #C2410C; }
+  .grade-color-6 .grade-badge-circle { background: #0284C7; box-shadow: 0 3px 0 #0369A1; }
   
   .grade-info {
     display: flex;
@@ -473,7 +458,7 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     transition: transform 0.2s ease, color 0.2s ease;
   }
   .grade-card:hover .grade-arrow {
-    color: #4F46E5;
+    color: #0284C7;
     transform: translateX(4px);
   }
 
@@ -487,13 +472,13 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     gap: 0.75rem;
   }
   .topic-pill {
-    background: #1E1B4B;
-    border: 2px solid #312E81;
-    border-bottom: 5px solid #0F172A;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-bottom: 5px solid #CBD5E1;
     padding: 0.55rem 1.15rem;
     border-radius: 9999px;
     text-decoration: none;
-    color: #E2E8F0;
+    color: #1E293B;
     font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 800;
@@ -501,29 +486,29 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
     transition: transform 0.08s ease, border-bottom-width 0.08s ease, background-color 0.1s ease;
   }
   .topic-dot {
     font-size: 0.6rem;
-    color: #6366F1;
+    color: #0284C7;
   }
   .topic-pill:hover {
-    background: #4F46E5;
-    color: #FFFFFF;
-    border-color: #6366F1;
+    background: #F0FDF4;
+    color: #15803D;
+    border-color: #86EFAC;
     border-bottom-width: 6px;
     transform: translateY(-2px);
   }
   .topic-pill:hover .topic-dot {
-    color: #FDE047;
+    color: #16A34A;
   }
   .topic-pill:active {
     transform: translateY(3px);
     border-bottom-width: 2px !important;
   }
 
-  /* Games Directory & Quest Cards */
+  /* Games Directory & Cards */
   .games-directory {
     margin: 4.5rem 0;
   }
@@ -546,26 +531,26 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
   .section-title {
     font-size: 2.1rem;
     font-weight: 800;
-    color: #F8FAFC;
+    color: #0F172A;
     margin: 0;
   }
   .section-subtitle {
     margin: 0.2rem 0 0;
-    color: #94A3B8;
+    color: #64748B;
     font-weight: 600;
     font-size: 1rem;
   }
   .count-badge {
-    background: #1E1B4B;
-    color: #BAE6FD;
-    border: 2px solid #38BDF8;
-    border-bottom: 4px solid #0369A1;
+    background: #FFFFFF;
+    color: #0369A1;
+    border: 2px solid #E2E8F0;
+    border-bottom: 4px solid #CBD5E1;
     font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 800;
     padding: 0.45rem 1rem;
     border-radius: 9999px;
-    box-shadow: 0 3px 0 #0369A1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
@@ -580,12 +565,12 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     gap: 1.5rem;
   }
   
-  /* Collectible Arcade Game Cards */
+  /* Toybox Playful Game Selection Cards */
   .game-card {
-    background: #0F172A;
-    border: 2px solid #312E81;
-    border-bottom: 6px solid #1E1B4B;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
     border-radius: 20px;
+    box-shadow: 0 6px 0 #CBD5E1;
     padding: 1.4rem;
     text-decoration: none;
     color: inherit;
@@ -593,7 +578,6 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
     transition: transform 0.12s ease, border-bottom-width 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
     overflow: hidden;
   }
@@ -603,18 +587,22 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     top: 0;
     left: 0;
     right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, #6366F1, #EC4899, #FACC15);
+    height: 6px;
+    background: #38BDF8;
   }
+  .card-variant-0::before { background: #38BDF8; }
+  .card-variant-1::before { background: #58CC02; }
+  .card-variant-2::before { background: #FBBF24; }
+  .card-variant-3::before { background: #F43F5E; }
+
   .game-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 14px 28px rgba(99, 102, 241, 0.3);
-    border-color: #6366F1;
-    border-bottom-width: 8px;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 0 #CBD5E1, 0 16px 25px rgba(0, 0, 0, 0.05);
+    border-color: #38BDF8;
   }
   .game-card:active {
     transform: translateY(3px);
-    border-bottom-width: 2px !important;
+    box-shadow: 0 2px 0 #CBD5E1;
   }
 
   .card-meta {
@@ -624,9 +612,9 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     margin-bottom: 0.85rem;
   }
   .card-grade {
-    background: #312E81;
-    color: #C7D2FE;
-    border: 2px solid #6366F1;
+    background: #E0F2FE;
+    color: #0369A1;
+    border: 1.5px solid #BAE6FD;
     font-family: var(--font-heading);
     font-size: 0.8rem;
     font-weight: 800;
@@ -637,9 +625,9 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    background: #451A03;
-    color: #FDBA74;
-    border: 2px solid #F97316;
+    background: #FEF3C7;
+    color: #D97706;
+    border: 1.5px solid #FDE68A;
     border-radius: 9999px;
     padding: 0.25rem 0.7rem;
     font-size: 0.8rem;
@@ -650,13 +638,13 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
   .card-title {
     font-size: 1.25rem;
     font-weight: 800;
-    color: #F8FAFC;
+    color: #0F172A;
     margin: 0 0 0.45rem;
     line-height: 1.3;
   }
   .card-prompt {
     font-size: 0.95rem;
-    color: #94A3B8;
+    color: #475569;
     line-height: 1.5;
     margin: 0 0 1.25rem;
     flex-grow: 1;
@@ -668,34 +656,37 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     justify-content: space-between;
     align-items: center;
     font-size: 0.85rem;
-    border-top: 2px dashed #1E293B;
+    border-top: 2px dashed #E2E8F0;
     padding-top: 0.85rem;
   }
   .card-topic {
     text-transform: capitalize;
-    color: #A5B4FC;
+    color: #64748B;
     font-weight: 800;
     font-size: 0.825rem;
   }
+  
+  /* Duolingo-style Green 3D Button */
   .play-pill {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    background: #6366F1;
+    background: #58CC02;
     color: #FFFFFF;
     font-family: var(--font-heading);
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 0.825rem;
-    padding: 0.35rem 0.95rem;
-    border: 2px solid #818CF8;
-    border-bottom: 4px solid #3730A3;
-    border-radius: 9999px;
-    transition: transform 0.08s ease, border-bottom-width 0.08s ease;
+    padding: 0.4rem 1rem;
+    border: 2px solid #46A302;
+    border-bottom: 4px solid #378000;
+    border-radius: 12px;
+    box-shadow: 0 2px 0 #378000;
+    transition: transform 0.08s ease, background-color 0.1s ease;
   }
   .game-card:hover .play-pill {
-    background: #4F46E5;
+    background: #68DE05;
     transform: scale(1.05);
   }
   .play-arrow {
@@ -708,13 +699,13 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
   /* Teacher Banner */
   .teacher-banner {
     position: relative;
-    background: linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #4338CA 100%);
+    background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
     color: #FFFFFF;
     border-radius: 24px;
     padding: 3rem 2.5rem;
     margin: 5rem 0 2rem;
-    border: 3px solid #6366F1;
-    box-shadow: 0 12px 0 #1E1B4B, 0 20px 30px rgba(30, 27, 75, 0.4);
+    border: 3px solid #38BDF8;
+    box-shadow: 0 10px 0 #075985;
     overflow: hidden;
   }
   .teacher-banner-deco {
@@ -722,31 +713,31 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     right: 2rem;
     bottom: -1rem;
     font-size: 9rem;
-    opacity: 0.08;
+    opacity: 0.12;
     pointer-events: none;
     user-select: none;
   }
   .teacher-tag {
     display: inline-block;
-    background: #F59E0B;
-    color: #FFFFFF;
+    background: #FBBF24;
+    color: #78350F;
     font-family: var(--font-heading);
     font-size: 0.825rem;
-    font-weight: 700;
+    font-weight: 800;
     padding: 0.35rem 0.9rem;
     border-radius: 9999px;
-    box-shadow: 0 3px 0 #B45309;
+    box-shadow: 0 3px 0 #D97706;
     margin-bottom: 0.85rem;
   }
   .teacher-banner-content h2 {
     font-size: 2.15rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #FFFFFF;
     margin: 0 0 0.85rem;
     letter-spacing: -0.02em;
   }
   .teacher-banner-content p {
-    color: #E0E7FF;
+    color: #F0F9FF;
     font-size: 1.15rem;
     line-height: 1.65;
     max-width: 760px;
@@ -759,17 +750,27 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
     gap: 0.85rem;
   }
   .t-badge {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(8px);
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
     padding: 0.5rem 1rem;
     border-radius: 9999px;
     font-family: var(--font-heading);
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #FFFFFF;
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
   }
+
+  @media (max-width: 768px) {
+    .hero-headline { font-size: 2.25rem; }
+    .hero-subhead { font-size: 1.05rem; }
+    .cta-primary { font-size: 1.05rem; padding: 0.9rem 1.5rem; }
+    .cta-secondary { font-size: 1rem; padding: 0.9rem 1.25rem; }
+    .teacher-banner { padding: 2rem 1.5rem; }
+    .teacher-banner-content h2 { font-size: 1.65rem; }
+  }
+</style>
 
   @media (max-width: 768px) {
     .hero-headline { font-size: 2.25rem; }
