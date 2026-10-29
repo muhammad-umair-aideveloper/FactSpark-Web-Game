@@ -65,7 +65,7 @@ const targetIds = resolveTargetIds(game);
 
     <div class="metric-item accuracy-metric">
       <span class="metric-label">Accuracy</span>
-      <span class="metric-val" id="metric-accuracy">100%</span>
+      <span class="metric-val" id="metric-accuracy">0%</span>
     </div>
 
     <div class="metric-item pb-metric">
@@ -96,6 +96,9 @@ const targetIds = resolveTargetIds(game);
     ))}
   </div>
 
+  <!-- Screen reader live announcer for time penalties and round results -->
+  <div class="sr-only" aria-live="assertive" aria-atomic="true" id="game-announcer"></div>
+
   <!-- Round End Modal Overlay -->
   <div class="round-modal-backdrop" id="end-modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="round-modal-card">
@@ -110,7 +113,7 @@ const targetIds = resolveTargetIds(game);
 
       <div class="modal-stats-grid">
         <div class="mstat"><span class="mstat-lbl">Final Score</span><strong id="modal-final-score">0</strong></div>
-        <div class="mstat"><span class="mstat-lbl">Accuracy</span><strong id="modal-final-accuracy">100%</strong></div>
+        <div class="mstat"><span class="mstat-lbl">Accuracy</span><strong id="modal-final-accuracy">0%</strong></div>
         <div class="mstat"><span class="mstat-lbl">Time Elapsed</span><strong id="modal-final-time">0s</strong></div>
         <div class="mstat"><span class="mstat-lbl">Mistakes</span><strong id="modal-final-mistakes">0</strong></div>
       </div>
@@ -153,6 +156,8 @@ const targetIds = resolveTargetIds(game);
     const btnShuffle = document.getElementById('btn-shuffle') as HTMLButtonElement;
     const btnReset = document.getElementById('btn-reset') as HTMLButtonElement;
     const modalBtnReplay = document.getElementById('modal-btn-replay') as HTMLButtonElement;
+    const announcer = document.getElementById('game-announcer') as HTMLElement;
+    let lastFocusedElement: HTMLElement | null = null;
 
     // Collect DOM tile items
     const tileButtons = Array.from(gridBoard.querySelectorAll<HTMLButtonElement>('.grid-tile'));

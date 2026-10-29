@@ -135,6 +135,11 @@ export class GridEngine {
       return { correct: true, remaining: this.getRemainingTargetsCount() };
     }
 
+    // If currently flashing in wrong state, ignore further clicks until the flash ends
+    if (tile.status === 'wrong') {
+      return { correct: false, remaining: this.getRemainingTargetsCount() };
+    }
+
     this.totalClicks++;
 
     if (tile.isTarget) {
@@ -262,7 +267,7 @@ export class GridEngine {
       : Math.max(0, this.timeLimitSeconds - totalElapsed);
 
     const accuracy = this.totalClicks === 0
-      ? 100
+      ? 0
       : Math.round((this.correctClicks / this.totalClicks) * 100);
 
     const score = Math.max(

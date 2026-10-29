@@ -148,4 +148,57 @@ describe('GridEngine', () => {
     engine.destroy();
     vi.useRealTimers();
   });
+
+  it('ignores clicks on a wrong tile while it is flashing to prevent penalty stacking', () => {
+    vi.useFakeTimers();
+    const engine = new GridEngine(sampleOptions);
+    engine.start();
+
+    // First wrong click
+    engine.clickTile('cell-5');
+    const tile = engine.tiles.find((t) => t.id === 'cell-5');
+    expect(tile?.status).toBe('wrong');
+    expect(engine.getStats().mistakes).toBe(1);
+    expect(engine.getStats().totalClicks).toBe(1);
+
+    // Rapid spam clicks on the same flashing wrong tile
+    engine.clickTile('cell-5');
+    engine.clickTile('cell-5');
+    engine.clickTile('cell-5');
+
+    // Mistakes and totalClicks must not stack
+    expect(engine.getStats().mistakes).toBe(1);
+    expect(engine.getStats().totalClicks).toBe(1);
+
+    // Advance 700ms past the 600ms flash
+    vi.advanceTimersByTime(700);
+    expect(tile?.status).toBe('unclicked');
+
+    // Now clicking again is recognized as a new mistake
+    engine.clickTile('cell-5');
+    expect(engine.getStats().mistakes).toBe(2);
+    expect(engine.getStats().totalClicks).toBe(2);
+
+    engine.destroy();
+    vi.useRealTimers();
+  });
+
+  it('reports 0% accuracy when zero clicks have occurred', () => {
+    const engine = new GridEngine(sampleOptions);
+    expect(engine.getStats().totalClicks).toBe(0);
+    expect(engine.getStats().accuracy).toBe(0);
+
+    // Also on timeout with zero clicks
+    vi.useFakeTimers();
+    const shortGame = new GridEngine({ ...sampleOptions, seconds: 1 });
+    shortGame.start();
+    vi.advanceTimersByTime(1500);
+    expect(shortGame.status).toBe('timeout');
+    expect(shortGame.getStats().totalClicks).toBe(0);
+    expect(shortGame.getStats().accuracy).toBe(0);
+
+    shortGame.destroy();
+    engine.destroy();
+    vi.useRealTimers();
+  });
 });
