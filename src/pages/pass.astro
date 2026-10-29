@@ -296,10 +296,10 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
   .pass-pill {
     display: inline-block;
     padding: 0.35rem 1.15rem;
-    background: #1E1B4B;
-    color: #818CF8;
-    border: 1.5px solid #4338CA;
-    border-bottom: 3px solid #312E81;
+    background: #E0F2FE;
+    color: #0369A1;
+    border: 1.5px solid #BAE6FD;
+    border-bottom: 3px solid #7DD3FC;
     border-radius: 12px;
     font-weight: 800;
     font-size: 0.85rem;
@@ -310,16 +310,15 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
 
   .pass-h1 {
     font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 800;
-    color: #F8FAFC;
+    font-weight: 900;
+    color: #0F172A;
     margin-bottom: 1rem;
     line-height: 1.15;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
   }
 
   .pass-subtitle {
     font-size: 1.15rem;
-    color: #CBD5E1;
+    color: #475569;
     max-width: 680px;
     margin: 0 auto;
     line-height: 1.6;
@@ -338,11 +337,11 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
   .toggle-label {
     font-size: 1rem;
     font-weight: 800;
-    color: #F8FAFC;
+    color: #0F172A;
   }
 
   .savings-tag {
-    background: #10B981;
+    background: #58CC02;
     color: #FFFFFF;
     font-family: var(--font-heading);
     font-size: 0.775rem;
@@ -350,26 +349,26 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
     padding: 0.2rem 0.6rem;
     border-radius: 8px;
     margin-left: 0.4rem;
-    border-bottom: 2px solid #047857;
+    border-bottom: 2px solid #378000;
   }
 
   .billing-toggle-btn {
     width: 60px;
     height: 34px;
-    background: #020617;
+    background: #E2E8F0;
     border-radius: 9999px;
-    border: 2px solid #312E81;
+    border: 2px solid #CBD5E1;
     position: relative;
     cursor: pointer;
     padding: 2px;
-    box-shadow: 0 3px 0 #020617;
+    box-shadow: 0 2px 0 #94A3B8;
     transition: background 0.2s ease, border-color 0.2s ease;
   }
 
   .billing-toggle-btn.active {
-    background: #6366F1;
-    border-color: #4338CA;
-    box-shadow: 0 3px 0 #312E81;
+    background: #0284C7;
+    border-color: #0369A1;
+    box-shadow: 0 2px 0 #075985;
   }
 
   .toggle-slider {
@@ -378,7 +377,7 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
     height: 26px;
     background: #FFFFFF;
     border-radius: 50%;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
@@ -396,26 +395,26 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
   }
 
   .plan-card {
-    background: #0F172A;
-    border: 2px solid #312E81;
-    border-bottom: 6px solid #1E1B4B;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-bottom: 6px solid #CBD5E1;
     border-radius: 26px;
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
     position: relative;
-    box-shadow: 0 10px 0 #020617, 0 20px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 0 #CBD5E1;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 
   .plan-card.featured {
-    border: 3px solid #6366F1;
-    border-bottom: 8px solid #4338CA;
-    box-shadow: 0 12px 0 #020617, 0 25px 40px rgba(99, 102, 241, 0.25);
+    border: 3px solid #38BDF8;
+    border-bottom: 8px solid #0284C7;
+    box-shadow: 0 10px 0 #CBD5E1, 0 20px 30px rgba(0, 0, 0, 0.05);
   }
   .plan-card.featured:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 0 #020617, 0 30px 45px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 14px 0 #CBD5E1, 0 25px 35px rgba(2, 132, 199, 0.15);
   }
 
   .popular-ribbon {
@@ -423,8 +422,8 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
     top: -16px;
     left: 50%;
     transform: translateX(-50%);
-    background: #F59E0B;
-    color: #FFFFFF;
+    background: #FBBF24;
+    color: #78350F;
     font-family: var(--font-heading);
     font-size: 0.825rem;
     font-weight: 800;
@@ -432,13 +431,13 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
     letter-spacing: 0.06em;
     padding: 0.4rem 1.4rem;
     border-radius: 12px;
-    border-bottom: 3px solid #B45309;
-    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
+    border-bottom: 3px solid #D97706;
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
   }
 
   .plan-header {
     text-align: center;
-    border-bottom: 2px dashed #1E293B;
+    border-bottom: 2px dashed #E2E8F0;
     padding-bottom: 1.75rem;
     margin-bottom: 1.75rem;
   }
@@ -447,13 +446,13 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
     font-family: var(--font-heading);
     font-size: 1.6rem;
     font-weight: 800;
-    color: #F8FAFC;
+    color: #0F172A;
     margin-bottom: 0.5rem;
   }
 
   .plan-desc {
     font-size: 0.95rem;
-    color: #94A3B8;
+    color: #64748B;
     margin-bottom: 1.25rem;
     min-height: 2.5rem;
     font-weight: 600;
@@ -469,21 +468,21 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
   .price-val {
     font-family: var(--font-heading);
     font-size: 3.25rem;
-    font-weight: 800;
-    color: #F8FAFC;
+    font-weight: 900;
+    color: #0F172A;
   }
 
   .price-period {
     font-family: var(--font-heading);
     font-size: 1.05rem;
-    color: #94A3B8;
+    color: #64748B;
     font-weight: 700;
   }
 
   .billing-note {
     font-family: var(--font-heading);
     font-size: 0.85rem;
-    color: #4ADE80;
+    color: #15803D;
     font-weight: 800;
     margin-top: 0.5rem;
   }
@@ -497,7 +496,7 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
     flex-direction: column;
     gap: 1rem;
     font-size: 1rem;
-    color: #E2E8F0;
+    color: #334155;
     font-weight: 600;
   }
 
@@ -509,7 +508,7 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
   }
 
   .features-list li.disabled {
-    color: #64748B;
+    color: #94A3B8;
     text-decoration: line-through;
   }
 
@@ -519,9 +518,9 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
     justify-content: center;
     width: 22px;
     height: 22px;
-    background: #064E3B;
-    color: #4ADE80;
-    border: 1px solid #059669;
+    background: #DCFCE7;
+    color: #15803D;
+    border: 1px solid #86EFAC;
     border-radius: 50%;
     font-size: 0.85rem;
     font-weight: 900;
@@ -534,9 +533,9 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
     justify-content: center;
     width: 22px;
     height: 22px;
-    background: #450A0A;
-    color: #F87171;
-    border: 1px solid #DC2626;
+    background: #FEE2E2;
+    color: #DC2626;
+    border: 1px solid #FCA5A5;
     border-radius: 50%;
     font-size: 0.85rem;
     font-weight: 900;
@@ -563,22 +562,22 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
   .btn-plan[disabled] {
     opacity: 0.65;
     cursor: not-allowed;
-    background: #1E293B !important;
-    color: #64748B !important;
-    border: 2px solid #334155 !important;
-    border-bottom: 4px solid #0F172A !important;
+    background: #E2E8F0 !important;
+    color: #94A3B8 !important;
+    border: 2px solid #CBD5E1 !important;
+    border-bottom: 4px solid #94A3B8 !important;
     box-shadow: none !important;
     transform: none !important;
   }
 
   .btn-primary {
-    background: #6366F1;
+    background: #58CC02;
     color: #FFFFFF;
-    border-bottom: 5px solid #4338CA;
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    border-bottom: 5px solid #378000;
+    box-shadow: 0 4px 14px rgba(88, 204, 2, 0.3);
   }
   .btn-primary:hover:not(:disabled) {
-    background: #4F46E5;
+    background: #68DE05;
     transform: translateY(-2px);
   }
   .btn-primary:active:not(:disabled) {
@@ -587,14 +586,14 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
   }
 
   .btn-secondary {
-    background: #1E1B4B;
-    color: #818CF8;
-    border: 2px solid #4338CA;
-    border-bottom: 5px solid #312E81;
+    background: #F8FAFC;
+    color: #0284C7;
+    border: 2px solid #E2E8F0;
+    border-bottom: 5px solid #CBD5E1;
   }
   .btn-secondary:hover {
-    background: #2E2A72;
-    border-color: #6366F1;
+    background: #F1F5F9;
+    border-color: #CBD5E1;
     transform: translateY(-2px);
   }
   .btn-secondary:active {
@@ -608,25 +607,25 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
   }
 
   .ethics-box {
-    background: #022C22;
-    border: 2.5px solid #059669;
-    border-bottom: 6px solid #047857;
+    background: #F0FDF4;
+    border: 2.5px solid #86EFAC;
+    border-bottom: 6px solid #4ADE80;
     border-radius: 20px;
     padding: 2rem 2.25rem;
-    box-shadow: 0 8px 0 #020617;
+    box-shadow: 0 4px 0 #BBF7D0;
   }
 
   .ethics-box h3 {
     font-family: var(--font-heading);
     font-size: 1.35rem;
     font-weight: 800;
-    color: #6EE7B7;
+    color: #15803D;
     margin-bottom: 0.65rem;
   }
 
   .ethics-box p {
     font-size: 1rem;
-    color: #A7F3D0;
+    color: #166534;
     line-height: 1.65;
     margin: 0;
     font-weight: 600;
@@ -641,7 +640,7 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 800;
-    color: #F8FAFC;
+    color: #0F172A;
     text-align: center;
     margin-bottom: 2rem;
   }
@@ -649,10 +648,10 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
   .table-container {
     overflow-x: auto;
     border-radius: 20px;
-    border: 3px solid #312E81;
-    border-bottom: 6px solid #1E1B4B;
-    box-shadow: 0 8px 0 #020617;
-    background: #0F172A;
+    border: 3px solid #E2E8F0;
+    border-bottom: 6px solid #CBD5E1;
+    box-shadow: 0 6px 0 #CBD5E1;
+    background: #FFFFFF;
   }
 
   .comp-table {
@@ -660,30 +659,30 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
     border-collapse: collapse;
     text-align: left;
     font-size: 1rem;
-    background: #0F172A;
-    color: #E2E8F0;
+    background: #FFFFFF;
+    color: #334155;
   }
 
   .comp-table th,
   .comp-table td {
     padding: 1.15rem 1.4rem;
-    border-bottom: 1.5px solid #1E293B;
+    border-bottom: 1.5px solid #E2E8F0;
   }
 
   .comp-table th {
-    background: #020617;
+    background: #F8FAFC;
     font-family: var(--font-heading);
     font-weight: 800;
-    color: #F8FAFC;
+    color: #0F172A;
   }
 
   .highlight-col {
-    background: #1E1B4B;
+    background: #F0F9FF;
   }
 
   .font-bold {
     font-weight: 800;
-    color: #818CF8;
+    color: #0284C7;
   }
 
   /* FAQ */
@@ -700,26 +699,26 @@ const isMockPayment = import.meta.env.DEV && import.meta.env.PUBLIC_PAYMENT_MODE
   }
 
   .faq-item {
-    border: 2px solid #312E81;
-    border-bottom: 5px solid #1E1B4B;
+    border: 2px solid #E2E8F0;
+    border-bottom: 5px solid #CBD5E1;
     border-radius: 18px;
     padding: 1.15rem 1.4rem;
-    background: #0F172A;
-    box-shadow: 0 4px 0 #020617;
+    background: #FFFFFF;
+    box-shadow: 0 3px 0 #CBD5E1;
   }
 
   .faq-item summary {
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 1.1rem;
-    color: #F8FAFC;
+    color: #0F172A;
     cursor: pointer;
   }
 
   .faq-item p {
     margin-top: 0.85rem;
     font-size: 1rem;
-    color: #CBD5E1;
+    color: #475569;
     line-height: 1.6;
     font-weight: 600;
   }
