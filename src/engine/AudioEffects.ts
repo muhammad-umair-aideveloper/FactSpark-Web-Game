@@ -1,6 +1,6 @@
 class SynthesizedAudio {
   private ctx: AudioContext | null = null;
-  public enabled = true;
+  public enabled = false;
 
   private getContext(): AudioContext | null {
     if (typeof window === 'undefined') return null;
