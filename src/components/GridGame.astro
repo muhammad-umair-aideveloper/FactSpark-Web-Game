@@ -351,7 +351,7 @@ const targetIds = resolveTargetIds(game);
   /* Header card: Prompt & Control Console */
   .game-header-card {
     background: #FFFFFF;
-    border: 3px solid #E2E8F0;
+    border: 2px solid #0F172A;
     border-radius: 20px;
     padding: 1.15rem 1.4rem;
     display: flex;
@@ -359,31 +359,32 @@ const targetIds = resolveTargetIds(game);
     align-items: center;
     gap: 1rem;
     margin-bottom: 0.85rem;
-    box-shadow: 0 6px 0 #CBD5E1;
+    box-shadow: 0 6px 0 0 #0F172A;
   }
   .prompt-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    font-family: var(--font-heading);
-    font-size: 0.775rem;
-    font-weight: 800;
+    font-family: var(--font-caps);
+    font-size: 0.75rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #0369A1;
-    background: #E0F2FE;
-    border: 2px solid #BAE6FD;
-    padding: 0.25rem 0.75rem;
+    color: #07006C;
+    background: #E1E0FF;
+    border: 1.5px solid #0F172A;
+    padding: 0.2rem 0.7rem;
     border-radius: 9999px;
     margin-bottom: 0.35rem;
   }
   .prompt-title {
     font-family: var(--font-heading);
     font-size: 1.55rem;
-    font-weight: 800;
+    font-weight: 900;
     color: #0F172A;
     margin: 0;
     line-height: 1.25;
+    letter-spacing: -0.02em;
   }
   .game-controls {
     display: flex;
@@ -397,62 +398,57 @@ const targetIds = resolveTargetIds(game);
     align-items: center;
     gap: 0.35rem;
     background: #FFFFFF;
-    border: 2px solid #CBD5E1;
-    border-bottom: 4px solid #94A3B8;
+    border: 2px solid #0F172A;
     border-radius: 12px;
     padding: 0.5rem 0.85rem;
     font-family: var(--font-heading);
     font-size: 0.85rem;
     font-weight: 800;
-    color: #1E293B;
+    color: #0F172A;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-    transition: transform 0.08s ease, border-bottom-width 0.08s ease, background-color 0.12s;
+    box-shadow: 0 4px 0 0 #0F172A;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.1s;
   }
   .ctrl-btn:hover {
-    background: #F8FAFC;
-    border-color: #94A3B8;
-    transform: translateY(-2px);
-    border-bottom-width: 5px;
+    background: #F2F3FF;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 0 0 #0F172A;
   }
   .ctrl-btn:active {
     transform: translateY(3px);
-    border-bottom-width: 2px !important;
+    box-shadow: 0 1px 0 0 #0F172A;
   }
   
   /* High Energy Reset Button */
   .reset-btn {
-    background: #F43F5E;
-    color: #FFFFFF;
-    border: 2px solid #E11D48;
-    border-bottom: 4px solid #BE123C;
-    box-shadow: 0 2px 4px rgba(244, 63, 94, 0.2);
+    background: #FFDAD6;
+    color: #93000A;
+    box-shadow: 0 4px 0 0 #0F172A;
   }
   .reset-btn:hover {
-    background: #E11D48;
-    border-color: #BE123C;
-    transform: translateY(-2px);
-    border-bottom-width: 5px;
+    background: #BA1A1A;
     color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 0 0 #0F172A;
   }
   .reset-btn:active {
     transform: translateY(3px);
-    border-bottom-width: 2px !important;
+    box-shadow: 0 1px 0 0 #0F172A;
   }
 
-  /* Telemetry Bar: Clean Pill Container */
+  /* Telemetry Bar: Clean Tactile Pill Container */
   .telemetry-bar {
     background: #FFFFFF;
-    color: #1E293B;
-    border: 3px solid #E2E8F0;
+    color: #0F172A;
+    border: 2px solid #0F172A;
     border-radius: 20px;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem 0.85rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 0.4rem;
     margin-bottom: 0.85rem;
-    box-shadow: 0 6px 0 #E2E8F0;
+    box-shadow: 0 5px 0 0 #0F172A;
   }
   .metric-item {
     display: flex;
@@ -461,13 +457,14 @@ const targetIds = resolveTargetIds(game);
     padding: 0.35rem 0.65rem;
     border-radius: 14px;
     min-width: 80px;
+    border: 1.5px solid #0F172A;
   }
   .metric-label {
-    font-family: var(--font-heading);
+    font-family: var(--font-caps);
     font-size: 0.68rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 800;
+    letter-spacing: 0.06em;
+    font-weight: 700;
   }
   .metric-val {
     font-family: var(--font-heading);
@@ -476,19 +473,18 @@ const targetIds = resolveTargetIds(game);
     font-variant-numeric: tabular-nums;
   }
   
-  /* Soft Cheerful Badges */
+  /* Tactile Telemetry Color Badges */
   .timer-metric {
-    background: #FEF3C7;
-    border: 2px solid #FDE68A;
+    background: #FFDF9F;
   }
   .timer-metric .metric-label {
-    color: #B45309;
+    color: #6F5100;
   }
   .timer-metric .metric-val {
-    color: #D97706;
+    color: #261A00;
   }
   .timer-metric .metric-val.urgent {
-    color: #DC2626;
+    color: #BA1A1A;
     animation: urgentPulse 0.4s infinite alternate ease-in-out;
   }
   @keyframes urgentPulse {
@@ -497,63 +493,59 @@ const targetIds = resolveTargetIds(game);
   }
 
   .targets-metric {
-    background: #E0F2FE;
-    border: 2px solid #BAE6FD;
+    background: #E1E0FF;
   }
   .targets-metric .metric-label {
-    color: #0284C7;
+    color: #07006C;
   }
   .targets-metric .metric-val {
-    color: #0369A1;
+    color: #2F2EBE;
   }
 
   .score-metric {
-    background: #DCFCE7;
-    border: 2px solid #BBF7D0;
+    background: #6BFF8F;
   }
   .score-metric .metric-label {
-    color: #16A34A;
+    color: #002109;
   }
   .score-metric .metric-val {
-    color: #15803D;
+    color: #005321;
   }
   .score-metric .metric-val::before {
     content: '⭐ ';
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .accuracy-metric {
-    background: #FCE7F3;
-    border: 2px solid #FBCFE8;
+    background: #FFDAD6;
   }
   .accuracy-metric .metric-label {
-    color: #DB2777;
+    color: #93000A;
   }
   .accuracy-metric .metric-val {
-    color: #BE185D;
+    color: #BA1A1A;
   }
 
   .pb-metric {
-    background: #F3E8FF;
-    border: 2px solid #E9D5FF;
+    background: #DAE2FD;
   }
   .pb-metric .metric-label {
-    color: #9333EA;
+    color: #283044;
   }
   .pb-metric .metric-val {
-    color: #7E22CE;
+    color: #131B2E;
   }
 
-  /* 10x10 Grid: Clean Toybox Keycap Chassis */
+  /* 10x10 Grid: Tactile Neo-Brutalist Toybox Chassis */
   .grid-container {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 6px;
-    background: #E2E8F0;
-    border: 4px solid #CBD5E1;
+    background: #F2F3FF;
+    border: 3px solid #0F172A;
     border-radius: 24px;
     padding: 12px;
-    box-shadow: 0 8px 0 #94A3B8;
+    box-shadow: 0 8px 0 0 #0F172A;
     aspect-ratio: 1 / 1;
     touch-action: manipulation;
   }
@@ -568,12 +560,12 @@ const targetIds = resolveTargetIds(game);
     font-weight: 900;
   }
 
-  /* 10x10 Number Tiles: 3D Physical White Keycaps */
+  /* 10x10 Number Tiles: 3D Physical Keycaps */
   .grid-tile {
     position: relative;
     background: #FFFFFF;
-    border: 2px solid #E2E8F0;
-    border-bottom: 5px solid #CBD5E1;
+    border: 2px solid #0F172A;
+    border-bottom: 5px solid #C7C4D7;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -581,33 +573,33 @@ const targetIds = resolveTargetIds(game);
     font-family: var(--font-heading);
     font-size: 1.15rem;
     font-weight: 900;
-    color: #1E293B;
+    color: #0F172A;
     cursor: pointer;
     padding: 0;
     transition: transform 0.08s ease, border-bottom-width 0.08s ease, background-color 0.1s ease;
     outline: none;
     user-select: none;
+    font-variant-numeric: tabular-nums;
   }
   .grid-tile:hover {
-    background: #F8FAFC;
+    background: #FAF8FF;
     transform: translateY(-2px);
     border-bottom-width: 6px;
-    border-color: #CBD5E1;
   }
   .grid-tile:active {
     transform: translateY(3px);
     border-bottom-width: 2px !important;
   }
   .grid-tile:focus-visible {
-    box-shadow: 0 0 0 3px #38BDF8, 0 3px 0 #0284C7;
+    box-shadow: 0 0 0 3px #4648D4, 0 3px 0 0 #0F172A;
     z-index: 5;
   }
 
-  /* Correct State: Duolingo Green Keycap */
+  /* Correct State: Sonic Lime Green Keycap */
   .grid-tile.is-correct {
-    background: #58CC02 !important;
-    border-color: #46A302 !important;
-    border-bottom: 5px solid #378000 !important;
+    background: #22C55E !important;
+    border-color: #0F172A !important;
+    border-bottom: 5px solid #15803D !important;
     color: #FFFFFF !important;
     animation: popBounce 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
@@ -629,11 +621,11 @@ const targetIds = resolveTargetIds(game);
     opacity: 0.15;
   }
 
-  /* Wrong State: Coral Cherry / Duolingo Red Keycap */
+  /* Wrong State: Coral Rose Keycap */
   .grid-tile.is-wrong {
-    background: #FF4B4B !important;
-    border-color: #EA2B2B !important;
-    border-bottom: 5px solid #BA1B1B !important;
+    background: #F43F5E !important;
+    border-color: #0F172A !important;
+    border-bottom: 5px solid #BE123C !important;
     color: #FFFFFF !important;
     animation: tileShake 0.35s ease;
   }
@@ -651,19 +643,19 @@ const targetIds = resolveTargetIds(game);
     40%, 80% { transform: translateX(5px) rotate(2deg); }
   }
 
-  /* Missed State: Soft Honey Outline */
+  /* Missed State: Gold Outline */
   .grid-tile.is-missed {
-    border: 3px dashed #F59E0B !important;
-    border-bottom: 5px solid #D97706 !important;
-    background: #FEF3C7 !important;
-    color: #B45309 !important;
+    border: 2px dashed #795900 !important;
+    border-bottom: 5px solid #795900 !important;
+    background: #FFDF9F !important;
+    color: #6F5100 !important;
   }
 
   /* Round End Victory Modal */
   .round-modal-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(15, 23, 42, 0.5);
+    background: rgba(19, 27, 46, 0.6);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     display: flex;
@@ -675,13 +667,13 @@ const targetIds = resolveTargetIds(game);
   }
   .round-modal-card {
     background: #FFFFFF;
-    border: 4px solid #38BDF8;
+    border: 3px solid #0F172A;
     border-radius: 26px;
     padding: 2.25rem 2rem;
     text-align: center;
     max-width: 380px;
     width: 100%;
-    box-shadow: 0 8px 0 #0284C7, 0 20px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 0 0 #0F172A;
     animation: modalPopIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   @keyframes modalPopIn {
@@ -702,31 +694,31 @@ const targetIds = resolveTargetIds(game);
     transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
   }
   .star-icon.active {
-    color: #FBBF24;
-    text-shadow: 0 4px 0 #D97706;
+    color: #FFC329;
+    text-shadow: 0 4px 0 #795900;
     transform: scale(1.15);
   }
 
   .modal-title {
     font-family: var(--font-heading);
     font-size: 1.85rem;
-    font-weight: 800;
+    font-weight: 900;
     color: #0F172A;
     margin: 0 0 0.25rem;
   }
   .modal-subtitle {
     font-size: 0.95rem;
-    color: #64748B;
+    color: #464554;
     margin: 0 0 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .modal-stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
-    background: #F8FAFC;
-    border: 2px solid #E2E8F0;
+    background: #F2F3FF;
+    border: 2px solid #0F172A;
     border-radius: 16px;
     padding: 1rem;
     margin-bottom: 1.75rem;
@@ -737,43 +729,44 @@ const targetIds = resolveTargetIds(game);
     align-items: center;
   }
   .mstat-lbl {
-    font-family: var(--font-heading);
+    font-family: var(--font-caps);
     font-size: 0.725rem;
-    color: #64748B;
+    color: #464554;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
   }
   .mstat strong {
     font-family: var(--font-heading);
     font-size: 1.3rem;
     color: #0F172A;
-    font-weight: 800;
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
   }
 
   /* Giant 3D Play Again Button */
   .btn-play-again {
     width: 100%;
-    background: #58CC02;
+    background: #22C55E;
     color: #FFFFFF;
-    border: 2px solid #46A302;
-    border-bottom: 5px solid #378000;
+    border: 2px solid #0F172A;
     border-radius: 16px;
     padding: 0.95rem 1.25rem;
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    font-weight: 800;
+    font-weight: 900;
+    text-transform: uppercase;
     cursor: pointer;
-    box-shadow: 0 6px 0 #378000;
-    transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.12s ease;
+    box-shadow: 0 6px 0 0 #15803D;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.1s;
   }
   .btn-play-again:hover {
-    background: #68DE05;
+    background: #16A34A;
     transform: translateY(-2px);
-    box-shadow: 0 8px 0 #378000;
+    box-shadow: 0 7px 0 0 #15803D;
   }
   .btn-play-again:active {
     transform: translateY(4px);
-    box-shadow: 0 2px 0 #378000;
+    box-shadow: 0 2px 0 0 #15803D;
   }
 
   @media (max-width: 520px) {
@@ -823,13 +816,13 @@ const targetIds = resolveTargetIds(game);
     .grid-container {
       gap: 2px;
       padding: 4px;
-      border-width: 3px;
+      border-width: 2px;
       border-radius: 14px;
     }
     .grid-tile {
       font-size: 0.85rem;
       border-radius: 6px;
-      border-width: 1px;
+      border-width: 1.5px;
       border-bottom-width: 3px !important;
     }
     .game-header-card {
