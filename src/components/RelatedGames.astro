@@ -59,10 +59,10 @@ const relatedGames = relatedSlugs
   .section-title {
     font-family: var(--font-heading);
     font-size: 1.65rem;
-    font-weight: 800;
+    font-weight: 900;
     color: #0F172A;
     margin: 0;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
   .games-grid {
     display: grid;
@@ -70,20 +70,20 @@ const relatedGames = relatedSlugs
     gap: 1.25rem;
   }
   
-  /* Toybox Playful Cards */
+  /* Tactile Neo-Brutalist Game Cards */
   .game-card {
     position: relative;
     background: #FFFFFF;
-    border: 2px solid #E2E8F0;
+    border: 2px solid #0F172A;
     border-radius: 20px;
-    box-shadow: 0 6px 0 #CBD5E1;
+    box-shadow: 0 6px 0 0 #0F172A;
     padding: 1.35rem;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
     overflow: hidden;
   }
   .game-card::before {
@@ -93,16 +93,16 @@ const relatedGames = relatedSlugs
     left: 0;
     right: 0;
     height: 6px;
-    background: #38BDF8;
+    background: #4648D4;
+    border-bottom: 2px solid #0F172A;
   }
   .game-card:hover {
     transform: translateY(-4px);
-    border-color: #38BDF8;
-    box-shadow: 0 10px 0 #CBD5E1, 0 14px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 0 0 #0F172A;
   }
   .game-card:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 0 #CBD5E1;
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 0 #0F172A;
   }
 
   .card-badge-row {
@@ -113,12 +113,12 @@ const relatedGames = relatedSlugs
     margin-top: 0.25rem;
   }
   .card-badge {
-    background-color: #E0F2FE;
-    color: #0369A1;
-    border: 1.5px solid #BAE6FD;
-    font-family: var(--font-heading);
+    background-color: #E1E0FF;
+    color: #07006C;
+    border: 1.5px solid #0F172A;
+    font-family: var(--font-caps);
     font-size: 0.775rem;
-    font-weight: 800;
+    font-weight: 700;
     padding: 0.2rem 0.65rem;
     border-radius: 10px;
     letter-spacing: 0.04em;
@@ -127,64 +127,65 @@ const relatedGames = relatedSlugs
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
-    background: #FEF3C7;
-    color: #D97706;
-    border: 1.5px solid #FDE68A;
+    background: #FFDF9F;
+    color: #6F5100;
+    border: 1.5px solid #0F172A;
     border-radius: 10px;
     padding: 0.2rem 0.6rem;
     font-size: 0.775rem;
-    font-family: var(--font-heading);
-    font-weight: 800;
+    font-family: var(--font-caps);
+    font-weight: 700;
   }
 
   .card-title {
     font-family: var(--font-heading);
     font-size: 1.15rem;
-    font-weight: 800;
+    font-weight: 900;
     color: #0F172A;
     margin: 0 0 0.45rem;
     line-height: 1.35;
   }
   .card-prompt {
     font-size: 0.875rem;
-    color: #475569;
+    color: #464554;
     margin: 0 0 1rem;
     flex-grow: 1;
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: 500;
   }
   .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.825rem;
-    border-top: 2px dashed #E2E8F0;
+    border-top: 2px dashed #C7C4D7;
     padding-top: 0.75rem;
   }
   .card-topic {
     text-transform: capitalize;
-    color: #64748B;
-    font-weight: 800;
+    color: #464554;
+    font-weight: 700;
+    font-family: var(--font-caps);
   }
   .card-play-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    background: #58CC02;
-    border: 1.5px solid #46A302;
-    border-bottom: 4px solid #378000;
+    background: #22C55E;
+    border: 2px solid #0F172A;
     color: #FFFFFF;
     font-family: var(--font-heading);
     font-size: 0.775rem;
-    font-weight: 800;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: 0.35rem 0.8rem;
     border-radius: 12px;
-    transition: transform 0.1s ease, border-bottom-width 0.1s ease;
+    box-shadow: 0 3px 0 0 #15803D;
+    transition: transform 0.08s ease, background-color 0.1s;
   }
   .card-play-btn:hover {
-    background: #68DE05;
+    background: #16A34A;
   }
   .arrow-icon {
     transition: transform 0.2s ease;
