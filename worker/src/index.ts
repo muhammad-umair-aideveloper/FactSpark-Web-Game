@@ -1,5 +1,5 @@
 export interface Env {
-  ENVIRONMENT: string;
+  ENVIRONMENT?: string;
   STRIPE_SECRET_KEY?: string;
   STRIPE_WEBHOOK_SECRET?: string;
   STRIPE_MONTHLY_PRICE_ID: string;
@@ -126,8 +126,8 @@ export default {
           }
         }
 
-        // Demo / offline fallback mode (only in non-production environments)
-        if (env.ENVIRONMENT !== 'production') {
+        // Demo / offline fallback mode (only when explicitly in development environment)
+        if (env.ENVIRONMENT === 'development') {
           return new Response(
             JSON.stringify({
               url: `${origin}/pass/success?demo=true&plan=${plan}`
@@ -137,7 +137,7 @@ export default {
         }
 
         return new Response(
-          JSON.stringify({ error: 'Payment provider unavailable in production' }),
+          JSON.stringify({ error: 'Payment provider unavailable' }),
           { status: 503, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
         );
       } catch (err: any) {

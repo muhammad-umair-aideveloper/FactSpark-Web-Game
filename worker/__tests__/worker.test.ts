@@ -81,18 +81,79 @@ describe('Cloudflare Worker License & Webhook Endpoints', () => {
     expect(jsonForged.valid).toBe(false);
   });
 
-  it('handles create-checkout-session in demo/offline fallback mode', async () => {
+  it('handles create-checkout-session in demo/offline fallback mode when ENVIRONMENT is development', async () => {
     const req = new Request('https://worker.gridfluency.com/api/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ plan: 'annual' })
     });
 
-    const res = await worker.fetch(req, mockEnv);
+    const devEnv: Env = { ...mockEnv, ENVIRONMENT: 'development' };
+    const res = await worker.fetch(req, devEnv);
     expect(res.status).toBe(200);
 
     const json = await res.json() as { url: string };
     expect(json.url).toContain('/pass/success');
     expect(json.url).toContain('plan=annual');
+  });
+
+  it('fails closed and returns 503 when ENVIRONMENT is undefined', async () => {
+    const req = new Request('https://worker.gridfluency.com/api/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ plan: 'annual' })
+    });
+
+    const envUndefined: Env = { ...mockEnv, ENVIRONMENT: undefined };
+    const res = await worker.fetch(req, envUndefined);
+    expect(res.status).toBe(503);
+
+    const json = await res.json() as { error: string };
+    expect(json.error).toBe('Payment provider unavailable');
+  });
+
+  it('fails closed and returns 503 when ENVIRONMENT is empty string', async () => {
+    const req = new Request('https://worker.gridfluency.com/api/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ plan: 'annual' })
+    });
+
+    const envEmpty: Env = { ...mockEnv, ENVIRONMENT: '' };
+    const res = await worker.fetch(req, envEmpty);
+    expect(res.status).toBe(503);
+
+    const json = await res.json() as { error: string };
+    expect(json.error).toBe('Payment provider unavailable');
+  });
+
+  it('fails closed and returns 503 when ENVIRONMENT is production', async () => {
+    const req = new Request('https://worker.gridfluency.com/api/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ plan: 'annual' })
+    });
+
+    const envProd: Env = { ...mockEnv, ENVIRONMENT: 'production' };
+    const res = await worker.fetch(req, envProd);
+    expect(res.status).toBe(503);
+
+    const json = await res.json() as { error: string };
+    expect(json.error).toBe('Payment provider unavailable');
+  });
+
+  it('fails closed and returns 503 when ENVIRONMENT is staging', async () => {
+    const req = new Request('https://worker.gridfluency.com/api/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ plan: 'annual' })
+    });
+
+    const envStaging: Env = { ...mockEnv, ENVIRONMENT: 'staging' };
+    const res = await worker.fetch(req, envStaging);
+    expect(res.status).toBe(503);
+
+    const json = await res.json() as { error: string };
+    expect(json.error).toBe('Payment provider unavailable');
   });
 });
