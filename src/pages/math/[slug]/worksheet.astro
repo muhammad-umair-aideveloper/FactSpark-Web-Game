@@ -42,10 +42,9 @@ const data = generateWorksheetData(game);
       .no-print-bar {
         background: #FFFFFF;
         color: #0F172A;
-        border: 2px solid #E2E8F0;
-        border-bottom: 5px solid #CBD5E1;
+        border: 2px solid #0F172A;
         padding: 14px 24px;
-        border-radius: 16px;
+        border-radius: 18px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -53,32 +52,31 @@ const data = generateWorksheetData(game);
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 4px 0 0 #0F172A;
       }
       .btn-print {
-        background: #58CC02;
+        background: #22C55E;
         color: #FFFFFF;
-        border: 2px solid #46A302;
-        border-bottom: 4px solid #378000;
+        border: 2px solid #0F172A;
         border-radius: 12px;
         padding: 8px 18px;
         font-weight: 800;
         font-size: 14px;
         cursor: pointer;
-        box-shadow: 0 3px 0 #378000;
-        transition: transform 0.12s, box-shadow 0.12s;
+        box-shadow: 0 3px 0 0 #15803D;
+        transition: transform 0.08s ease, box-shadow 0.08s ease;
       }
       .btn-print:hover {
-        background: #68DE05;
+        background: #16A34A;
         transform: translateY(-1px);
-        box-shadow: 0 4px 0 #378000;
+        box-shadow: 0 4px 0 0 #15803D;
       }
       .btn-print:active {
         transform: translateY(2px);
-        box-shadow: 0 1px 0 #378000;
+        box-shadow: 0 1px 0 0 #15803D;
       }
       .btn-back {
-        color: #0284C7;
+        color: #4648D4;
         text-decoration: none;
         font-size: 14px;
         font-weight: 800;
@@ -231,9 +229,9 @@ const data = generateWorksheetData(game);
     <!-- PAGE 2: TEACHER ANSWER KEY -->
     <div class="worksheet-page">
       <div class="header-fields">
-        <div class="field-line" style="color: #0284C7; font-weight: 800;">TEACHER ANSWER KEY</div>
+        <div class="field-line" style="color: #4648D4; font-weight: 800;">TEACHER ANSWER KEY</div>
         <div class="field-line">Target Count: <strong>{data.targetsCount}</strong></div>
-        <div class="field-line">Grid Fluency &copy;</div>
+        <div class="field-line">Fact Spark ⚡ &copy;</div>
       </div>
 
       <div class="title-section">
