@@ -72,36 +72,36 @@ const {
     --font-heading: 'Fredoka', -apple-system, BlinkMacSystemFont, 'Segoe UI', cursive, sans-serif;
     --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
-    /* Authentic Arcade Video Game Palette */
-    --brand-indigo: #6366F1;
-    --brand-dark-indigo: #4F46E5;
-    --brand-shadow: #3730A3;
+    /* Playful Toybox & Candy Palette */
+    --brand-indigo: #0284C7;
+    --brand-dark-indigo: #0369A1;
+    --brand-shadow: #075985;
     
-    --success-green: #22C55E;
-    --success-bright: #4ADE80;
-    --success-shadow: #15803D;
+    --success-green: #58CC02;
+    --success-bright: #68DE05;
+    --success-shadow: #46A302;
     
     --energy-orange: #F97316;
     --energy-orange-shadow: #C2410C;
     --bubblegum-pink: #EC4899;
     --bubblegum-shadow: #BE185D;
     
-    --sun-amber: #FACC15;
-    --sun-amber-shadow: #CA8A04;
+    --sun-amber: #FBBF24;
+    --sun-amber-shadow: #D97706;
     
-    /* High-contrast Arcade Theme Tokens */
-    --navy-text: #F8FAFC;
-    --slate-text: #E2E8F0;
-    --slate-muted: #94A3B8;
-    --slate-border: #334155;
-    --bg-canvas: #0B0F19;
-    --arcade-panel-bg: #111827;
-    --arcade-card-border: #312E81;
-    --arcade-card-shadow: #1E1B4B;
+    /* Crisp Playful Toybox Light Tokens */
+    --navy-text: #0F172A;
+    --slate-text: #1E293B;
+    --slate-muted: #64748B;
+    --slate-border: #E2E8F0;
+    --bg-canvas: #F8FAFC;
+    --arcade-panel-bg: #FFFFFF;
+    --arcade-card-border: #E2E8F0;
+    --arcade-card-shadow: #CBD5E1;
     
     /* 3D Tactile Depths */
     --btn-radius: 14px;
-    --card-radius: 18px;
+    --card-radius: 20px;
   }
 
   *, *::before, *::after {
@@ -111,7 +111,7 @@ const {
   html {
     font-family: var(--font-body);
     background-color: var(--bg-canvas);
-    color: var(--navy-text);
+    color: var(--slate-text);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
@@ -125,16 +125,14 @@ const {
     flex-direction: column;
     position: relative;
     overflow-x: hidden;
-    color: #F8FAFC;
-    background-color: #0B0F19;
+    color: #1E293B;
+    background-color: #F8FAFC;
     background-image: 
-      radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.22) 0%, transparent 45%),
-      radial-gradient(circle at 85% 20%, rgba(236, 72, 153, 0.2) 0%, transparent 45%),
-      radial-gradient(circle at 50% 85%, rgba(56, 189, 248, 0.18) 0%, transparent 50%),
-      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(180deg, #0B0F19 0%, #1E1B4B 50%, #0B0F19 100%);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px, 100% 100%;
+      radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 85% 20%, rgba(251, 191, 36, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 50% 85%, rgba(88, 204, 2, 0.1) 0%, transparent 50%),
+      radial-gradient(#CBD5E1 1.5px, transparent 1.5px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
   }
 
   /* Ambient Floating Background Decorations */
@@ -151,19 +149,18 @@ const {
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 2.4rem;
-    opacity: 0.25;
+    opacity: 0.35;
     animation: doodleFloat 14s ease-in-out infinite;
     user-select: none;
-    text-shadow: 0 0 16px currentColor;
   }
   
-  .doodle-plus { animation-delay: 0s; color: #818CF8; font-size: 3rem; }
-  .doodle-times { animation-delay: 2s; color: #F472B6; font-size: 2.6rem; }
+  .doodle-plus { animation-delay: 0s; color: #38BDF8; font-size: 3rem; }
+  .doodle-times { animation-delay: 2s; color: #F43F5E; font-size: 2.6rem; }
   .doodle-star { animation-delay: 4s; color: #FBBF24; font-size: 2.4rem; }
-  .doodle-divide { animation-delay: 6s; color: #34D399; font-size: 2.8rem; }
-  .doodle-equals { animation-delay: 8s; color: #A78BFA; font-size: 2.6rem; }
+  .doodle-divide { animation-delay: 6s; color: #58CC02; font-size: 2.8rem; }
+  .doodle-equals { animation-delay: 8s; color: #A855F7; font-size: 2.6rem; }
   .doodle-sparkle { animation-delay: 10s; color: #FB923C; font-size: 2.4rem; }
-  .doodle-minus { animation-delay: 12s; color: #38BDF8; font-size: 3.2rem; }
+  .doodle-minus { animation-delay: 12s; color: #0284C7; font-size: 3.2rem; }
 
   @keyframes doodleFloat {
     0%, 100% {
@@ -178,27 +175,27 @@ const {
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.35;
+    opacity: 0.3;
     pointer-events: none;
   }
   .orb-1 {
     width: 380px;
     height: 380px;
-    background: rgba(99, 102, 241, 0.15);
+    background: rgba(56, 189, 248, 0.15);
     top: -80px;
     right: -100px;
   }
   .orb-2 {
     width: 420px;
     height: 420px;
-    background: rgba(236, 72, 153, 0.12);
+    background: rgba(244, 63, 94, 0.1);
     bottom: 10%;
     left: -120px;
   }
   .orb-3 {
     width: 320px;
     height: 320px;
-    background: rgba(245, 158, 11, 0.1);
+    background: rgba(251, 191, 36, 0.12);
     top: 45%;
     right: 5%;
   }
@@ -219,7 +216,7 @@ const {
     letter-spacing: -0.015em;
   }
 
-  /* Real 3D Tactile Arcade Buttons */
+  /* Real 3D Tactile Buttons */
   .btn-3d {
     position: relative;
     display: inline-flex;
@@ -248,9 +245,9 @@ const {
 
   /* Accessibility & Focus Rings */
   :focus-visible {
-    outline: 3px solid #6366F1;
+    outline: 3px solid #0284C7;
     outline-offset: 3px;
-    border-radius: 6px;
+    border-radius: 8px;
   }
 
   /* Chromebook (1366x768) & School Tablet Responsive Optimization */
