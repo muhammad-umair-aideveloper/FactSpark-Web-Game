@@ -32,27 +32,27 @@ const {
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={metaDescription} />
-    <meta property="og:site_name" content="Grid Fluency" />
+    <meta property="og:site_name" content="Fact Spark ⚡" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={metaDescription} />
 
-    <!-- Google Fonts: Fredoka (punchy rounded headings) & Nunito (friendly bouncy body) -->
+    <!-- Google Fonts: Rubik & Space Grotesk (Tactile Toybox Arcade Design System) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
 
     <slot name="head" />
   </head>
   <body>
-    <!-- Playful Ambient Background Canvas with Floating Math Doodles -->
+    <!-- Tactile Ambient Background Canvas with Floating Math Glyphs -->
     <div class="ambient-bg-layer" aria-hidden="true">
       <div class="math-doodle doodle-plus" style="top: 8%; left: 4%;">&#43;</div>
       <div class="math-doodle doodle-times" style="top: 15%; right: 5%;">&#215;</div>
       <div class="math-doodle doodle-star" style="top: 32%; left: 7%;">&#9733;</div>
       <div class="math-doodle doodle-divide" style="top: 48%; right: 4%;">&#247;</div>
       <div class="math-doodle doodle-equals" style="top: 65%; left: 3%;">&#61;</div>
-      <div class="math-doodle doodle-sparkle" style="top: 78%; right: 6%;">&#10022;</div>
+      <div class="math-doodle doodle-sparkle" style="top: 78%; right: 6%;">⚡</div>
       <div class="math-doodle doodle-minus" style="top: 90%; left: 8%;">&#8722;</div>
       <div class="ambient-orb orb-1"></div>
       <div class="ambient-orb orb-2"></div>
@@ -69,35 +69,55 @@ const {
 
 <style is:global>
   :root {
-    --font-heading: 'Fredoka', -apple-system, BlinkMacSystemFont, 'Segoe UI', cursive, sans-serif;
-    --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Rubik', system-ui, -apple-system, sans-serif;
+    --font-body: 'Rubik', system-ui, -apple-system, sans-serif;
+    --font-caps: 'Space Grotesk', system-ui, -apple-system, sans-serif;
     
-    /* Playful Toybox & Candy Palette */
-    --brand-indigo: #0284C7;
-    --brand-dark-indigo: #0369A1;
-    --brand-shadow: #075985;
-    
-    --success-green: #58CC02;
-    --success-bright: #68DE05;
-    --success-shadow: #46A302;
-    
-    --energy-orange: #F97316;
-    --energy-orange-shadow: #C2410C;
-    --bubblegum-pink: #EC4899;
-    --bubblegum-shadow: #BE185D;
-    
-    --sun-amber: #FBBF24;
-    --sun-amber-shadow: #D97706;
-    
-    /* Crisp Playful Toybox Light Tokens */
-    --navy-text: #0F172A;
-    --slate-text: #1E293B;
-    --slate-muted: #64748B;
-    --slate-border: #E2E8F0;
-    --bg-canvas: #F8FAFC;
-    --arcade-panel-bg: #FFFFFF;
-    --arcade-card-border: #E2E8F0;
-    --arcade-card-shadow: #CBD5E1;
+    /* Tactile Toybox Arcade Palette (DESIGN.md specification) */
+    --bg-canvas: #FAF8FF;
+    --surface-lowest: #FFFFFF;
+    --surface-low: #F2F3FF;
+    --surface-container: #EAEDFF;
+    --surface-high: #E2E7FF;
+    --surface-highest: #DAE2FD;
+
+    --ink-primary: #131B2E;
+    --ink-heading: #0F172A;
+    --ink-muted: #464554;
+    --ink-border: #0F172A;
+    --outline-variant: #C7C4D7;
+
+    --primary-spark: #4648D4;
+    --primary-bevel: #2F2EBE;
+    --primary-container: #6063EE;
+    --on-primary: #FFFFFF;
+
+    --secondary-spark: #795900;
+    --secondary-container: #FFC329;
+    --secondary-bevel: #795900;
+    --on-secondary: #FFFFFF;
+
+    --tertiary-green: #00873B;
+    --tertiary-bevel: #005321;
+    --tertiary-container: #00873B;
+    --on-tertiary: #FFFFFF;
+
+    --error-red: #BA1A1A;
+    --error-bevel: #93000A;
+
+    /* Grade World Palettes */
+    --grade1-blue: #0EA5E9;
+    --grade1-bevel: #0284C7;
+    --grade2-green: #22C55E;
+    --grade2-bevel: #15803D;
+    --grade3-orange: #F97316;
+    --grade3-bevel: #C2410C;
+    --grade4-purple: #A855F7;
+    --grade4-bevel: #7E22CE;
+    --grade5-rose: #F43F5E;
+    --grade5-bevel: #BE123C;
+    --grade6-teal: #14B8A6;
+    --grade6-bevel: #0F766E;
     
     /* 3D Tactile Depths */
     --btn-radius: 14px;
@@ -111,7 +131,7 @@ const {
   html {
     font-family: var(--font-body);
     background-color: var(--bg-canvas);
-    color: var(--slate-text);
+    color: var(--ink-primary);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
@@ -125,13 +145,13 @@ const {
     flex-direction: column;
     position: relative;
     overflow-x: hidden;
-    color: #1E293B;
-    background-color: #F8FAFC;
+    color: var(--ink-primary);
+    background-color: var(--bg-canvas);
     background-image: 
-      radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
-      radial-gradient(circle at 85% 20%, rgba(251, 191, 36, 0.12) 0%, transparent 45%),
-      radial-gradient(circle at 50% 85%, rgba(88, 204, 2, 0.1) 0%, transparent 50%),
-      radial-gradient(#CBD5E1 1.5px, transparent 1.5px);
+      radial-gradient(circle at 15% 15%, rgba(96, 99, 238, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 85% 20%, rgba(255, 195, 41, 0.09) 0%, transparent 45%),
+      radial-gradient(circle at 50% 85%, rgba(0, 135, 59, 0.06) 0%, transparent 50%),
+      radial-gradient(#C7C4D7 1.5px, transparent 1.5px);
     background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
   }
 
@@ -147,20 +167,20 @@ const {
   .math-doodle {
     position: absolute;
     font-family: var(--font-heading);
-    font-weight: 800;
+    font-weight: 900;
     font-size: 2.4rem;
-    opacity: 0.35;
+    opacity: 0.28;
     animation: doodleFloat 14s ease-in-out infinite;
     user-select: none;
   }
   
-  .doodle-plus { animation-delay: 0s; color: #38BDF8; font-size: 3rem; }
-  .doodle-times { animation-delay: 2s; color: #F43F5E; font-size: 2.6rem; }
-  .doodle-star { animation-delay: 4s; color: #FBBF24; font-size: 2.4rem; }
-  .doodle-divide { animation-delay: 6s; color: #58CC02; font-size: 2.8rem; }
-  .doodle-equals { animation-delay: 8s; color: #A855F7; font-size: 2.6rem; }
-  .doodle-sparkle { animation-delay: 10s; color: #FB923C; font-size: 2.4rem; }
-  .doodle-minus { animation-delay: 12s; color: #0284C7; font-size: 3.2rem; }
+  .doodle-plus { animation-delay: 0s; color: var(--grade1-blue); font-size: 3rem; }
+  .doodle-times { animation-delay: 2s; color: var(--grade5-rose); font-size: 2.6rem; }
+  .doodle-star { animation-delay: 4s; color: var(--secondary-container); font-size: 2.4rem; }
+  .doodle-divide { animation-delay: 6s; color: var(--grade2-green); font-size: 2.8rem; }
+  .doodle-equals { animation-delay: 8s; color: var(--grade4-purple); font-size: 2.6rem; }
+  .doodle-sparkle { animation-delay: 10s; color: var(--secondary-container); font-size: 2.4rem; }
+  .doodle-minus { animation-delay: 12s; color: var(--primary-spark); font-size: 3.2rem; }
 
   @keyframes doodleFloat {
     0%, 100% {
@@ -175,48 +195,49 @@ const {
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.3;
+    opacity: 0.25;
     pointer-events: none;
   }
   .orb-1 {
     width: 380px;
     height: 380px;
-    background: rgba(56, 189, 248, 0.15);
+    background: rgba(70, 72, 212, 0.12);
     top: -80px;
     right: -100px;
   }
   .orb-2 {
     width: 420px;
     height: 420px;
-    background: rgba(244, 63, 94, 0.1);
+    background: rgba(244, 63, 94, 0.08);
     bottom: 10%;
     left: -120px;
   }
   .orb-3 {
     width: 320px;
     height: 320px;
-    background: rgba(251, 191, 36, 0.12);
+    background: rgba(255, 195, 41, 0.1);
     top: 45%;
     right: 5%;
   }
 
   .page-body {
     flex: 1;
-    max-width: 1240px;
+    max-width: 1280px;
     width: 100%;
     margin: 0 auto;
-    padding: 2rem 1.25rem;
+    padding: 2rem 1.5rem;
     position: relative;
     z-index: 1;
   }
   
   h1, h2, h3, h4, .brand-text, .section-title, .prompt-title {
     font-family: var(--font-heading);
-    color: var(--navy-text);
-    letter-spacing: -0.015em;
+    color: var(--ink-heading);
+    letter-spacing: -0.02em;
+    font-weight: 800;
   }
 
-  /* Real 3D Tactile Buttons */
+  /* Real 3D Tactile Neo-Brutalist Buttons */
   .btn-3d {
     position: relative;
     display: inline-flex;
@@ -226,11 +247,11 @@ const {
     font-family: var(--font-heading);
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     text-decoration: none;
     border-radius: var(--btn-radius);
-    border: 2px solid transparent;
-    transition: transform 0.08s ease, border-bottom-width 0.08s ease, box-shadow 0.08s ease;
+    border: 2px solid var(--ink-border);
+    transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.1s ease;
     cursor: pointer;
     user-select: none;
     touch-action: manipulation;
@@ -240,17 +261,40 @@ const {
   }
   .btn-3d:active {
     transform: translateY(3px);
-    border-bottom-width: 2px !important;
+  }
+
+  /* Tactile Pill Caps & Numeric Typography */
+  .pill-caps {
+    font-family: var(--font-caps);
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .num-tabular, .telemetry-val, .counter-num, .timer-num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  /* Tactile 3D Card Shell */
+  .card-3d {
+    background: var(--surface-lowest);
+    border: 2px solid var(--ink-border);
+    border-radius: var(--card-radius);
+    box-shadow: 0 6px 0 0 var(--ink-border);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
   }
 
   /* Accessibility & Focus Rings */
   :focus-visible {
-    outline: 3px solid #0284C7;
+    outline: 3px solid var(--primary-spark);
     outline-offset: 3px;
     border-radius: 8px;
   }
 
-  /* Chromebook (1366x768) & School Tablet Responsive Optimization */
+  /* Chromebook & School Tablet Responsive Optimization */
   @media (max-width: 1366px) {
     .page-body {
       padding: 1.5rem 1rem;
@@ -259,12 +303,11 @@ const {
 
   @media (max-width: 480px) {
     .page-body {
-      padding: 0.75rem 0.25rem;
+      padding: 0.75rem 0.5rem;
     }
   }
 
   @media (pointer: coarse) {
-    /* Touch devices: ensure effortless tap feedback and minimum 44px touch targets */
     .btn-3d, .tool-btn, .ctrl-btn, .nav-link, .topic-pill {
       min-height: 44px;
     }
