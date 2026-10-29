@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Privacy Policy', url: '/privacy/' }
+];
+
+const seoTitle = 'Privacy Policy — Grid Fluency';
+const seoDesc = 'Plain-English privacy policy for Grid Fluency. We do not collect student personal information, require passwords, or track users across sites.';
+const canonicalUrl = 'https://gridfluency.com/privacy/';
+---
+
+<BaseLayout
+  title={seoTitle}
+  metaDescription={seoDesc}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs crumbs={breadcrumbs} />
+
+  <main class="privacy-container">
+    <header class="privacy-header">
+      <span class="privacy-tag">Transparency & Safety</span>
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last Updated: October 2026</p>
+    </header>
+
+    <div class="privacy-card">
+      <section class="privacy-section">
+        <h2>Overview</h2>
+        <p>
+          Grid Fluency is an educational math practice game designed for students, teachers, and families. 
+          Our core principle is straightforward: <strong>we don't collect personal information from students</strong>. 
+          There are no student accounts, no user logins, and no passwords required to play any game.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h2>What We Store in Your Browser</h2>
+        <p>
+          We do not store your data on remote servers when you play games. All gameplay progress is kept locally on your device using your browser's <code>localStorage</code>:
+        </p>
+        <ul>
+          <li><strong>Personal Best Scores:</strong> Your highest score and fastest completion time for each grid game.</li>
+          <li><strong>Audio Preference:</strong> Whether you prefer game sound effects toggled on or off.</li>
+          <li><strong>License Token (if applicable):</strong> If a teacher or parent has purchased a Teacher Pass, a license key is saved in localStorage so the browser knows not to display advertisements.</li>
+        </ul>
+        <p>
+          You can erase this information at any time by clearing your browser's site data or cookies.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h2>No Accounts and No Student Personal Data</h2>
+        <p>
+          Students never create accounts, provide names, enter email addresses, or share any personal details. Students can jump right into any math game without registering. We do not build profiles on children or track student identity across sessions or other websites.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h2>Advertising & Third-Party Scripts</h2>
+        <p>
+          To keep our math games free for everyone, the free version displays banner advertisements. We configure our ad tags with child-directed settings:
+        </p>
+        <ul>
+          <li>Ads are <strong>non-personalized</strong> contextual ads.</li>
+          <li>We do not permit behavioral profiling, interest-based tracking, or retargeting.</li>
+          <li>Third-party ad networks may receive standard technical data necessary to serve the creative (such as IP address for coarse geographic delivery and browser dimensions), but no student identifiers or personal accounts are shared.</li>
+        </ul>
+        <p>
+          Subscribers to our Teacher &amp; Parent Pass enjoy a 100% ad-free experience where all external advertising scripts are blocked entirely from loading.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h2>Contact Us</h2>
+        <p>
+          If you have questions about our data practices or need help with your classroom setup, please contact us at:
+        </p>
+        <p class="contact-box">
+          <strong>Email:</strong> <a href="mailto:contact@gridfluency.com">contact@gridfluency.com</a> <span class="placeholder-note">(contact email placeholder)</span>
+        </p>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .privacy-container {
+    max-width: 800px;
+    margin: 2rem auto 5rem;
+    padding: 0 1.25rem;
+  }
+  .privacy-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .privacy-tag {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    background: rgba(99, 102, 241, 0.15);
+    color: #818CF8;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+  .privacy-header h1 {
+    font-family: 'Fredoka', cursive, sans-serif;
+    font-size: 2.75rem;
+    color: #F8FAFC;
+    margin: 0 0 0.5rem;
+  }
+  .last-updated {
+    color: #94A3B8;
+    font-size: 0.95rem;
+  }
+  .privacy-card {
+    background: #1E293B;
+    border: 2px solid #334155;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+  .privacy-section {
+    margin-bottom: 2.25rem;
+  }
+  .privacy-section:last-child {
+    margin-bottom: 0;
+  }
+  .privacy-section h2 {
+    font-family: 'Fredoka', cursive, sans-serif;
+    font-size: 1.5rem;
+    color: #38BDF8;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+  }
+  .privacy-section p {
+    color: #CBD5E1;
+    line-height: 1.7;
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+  }
+  .privacy-section ul {
+    color: #CBD5E1;
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    margin: 0 0 1rem;
+  }
+  .privacy-section li {
+    margin-bottom: 0.5rem;
+  }
+  .privacy-section code {
+    background: #0F172A;
+    color: #F43F5E;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.375rem;
+    font-size: 0.9em;
+  }
+  .contact-box {
+    background: #0F172A;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #334155;
+  }
+  .contact-box a {
+    color: #38BDF8;
+    text-decoration: underline;
+  }
+  .placeholder-note {
+    font-size: 0.85rem;
+    color: #64748B;
+    font-style: italic;
+    margin-left: 0.5rem;
+  }
+  @media (max-width: 640px) {
+    .privacy-card {
+      padding: 1.5rem;
+    }
+    .privacy-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
