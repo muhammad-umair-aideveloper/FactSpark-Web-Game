@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Fact Spark ⚡</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400..900;1,400..900&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-high": "#e2e7ff", "on-primary-fixed": "#07006c", "tertiary-fixed-dim": "#4ae176", "on-tertiary-container": "#f7fff3", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#005321", "on-background": "#131b2e", "on-error-container": "#93000a", "on-secondary-fixed": "#261a00", "on-tertiary-fixed": "#002109", "on-primary-fixed-variant": "#2f2ebe", "on-tertiary": "#ffffff", "primary-fixed": "#e1e0ff", "primary-container": "#6063ee", "tertiary-container": "#00873b", "secondary": "#795900", "inverse-surface": "#283044", "on-error": "#ffffff", "tertiary-fixed": "#6bff8f", "outline-variant": "#c7c4d7", "on-secondary-container": "#6f5100", "primary": "#4648d4", "inverse-primary": "#c0c1ff", "surface-tint": "#494bd6", "secondary-fixed": "#ffdf9f", "on-primary-container": "#fffbff", "error": "#ba1a1a", "tertiary": "#006b2d", "surface-bright": "#faf8ff", "primary-fixed-dim": "#c0c1ff", "on-secondary-fixed-variant": "#5c4300", "outline": "#767586", "surface-variant": "#dae2fd", "background": "#faf8ff", "surface-container": "#eaedff", "secondary-container": "#ffc329", "surface-dim": "#d2d9f4", "on-primary": "#ffffff", "on-secondary": "#ffffff", "surface": "#faf8ff", "surface-container-highest": "#dae2fd", "on-surface-variant": "#464554", "on-surface": "#131b2e", "surface-container-low": "#f2f3ff", "error-container": "#ffdad6", "inverse-on-surface": "#eef0ff", "secondary-fixed-dim": "#f9bd22" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "gutter": "1.5rem", "margin-mobile": "1rem", "space-sm": "0.5rem", "margin": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "score-timer-lg": [ "Rubik" ], "display-hero": [ "Rubik" ], "display-hero-mobile": [ "Rubik" ], "label-caps": [ "Space Grotesk" ], "headline-sm": [ "Rubik" ], "headline-xl-mobile": [ "Rubik" ], "headline-lg": [ "Rubik" ], "body-md": [ "Rubik" ], "body-lg": [ "Rubik" ], "score-timer-num": [ "Rubik" ], "headline-md": [ "Rubik" ], "body-sm": [ "Rubik" ], "headline-xl": [ "Rubik" ] }, "fontSize": { "score-timer-lg": [ "48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "900" } ], "display-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "900" } ], "display-hero-mobile": [ "38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "900" } ], "label-caps": [ "13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" } ], "headline-sm": [ "18px", { "lineHeight": "24px", "fontWeight": "700" } ], "headline-xl-mobile": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "900" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "800" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "500" } ], "body-lg": [ "18px", { "lineHeight": "26px", "fontWeight": "500" } ], "score-timer-num": [ "32px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "900" } ], "headline-md": [ "22px", { "lineHeight": "28px", "fontWeight": "800" } ], "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "500" } ], "headline-xl": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "900" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full max-w-[1200px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[28px]">bolt</span><span class="font-headline-md text-headline-md text-on-surface tracking-tight">Fact Spark ⚡</span></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all bg-primary-container text-on-primary-container font-headline-sm" data-path="my-spark-locker" href="#">My Spark Locker</a><a class="px-space-md py-space-xs rounded-full font-headline-sm text-headline-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="class-leaderboard" href="#">Class Leaderboard</a><a class="px-space-md py-space-xs rounded-full font-headline-sm text-headline-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="keycap-shop" href="#">Keycap Shop</a></nav></div><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-[18px]">local_fire_department</span><span class="font-label-caps text-label-caps uppercase">12-Day Streak</span></div><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">diamond</span><span class="font-label-caps text-label-caps uppercase">3,450 Gems</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-lowest text-on-surface shadow-[0_1px_4px_rgba(0,0,0,0.05)]"><span class="material-symbols-outlined text-tertiary text-[18px]">smart_toy</span><span class="font-label-caps text-label-caps uppercase">RoboSpark #42</span></div><a class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-all active:translate-y-0.5 shadow-[0_3px_0_0_#2f2ebe]" data-path="game-arena" href="#"><span class="material-symbols-outlined text-[20px]">sports_esports</span><span class="font-headline-sm text-headline-sm hidden sm:inline">Game Arena</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1280px] mx-auto px-margin py-space-sm flex flex-col gap-space-md">
+<!-- SUB-NAV / CONTEXT BAR -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-[0_3px_0_0_#c7c4d7]">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px]">inventory_2</span>
+          Student Hub
+        </span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Alex's Math Locker &amp; Arcade Quests</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-space-sm py-0.5 rounded-full">
+<span class="material-symbols-outlined text-secondary text-[16px]">schedule</span>
+          Session: Morning Block 2
+        </span>
+<button class="flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-lowest text-on-surface font-label-caps text-label-caps shadow-[0_2px_0_0_#c7c4d7] active:translate-y-0.5 active:shadow-none hover:bg-surface-container" id="audio-toggle">
+<span class="material-symbols-outlined text-[16px] text-tertiary">volume_up</span>
+          SFX ON
+        </button>
+</div>
+</div>
+<!-- TOP ROW (12 COLS): 5 COLS HERO CARD + 7 COLS QUESTS & CHEST -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-stretch">
+<!-- LEFT: 5 COLS STUDENT HERO CARD -->
+<div class="lg:col-span-5 bg-primary text-on-primary rounded-3xl p-5 shadow-[0_6px_0_0_#2f2ebe] flex flex-col justify-between relative overflow-hidden">
+<!-- Ambient decorative shapes inside card -->
+<div class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-white/10 pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-secondary-container/15 pointer-events-none"></div>
+<div>
+<!-- Top Row Badges -->
+<div class="flex items-center justify-between gap-space-xs mb-3">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-white/20 text-on-primary font-label-caps text-label-caps uppercase tracking-wider backdrop-blur-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">bolt</span>
+              Player Passport
+            </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-black/20 text-surface-bright font-label-caps text-label-caps uppercase">
+<span class="material-symbols-outlined text-[14px]">school</span>
+              Grade 4 • Room 204
+            </span>
+</div>
+<!-- Avatar & Rank Area -->
+<div class="flex items-center gap-3 bg-white/10 p-3 rounded-2xl backdrop-blur-sm mb-3">
+<div class="relative w-16 h-16 rounded-2xl bg-surface-container-lowest flex items-center justify-center shadow-[0_4px_0_0_#2f2ebe] shrink-0">
+<span class="material-symbols-outlined text-primary text-[40px]">smart_toy</span>
+<span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed flex items-center justify-center font-label-caps text-[10px]">
+                ✓
+              </span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-md text-headline-md text-white truncate">RoboSpark #42</span>
+<span class="bg-secondary-container text-on-secondary-container font-label-caps text-[11px] px-2 py-0.5 rounded-full uppercase">
+                  Lv. 18
+                </span>
+</div>
+<div class="inline-flex items-center gap-1 mt-0.5 px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-fixed font-label-caps text-[11px]">
+<span class="material-symbols-outlined text-[13px]">military_tech</span>
+                Grandmaster Multiplication Ninja
+              </div>
+</div>
+</div>
+<!-- Chunky XP Progress Bar -->
+<div class="bg-black/20 p-3 rounded-2xl mb-3">
+<div class="flex items-center justify-between text-white font-label-caps text-[12px] mb-1.5">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary-fixed">auto_awesome</span>
+                2,400 / 3,000 XP
+              </span>
+<span class="text-secondary-fixed font-headline-sm text-headline-sm">80%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-lowest/30 rounded-full p-0.5 overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary-fixed-dim to-secondary-container rounded-full w-4/5 shadow-[inset_0_2px_0_rgba(255,255,255,0.4)] transition-all duration-500"></div>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-low mt-1 text-right">600 XP to Level 19 Unlock 🚀</p>
+</div>
+</div>
+<!-- 3 Tactile Stat Chips -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<div class="bg-surface-container-lowest text-on-surface rounded-xl p-2 text-center shadow-[0_3px_0_0_#2f2ebe]">
+<div class="font-label-caps text-[11px] text-on-surface-variant flex items-center justify-center gap-0.5">
+<span class="material-symbols-outlined text-secondary text-[14px]">speed</span>
+              Best Speed
+            </div>
+<div class="font-score-timer-num text-[18px] leading-tight text-primary mt-0.5">0.8s</div>
+<div class="font-body-sm text-[10px] text-on-surface-variant">per tile</div>
+</div>
+<div class="bg-surface-container-lowest text-on-surface rounded-xl p-2 text-center shadow-[0_3px_0_0_#2f2ebe]">
+<div class="font-label-caps text-[11px] text-on-surface-variant flex items-center justify-center gap-0.5">
+<span class="material-symbols-outlined text-tertiary text-[14px]">my_location</span>
+              Accuracy
+            </div>
+<div class="font-score-timer-num text-[18px] leading-tight text-tertiary text-opacity-100 mt-0.5">97.2%</div>
+<div class="font-body-sm text-[10px] text-on-surface-variant">all games</div>
+</div>
+<div class="bg-surface-container-lowest text-on-surface rounded-xl p-2 text-center shadow-[0_3px_0_0_#2f2ebe]">
+<div class="font-label-caps text-[11px] text-on-surface-variant flex items-center justify-center gap-0.5">
+<span class="material-symbols-outlined text-secondary-container text-[14px]">grid_view</span>
+              Grids Cleared
+            </div>
+<div class="font-score-timer-num text-[18px] leading-tight text-secondary mt-0.5">84</div>
+<div class="font-body-sm text-[10px] text-on-surface-variant">completed</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: 7 COLS DAILY SPARK QUESTS & GOLDEN CHEST -->
+<div class="lg:col-span-7 bg-surface-container-lowest text-on-surface rounded-3xl p-5 shadow-[0_6px_0_0_#dae2fd] flex flex-col justify-between">
+<!-- Header -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[26px]">redeem</span>
+<span class="font-headline-md text-headline-md text-on-surface">Daily Spark Quests</span>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[15px] text-primary">timer</span>
+            Resets in 4h 12m
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm items-stretch flex-1">
+<!-- Left 8 cols: Quest Bars -->
+<div class="md:col-span-8 flex flex-col gap-2.5 justify-between">
+<!-- Quest 1 -->
+<div class="bg-surface-container-low rounded-2xl p-3 shadow-[0_3px_0_0_#dae2fd] flex items-center justify-between gap-3" id="quest-1">
+<div class="flex items-center gap-2.5 min-w-0 flex-1">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">filter_vintage</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="font-headline-sm text-[15px] leading-snug text-on-surface truncate">Pop 50 Prime Numbers</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-full"></div>
+</div>
+<span class="font-label-caps text-[11px] text-tertiary shrink-0">50/50 Done!</span>
+</div>
+</div>
+</div>
+<button class="claim-btn shrink-0 px-3 py-2 rounded-xl bg-tertiary-container text-on-tertiary-container font-headline-sm text-[13px] shadow-[0_4px_0_0_#005321] active:translate-y-1 active:shadow-none hover:brightness-105 transition-all flex items-center gap-1" onclick="claimQuest('quest-1', 100)">
+<span>CLAIM</span>
+<span class="text-secondary-fixed">+100 💎</span>
+</button>
+</div>
+<!-- Quest 2 -->
+<div class="bg-surface-container-low rounded-2xl p-3 shadow-[0_3px_0_0_#dae2fd] flex items-center justify-between gap-3" id="quest-2">
+<div class="flex items-center gap-2.5 min-w-0 flex-1">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">timer_10</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="font-headline-sm text-[15px] leading-snug text-on-surface truncate">Beat 60s Run @ 100% Acc</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full"></div>
+</div>
+<span class="font-label-caps text-[11px] text-primary shrink-0">1/1 Complete</span>
+</div>
+</div>
+</div>
+<button class="claim-btn shrink-0 px-3 py-2 rounded-xl bg-tertiary-container text-on-tertiary-container font-headline-sm text-[13px] shadow-[0_4px_0_0_#005321] active:translate-y-1 active:shadow-none hover:brightness-105 transition-all flex items-center gap-1" onclick="claimQuest('quest-2', 150)">
+<span>CLAIM</span>
+<span class="text-secondary-fixed">+150 💎</span>
+</button>
+</div>
+<!-- Quest 3 -->
+<div class="bg-surface-container-low rounded-2xl p-3 shadow-[0_3px_0_0_#dae2fd] flex items-center justify-between gap-3" id="quest-3">
+<div class="flex items-center gap-2.5 min-w-0 flex-1">
+<div class="w-10 h-10 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">pie_chart</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="font-headline-sm text-[15px] leading-snug text-on-surface truncate">Clear 3 Fraction Grids</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-2/3"></div>
+</div>
+<span class="font-label-caps text-[11px] text-on-surface-variant shrink-0">2/3 Runs</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 px-3 py-2 rounded-xl bg-primary text-on-primary font-headline-sm text-[13px] shadow-[0_4px_0_0_#2f2ebe] active:translate-y-1 active:shadow-none hover:brightness-105 transition-all flex items-center gap-1">
+<span>PLAY</span>
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Right 4 cols: Bouncy Golden Chest -->
+<div class="md:col-span-4 bg-gradient-to-b from-secondary-fixed to-secondary-container text-on-secondary-fixed rounded-2xl p-3.5 shadow-[0_4px_0_0_#5c4300] flex flex-col items-center justify-between text-center relative overflow-hidden">
+<div class="w-full flex justify-between items-center text-on-secondary-container font-label-caps text-[11px]">
+<span class="font-bold">SUPER CHEST</span>
+<span class="px-2 py-0.5 bg-surface-container-lowest/80 rounded-full font-bold">2/3 READY</span>
+</div>
+<!-- Animated Chest Graphic -->
+<div class="my-1 relative flex items-center justify-center">
+<div class="w-20 h-20 rounded-full bg-surface-container-lowest/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-[52px] text-on-secondary-container drop-shadow-sm select-none">
+                  lock
+                </span>
+</div>
+<span class="absolute -top-1 -right-1 text-2xl select-none">✨</span>
+</div>
+<div class="w-full">
+<p class="font-headline-sm text-[13px] leading-tight text-on-secondary-container mb-2">
+                Unlock all 3 for <strong>500 Gems</strong> &amp; Mystery Skin!
+              </p>
+<div class="w-full py-1.5 px-2 rounded-xl bg-surface-container-lowest text-on-surface font-label-caps text-[11px] shadow-[0_2px_0_0_#5c4300] flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">lock_clock</span>
+                1 Quest Left
+              </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM ROW (12 COLS): KEYCAP STYLES (4 COLS) + TROPHY ROOM (4 COLS) + PODIUM (4 COLS) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-md items-stretch">
+<!-- LEFT: 4 COLS EQUIP KEYCAP STYLE -->
+<div class="lg:col-span-4 bg-surface-container-lowest text-on-surface rounded-3xl p-5 shadow-[0_6px_0_0_#dae2fd] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[24px]">palette</span>
+<span class="font-headline-md text-headline-md text-on-surface">Keycap Skins</span>
+</div>
+<span class="font-label-caps text-[11px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">
+              10x10 Theme
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Tactile switch cap style for math battles.</p>
+<!-- 2x2 Grid of Keycap Skins -->
+<div class="grid grid-cols-2 gap-2.5" id="keycap-grid">
+<!-- Skin 1: Toybox Classic (Equipped) -->
+<div class="keycap-card bg-surface-container-low p-2.5 rounded-2xl shadow-[0_3px_0_0_#dae2fd] flex flex-col items-center justify-between text-center relative border-2 border-primary">
+<span class="absolute top-1.5 right-1.5 font-label-caps text-[10px] bg-primary text-on-primary px-1.5 py-0.2 rounded-full">ON</span>
+<!-- Keycap visual representation -->
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest shadow-[0_5px_0_0_#767586] flex items-center justify-center font-headline-md text-headline-md text-on-surface my-1.5 select-none">
+                8
+              </div>
+<div class="font-headline-sm text-[12px] text-on-surface mt-1">Toybox White</div>
+<button class="w-full mt-1.5 py-1 px-2 rounded-lg bg-surface-container text-on-surface-variant font-label-caps text-[11px] cursor-default">
+                EQUIPPED ✓
+              </button>
+</div>
+<!-- Skin 2: Bubblegum Pink -->
+<div class="keycap-card bg-surface-container-low p-2.5 rounded-2xl shadow-[0_3px_0_0_#dae2fd] flex flex-col items-center justify-between text-center relative hover:bg-surface-container transition-all">
+<div class="w-12 h-12 rounded-xl bg-error-container shadow-[0_5px_0_0_#93000a] flex items-center justify-center font-headline-md text-headline-md text-on-error-container my-1.5 select-none">
+                7
+              </div>
+<div class="font-headline-sm text-[12px] text-on-surface mt-1">Bubble Pop</div>
+<button class="w-full mt-1.5 py-1 px-2 rounded-lg bg-surface-container-highest text-on-surface font-label-caps text-[11px] shadow-[0_2px_0_0_#c7c4d7] active:translate-y-0.5 active:shadow-none hover:bg-primary-fixed" onclick="equipSkin(this, 'Bubble Pop')">
+                EQUIP 👆
+              </button>
+</div>
+<!-- Skin 3: Cyber Slime Green -->
+<div class="keycap-card bg-surface-container-low p-2.5 rounded-2xl shadow-[0_3px_0_0_#dae2fd] flex flex-col items-center justify-between text-center relative hover:bg-surface-container transition-all">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed shadow-[0_5px_0_0_#005321] flex items-center justify-center font-headline-md text-headline-md text-on-tertiary-fixed my-1.5 select-none">
+                9
+              </div>
+<div class="font-headline-sm text-[12px] text-on-surface mt-1">Cyber Slime</div>
+<button class="w-full mt-1.5 py-1 px-2 rounded-lg bg-surface-container-highest text-on-surface font-label-caps text-[11px] shadow-[0_2px_0_0_#c7c4d7] active:translate-y-0.5 active:shadow-none hover:bg-primary-fixed" onclick="equipSkin(this, 'Cyber Slime')">
+                EQUIP 👆
+              </button>
+</div>
+<!-- Skin 4: Golden Dragon (Locked) -->
+<div class="keycap-card bg-surface-container-low p-2.5 rounded-2xl shadow-[0_3px_0_0_#dae2fd] flex flex-col items-center justify-between text-center relative opacity-90">
+<span class="absolute top-1.5 right-1.5 font-label-caps text-[10px] bg-secondary-container text-on-secondary-container px-1.5 py-0.2 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">diamond</span> 500
+              </span>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed shadow-[0_5px_0_0_#5c4300] flex items-center justify-center font-headline-md text-headline-md text-on-secondary-fixed my-1.5 select-none relative">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">lock</span>
+</div>
+<div class="font-headline-sm text-[12px] text-on-surface mt-1">Gold Dragon</div>
+<button class="w-full mt-1.5 py-1 px-2 rounded-lg bg-secondary-container text-on-secondary-container font-label-caps text-[11px] shadow-[0_2px_0_0_#5c4300] active:translate-y-0.5 active:shadow-none hover:brightness-105" onclick="unlockSkin(this)">
+                UNLOCK 🔒
+              </button>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2 flex items-center justify-between font-label-caps text-[11px] text-on-surface-variant bg-surface-container px-3 py-1.5 rounded-xl">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[15px]">brush</span>
+            More in Shop
+          </span>
+<span class="text-primary font-bold">12 Total Skins ▶</span>
+</div>
+</div>
+<!-- CENTER: 4 COLS TROPHY & STICKER SHOWCASE -->
+<div class="lg:col-span-4 bg-surface-container-lowest text-on-surface rounded-3xl p-5 shadow-[0_6px_0_0_#dae2fd] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">emoji_events</span>
+<span class="font-headline-md text-headline-md text-on-surface">Trophy Room</span>
+</div>
+<span class="font-label-caps text-[11px] text-on-tertiary-container bg-tertiary-container px-2.5 py-0.5 rounded-full">
+              16 / 24 Unlocked
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Badges earned through speed &amp; accuracy.</p>
+<!-- 3x2 Grid of Chunky Badges -->
+<div class="grid grid-cols-3 gap-2 text-center">
+<!-- Badge 1: Speed Demon -->
+<div class="bg-surface-container-low p-2 rounded-xl shadow-[0_3px_0_0_#dae2fd] flex flex-col items-center justify-center group hover:bg-surface-container transition-all cursor-pointer" title="Solved 60 tiles in under 60 seconds">
+<div class="w-11 h-11 rounded-2xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-[0_3px_0_0_#5c4300] mb-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">bolt</span>
+</div>
+<span class="font-label-caps text-[11px] text-on-surface leading-tight">Speed Demon</span>
+<span class="font-body-sm text-[9px] text-secondary font-bold">GOLD</span>
+</div>
+<!-- Badge 2: Streak Fire -->
+<div class="bg-surface-container-low p-2 rounded-xl shadow-[0_3px_0_0_#dae2fd] flex flex-col items-center justify-center group hover:bg-surface-container transition-all cursor-pointer" title="Played 12 days without missing">
+<div class="w-11 h-11 rounded-2xl bg-error-container text-on-error-container flex items-center justify-center shadow-[0_3px_0_0_#93000a] mb-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+</div>
+<span class="font-label-caps text-[11px] text-on-surface leading-tight">12-Day Streak</span>
+<span class="font-body-sm text-[9px] text-error font-bold">ACTIVE</span>
+</div>
+<!-- Badge 3: Times Table King -->
+<div class="bg-surface-container-low p-2 rounded-xl shadow-[0_3px_0_0_#dae2fd] flex flex-col items-center justify-center group hover:bg-surface-container transition-all cursor-pointer" title="Mastered 1-12 Multiplication Grids">
+<div class="w-11 h-11 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_3px_0_0_#2f2ebe] mb-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">crown</span>
+</div>
+<span class="font-label-caps text-[11px] text-on-surface leading-tight">Table King</span>
+<span class="font-body-sm text-[9px] text-primary font-bold">12x12</span>
+</div>
+<!-- Badge 4: Sniper 100% -->
+<div class="bg-surface-container-low p-2 rounded-xl shadow-[0_3px_0_0_#dae2fd] flex flex-col items-center justify-center group hover:bg-surface-container transition-all cursor-pointer" title="No mistakes in 5 consecutive rounds">
+<div class="w-11 h-11 rounded-2xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shadow-[0_3px_0_0_#005321] mb-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">adjust</span>
+</div>
+<span class="font-label-caps text-[11px] text-on-surface leading-tight">Sniper 100%</span>
+<span class="font-body-sm text-[9px] text-tertiary font-bold">FLAWLESS</span>
+</div>
+<!-- Badge 5: Mystery Diamond (Locked) -->
+<div class="bg-surface-container-low/60 p-2 rounded-xl shadow-[0_2px_0_0_#c7c4d7] flex flex-col items-center justify-center opacity-60">
+<div class="w-11 h-11 rounded-2xl bg-surface-container-highest text-on-surface-variant flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[22px]">question_mark</span>
+</div>
+<span class="font-label-caps text-[11px] text-on-surface-variant leading-tight">Diamond ???</span>
+<span class="font-body-sm text-[9px] text-outline">LOCKED</span>
+</div>
+<!-- Badge 6: Century Club (Locked) -->
+<div class="bg-surface-container-low/60 p-2 rounded-xl shadow-[0_2px_0_0_#c7c4d7] flex flex-col items-center justify-center opacity-60">
+<div class="w-11 h-11 rounded-2xl bg-surface-container-highest text-on-surface-variant flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<span class="font-label-caps text-[11px] text-on-surface-variant leading-tight">Century Club</span>
+<span class="font-body-sm text-[9px] text-outline">84/100</span>
+</div>
+</div>
+</div>
+<!-- Trophy Shelf Status -->
+<div class="mt-3 bg-surface-container px-3 py-2 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-caps text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">stars</span>
+            Next Trophy: Century Club (16 runs left)
+          </div>
+<span class="font-headline-sm text-[12px] text-secondary font-bold">84%</span>
+</div>
+</div>
+<!-- RIGHT: 4 COLS CLASSROOM PODIUM -->
+<div class="md:col-span-2 lg:col-span-4 bg-surface-container-lowest text-on-surface rounded-3xl p-5 shadow-[0_6px_0_0_#dae2fd] flex flex-col justify-between">
+<div>
+<!-- Header -->
+<div class="flex items-center justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[24px]">leaderboard</span>
+<span class="font-headline-md text-headline-md text-on-surface">Class Podium</span>
+</div>
+<span class="font-label-caps text-[11px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">
+              Period 2 • Rm 204
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Weekly fact duel leaderboard.</p>
+<!-- Safe COPPA anonymous handles list -->
+<div class="flex flex-col gap-1.5">
+<!-- Rank 1 -->
+<div class="flex items-center justify-between px-3 py-1.5 rounded-xl bg-surface-container-low shadow-[0_2px_0_0_#dae2fd]">
+<div class="flex items-center gap-2 min-w-0">
+<span class="text-base select-none">🥇</span>
+<span class="font-headline-sm text-[13px] text-on-surface truncate">@TurboTiger</span>
+</div>
+<span class="font-score-timer-num text-[14px] text-primary">4,820 <span class="font-body-sm text-[10px] text-on-surface-variant">pts</span></span>
+</div>
+<!-- Rank 2: YOU (Highlighted in Sunny Yellow) -->
+<div class="flex flex-col px-3 py-1.5 rounded-xl bg-secondary-fixed text-on-secondary-fixed shadow-[0_4px_0_0_#5c4300] border-2 border-secondary-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="text-base select-none">🥈</span>
+<div class="flex items-center gap-1 truncate">
+<span class="font-headline-sm text-[13px] text-on-secondary-container font-black">@RoboSpark #42</span>
+<span class="bg-primary text-on-primary font-label-caps text-[9px] px-1.5 py-0.2 rounded-full uppercase">YOU</span>
+</div>
+</div>
+<span class="font-score-timer-num text-[15px] text-on-secondary-fixed">4,690 <span class="font-body-sm text-[10px]">pts</span></span>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-caps text-on-secondary-container mt-0.5">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">trending_up</span>
+                  ONLY 130 PTS BEHIND #1!
+                </span>
+<span class="font-bold text-tertiary">Gap closing!</span>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="flex items-center justify-between px-3 py-1.5 rounded-xl bg-surface-container-low shadow-[0_2px_0_0_#dae2fd]">
+<div class="flex items-center gap-2 min-w-0">
+<span class="text-base select-none">🥉</span>
+<span class="font-headline-sm text-[13px] text-on-surface truncate">@MathWizard</span>
+</div>
+<span class="font-score-timer-num text-[14px] text-on-surface-variant">4,110 <span class="font-body-sm text-[10px]">pts</span></span>
+</div>
+<!-- Rank 4 -->
+<div class="flex items-center justify-between px-3 py-1 rounded-xl bg-surface-container-low/70">
+<div class="flex items-center gap-2 min-w-0 text-on-surface-variant">
+<span class="font-label-caps text-[12px] font-bold w-4 text-center">4</span>
+<span class="font-headline-sm text-[13px] text-on-surface truncate">@NeonFox</span>
+</div>
+<span class="font-body-md text-[13px] text-on-surface-variant">3,890 pts</span>
+</div>
+<!-- Rank 5 -->
+<div class="flex items-center justify-between px-3 py-1 rounded-xl bg-surface-container-low/70">
+<div class="flex items-center gap-2 min-w-0 text-on-surface-variant">
+<span class="font-label-caps text-[12px] font-bold w-4 text-center">5</span>
+<span class="font-headline-sm text-[13px] text-on-surface truncate">@PixelPanda</span>
+</div>
+<span class="font-body-md text-[13px] text-on-surface-variant">3,740 pts</span>
+</div>
+</div>
+</div>
+<!-- Giant Call-to-Action 3D Button -->
+<div class="mt-3">
+<button class="w-full py-2.5 px-4 rounded-2xl bg-secondary-container text-on-secondary-container font-headline-sm text-headline-sm shadow-[0_5px_0_0_#6f5100] active:translate-y-1 active:shadow-[0_1px_0_0_#6f5100] hover:brightness-105 transition-all flex items-center justify-center gap-2" id="blitz-cta">
+<span>BEAT #1 IN 60s BLITZ</span>
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+</button>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION POPUP (HIDDEN BY DEFAULT) -->
+<div class="fixed bottom-6 right-6 z-50 bg-tertiary-container text-on-tertiary-container px-4 py-2.5 rounded-2xl shadow-[0_6px_0_0_#005321] flex items-center gap-2 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast-notification">
+<span class="material-symbols-outlined text-[24px] text-secondary-fixed">stars</span>
+<div>
+<div class="font-headline-sm text-[14px]" id="toast-title">Quest Claimed!</div>
+<div class="font-body-sm text-[12px] text-on-tertiary-container/90" id="toast-msg">+100 Spark Gems added to Locker</div>
+</div>
+</div>
+</div>
+<script>
+    // Audio trigger simulation & micro-interactions
+    const audioToggle = document.getElementById('audio-toggle');
+    let soundOn = true;
+    if (audioToggle) {
+      audioToggle.addEventListener('click', () => {
+        soundOn = !soundOn;
+        audioToggle.innerHTML = soundOn 
+          ? '<span class="material-symbols-outlined text-[16px] text-tertiary">volume_up</span> SFX ON'
+          : '<span class="material-symbols-outlined text-[16px] text-error">volume_off</span> SFX OFF';
+      });
+    }
+
+    function showToast(title, msg) {
+      const toast = document.getElementById('toast-notification');
+      const titleEl = document.getElementById('toast-title');
+      const msgEl = document.getElementById('toast-msg');
+      if (!toast || !titleEl || !msgEl) return;
+
+      titleEl.innerText = title;
+      msgEl.innerText = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 2500);
+    }
+
+    function claimQuest(questId, gems) {
+      const quest = document.getElementById(questId);
+      if (!quest) return;
+      const btn = quest.querySelector('.claim-btn');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = 'CLAIMED ✓';
+        btn.classList.remove('bg-tertiary-container', 'shadow-[0_4px_0_0_#005321]');
+        btn.classList.add('bg-surface-container-highest', 'text-on-surface-variant', 'cursor-default', 'shadow-none');
+      }
+      showToast('⚡ Quest Complete!', `+${gems} Gems added! Super Chest meter filled.`);
+    }
+
+    function equipSkin(btn, name) {
+      const grid = document.getElementById('keycap-grid');
+      if (!grid) return;
+      
+      const cards = grid.querySelectorAll('.keycap-card');
+      cards.forEach(card => {
+        card.classList.remove('border-2', 'border-primary');
+        const badge = card.querySelector('.bg-primary');
+        if (badge) badge.remove();
+        const actionBtn = card.querySelector('button');
+        if (actionBtn && actionBtn.innerText.includes('EQUIPPED')) {
+          actionBtn.innerText = 'EQUIP 👆';
+          actionBtn.className = 'w-full mt-1.5 py-1 px-2 rounded-lg bg-surface-container-highest text-on-surface font-label-caps text-[11px] shadow-[0_2px_0_0_#c7c4d7] active:translate-y-0.5 active:shadow-none hover:bg-primary-fixed';
+          actionBtn.setAttribute('onclick', `equipSkin(this, '${card.querySelector('.font-headline-sm').innerText}')`);
+        }
+      });
+
+      const parentCard = btn.closest('.keycap-card');
+      if (parentCard) {
+        parentCard.classList.add('border-2', 'border-primary');
+        const activeBadge = document.createElement('span');
+        activeBadge.className = 'absolute top-1.5 right-1.5 font-label-caps text-[10px] bg-primary text-on-primary px-1.5 py-0.2 rounded-full';
+        activeBadge.innerText = 'ON';
+        parentCard.appendChild(activeBadge);
+
+        btn.innerText = 'EQUIPPED ✓';
+        btn.className = 'w-full mt-1.5 py-1 px-2 rounded-lg bg-surface-container text-on-surface-variant font-label-caps text-[11px] cursor-default';
+        btn.removeAttribute('onclick');
+      }
+
+      showToast('🎨 Skin Equipped!', `${name} is now your active math tile style.`);
+    }
+
+    function unlockSkin(btn) {
+      btn.innerText = 'UNLOCKED! 🎉';
+      btn.classList.remove('bg-secondary-container');
+      btn.classList.add('bg-tertiary-container', 'text-on-tertiary-container');
+      showToast('🔓 Unlocked!', 'Golden Dragon Keycap unlocked for 500 Gems!');
+    }
+
+    const blitzCta = document.getElementById('blitz-cta');
+    if (blitzCta) {
+      blitzCta.addEventListener('click', () => {
+        showToast('🚀 Launching Blitz Arena!', 'Preparing 60-Second Challenge vs @TurboTiger...');
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full max-w-[1200px] mx-auto px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="px-space-md py-space-xs rounded-full bg-tertiary-container text-on-tertiary-container flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">verified_user</span><span class="font-label-caps text-label-caps">COPPA &amp; FERPA SAFE</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">Elementary Math Arcade Hub • Grades K-6</span></div><div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant"><span>Fact Spark ⚡ Studio</span><span>•</span><span>Playful Math Mastery</span></div></div></footer></body></html>
