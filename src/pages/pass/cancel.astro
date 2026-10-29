@@ -51,7 +51,7 @@ const breadcrumbs = [
   .cancel-title {
     font-family: var(--font-heading);
     font-size: 2.25rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #0F172A;
     margin-bottom: 0.75rem;
   }
@@ -74,26 +74,27 @@ const breadcrumbs = [
   .btn-primary {
     display: inline-block;
     padding: 0.95rem 1.85rem;
-    background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    background: #0284C7;
     color: #FFFFFF;
     font-family: var(--font-heading);
     font-size: 1.05rem;
-    font-weight: 700;
+    font-weight: 800;
     border-radius: 16px;
-    border: 2px solid #3730A3;
+    border: 2px solid #0369A1;
+    border-bottom: 5px solid #075985;
     text-decoration: none;
-    box-shadow: 0 5px 0 #3730A3;
+    box-shadow: 0 4px 0 #075985;
     transition: transform 0.12s, box-shadow 0.12s;
   }
 
   .btn-primary:hover {
-    background: #4338CA;
+    background: #0369A1;
     transform: translateY(-2px);
-    box-shadow: 0 7px 0 #3730A3;
+    box-shadow: 0 6px 0 #075985;
   }
   .btn-primary:active {
     transform: translateY(3px);
-    box-shadow: 0 1px 0 #3730A3;
+    box-shadow: 0 1px 0 #075985;
   }
 
   .btn-secondary {
@@ -103,18 +104,19 @@ const breadcrumbs = [
     color: #1E293B;
     font-family: var(--font-heading);
     font-size: 1.05rem;
-    font-weight: 700;
+    font-weight: 800;
     border-radius: 16px;
     border: 2px solid #CBD5E1;
+    border-bottom: 5px solid #94A3B8;
     text-decoration: none;
-    box-shadow: 0 4px 0 #CBD5E1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     transition: transform 0.12s, box-shadow 0.12s;
   }
 
   .btn-secondary:hover {
     background: #F8FAFC;
     transform: translateY(-2px);
-    box-shadow: 0 6px 0 #94A3B8;
+    border-color: #94A3B8;
   }
   .btn-secondary:active {
     transform: translateY(3px);
