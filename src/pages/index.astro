@@ -16,76 +16,152 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
   metaDescription={metaDescription}
   canonicalUrl={canonicalUrl}
 >
-  <!-- Hero Section -->
+  <!-- Hero Section: Arcade Launchpad -->
   <section class="hero-section">
-    <div class="hero-badge">Built for School Chromebooks &bull; COPPA Compliant &bull; Zero Accounts Needed</div>
-    <h1 class="hero-headline">Master Math Facts in <span class="highlight-text">60-Second</span> Grid Speed Runs</h1>
-    <p class="hero-subhead">
-      Grid Fluency is a high-speed math fluency platform designed for low-spec classroom devices. 
-      Click primes, factors, multiples, and fractions on an interactive 10x10 board with instant feedback and zero lag.
-    </p>
-    <div class="hero-actions">
-      <a href="/math/prime-numbers-to-100-game/" class="cta-primary">Play Prime Numbers Grid &rarr;</a>
-      <a href="/playlist/" class="cta-secondary">Create Class Playlist</a>
+    <!-- Floating Reward Badges -->
+    <div class="floating-chips-row" aria-label="Game features">
+      <span class="hero-chip streak-chip">🔥 60s Streak</span>
+      <span class="hero-chip speed-chip">⚡ Fast Play</span>
+      <span class="hero-chip lag-chip">🏆 Zero Lag</span>
+      <span class="hero-chip free-chip">🎮 100% Free</span>
+    </div>
+
+    <div class="hero-top-badge">
+      <span class="badge-icon" aria-hidden="true">&#128640;</span>
+      <span>Built for School Chromebooks &bull; COPPA Compliant &bull; No Passwords</span>
+    </div>
+
+    <div class="hero-content-wrap">
+      <h1 class="hero-headline">
+        Master Math Facts in <span class="highlight-badge"><span class="neon-glow" aria-hidden="true"></span>60-Second</span> Grid Speed Runs
+      </h1>
+      
+      <p class="hero-subhead">
+        The ultimate arcade math battleground for elementary &amp; middle schoolers! 
+        Tap primes, factor bursts, multi-combos, and fraction matches on the fast-paced 10&times;10 grid with instant audio-visual rewards.
+      </p>
+
+      <!-- Mascot & Launchpad Action Area -->
+      <div class="mascot-launchpad">
+        <div class="mascot-container" aria-hidden="true">
+          <div class="mascot-bubble">Ready, Set, Solve! ⚡</div>
+          <div class="mascot-avatar">
+            <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="36" fill="#6366F1" stroke="#4F46E5" stroke-width="4"/>
+              <circle cx="28" cy="34" r="6" fill="#FFFFFF"/>
+              <circle cx="29.5" cy="34" r="3" fill="#0F172A"/>
+              <circle cx="52" cy="34" r="6" fill="#FFFFFF"/>
+              <circle cx="50.5" cy="34" r="3" fill="#0F172A"/>
+              <path d="M30 48 Q40 58 50 48" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <circle cx="20" cy="42" r="4" fill="#F472B6" opacity="0.6"/>
+              <circle cx="60" cy="42" r="4" fill="#F472B6" opacity="0.6"/>
+              <polygon points="40,6 45,18 35,18" fill="#F59E0B"/>
+              <circle cx="40" cy="6" r="3" fill="#FDE68A"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="/math/prime-numbers-to-100-game/" class="cta-primary btn-3d">
+            <span class="play-icon" aria-hidden="true">&#9658;</span>
+            <span>PRESS TO PLAY NOW</span>
+            <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="/playlist/" class="cta-secondary btn-3d">
+            <span class="btn-icon" aria-hidden="true">&#127918;</span>
+            <span>Create Class Playlist</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Filter by Grade Level -->
+  <!-- Filter by Grade Level: Tactile Grade Stations -->
   <section class="grades-strip" aria-labelledby="grades-strip-title">
-    <h2 id="grades-strip-title" class="strip-label">Select by Grade Level</h2>
+    <div class="section-title-wrap">
+      <span class="section-icon" aria-hidden="true">&#127891;</span>
+      <h2 id="grades-strip-title" class="strip-label">Choose Your Grade Station</h2>
+    </div>
     <div class="grades-pills">
       {grades.map((grade) => (
-        <a href={`/math/grade-${grade}/`} class="grade-pill">
-          <strong>Grade {grade}</strong>
-          <span>{allGames.filter((g) => g.grade === grade).length} Games</span>
+        <a href={`/math/grade-${grade}/`} class={`grade-card grade-color-${grade}`}>
+          <div class="grade-badge-circle">Gr {grade}</div>
+          <div class="grade-info">
+            <strong class="grade-name">Grade {grade}</strong>
+            <span class="grade-count">{allGames.filter((g) => g.grade === grade).length} Speed Challenges</span>
+          </div>
+          <span class="grade-arrow" aria-hidden="true">&rarr;</span>
         </a>
       ))}
     </div>
   </section>
 
-  <!-- Filter by Math Topic -->
+  <!-- Filter by Math Topic: Playful Neo-Pop Pills -->
   <section class="topics-strip" aria-labelledby="topics-strip-title">
-    <h2 id="topics-strip-title" class="strip-label">Explore Math Domains</h2>
+    <div class="section-title-wrap">
+      <span class="section-icon" aria-hidden="true">&#127919;</span>
+      <h2 id="topics-strip-title" class="strip-label">Explore Math Worlds</h2>
+    </div>
     <div class="topics-pills">
       {topics.map((topic) => (
         <a href={`/math/${topic}/`} class="topic-pill">
-          {topic.replace('-', ' ')}
+          <span class="topic-dot" aria-hidden="true">&#9670;</span>
+          <span class="topic-name">{topic.replace('-', ' ')}</span>
         </a>
       ))}
     </div>
   </section>
 
-  <!-- All 40 Games Directory -->
+  <!-- All 40 Games Directory: Arcade Quest Grid -->
   <section class="games-directory" aria-labelledby="directory-title">
     <div class="directory-header">
-      <h2 id="directory-title" class="section-title">All 40 Math Speed Challenges</h2>
-      <span class="count-badge">{allGames.length} Games Available</span>
+      <div class="directory-title-box">
+        <span class="badge-burst" aria-hidden="true">&#128293;</span>
+        <div>
+          <h2 id="directory-title" class="section-title">All Math Speed Challenges</h2>
+          <p class="section-subtitle">Jump into any 10&times;10 grid challenge below!</p>
+        </div>
+      </div>
+      <span class="count-badge">
+        <span class="badge-sparkle" aria-hidden="true">&#9733;</span>
+        {allGames.length} Challenges Ready
+      </span>
     </div>
 
     <div class="games-grid">
-      {allGames.map((game) => (
-        <a href={`/math/${game.slug}/`} class="game-card">
+      {allGames.map((game, idx) => (
+        <a href={`/math/${game.slug}/`} class={`game-card card-variant-${idx % 4}`}>
           <div class="card-meta">
             <span class="card-grade">Grade {game.grade}</span>
-            <span class="card-timer">{game.game.seconds}s</span>
+            <span class="card-timer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              {game.game.seconds}s
+            </span>
           </div>
+
           <h3 class="card-title">{game.seo.h1}</h3>
           <p class="card-prompt">{game.game.prompt}</p>
+
           <div class="card-footer">
             <span class="card-topic">{game.topic.replace('-', ' ')}</span>
-            <span class="play-link">Play &rarr;</span>
+            <span class="play-pill">
+              <span>Play</span>
+              <span class="play-arrow" aria-hidden="true">&rarr;</span>
+            </span>
           </div>
         </a>
       ))}
     </div>
   </section>
 
-  <!-- Teacher Features Banner -->
+  <!-- Teacher Features Banner: Game Master Deck -->
   <section class="teacher-banner">
+    <div class="teacher-banner-deco" aria-hidden="true">&#128081;</div>
     <div class="teacher-banner-content">
-      <h2>Classroom-Ready Tools for Teachers</h2>
+      <span class="teacher-tag">Teacher &amp; Educator Command Deck</span>
+      <h2>Classroom-Ready Tools with Zero Setup</h2>
       <p>
-        No student accounts, no passwords, and no setup time. Share directly to Google Classroom, encode custom multi-game playlist sequences in the URL, or print 10x10 worksheets with answer keys.
+        Zero accounts to create, no lost passwords, and 100% free student access. Instantly beam challenges to Google Classroom, encode multi-game playlist circuits directly in the URL, or print 10&times;10 worksheets with teacher keys.
       </p>
       <div class="teacher-badges">
         <span class="t-badge">&#10003; 1-Click Google Classroom</span>
@@ -98,274 +174,580 @@ const metaDescription = 'Play 40+ fast-paced 10x10 math fluency games on classro
 </BaseLayout>
 
 <style>
-  /* Hero */
+  /* Hero Section */
   .hero-section {
     text-align: center;
-    padding: 3rem 1rem 2.5rem;
-    max-width: 860px;
+    padding: 2.5rem 1rem 3rem;
+    max-width: 960px;
     margin: 0 auto;
+    position: relative;
   }
-  .hero-badge {
-    display: inline-block;
-    background: #e0e7ff;
-    color: #4338ca;
-    font-size: 0.8rem;
+  
+  /* Floating Reward Badges */
+  .floating-chips-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .hero-chip {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
     font-weight: 700;
-    padding: 0.35rem 0.85rem;
+    padding: 0.4rem 0.9rem;
     border-radius: 9999px;
-    margin-bottom: 1.25rem;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    box-shadow: 0 4px 0 #E2E8F0;
+    animation: floatChip 4s ease-in-out infinite;
+    user-select: none;
   }
+  .streak-chip { color: #EA580C; border-color: #FED7AA; box-shadow: 0 4px 0 #FDBA74; animation-delay: 0s; }
+  .speed-chip { color: #4F46E5; border-color: #C7D2FE; box-shadow: 0 4px 0 #A5B4FC; animation-delay: 0.8s; }
+  .lag-chip { color: #059669; border-color: #A7F3D0; box-shadow: 0 4px 0 #6EE7B7; animation-delay: 1.6s; }
+  .free-chip { color: #DB2777; border-color: #FBCFE8; box-shadow: 0 4px 0 #F9A8D4; animation-delay: 2.4s; }
+
+  @keyframes floatChip {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .hero-top-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #EEF2FF;
+    color: #4338CA;
+    border: 2px solid #C7D2FE;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.4rem 1.15rem;
+    border-radius: 9999px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 0 #C7D2FE;
+  }
+  .badge-icon {
+    font-size: 1rem;
+  }
+
   .hero-headline {
-    font-size: 2.75rem;
-    font-weight: 800;
+    font-size: 3.25rem;
+    font-weight: 700;
     line-height: 1.15;
-    color: #0f172a;
-    letter-spacing: -0.03em;
-    margin: 0 0 1rem;
+    color: #0F172A;
+    margin: 0 0 1.25rem;
+    letter-spacing: -0.025em;
   }
-  .highlight-text {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  
+  /* Animated Neon Gradient Badge for 60-Second */
+  .highlight-badge {
+    position: relative;
+    display: inline-block;
+    padding: 0.15rem 0.75rem;
+    background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+    color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 6px 0 #3730A3, 0 12px 24px rgba(99, 102, 241, 0.35);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: rotate(-1.5deg);
+    margin: 0 0.25rem;
   }
+  .neon-glow {
+    position: absolute;
+    inset: -3px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #818CF8, #F472B6);
+    opacity: 0.6;
+    filter: blur(8px);
+    z-index: -1;
+    animation: neonPulse 2.5s ease-in-out infinite alternate;
+  }
+  @keyframes neonPulse {
+    from { opacity: 0.3; transform: scale(0.97); }
+    to { opacity: 0.75; transform: scale(1.04); }
+  }
+
   .hero-subhead {
-    font-size: 1.15rem;
-    color: #475569;
-    line-height: 1.6;
-    margin: 0 auto 2rem;
-    max-width: 720px;
+    font-size: 1.2rem;
+    color: #334155;
+    line-height: 1.65;
+    margin: 0 auto 2.25rem;
+    max-width: 760px;
+    font-weight: 600;
   }
+
+  /* Mascot & Launchpad Area */
+  .mascot-launchpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .mascot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .mascot-avatar {
+    animation: mascotBounce 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 14px rgba(99, 102, 241, 0.25));
+  }
+  @keyframes mascotBounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+  }
+  .mascot-bubble {
+    background: #FFFFFF;
+    color: #0F172A;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 14px;
+    border: 2px solid #E2E8F0;
+    box-shadow: 0 4px 0 #E2E8F0;
+    margin-bottom: -6px;
+    z-index: 2;
+  }
+
   .hero-actions {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.25rem;
     flex-wrap: wrap;
+    width: 100%;
   }
+  
+  /* Giant 3D Neo-Brutalist Main CTA */
   .cta-primary {
-    background: #4f46e5;
-    color: #ffffff;
-    font-size: 1rem;
+    background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    color: #FFFFFF;
+    font-size: 1.2rem;
     font-weight: 700;
-    padding: 0.85rem 1.75rem;
-    border-radius: 8px;
-    text-decoration: none;
-    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
-    transition: background-color 0.15s, transform 0.15s;
+    padding: 1.05rem 2.25rem;
+    border: 2px solid #4338CA;
+    border-radius: 20px;
+    box-shadow: 0 6px 0 #3730A3, 0 14px 20px rgba(79, 70, 229, 0.3);
   }
   .cta-primary:hover {
-    background: #4338ca;
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, #4F46E5 0%, #4338CA 100%);
+    box-shadow: 0 8px 0 #3730A3, 0 18px 26px rgba(79, 70, 229, 0.38);
+    transform: translateY(-2px);
   }
-  .cta-secondary {
-    background: #ffffff;
-    color: #334155;
+  .cta-primary:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #3730A3;
+  }
+  .play-icon {
     font-size: 1rem;
-    font-weight: 600;
-    padding: 0.85rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    border: 1px solid #cbd5e1;
-    transition: background-color 0.15s;
+    color: #FDE047;
   }
-  .cta-secondary:hover {
-    background: #f1f5f9;
+  .cta-arrow {
+    transition: transform 0.2s ease;
+  }
+  .cta-primary:hover .cta-arrow {
+    transform: translateX(4px);
   }
 
-  /* Grades and Topics Strips */
-  .grades-strip, .topics-strip {
-    margin: 2rem 0;
+  .cta-secondary {
+    background: #FFFFFF;
+    color: #1E293B;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1.05rem 1.85rem;
+    border: 2px solid #CBD5E1;
+    border-radius: 20px;
+    box-shadow: 0 5px 0 #CBD5E1, 0 10px 15px rgba(0, 0, 0, 0.04);
+  }
+  .cta-secondary:hover {
+    background: #F8FAFC;
+    border-color: #94A3B8;
+    box-shadow: 0 7px 0 #94A3B8;
+    transform: translateY(-2px);
+  }
+  .cta-secondary:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #CBD5E1;
+  }
+
+  /* Section Titles */
+  .section-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .section-icon {
+    font-size: 1.25rem;
   }
   .strip-label {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #64748b;
-    margin-bottom: 0.75rem;
+    color: #0F172A;
+    margin: 0;
+  }
+
+  /* Grades Strip: Tactile Station Cards */
+  .grades-strip {
+    margin: 3rem 0;
   }
   .grades-pills {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
   }
-  .grade-pill {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
+  .grade-card {
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: 18px;
+    padding: 1rem 1.15rem;
     text-decoration: none;
     display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    box-shadow: 0 5px 0 #E2E8F0;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .grade-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 0 #C7D2FE;
+    border-color: #818CF8;
+  }
+  .grade-card:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #CBD5E1;
+  }
+  .grade-badge-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #FFFFFF;
+    flex-shrink: 0;
+  }
+  .grade-color-1 .grade-badge-circle { background: #10B981; box-shadow: 0 3px 0 #059669; }
+  .grade-color-2 .grade-badge-circle { background: #06B6D4; box-shadow: 0 3px 0 #0891B2; }
+  .grade-color-3 .grade-badge-circle { background: #8B5CF6; box-shadow: 0 3px 0 #6D28D9; }
+  .grade-color-4 .grade-badge-circle { background: #EC4899; box-shadow: 0 3px 0 #BE185D; }
+  .grade-color-5 .grade-badge-circle { background: #F97316; box-shadow: 0 3px 0 #C2410C; }
+  .grade-color-6 .grade-badge-circle { background: #6366F1; box-shadow: 0 3px 0 #4338CA; }
+  
+  .grade-info {
+    display: flex;
     flex-direction: column;
-    color: #1e293b;
-    transition: border-color 0.15s, box-shadow 0.15s;
+    flex-grow: 1;
   }
-  .grade-pill strong {
-    font-size: 1rem;
-    color: #4f46e5;
+  .grade-name {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    color: #0F172A;
   }
-  .grade-pill span {
-    font-size: 0.8rem;
-    color: #64748b;
+  .grade-count {
+    font-size: 0.775rem;
+    color: #64748B;
+    font-weight: 700;
   }
-  .grade-pill:hover {
-    border-color: #818cf8;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  .grade-arrow {
+    color: #94A3B8;
+    font-weight: 700;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  .grade-card:hover .grade-arrow {
+    color: #4F46E5;
+    transform: translateX(4px);
   }
 
+  /* Topics Strip */
+  .topics-strip {
+    margin: 3rem 0;
+  }
   .topics-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
   .topic-pill {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    padding: 0.4rem 0.85rem;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    padding: 0.55rem 1.15rem;
     border-radius: 9999px;
     text-decoration: none;
     color: #334155;
-    font-size: 0.875rem;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
     font-weight: 600;
     text-transform: capitalize;
-    transition: background-color 0.15s, color 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 0 #E2E8F0;
+    transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease, background-color 0.15s, border-color 0.15s;
+  }
+  .topic-dot {
+    font-size: 0.6rem;
+    color: #6366F1;
   }
   .topic-pill:hover {
-    background: #4f46e5;
-    color: #ffffff;
-    border-color: #4f46e5;
+    background: #4F46E5;
+    color: #FFFFFF;
+    border-color: #3730A3;
+    box-shadow: 0 6px 0 #3730A3;
+    transform: translateY(-2px);
+  }
+  .topic-pill:hover .topic-dot {
+    color: #FDE047;
+  }
+  .topic-pill:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #3730A3;
   }
 
-  /* Games Directory */
+  /* Games Directory & Quest Cards */
   .games-directory {
-    margin: 3.5rem 0;
+    margin: 4.5rem 0;
   }
   .directory-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .directory-title-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .badge-burst {
+    font-size: 1.75rem;
   }
   .section-title {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #0f172a;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0F172A;
     margin: 0;
   }
-  .count-badge {
-    background: #eff6ff;
-    color: #2563eb;
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 0.3rem 0.75rem;
-    border-radius: 9999px;
+  .section-subtitle {
+    margin: 0.2rem 0 0;
+    color: #64748B;
+    font-weight: 600;
+    font-size: 0.95rem;
   }
+  .count-badge {
+    background: #EEF2FF;
+    color: #4338CA;
+    border: 2px solid #C7D2FE;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 0.45rem 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 3px 0 #C7D2FE;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .badge-sparkle {
+    color: #F59E0B;
+  }
+
   .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
+  
+  /* Bouncy Quest Tiles */
   .game-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1.25rem;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: var(--card-radius);
+    padding: 1.35rem;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    position: relative;
+    box-shadow: 0 6px 0 #E2E8F0, 0 12px 20px -4px rgba(15, 23, 42, 0.05);
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.25s ease;
   }
   .game-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
-    border-color: #cbd5e1;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 0 #C7D2FE, 0 18px 28px -4px rgba(99, 102, 241, 0.18);
+    border-color: #818CF8;
   }
+  .game-card:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #C7D2FE;
+  }
+
   .card-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
   }
   .card-grade {
-    background: #eff6ff;
-    color: #2563eb;
-    font-size: 0.75rem;
+    background: #EEF2FF;
+    color: #4F46E5;
+    border: 1.5px solid #C7D2FE;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
     font-weight: 700;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.65rem;
     border-radius: 9999px;
   }
   .card-timer {
-    color: #64748b;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: #FFF7ED;
+    color: #EA580C;
+    border: 1.5px solid #FED7AA;
+    border-radius: 9999px;
+    padding: 0.2rem 0.6rem;
     font-size: 0.8rem;
-    font-weight: 600;
-  }
-  .card-title {
-    font-size: 1.05rem;
+    font-family: var(--font-heading);
     font-weight: 700;
-    color: #1e293b;
-    margin: 0 0 0.4rem;
-    line-height: 1.35;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0 0 0.45rem;
+    line-height: 1.3;
   }
   .card-prompt {
-    font-size: 0.875rem;
-    color: #64748b;
-    margin: 0 0 1rem;
+    font-size: 0.925rem;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0 0 1.25rem;
     flex-grow: 1;
+    font-weight: 600;
   }
+
   .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.8rem;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 0.75rem;
+    font-size: 0.85rem;
+    border-top: 2px dashed #F1F5F9;
+    padding-top: 0.85rem;
   }
   .card-topic {
     text-transform: capitalize;
-    color: #64748b;
-    font-weight: 500;
-  }
-  .play-link {
-    color: #4f46e5;
+    color: #64748B;
     font-weight: 700;
+    font-size: 0.825rem;
+  }
+  .play-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #4F46E5;
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    box-shadow: 0 3px 0 #3730A3;
+    transition: transform 0.15s ease, background-color 0.15s;
+  }
+  .game-card:hover .play-pill {
+    background: #4338CA;
+    transform: scale(1.05);
+  }
+  .play-arrow {
+    transition: transform 0.2s ease;
+  }
+  .game-card:hover .play-arrow {
+    transform: translateX(3px);
   }
 
   /* Teacher Banner */
   .teacher-banner {
-    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-    color: #ffffff;
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    margin: 4rem 0 2rem;
+    position: relative;
+    background: linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #4338CA 100%);
+    color: #FFFFFF;
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    margin: 5rem 0 2rem;
+    border: 3px solid #6366F1;
+    box-shadow: 0 12px 0 #1E1B4B, 0 20px 30px rgba(30, 27, 75, 0.4);
+    overflow: hidden;
+  }
+  .teacher-banner-deco {
+    position: absolute;
+    right: 2rem;
+    bottom: -1rem;
+    font-size: 9rem;
+    opacity: 0.08;
+    pointer-events: none;
+    user-select: none;
+  }
+  .teacher-tag {
+    display: inline-block;
+    background: #F59E0B;
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 0.825rem;
+    font-weight: 700;
+    padding: 0.35rem 0.9rem;
+    border-radius: 9999px;
+    box-shadow: 0 3px 0 #B45309;
+    margin-bottom: 0.85rem;
   }
   .teacher-banner-content h2 {
-    font-size: 1.75rem;
-    font-weight: 800;
-    margin: 0 0 0.75rem;
+    font-size: 2.15rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.02em;
   }
   .teacher-banner-content p {
-    color: #c7d2fe;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 0 1.5rem;
+    color: #E0E7FF;
+    font-size: 1.15rem;
+    line-height: 1.65;
+    max-width: 760px;
+    margin: 0 0 1.75rem;
+    font-weight: 600;
   }
   .teacher-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.85rem;
   }
   .t-badge {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.4rem 0.85rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 1rem;
     border-radius: 9999px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
   }
-  @media (max-width: 640px) {
-    .hero-headline { font-size: 2rem; }
-    .hero-subhead { font-size: 1rem; }
+
+  @media (max-width: 768px) {
+    .hero-headline { font-size: 2.25rem; }
+    .hero-subhead { font-size: 1.05rem; }
+    .cta-primary { font-size: 1.05rem; padding: 0.9rem 1.5rem; }
+    .cta-secondary { font-size: 1rem; padding: 0.9rem 1.25rem; }
+    .teacher-banner { padding: 2rem 1.5rem; }
+    .teacher-banner-content h2 { font-size: 1.65rem; }
   }
 </style>
