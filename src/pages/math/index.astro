@@ -2,7 +2,7 @@
 import HubLayout from '../../layouts/HubLayout.astro';
 import { getAllGames } from '../../contentLoader';
 
-const allGames = getAllGames().sort((a, b) => a.grade - b.grade || a.title.localeCompare(b.title));
+const allGames = getAllGames().sort((a, b) => a.grade - b.grade || a.slug.localeCompare(b.slug));
 
 const canonicalUrl = 'https://gridfluency.com/math/';
 const title = 'Math Fluency Games Catalog — 10x10 Speed Grids for Grades 1–6';
