@@ -12,7 +12,7 @@ export class HouseAdAdapter implements AdProvider {
     },
     {
       title: 'Built for Chromebook Classrooms',
-      sub: 'Zero student logins, zero passwords, and COPPA-compliant privacy. Get full teacher tools for $29/year.',
+      sub: "Zero student logins, zero passwords. We don't collect personal information from students. Get full teacher tools for $29/year.",
       cta: 'Learn About Teacher Pass &rarr;',
       link: '/pass/'
     }
